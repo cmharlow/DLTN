@@ -1,0 +1,32 @@
+DLTN Label,Cardinality,DLTN MODS,Vocab/Encoding,DLTN Guidelines,DPLA Label,DPLA Class,DPLA Property
+Alternative Title,{0..n},"<titleInfo type=""alternative""><title>",,"Enter all secondary/alternative titles here. If repeated title element, first title element assumed to be title, rest, alternative",Alternative Title,dpla:SourceResource,dcterms:alternative
+Collection Title,{1},<oai:set>,,Should be same/derived from archival collection name in <relatedItem type='host' displayLabel='Collection'><title><titleInfo>,Collection,dpla:SourceResource,dcterms:isPartOf
+Collection Description,{0..1},<oai:setDescription>,,Should be repeated in <relatedItem type='host' displayLabel='Collection'><abstract> or <relatedItem type='host' displayLabel='Collection'><note> if applicable.,Collection Description,dcmitype:Collection,dcterms:description
+Contributor,{0..n},<name><namePart>[value]</namePart><role> <roleTerm>contributor</roleTerm></role></name>,LCNAF,"Use RDA Guidelines to separate out Contributor/Creator if metadata has roles to support. Otherwise, rely on separation of dcterms:creator/dcterms:contributor",Contributor,dpla:SourceResource,dcterms:contributor
+Creator,{0..n},<name><namePart>[value]</namePart><role> <roleTerm>creator</roleTerm></role></name>,LCNAF,"Try to capture authority, URI where feasible, and put in appropriate MODS attributes",Creator,dpla:SourceResource,dcterms:creator
+Key Date,{1},"<originInfo><dateCreated keyDate=""yes"">",EDTF,Use EDTF encoding.,Date,dpla:SourceResource,dc:date
+Text Date,{1..n},<originInfo><dateCreated>,,Take dates as found.,,,
+Description / Abstract,{0..n},"<note type=""content""> | <abstract>",,"Can also use Note as needed, though all descriptions of the physical resource should be here.",Description,dpla:SourceResource,dcterms:description
+Extent,{0..n},<physicalDescription><extent>,,Take as is.,Extent,dpla:SourceResource,dcterms:extent
+Form,{1..n},"<physicalDescription><form> (exluding DCMI Types, Internet Media Types, if used)",Leave as is.,Try to parse dimensions into Extent element.,Format,dpla:SourceResource,dc:format
+Genre,{0..n},<genre>,UTK Form Terms (AAT),"Not capturing 'aboutness' for DPLA. Take as found, review. Maps to UTK MODS Form terms, for example, not UTK MODS genre terms.",Genre,dpla:SourceResource,edm:hasType
+Identifier,{1..n},<identifier>,,,Identifier,dpla:SourceResource,dcterms:identifier
+Language,{0..n},<language><languageTerm>,iso639-2b,Either make all code or all text,Language,dpla:SourceResource,dcterms:language
+Subject - Geographic,{0..n},<subject><geographic> | <subject><hierarchicalGeographic>,FAST,"Try to capture authority, URI where feasible.",Place,dpla:SourceResource,dcterms:spatial
+Publisher,{0..n},<originInfo><publisher>,LCNAF,THIS IS NOT THE ORGANIZATION THAT DID THE DIGITIZATION. ,Publisher,dpla:SourceResource,dcterms:publisher
+Related Item,{0..n},<relatedItem><title><titlePart> | <relatedItem><location><url>,,"Capture where possible/given. URL preferred. Ignore displayLabel=""Collection""",Relation,dpla:SourceResource,dc:relation
+Referenced/Replaced By,{0..n},"<relatedItem type=""isReferencedBy""><title><titlePart> | <relatedItem type=""isReferencedBy""><location><url>",,Capture where possible/given.,Replaced By,dpla:SourceResource,dpla:isReplacedBy
+References/Replaces,{0..n},"<relatedItem type=""references""><title><titlePart> | <relatedItem type=""references""><location><url>",,Capture where possible/given.,Replaces,dpla:SourceResource,dpla:replaces
+Rights,{1},<accessCondition>,Local vocabulary,This is rights for the physical objects. Standardize?,Rights,dpla:SourceResource,dc:rights
+RightsHolder,{0..n},(can extend MODS if needed; get other's opinion),LCNAF,,Rights Holder,dpla:SourceResource,dcterms:rightsholder
+Subject - Topic,{0..n},<subject><topic>,LCSH,"Try to capture authority, URI where feasible.",Subject,dpla:SourceResource,dcterms:subject
+Subject - Temporal,{0..n),<subject><temporal>,EDTF,,Temporal Coverage,dpla:SourceResource,dcterms:temporal
+Title,{1},<titleInfo><title>,,Make sure to include intitial articles if parsed out in source data. All other titles go into Alternative Title.,Title,dpla:SourceResource,dcterms:title
+Type,{1..n},<typeofresource>,DCMIType,DCMIType vocabulary only - map over MODS Type terms.,Type,dpla:SourceResource,dcterms:type
+File Format,{1..n},<physicalDescription><internetMediaType>,Internet Media Types,,File Format,edm:WebResource,dc:format
+Digital Object Rights,{0..1},"<accessCondition displayLabel=""Digital Object Rights"">",Local vocabulary,Rights for the digital object. Standardize in some manner.,Rights,edm:WebResource,dc:rights
+Data Provider,{1},<recordInfo><recordContentSource>,LCNAF,,Data Provider,ore:Aggregation,edm:dataProvider
+Object in Context,{1},"<location><url usage=""primary display"" access=""object in  context"">",,"Try to pull in authority, URI where possible. Could generate based off of separate institution's datasets/XSLT",Is Shown At,ore:Aggregation,edm:isShownAt
+File URL,{0..1},"<location><url usage=""primary display"" access=""raw object"">",,URL to the file of the digitized object at the highest possible resolution.,Object,ore:Aggregation,edm:object
+Object Preview,{1},"<location><url access=""preview"">",,URL to a thumbnail file of the digitized object,Preview,ore:Aggregation,edm:preview
+Provider,n/a,"""Tennessee Digital Library""",,Set value. Need in metadata?,Provider,ore:Aggregation,edm:provider
