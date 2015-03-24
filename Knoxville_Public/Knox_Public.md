@@ -6,18 +6,31 @@
  Completeness (total):
 
     {http://purl.org/dc/elements/1.1/}contributor: |                         |    341/20217 |   1% 
+    
         {http://purl.org/dc/elements/1.1/}creator: |=================        |  14300/20217 |  70% 
+        
            {http://purl.org/dc/elements/1.1/}date: |=======================  |  19280/20217 |  95% 
+           
     {http://purl.org/dc/elements/1.1/}description: |======================== |  20072/20217 |  99% 
+    
          {http://purl.org/dc/elements/1.1/}format: |======================== |  20127/20217 |  99% 
+         
      {http://purl.org/dc/elements/1.1/}identifier: |=========================|  20217/20217 | 100% 
+     
        {http://purl.org/dc/elements/1.1/}language: |===                      |   3068/20217 |  15% 
+       
       {http://purl.org/dc/elements/1.1/}publisher: |=======                  |   5991/20217 |  29% 
+      
        {http://purl.org/dc/elements/1.1/}relation: |===                      |   2587/20217 |  12% 
+       
          {http://purl.org/dc/elements/1.1/}rights: |======================== |  20127/20217 |  99% 
+         
          {http://purl.org/dc/elements/1.1/}source: |======================== |  19878/20217 |  98% 
+         
         {http://purl.org/dc/elements/1.1/}subject: |=======================  |  19400/20217 |  95% 
+        
           {http://purl.org/dc/elements/1.1/}title: |=========================|  20217/20217 | 100% 
+          
            {http://purl.org/dc/elements/1.1/}type: |=======================  |  19370/20217 |  95% 
 
 ##XSLT: 
@@ -32,28 +45,46 @@
   
   
        {http://purl.org/dc/elements/1.1/}creator: |=======================  |    103/108 |  95% 
+       
           {http://purl.org/dc/elements/1.1/}date: |=========================|    108/108 | 100% 
+          
    {http://purl.org/dc/elements/1.1/}description: |=========================|    108/108 | 100% 
+   
         {http://purl.org/dc/elements/1.1/}format: |=========================|    108/108 | 100% 
+        
     {http://purl.org/dc/elements/1.1/}identifier: |=========================|    108/108 | 100% 
+    
         {http://purl.org/dc/elements/1.1/}rights: |=========================|    108/108 | 100% 
+        
         {http://purl.org/dc/elements/1.1/}source: |=========================|    108/108 | 100% 
+        
        {http://purl.org/dc/elements/1.1/}subject: |=========================|    108/108 | 100% 
+       
          {http://purl.org/dc/elements/1.1/}title: |=========================|    108/108 | 100% 
+         
           {http://purl.org/dc/elements/1.1/}type: |=========================|    108/108 | 100% 
 
 ### Great Smoky Mountains Photographs - Thompson Brothers: p15136coll2 (279 records)*
   Completeness:
  
         {http://purl.org/dc/elements/1.1/}creator: |=========================|    279/279 | 100% 
+        
            {http://purl.org/dc/elements/1.1/}date: |=========================|    279/279 | 100% 
+           
     {http://purl.org/dc/elements/1.1/}description: |=========================|    279/279 | 100% 
+    
          {http://purl.org/dc/elements/1.1/}format: |=========================|    279/279 | 100% 
+         
      {http://purl.org/dc/elements/1.1/}identifier: |=========================|    279/279 | 100% 
+     
          {http://purl.org/dc/elements/1.1/}rights: |=========================|    279/279 | 100% 
+         
          {http://purl.org/dc/elements/1.1/}source: |=========================|    279/279 | 100% 
+         
         {http://purl.org/dc/elements/1.1/}subject: |=========================|    279/279 | 100% 
+        
           {http://purl.org/dc/elements/1.1/}title: |=========================|    279/279 | 100% 
+          
            {http://purl.org/dc/elements/1.1/}type: |=========================|    279/279 | 100% 
 
 ### George F. Barber Collection [see note] : p15136coll3 (4381 records)^
@@ -73,19 +104,30 @@
   Completeness:
   
      {http://purl.org/dc/elements/1.1/}contributor: |                         |      2/4901 |   0% 
+     
          {http://purl.org/dc/elements/1.1/}creator: |===                      |    737/4901 |  15% 
+         
             {http://purl.org/dc/elements/1.1/}date: |=====================    |   4271/4901 |  87% 
+            
      {http://purl.org/dc/elements/1.1/}description: |======================== |   4869/4901 |  99% 
+     
           {http://purl.org/dc/elements/1.1/}format: |=========================|   4901/4901 | 100% 
+          
       {http://purl.org/dc/elements/1.1/}identifier: |=========================|   4901/4901 | 100% 
+      
        {http://purl.org/dc/elements/1.1/}publisher: |====================     |   3967/4901 |  80% 
+       
           {http://purl.org/dc/elements/1.1/}rights: |=========================|   4901/4901 | 100% 
+          
           {http://purl.org/dc/elements/1.1/}source: |======================== |   4837/4901 |  98% 
+          
          {http://purl.org/dc/elements/1.1/}subject: |======================   |   4413/4901 |  90% 
+         
            {http://purl.org/dc/elements/1.1/}title: |=========================|   4901/4901 | 100% 
+           
             {http://purl.org/dc/elements/1.1/}type: |======================   |   4351/4901 |  88% 
 
-### Selected Materials from the McClung Historical Collection [see note] : p15136coll4 (4111 records - not including 22 deleted records)
+### Selected Materials from the McClung Historical Collection [see note] : p15136coll4 (4111 records - not including 22 deleted records)^
 
 **There are further McClung Historical Collection items using the oai:setSpec above. Should these be included?
 
@@ -190,7 +232,33 @@
   - W.R. Briscoe Collection 5
   - Windle Store Ledger and family papers. Sevier Family Collection, Sevier Family Association (10 records)
 
+Completeness includes all, since unclear how to separate out: 
 
+  {http://purl.org/dc/elements/1.1/}contributor: |==                       |    339/4110 |   8% 
+  
+      {http://purl.org/dc/elements/1.1/}creator: |=================        |   2828/4110 |  68% 
+      
+         {http://purl.org/dc/elements/1.1/}date: |=======================  |   3850/4110 |  93% 
+         
+  {http://purl.org/dc/elements/1.1/}description: |======================== |   4002/4110 |  97% 
+  
+       {http://purl.org/dc/elements/1.1/}format: |======================== |   4020/4110 |  97% 
+       
+   {http://purl.org/dc/elements/1.1/}identifier: |=========================|   4110/4110 | 100% 
+   
+     {http://purl.org/dc/elements/1.1/}language: |==================       |   3068/4110 |  74% 
+     
+    {http://purl.org/dc/elements/1.1/}publisher: |===========              |   1912/4110 |  46% 
+    
+       {http://purl.org/dc/elements/1.1/}rights: |======================== |   4020/4110 |  97% 
+       
+       {http://purl.org/dc/elements/1.1/}source: |=======================  |   3848/4110 |  93% 
+       
+      {http://purl.org/dc/elements/1.1/}subject: |=======================  |   3826/4110 |  93% 
+      
+        {http://purl.org/dc/elements/1.1/}title: |=========================|   4110/4110 | 100% 
+        
+         {http://purl.org/dc/elements/1.1/}type: |=======================  |   3850/4110 |  93% 
 
 ## Public Domain?
  - Unremediated Rights statements:
