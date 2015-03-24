@@ -3,7 +3,8 @@
 ## Stats
  - 20,349 records total from OAI feed, 20217 harvested, 113 with header 'deleted', other difference in # not yet explained.
  - schema: OAI Dublin Core (from ContentDM)
- - Completeness (total)
+ Completeness (total):
+
     {http://purl.org/dc/elements/1.1/}contributor: |                         |    341/20217 |   1% 
         {http://purl.org/dc/elements/1.1/}creator: |=================        |  14300/20217 |  70% 
            {http://purl.org/dc/elements/1.1/}date: |=======================  |  19280/20217 |  95% 
@@ -28,6 +29,8 @@
 
 ### Hugh Tyler Collection: p15136coll1 (108 records)*
   Completeness:
+  
+  
        {http://purl.org/dc/elements/1.1/}creator: |=======================  |    103/108 |  95% 
           {http://purl.org/dc/elements/1.1/}date: |=========================|    108/108 | 100% 
    {http://purl.org/dc/elements/1.1/}description: |=========================|    108/108 | 100% 
@@ -41,6 +44,7 @@
 
 ### Great Smoky Mountains Photographs - Thompson Brothers: p15136coll2 (279 records)*
   Completeness:
+ 
         {http://purl.org/dc/elements/1.1/}creator: |=========================|    279/279 | 100% 
            {http://purl.org/dc/elements/1.1/}date: |=========================|    279/279 | 100% 
     {http://purl.org/dc/elements/1.1/}description: |=========================|    279/279 | 100% 
@@ -67,6 +71,7 @@
   - Rare Book Shelves, McClung Historical Collection (36 records)
 
   Completeness:
+  
      {http://purl.org/dc/elements/1.1/}contributor: |                         |      2/4901 |   0% 
          {http://purl.org/dc/elements/1.1/}creator: |===                      |    737/4901 |  15% 
             {http://purl.org/dc/elements/1.1/}date: |=====================    |   4271/4901 |  87% 
