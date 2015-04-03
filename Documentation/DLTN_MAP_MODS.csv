@@ -27,6 +27,6 @@ File Format,{1..n},<physicalDescription><internetMediaType>,Internet Media Types
 Digital Object Rights,{0..1},"<accessCondition displayLabel=""Digital Object Rights"">",Local vocabulary,Rights for the digital object. Standardize in some manner.,Rights,edm:WebResource,dc:rights
 Data Provider,{1},<recordInfo><recordContentSource>,LCNAF,,Data Provider,ore:Aggregation,edm:dataProvider
 Object in Context,{1},"<location><url usage=""primary display"" access=""object in  context"">",,"Try to pull in authority, URI where possible. Could generate based off of separate institution's datasets/XSLT",Is Shown At,ore:Aggregation,edm:isShownAt
-File URL,{0..1},"<location><url usage=""primary display"" access=""raw object"">",,URL to the file of the digitized object at the highest possible resolution.,Object,ore:Aggregation,edm:object
+File URL,{0..1},"<location><url access=""raw object"">",,URL to the file of the digitized object at the highest possible resolution.,Object,ore:Aggregation,edm:object
 Object Preview,{1},"<location><url access=""preview"">",,URL to a thumbnail file of the digitized object,Preview,ore:Aggregation,edm:preview
 Provider,n/a,"""Tennessee Digital Library""",,Set value. Need in metadata?,Provider,ore:Aggregation,edm:provider
