@@ -1,47 +1,54 @@
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oai_dc='http://www.openarchives.org/OAI/2.0/oai_dc/' xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.loc.gov/mods/v3" version="2.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:oai_dc='http://www.openarchives.org/OAI/2.0/oai_dc/' 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns="http://www.loc.gov/mods/v3" version="2.0">
     <xsl:output method="xml"  omit-xml-declaration="yes" indent="yes" encoding="UTF-8"/>
     <xsl:strip-space elements="*"/>
-    <xsl:template match="/">
-        <xsl:apply-templates select="oai_dc:dc" />
-    </xsl:template>
+   
+    <xsl:template match="text()|@*"/>
     
-    <xsl:template match="oai_dc:dc">
-        <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd" version="3.5">      
+    <xsl:template match="//oai_dc:dc">
+        <mods xmlns="http://www.loc.gov/mods/v3" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd" 
+            version="3.5">
             <xsl:apply-templates select="dc:title"/>
             
-            <!-- Some identifiers are dspace pid - actual identifiers - others are the object in context url. 
-                this just refers to former; latter is handled in location template -->
-            <xsl:apply-templates select="dc:identifier"/>
+            <xsl:for-each select="dc:creator">
+                <xsl:if test="lower-case(normalize-space(.)) != 'n/a'">
+                    <xsl:apply-templates select="."/>
+                </xsl:if>
+            </xsl:for-each>
+            <xsl:for-each select="dc:contributor">
+                <xsl:if test="lower-case(normalize-space(.)) != 'n/a'">
+                    <xsl:apply-templates select="."/>
+                </xsl:if>
+            </xsl:for-each>
             
-            <xsl:if test="lower-case(normalize-space(dc:creator)) != 'n/a'">
-                <xsl:apply-templates select="dc:creator"/>
-            </xsl:if>
-            <xsl:if test="lower-case(normalize-space(dc:contributor)) != 'n/a'">
-                <xsl:apply-templates select="dc:contributor"/>
-            </xsl:if>
-            
-            <xsl:if test="lower-case(normalize-space(dc:date)) != '' or not(contains(lower-case(normalize-space(dc:publisher)),'crossroads to freedom'))">
-                <xsl:call-template name="originInfo"/>
+            <xsl:if test="dc:date or dc:publisher">
+                <originInfo>
+                    <xsl:apply-templates select="dc:date"/>
+                    <xsl:if test="lower-case(normalize-space(.)) != 'unknown' and lower-case(normalize-space(.)) != 'n/a' and lower-case(normalize-space(.)) != 'none'">
+                        <xsl:apply-templates select="dc:publisher"/>
+                    </xsl:if>
+                </originInfo>
             </xsl:if>
             
             <xsl:apply-templates select="dc:language"/>
             
-            <xsl:if test="lower-case(normalize-space(dc:format)) != 'n/a' or lower-case(normalize-space(dc:hasversion)) != 'n/a'">
+            <xsl:if test="lower-case(normalize-space(dc:format)) != 'n/a' or lower-case(normalize-space(dc:medium)) != 'n/a' or lower-case(normalize-space(dc:hasversion)) != 'n/a'">
                 <xsl:call-template name="physicalDescription"/>
             </xsl:if>
             
-            
             <xsl:apply-templates select="dc:description"/>
-            
             <xsl:apply-templates select="dc:spatial"/>
             <xsl:apply-templates select="dc:subject"/>
             <xsl:apply-templates select="dc:temporal"/>
-            
             <xsl:apply-templates select="dc:type"/>
-            
             <xsl:apply-templates select="dc:medium"/>
-            
             <xsl:apply-templates select="dc:rights"/>
+            
             <xsl:if test="lower-case(normalize-space(dc:bibliographiccitation)) != 'n/a'">
                 <xsl:apply-templates select="dc:bibliographiccitation"/>
             </xsl:if>
@@ -54,14 +61,39 @@
                 <xsl:call-template name="Collection"/>
             </xsl:if>
             
-            <xsl:if test="contains(lower-case(dc:source), 'archive') or contains(lower-case(dc:source), 'library') or contains(lower-case(dc:source), 'association') or starts-with(lower-case(normalize-space(dc:identifier)), 'http://')">
-                <xsl:call-template name="Location"/>
-            </xsl:if>
+            <xsl:call-template name="Location"/>
             
             <xsl:apply-templates select="dc:availability"/>
             
             <xsl:call-template name="recordInfo"/>
         </mods>
+    </xsl:template>
+    
+    <xsl:template name="Collection">
+        <relatedItem type="host" displayLabel="Collection">
+            <title>
+                <titleInfo>
+                    <xsl:value-of select="dc:source"/>
+                </titleInfo>
+            </title>
+        </relatedItem>
+    </xsl:template>
+    
+    <xsl:template name="Location">
+        <location>
+            <xsl:choose>
+                <xsl:when test="contains(lower-case(dc:source), 'archive') or contains(lower-case(dc:source), 'library') or contains(lower-case(dc:source), 'association')">
+                    <physicalLocation>
+                        <xsl:value-of select="dc:source"/>
+                    </physicalLocation>
+                </xsl:when>
+                <xsl:when test="starts-with(lower-case(normalize-space(dc:identifier)), 'http://')">
+                    <url access="object in context" usage="primary">
+                        <xsl:value-of select="dc:identifier"/>
+                    </url>
+                </xsl:when>
+            </xsl:choose>
+        </location>
     </xsl:template>
     
     <xsl:template match="dc:availability">
@@ -74,35 +106,8 @@
     
     <xsl:template match="dc:bibliographiccitation">
         <accessCondition type="use and reproduction">
-            <xsl:value-of select="."/>
+            <xsl:value-of select="normalize-space(.)"/>
         </accessCondition>
-    </xsl:template>
-    
-    <xsl:template name="Collection">
-        <relatedItem type="host" displayLabel="Collection">
-            <title>
-                <titleInfo>
-                    <xsl:value-of select="."/>
-                </titleInfo>
-            </title>
-        </relatedItem>
-    </xsl:template>
-    
-    <xsl:template name="Location">
-        <location>
-            <xsl:choose>
-                <xsl:when test="contains(lower-case(.), 'archive') or contains(lower-case(.), 'library') or contains(lower-case(.), 'association')">
-                    <physicalLocation>
-                        <xsl:value-of select="."/>
-                    </physicalLocation>
-                </xsl:when>
-                <xsl:when test="starts-with(lower-case(normalize-space(dc:identifier)), 'http://')">
-                    <url access="object in context" usage="primary">
-                        <xsl:value-of select="."/>
-                    </url>
-                </xsl:when>
-            </xsl:choose>
-        </location>
     </xsl:template>
     
     <xsl:template match="dc:contributor">
@@ -182,7 +187,7 @@
             <xsl:otherwise>
                 <name>
                     <namePart>
-                        <xsl:apply-templates/>
+                        <xsl:value-of select="."/>
                     </namePart>
                     <role>
                         <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb">
@@ -218,7 +223,7 @@
             <xsl:otherwise>
                 <name>
                     <namePart>
-                        <xsl:apply-templates/>
+                        <xsl:value-of select="."/>
                     </namePart>
                     <role>
                         <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">
@@ -229,7 +234,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <xsl:template match="date">
+    <xsl:template match="dc:date">
         <xsl:choose>
             <xsl:when test="contains(., 'n/a')">
             </xsl:when>
@@ -258,14 +263,14 @@
             </xsl:when>
             <xsl:otherwise>
                 <dateCreated>
-                    <xsl:apply-templates/>
+                    <xsl:value-of select="."/>
                 </dateCreated>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     <xsl:template match="dc:description">
         <abstract>
-            <xsl:apply-templates/>
+            <xsl:value-of select="."/>
         </abstract>
     </xsl:template>
     <xsl:template name="physicalDescription">
@@ -301,10 +306,13 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <note>
-                        <xsl:apply-templates/>
+                        <xsl:value-of select="."/>
                     </note>
                 </xsl:otherwise>
             </xsl:choose>
+            <xsl:if test="dc:medium">
+                <form><xsl:value-of select="lower-case(dc:medium)"/></form>
+            </xsl:if>
         </physicalDescription>
     </xsl:template>
     <xsl:template match="dc:identifier">
@@ -329,197 +337,140 @@
         <xsl:choose>
             <xsl:when test="contains(lower-case(.), 'application')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027002">application forms</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'audio cassette')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028661">audiocassettes</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'audio')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028633">sound recordings</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'interview')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026392">interviews</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'biography')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300080102">biographies (documents)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'book')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028051">books</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'booklet')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300311670">booklets</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'business card')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026767">business cards</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'certificate')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026841">certificates</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'check')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300191339">checks (bank checks)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'digital image')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300215302">digital images</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'digital video')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300312050">digital moving image formats</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'document')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026030">documents</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'email')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300149026">electronic mail</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'exam')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026936">examinations (documents)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'flier') or contains(lower-case(.), 'flyer')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300224742">fliers (printed matter)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'form')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300049060">forms (documents)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'handbill') or contains(lower-case(.), 'handout')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027033">handbills</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'notes')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027200">notes</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'sheet music')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026430">sheet music</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'image')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300264387">images (object genre)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'label')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028730">labels (identifying artifacts)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'letter')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026879">letters (correspondence)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'balance sheet')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027486">balance sheets</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'manual')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026395">manuals (instructional materials)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'map')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028094">maps (documents)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'memo')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026906">memorandums</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'newsletter')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026652">newsletters</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'newspaper')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026656">newspapers</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'magnetic tape')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028558">magnetic tapes</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'pamphlet') or contains(lower-case(.), 'pamplet')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300220572">pamphlets</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'copy')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300257688">copies (document genres)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'photograph') or contains(lower-case(.), 'phothgraph')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300046300">photographs</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'postage')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300037321">postage stamps</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'postcard')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026816">postcards</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'poster')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027221">posters</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'program')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027240">programs (documents)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'receipt')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027573">receipts (financial records)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'speech')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026671">speeches (documents)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'sticker')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300207379">stickers</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'tape')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300014685">tape (materials)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'text')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300263751">texts (document genres)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'tickets')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300133073">admission tickets</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'video')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028682">video recordings</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'voucher')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027574">vouchers (sales records)</genre>
-                <genre><xsl:value-of select="."/></genre>
             </xsl:when>
-            <xsl:otherwise>
-                <genre><xsl:value-of select="."/></genre>
-            </xsl:otherwise>
         </xsl:choose>
-    </xsl:template>
-    
-    <xsl:template name="originInfo">
-        <originInfo>
-            <xsl:apply-templates select="date"/>
-            <publisher>
-                <xsl:value-of select='.'/>
-            </publisher>
-        </originInfo>
     </xsl:template>
     
     <xsl:template match="dc:provenance">
@@ -532,6 +483,12 @@
                 </title>
             </relatedItem>
         </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="dc:publisher">
+        <publisher>
+            <xsl:value-of select="."/>
+        </publisher>
     </xsl:template>
     
     <xsl:template name="recordInfo">
@@ -562,7 +519,7 @@
     </xsl:template>
     <xsl:template match="dc:rights">
         <accessCondition type="use and reproduction">
-            <xsl:apply-templates/>
+            <xsl:value-of select="normalize-space(.)"/>
         </accessCondition>
     </xsl:template>
 
@@ -570,7 +527,7 @@
         <xsl:if test="not(contains(., '\d+'))">
             <subject>
                 <geographic>
-                    <xsl:apply-templates/>
+                    <xsl:value-of select="."/>
                 </geographic>
             </subject>
         </xsl:if>
@@ -578,7 +535,7 @@
     <xsl:template match="dc:subject">
         <subject>
             <topic>
-                <xsl:apply-templates/>
+                <xsl:value-of select="."/>
             </topic>
         </subject>
     </xsl:template>
@@ -587,23 +544,30 @@
             <xsl:when test="matches(., '^\d{4}$') or matches(., '^\d{4}-\d{2}$') or matches(., '^\d{4}-\d{2}-\d{2}$')">
                 <subject>
                     <temporal encoding="edtf">
-                        <xsl:apply-templates/>
+                        <xsl:value-of select="."/>
                     </temporal>
                 </subject>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'unknown') or contains(lower-case(.), 'n/a')">
             </xsl:when>
+            <xsl:when test="contains(lower-case(.), 'tennessee') or contains(lower-case(.), 'kentucky') or contains(lower-case(.), 'd.c.')">
+                <subject>
+                    <geographic>
+                        <xsl:value-of select="."/>
+                    </geographic>
+                </subject>
+            </xsl:when>
             <xsl:when test="not(contains(., '\d+'))">
                 <subject>
                     <geographic>
-                        <xsl:apply-templates/>
+                        <xsl:value-of select="."/>
                     </geographic>
                 </subject>
             </xsl:when>
             <xsl:otherwise>
                 <subject>
                     <temporal>
-                        <xsl:apply-templates/>
+                        <xsl:value-of select="."/>
                     </temporal>
                 </subject>
             </xsl:otherwise>
