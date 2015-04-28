@@ -1,5 +1,6 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<<<<<<< HEAD
     xmlns:oai_dc='http://www.openarchives.org/OAI/2.0/oai_dc/' 
     xmlns:dc="http://purl.org/dc/elements/1.1/" 
     xmlns="http://www.loc.gov/mods/v3" version="2.0">
@@ -7,6 +8,17 @@
     <xsl:strip-space elements="*"/>
    
     <xsl:template match="text()|@*"/>
+=======
+    xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns="http://www.loc.gov/mods/v3" version="2.0">
+    <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+    <xsl:strip-space elements="*"/>
+    
+    <xsl:template match="@*|node()">
+        <xsl:apply-templates select="@*|node()"/>
+    </xsl:template>
+>>>>>>> f0afdbfbc337c56890fa36b1c9bba19699e7fa15
     
     <xsl:template match="//oai_dc:dc">
         <mods xmlns="http://www.loc.gov/mods/v3" 
@@ -15,6 +27,7 @@
             version="3.5">
             <xsl:apply-templates select="dc:title"/>
             
+<<<<<<< HEAD
             <xsl:for-each select="dc:creator">
                 <xsl:if test="lower-case(normalize-space(.)) != 'n/a'">
                     <xsl:apply-templates select="."/>
@@ -40,6 +53,18 @@
             <xsl:if test="lower-case(normalize-space(dc:format)) != 'n/a' or lower-case(normalize-space(dc:medium)) != 'n/a' or lower-case(normalize-space(dc:hasversion)) != 'n/a'">
                 <xsl:call-template name="physicalDescription"/>
             </xsl:if>
+=======
+            <xsl:apply-templates select="dc:identifier"/>
+            
+            <xsl:apply-templates select="dc:creator"/>
+            <xsl:apply-templates select="dc:contributor"/>
+            
+            <xsl:call-template name="originInfo"/>            
+            
+            <xsl:apply-templates select="dc:language"/>
+            
+            <xsl:call-template name="physicalDescription"/>
+>>>>>>> f0afdbfbc337c56890fa36b1c9bba19699e7fa15
             
             <xsl:apply-templates select="dc:description"/>
             <xsl:apply-templates select="dc:spatial"/>
@@ -48,20 +73,29 @@
             <xsl:apply-templates select="dc:type"/>
             <xsl:apply-templates select="dc:medium"/>
             <xsl:apply-templates select="dc:rights"/>
+<<<<<<< HEAD
             
             <xsl:if test="lower-case(normalize-space(dc:bibliographiccitation)) != 'n/a'">
                 <xsl:apply-templates select="dc:bibliographiccitation"/>
             </xsl:if>
+=======
+            <xsl:apply-templates select="dc:bibliographiccitation"/>
+>>>>>>> f0afdbfbc337c56890fa36b1c9bba19699e7fa15
             
             <xsl:apply-templates select="dc:provenance"/>
-            <xsl:if test="starts-with(dc:relation, 'rds:')">
-                <xsl:apply-templates select="dc:relation"/>
-            </xsl:if>
-            <xsl:if test="contains(lower-case(dc:source), 'collection') or contains(lower-case(dc:source), 'corp')">
-                <xsl:call-template name="Collection"/>
-            </xsl:if>
+            <xsl:apply-templates select="dc:relation"/>
             
+            <xsl:for-each select="dc:source">
+                <xsl:call-template name="Collection"/>
+            </xsl:for-each>
+            
+<<<<<<< HEAD
             <xsl:call-template name="Location"/>
+=======
+            <xsl:for-each select="dc:source | dc:identifier">
+                <xsl:call-template name="Location"/>
+            </xsl:for-each>
+>>>>>>> f0afdbfbc337c56890fa36b1c9bba19699e7fa15
             
             <xsl:apply-templates select="dc:availability"/>
             
@@ -69,6 +103,7 @@
         </mods>
     </xsl:template>
     
+<<<<<<< HEAD
     <xsl:template name="Collection">
         <relatedItem type="host" displayLabel="Collection">
             <title>
@@ -77,11 +112,240 @@
                 </titleInfo>
             </title>
         </relatedItem>
+=======
+    
+    
+<!-- Grouped Templates -->
+    <xsl:template name="Collection">
+        <xsl:if test="contains(lower-case(dc:source), 'collection') or contains(lower-case(dc:source), 'corp')">
+            <relatedItem type="host" displayLabel="Collection">
+                <title>
+                    <titleInfo>
+                        <xsl:value-of select="."/>
+                    </titleInfo>
+                </title>
+            </relatedItem>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template name="Location">
-        <location>
+        <xsl:if test="contains(lower-case(dc:source), 'archive') or contains(lower-case(dc:source), 'library') or contains(lower-case(dc:source), 'association') or starts-with(lower-case(normalize-space(dc:identifier)), 'http://')">
+            <location>
+                <xsl:choose>
+                    <xsl:when test="dc:source">
+                        <physicalLocation>
+                            <xsl:value-of select="."/>
+                        </physicalLocation>
+                    </xsl:when>
+                    <xsl:when test="dc:identifier">
+                        <url access="object in context" usage="primary">
+                            <xsl:value-of select="."/>
+                        </url>
+                    </xsl:when>
+                </xsl:choose>
+            </location>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="originInfo">
+        <xsl:if test="lower-case(normalize-space(dc:date)) != '' or not(contains(lower-case(normalize-space(dc:publisher)),'crossroads to freedom'))">
+            <originInfo>
+                <xsl:apply-templates select="dc:date"/>
+                <xsl:apply-templates select="dc:publisher"/>
+            </originInfo>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="physicalDescription">
+        <xsl:if test="lower-case(normalize-space(dc:format)) != 'n/a' or lower-case(normalize-space(dc:hasversion)) != 'n/a'">
+            <physicalDescription>
+                <xsl:choose>
+                    <xsl:when test="contains(., 'jpg') or contains(., 'jpeg')">
+                        <internetMediaType>image/jpeg</internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="contains(., 'flash audio')">
+                        <internetMediaType>audio/mp4</internetMediaType>
+                        <note>flash audio</note>
+                    </xsl:when>
+                    <xsl:when test="contains(., 'flash video')">
+                        <internetMediaType>video/mp4</internetMediaType>
+                        <note>flash video</note>
+                    </xsl:when>
+                    <xsl:when test="contains(., 'pdf')">
+                        <internetMediaType>application/pdf</internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="contains(., 'word')">
+                        <internetMediaType>application/msword</internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="contains(., 'Born digital') or contains(., 'Born Digital')">
+                        <digitalOrigin>born digital</digitalOrigin>
+                    </xsl:when>
+                    <xsl:when test="contains(., 'Crossroads Video') or contains(., 'Crossroads video') or contains(., 'CrossroadsVideo')">
+                        <digitalOrigin>reformatted digital</digitalOrigin>
+                        <note>Crossroads video</note>
+                    </xsl:when>
+                    <xsl:when test="contains(., 'CrossroadsText')">
+                        <digitalOrigin>reformatted digital</digitalOrigin>
+                        <note>Crossroads text</note>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:if test="dc:medium">
+                    <form>
+                        <xsl:value-of select="lower-case(normalize-space(dc:medium))"/>
+                    </form>
+                </xsl:if>
+            </physicalDescription>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="recordInfo">
+        <relatedItem type="host" displayLabel="Project">
+            <title>
+                <titleInfo>Crossroads to Freedom Digital Archive</titleInfo>
+                <location>
+                    <url>http://www.crossroadstofreedom.org/</url>
+                </location>
+            </title>
+        </relatedItem>
+        <recordInfo>
+            <recordContentSource>Rhodes College</recordContentSource>
+            <recordCreationDate><xsl:value-of select="record/header/datestamp"/></recordCreationDate>
+            <recordChangeDate><xsl:value-of select="current-dateTime()"/></recordChangeDate>
+            <languageOfCataloging>
+                <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+            </languageOfCataloging>
+            <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core record using a stylesheet available at https://github.com/cmh2166/DLTN. Metadata originally created in a locally modified version of qualified Dublin Core using DSpace (data dictionary available: https://wiki.lib.utk.edu/display/DPLA/Crossroads+Mapping+Notes.)</recordOrigin>
+        </recordInfo>
+    </xsl:template>
+    <xsl:template match="dc:relation">
+        <xsl:if test="starts-with(dc:relation, 'rds:')">
+            <relatedItem>
+                <identfier>
+                    <xsl:value-of select="."/>
+                </identfier>
+            </relatedItem>
+        </xsl:if>
+    </xsl:template>
+    <xsl:template match="dc:rights">
+        <accessCondition type="use and reproduction">
+            <xsl:value-of select="normalize-space(.)"/>
+        </accessCondition>
+    </xsl:template>
+    
+    
+<!-- Element Templates-->    
+    <xsl:template match="dc:availability">
+        <extension xmlns:dcterms="http://purl.org/dc/terms/">
+            <dcterms:available encoding="edtf">
+                <xsl:value-of select="."/>
+            </dcterms:available>
+        </extension>
+    </xsl:template>
+    
+    <xsl:template match="dc:bibliographiccitation">
+        <xsl:if test="lower-case(normalize-space(dc:bibliographiccitation)) != 'n/a'">
+            <accessCondition type="use and reproduction">
+                <xsl:value-of select="."/>
+            </accessCondition>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="dc:contributor">
+        <xsl:if test="lower-case(normalize-space(dc:contributor)) != 'n/a'">
             <xsl:choose>
+                <xsl:when test="contains(., 'interviewer')">
+                    <name>
+                        <namePart>
+                            <xsl:value-of select="replace(., ', interviewer', '')"/>
+                        </namePart>
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ivr">
+                                <xsl:text>Interviewer</xsl:text>
+                            </roleTerm>
+                        </role> 
+                    </name>
+                </xsl:when>
+                <xsl:when test="contains(., 'digitization')">
+                    <name>
+                        <namePart>
+                            <xsl:value-of select="replace(., ', digitization', '')"/>
+                        </namePart>
+                        <role>
+                            <roleTerm type="text">
+                                <xsl:text>Digitizer</xsl:text>
+                            </roleTerm>
+                        </role> 
+                    </name>
+                </xsl:when>
+                <xsl:when test="contains(., '(processing)')">
+                    <name>
+                        <namePart>
+                            <xsl:value-of select="replace(., ' (processing)', '')"/>
+                        </namePart>
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prc">
+                                <xsl:text>Process contact</xsl:text>
+                            </roleTerm>
+                        </role> 
+                    </name>
+                </xsl:when>
+                <xsl:when test="contains(., 'processor')">
+                    <name>
+                        <namePart>
+                            <xsl:value-of select="replace(., ', processor', '')"/>
+                        </namePart>
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prc">
+                                <xsl:text>Process contact</xsl:text>
+                            </roleTerm>
+                        </role> 
+                    </name>
+                </xsl:when>
+                <xsl:when test="contains(., ', camera')">
+                    <name>
+                        <namePart>
+                            <xsl:value-of select="replace(., ', camera', '')"/>
+                        </namePart>
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/vdg">
+                                <xsl:text>Videographer</xsl:text>
+                            </roleTerm>
+                        </role> 
+                    </name>
+                </xsl:when>
+                <xsl:when test="contains(., '(camera)')">
+                    <name>
+                        <namePart>
+                            <xsl:value-of select="replace(., ' (camera)', '')"/>
+                        </namePart>
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/vdg">
+                                <xsl:text>Videographer</xsl:text>
+                            </roleTerm>
+                        </role> 
+                    </name>
+                </xsl:when>
+                <xsl:otherwise>
+                    <name>
+                        <namePart>
+                            <xsl:value-of select="normalize-space(.)"/>
+                        </namePart>
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb">
+                                <xsl:text>Contributor</xsl:text>
+                            </roleTerm>
+                        </role> 
+                    </name>
+                </xsl:otherwise>
+            </xsl:choose> 
+        </xsl:if>
+>>>>>>> f0afdbfbc337c56890fa36b1c9bba19699e7fa15
+    </xsl:template>
+    
+    <xsl:template match="dc:creator">
+        <xsl:if test="lower-case(normalize-space(dc:creator)) != 'n/a'">
+            <xsl:choose>
+<<<<<<< HEAD
                 <xsl:when test="contains(lower-case(dc:source), 'archive') or contains(lower-case(dc:source), 'library') or contains(lower-case(dc:source), 'association')">
                     <physicalLocation>
                         <xsl:value-of select="dc:source"/>
@@ -91,11 +355,45 @@
                     <url access="object in context" usage="primary">
                         <xsl:value-of select="dc:identifier"/>
                     </url>
+=======
+                <xsl:when test="contains(., 'Crossroad')">
+                    <name>
+                        <namePart>Crossroads to Freedom Digital Archive, Rhodes College</namePart>
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prv">
+                                <xsl:text>Provider</xsl:text>
+                            </roleTerm>
+                        </role>
+                    </name>
                 </xsl:when>
+                <xsl:when test="contains(., 'nknown')">
+                    <name>
+                        <namePart>Unknown</namePart>
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">
+                                <xsl:text>Creator</xsl:text>
+                            </roleTerm>
+                        </role>
+                    </name> 
+>>>>>>> f0afdbfbc337c56890fa36b1c9bba19699e7fa15
+                </xsl:when>
+                <xsl:otherwise>
+                    <name>
+                        <namePart>
+                            <xsl:value-of select="normalize-space(.)"/>
+                        </namePart>
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">
+                                <xsl:text>Creator</xsl:text>
+                            </roleTerm>
+                        </role>
+                    </name> 
+                </xsl:otherwise>
             </xsl:choose>
-        </location>
+        </xsl:if>
     </xsl:template>
     
+<<<<<<< HEAD
     <xsl:template match="dc:availability">
         <extension xmlns:dcterms="http://purl.org/dc/terms/">
             <dcterms:available encoding="edtf">
@@ -234,6 +532,8 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+=======
+>>>>>>> f0afdbfbc337c56890fa36b1c9bba19699e7fa15
     <xsl:template match="dc:date">
         <xsl:choose>
             <xsl:when test="contains(., 'n/a')">
@@ -263,13 +563,19 @@
             </xsl:when>
             <xsl:otherwise>
                 <dateCreated>
+<<<<<<< HEAD
                     <xsl:value-of select="."/>
+=======
+                    <xsl:value-of select="normalize-space(.)"/>
+>>>>>>> f0afdbfbc337c56890fa36b1c9bba19699e7fa15
                 </dateCreated>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
     <xsl:template match="dc:description">
         <abstract>
+<<<<<<< HEAD
             <xsl:value-of select="."/>
         </abstract>
     </xsl:template>
@@ -315,7 +621,14 @@
             </xsl:if>
         </physicalDescription>
     </xsl:template>
+=======
+            <xsl:value-of select="normalize-space(.)"/>
+        </abstract>
+    </xsl:template>
+    
+>>>>>>> f0afdbfbc337c56890fa36b1c9bba19699e7fa15
     <xsl:template match="dc:identifier">
+        <!-- Some identifiers are dspace pid - actual identifiers - others are the object in context url. This templates just works applies to former; latter is handled in location template -->
         <xsl:if test="starts-with(., 'rds')">
             <identifier type="pid">
                 <xsl:value-of select="."/>
@@ -487,6 +800,7 @@
     
     <xsl:template match="dc:publisher">
         <publisher>
+<<<<<<< HEAD
             <xsl:value-of select="."/>
         </publisher>
     </xsl:template>
@@ -521,6 +835,10 @@
         <accessCondition type="use and reproduction">
             <xsl:value-of select="normalize-space(.)"/>
         </accessCondition>
+=======
+            <xsl:value-of select='.'/>
+        </publisher>
+>>>>>>> f0afdbfbc337c56890fa36b1c9bba19699e7fa15
     </xsl:template>
 
     <xsl:template match="dc:spatial">
@@ -573,11 +891,13 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
     <xsl:template match="dc:title">
         <xsl:if test="normalize-space(.)!=''">
             <titleInfo><title><xsl:value-of select="normalize-space(.)"/></title></titleInfo>
         </xsl:if>
     </xsl:template>
+    
     <xsl:template match="dc:type">
         <xsl:choose>
             <xsl:when
@@ -609,4 +929,5 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
 </xsl:stylesheet>
