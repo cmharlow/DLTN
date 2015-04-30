@@ -4,29 +4,9 @@
     xmlns:oai="http://www.openarchives.org/OAI/2.0/"
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
-    
-    <xsl:template match="text()|@*"/>
-    <xsl:template match="oai:record">
-        <xsl:element name="record" namespace="http://www.openarchives.org/OAI/2.0/">
-            <xsl:element name="header" namespace="http://www.openarchives.org/OAI/2.0/">
-                <xsl:element name="identifier" namespace="http://www.openarchives.org/OAI/2.0/">
-                    <xsl:value-of select="oai:header/oai:identifier"/>
-                </xsl:element>
-                <xsl:element name="datestamp" namespace="http://www.openarchives.org/OAI/2.0/">
-                    <xsl:value-of select="oai:header/oai:datestamp"/>
-                </xsl:element>
-                <xsl:element name="datestamp" namespace="http://www.openarchives.org/OAI/2.0/">
-                    <xsl:value-of select="current-dateTime()"/>
-                </xsl:element>
-                <xsl:element name="setSpec" namespace="http://www.openarchives.org/OAI/2.0/">Crossroads to Freedom</xsl:element>
-            </xsl:element>
-            <xsl:apply-templates select="oai:metadata/oai_dc:dc">
-                <xsl:with-param name="recordcreationdate"><xsl:value-of select="oai:header/oai:datestamp"/></xsl:with-param>
-                <xsl:with-param name="recordoaiidentifier"><xsl:value-of select="oai:header/oai:identifier"/></xsl:with-param>
-            </xsl:apply-templates>
-        </xsl:element>
-    </xsl:template>
-    <xsl:template match="oai_dc:dc">
+        
+    <xsl:template match="text()|@*"/>    
+    <xsl:template match="//oai_dc:dc">
         <xsl:param name="recordcreationdate"/>
         <xsl:param name="recordoaiidentifier"/>
         <mods xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd" version="3.5">      
@@ -76,9 +56,9 @@
             </relatedItem>
             <recordInfo>
                 <recordContentSource>Rhodes College. Crossroads to Freedom Digital Archive</recordContentSource>
-                <recordCreationDate><xsl:value-of select="$recordcreationdate"/></recordCreationDate>
+                <recordCreationDate><xsl:value-of select="../../oai:header/oai:datestamp"/></recordCreationDate>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
-                <recordIdentifier><xsl:value-of select="$recordoaiidentifier"/></recordIdentifier>
+                <recordIdentifier><xsl:value-of select="../../oai:header/oai:identifier"/></recordIdentifier>
                 <languageOfCataloging>
                     <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
                 </languageOfCataloging>
