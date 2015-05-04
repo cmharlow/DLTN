@@ -43,10 +43,10 @@
             <xsl:apply-templates select="dc:title" mode="seriesTitle"/>
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>McCoy Theatre Productions 1982-</title>
+                    <title>Farnsworth Shakespeare Print Collection</title>
                 </titleInfo>
                 <location>
-                    <url>https://dlynx.rhodes.edu/jspui/handle/10267/5853</url>
+                    <url>https://dlynx.rhodes.edu/jspui/handle/10267/21536</url>
                 </location>
             </relatedItem>
             <recordInfo>
@@ -461,7 +461,7 @@
     </xsl:template>
     
     <xsl:template match="dc:relation">
-        <xsl:for-each select="tokenize(normalize-space(lower-case(.)), ';')">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
                     <xsl:when test="contains(.,'http')"> 
