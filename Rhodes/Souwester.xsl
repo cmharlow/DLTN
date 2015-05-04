@@ -4,7 +4,7 @@
     xmlns:oai="http://www.openarchives.org/OAI/2.0/"
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
-        
+    
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
         <mods xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -193,16 +193,7 @@
     
     <xsl:template match="dc:identifier">
         <xsl:if test="normalize-space(.)!=''">
-            <xsl:choose>
-                <xsl:when test="starts-with(., 'http://')">
-                    <!-- skip, will be handled in identifier mode:URL -->
-                </xsl:when>
-                <xsl:otherwise>
-                    <identifier>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </identifier>
-                </xsl:otherwise>
-            </xsl:choose>
+            <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
         </xsl:if>
     </xsl:template>
     
@@ -243,7 +234,7 @@
             </xsl:choose>
         </xsl:if>            
     </xsl:template>
-        
+    
     <xsl:template match="dc:rights">
         <xsl:choose>
             <xsl:when test="matches(normalize-space(.),'^Public domain\.$') or matches(normalize-space(.),'^Public Domain$') or matches(normalize-space(.),'^Public Domain\.$')">
