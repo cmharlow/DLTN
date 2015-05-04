@@ -27,6 +27,7 @@
             <physicalDescription>
                 <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
                 <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
+                <xsl:apply-templates select="dc:source" mode="physicalNote"/> <!-- some physical notes type fields -->
             </physicalDescription>
             
             <location>
@@ -38,9 +39,11 @@
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
+            <xsl:apply-templates select="dc:publisher" mode="rights"/>
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
-            <xsl:apply-templates select="dc:type"/> <!-- genre -->
+            <xsl:apply-templates select="dc:format" mode="genre"/> <!-- genre -->
+            <xsl:apply-templates select="dc:source"/>
             <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
             <recordInfo>
                 <recordContentSource>University of Tennessee, Chattanooga</recordContentSource>
@@ -348,92 +351,69 @@
     
     <xsl:template match="dc:coverage">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
+            <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
-                    <xsl:when test="matches(normalize-space(.), 'Chattanooga (Tenn.)')">
+                    <xsl:when test="matches(normalize-space(.), '^\d{4}$') or matches(normalize-space(.), '^\d{4}-\d{2}$') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}$')">
                         <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79075123">Chattanooga (Tenn.)</geographic>
-                            <cartographics>
-                                <coordinates>35.04563, -85.30968</coordinates>
-                            </cartographics> 
-                        </subject> 
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="."/></temporal>
+                        </subject>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(.), 'Walden Ridge (Tenn.)')">
+                    <xsl:when test="matches(normalize-space(.), '^\d{2}-\d{2}-\d{4}$') or matches(normalize-space(.), '^\d{2}/\d{2}/\d{4}$')">
                         <subject>
-                            <geographic>Walden Ridge (Tenn.)</geographic>
-                            <cartographics>
-                                <coordinates>35.54035, -85.06079</coordinates>
-                            </cartographics> 
-                        </subject> 
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,7, 10),'-'), substring(., 1, 5))"/></temporal>
+                        </subject>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(.), 'Nashville (Tenn.)')">
+                    <xsl:when test="matches(normalize-space(.), '^\d{1}-\d{2}-\d{4}$') or matches(normalize-space(.), '^\d{1}/\d{2}/\d{4}$')">
                         <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n78095801">Nashville (Tenn.)</geographic>
-                            <cartographics>
-                                <coordinates>36.16589, -86.78444</coordinates>
-                            </cartographics> 
-                        </subject> 
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,6, 9),'-'), substring(., 1, 4))"/></temporal>
+                        </subject>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(.), 'Indianapolis (Ind.)')">
+                    <xsl:when test="matches(normalize-space(.), '^\d{4}-\d{4}$')">
                         <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79055094">Indianapolis (Ind.)</geographic>
-                            <cartographics>
-                                <coordinates>39.76838, -86.15804</coordinates>
-                            </cartographics> 
-                        </subject> 
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(normalize-space(.),1, 3),'/'), substring(., 5, 8))"/></temporal>
+                        </subject>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(.), 'Sand Mountain (Ala.)')">
+                    <xsl:when test="matches(normalize-space(.), '^\d{4} - \d{4}$')">
                         <subject>
-                            <geographic>Sand Mountain (Ala.)</geographic>
-                            <cartographics>
-                                <coordinates>32.85485, -86.91249</coordinates>
-                            </cartographics> 
-                        </subject> 
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(normalize-space(.),1, 3),'/'), substring(., 7, 10))"/></temporal>
+                        </subject>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(.), 'Murfreesboro (Tenn.)')">
+                    <xsl:when test="matches(normalize-space(lower-case(.)), '19th century')">
                         <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n50071679">Murfreesboro (Tenn.)</geographic>
-                            <cartographics>
-                                <coordinates>35.84562, -86.39027</coordinates>
-                            </cartographics> 
-                        </subject> 
+                            <temporal encoding="edtf" keyDate="yes">18uu</temporal>
+                        </subject>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(.), 'Washington (D.C.)')">
+                    <xsl:when test="matches(normalize-space(lower-case(.)), '20th century')">
                         <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79018774">Washington (D.C.)</geographic>
-                            <cartographics>
-                                <coordinates>38.91706, -77.00025</coordinates>
-                            </cartographics> 
-                        </subject> 
+                            <temporal encoding="edtf" keyDate="yes">19uu</temporal>
+                        </subject>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(.), 'Chickamauga (Ga.)')">
+                    <xsl:when test="starts-with(normalize-space(.), 'c. ')">
                         <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n91047626">Chickamauga (Ga.)</geographic>
-                            <cartographics>
-                                <coordinates>34.87119, -85.29079</coordinates>
-                            </cartographics> 
-                        </subject> 
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(replace(normalize-space(.), 'c. ', ''), '~')"/></temporal>
+                        </subject>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(.), 'Royal Air Force Station, Martlesham Heath (Suffolk)')">
+                    <xsl:when test="starts-with(normalize-space(.), 'ca. ')">
                         <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n84120766">Royal Air Force Station, Martlesham Heath (Suffolk)</geographic>
-                            <cartographics>
-                                <coordinates>52.058, 1.266</coordinates>
-                            </cartographics> 
-                        </subject> 
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(replace(normalize-space(.), 'ca. ', ''), '~')"/></temporal>
+                        </subject>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(.), 'Columbia (Tenn.)')">
+                    <xsl:when test="starts-with(normalize-space(.), 'between ')">
                         <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n83226061">Columbia (Tenn.)</geographic>
-                            <cartographics>
-                                <coordinates>35.61507, -87.03528</coordinates>
-                            </cartographics> 
-                        </subject> 
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="replace(replace(normalize-space(.), 'between ', ''), ' and ', '/')"/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:when test="starts-with(normalize-space(.), 'COVERAGE ')">
+                    </xsl:when>
+                    <xsl:when test="starts-with(normalize-space(.), 'Worcester ')">
+                        <subject>
+                            <topical><xsl:value-of select="normalize-space(.)"/></topical>
+                        </subject>
                     </xsl:when>
                     <xsl:otherwise>
                         <subject>
-                            <geographic><xsl:value-of select="normalize-space(.)"/></geographic>
-                        </subject> 
+                            <temporal><xsl:value-of select="normalize-space(.)"/></temporal>
+                        </subject>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
@@ -584,40 +564,55 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
+                    <xsl:when test="matches(normalize-space(.), '^\d{2}.\d{1}x\d{2}.\d{1}$')"> <!-- weird scientific date kinda numbers not mapped -->
+                    </xsl:when>
                     <xsl:when test="matches(normalize-space(.), '^\d{4}$') or matches(normalize-space(.), '^\d{4}-\d{2}$') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}$')">
-                        <subject>
-                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="."/></temporal>
-                        </subject>
+                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="normalize-space(.)"/></dateCreated>
+                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(.), '^\d{2}-\d{2}-\d{4}$') or matches(normalize-space(.), '^\d{2}/\d{2}/\d{4}$')">
-                        <subject>
-                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,7, 10),'-'), substring(., 1, 5))"/></temporal>
-                        </subject>
+                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,7, 10),'-'), substring(., 1, 5))"/></dateCreated>
+                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(.), '^\d{1}-\d{2}-\d{4}$') or matches(normalize-space(.), '^\d{1}/\d{2}/\d{4}$')">
-                        <subject>
-                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,6, 9),'-'), substring(., 1, 4))"/></temporal>
-                        </subject>
+                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,6, 9),'-'), substring(., 1, 4))"/></dateCreated>
+                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(.), '^\d{4}-\d{4}$')">
-                        <subject>
-                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(normalize-space(.),0, 3),'/'), substring(., 5, 8))"/></temporal>
-                        </subject>
+                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(normalize-space(.),1, 3),'/'), substring(., 5, 8))"/></dateCreated>
+                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(.), '^\d{4} - \d{4}$')">
+                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(normalize-space(.),1, 3),'/'), substring(., 7, 10))"/></dateCreated>
+                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                     </xsl:when>
                     <xsl:when test="starts-with(normalize-space(.), 'c. ')">
-                        <subject>
-                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(replace(normalize-space(.), 'c. ', ''), '~')"/></temporal>
-                        </subject>
+                        <dateCreated encoding="edtf" qualifier="approximate" keyDate="yes"><xsl:value-of select="concat(replace(normalize-space(.), 'c. ', ''), '~')"/></dateCreated>
+                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                     </xsl:when>
-                    <xsl:when test="starts-with(normalize-space(.), 'ca. ')">
-                        <subject>
-                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(replace(normalize-space(.), 'ca. ', ''), '~')"/></temporal>
-                        </subject>
+                    <xsl:when test="starts-with(normalize-space(.), 'circa ')">
+                        <dateCreated encoding="edtf" qualifier="approximate" keyDate="yes"><xsl:value-of select="concat(replace(normalize-space(.), 'circa ', ''), '~')"/></dateCreated>
+                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(.), '^ca. \d{4}$') or matches(normalize-space(.), '^ca. \d{4}-\d{2}$') or matches(normalize-space(.), '^ca. \d{4}-\d{2}-\d{2}$') ">
+                        <dateCreated encoding="edtf" qualifier="approximate" keyDate="yes"><xsl:value-of select="concat(replace(normalize-space(.), 'ca. ', ''), '~')"/></dateCreated>
+                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
+                    </xsl:when>
+                    <xsl:when test="starts-with(normalize-space(lower-case(.)), 'between ')">
+                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(replace(replace(normalize-space(lower-case(.)), 'between ', ''), ' and ', '/'), '-', '/')"/></dateCreated>
+                        <dateCreated><xsl:value-of select="normalize-space(lower-case(.))"/></dateCreated>
+                    </xsl:when>
+                    <xsl:when test="starts-with(normalize-space(lower-case(.)), 'ca. between ')">
+                        <dateCreated encoding="edtf" qualifier="approximate" keyDate="yes"><xsl:value-of select="replace(replace(replace(normalize-space(lower-case(.)), 'ca. between ', ''), ' and ', '/'), '-', '/')"/></dateCreated>
+                        <dateCreated><xsl:value-of select="normalize-space(lower-case(.))"/></dateCreated>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), '?')">
+                        <dateCreated qualifier="questionable" ><xsl:value-of select="normalize-space(lower-case(.))"/></dateCreated>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'n.d.') or contains(normalize-space(lower-case(.)), 'n/a') or contains(normalize-space(lower-case(.)), 'unknown')">
                     </xsl:when>
                     <xsl:otherwise>
-                        <dateCreated>
-                            <xsl:value-of select="normalize-space(.)"/>
-                        </dateCreated>
+                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
@@ -632,16 +627,45 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="dc:format"> <!-- should go into PhysicalDescription wrapper -->
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+    <xsl:template match="dc:format">
+        <xsl:for-each select="tokenize(replace(normalize-space(.), ')', ''), '(')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="matches(normalize-space(.), 'image/jp2') or matches(normalize-space(.), 'text/plain') or matches(normalize-space(.), 'video/mp4')">
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jp2') or matches(normalize-space(lower-case(.)), 'image/jpeg') or matches(normalize-space(lower-case(.)), 'image/pdf') or matches(normalize-space(lower-case(.)), 'image/tiff') or matches(normalize-space(lower-case(.)), 'text/plain') or matches(normalize-space(lower-case(.)), 'video/mp4') or matches(normalize-space(lower-case(.)), 'audio/mp3') or matches(normalize-space(lower-case(.)), 'video/vob')">
                         <internetMediaType><xsl:value-of select="normalize-space(.)"/></internetMediaType>
                     </xsl:when>
-                    <xsl:otherwise>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'image') and contains(normalize-space(lower-case(.)), 'jpeg')">
+                        <internetMediaType>image/jpeg</internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(lower-case(.)), '\d+')">
                         <extent><xsl:value-of select="normalize-space(.)"/></extent>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'insert size and time')">
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'dvd')">
+                        <form>DVD</form>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'photographs')">
+                        <form>photographs</form>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <note><xsl:value-of select="normalize-space(.)"/></note>
                     </xsl:otherwise>
+                </xsl:choose>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="dc:format" mode="genre">
+        <xsl:for-each select="tokenize(replace(normalize-space(.), ')', ''), '(')">
+            <xsl:if test="normalize-space(.)!=''">
+                <xsl:choose>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'dvd')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300264677">DVDs</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'photographs')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300046300">photographs</genre>
+                    </xsl:when>
                 </xsl:choose>
             </xsl:if>
         </xsl:for-each>
@@ -651,7 +675,6 @@
         <xsl:if test="normalize-space(.)!=''">
             <xsl:choose>
                 <xsl:when test="starts-with(., 'http://')">
-                    <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
                 </xsl:when>
                 <xsl:otherwise>
                     <identifier type="local"><xsl:value-of select="normalize-space(.)"/></identifier>
@@ -670,39 +693,72 @@
     
     <xsl:template match="dc:language">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
-                <language>
-                    <xsl:choose>
-                        <xsl:when test="normalize-space(lower-case(.))='en' or normalize-space(lower-case(.))='eng' or normalize-space(lower-case(.))='english'">
-                            <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
-                        </xsl:when>
-                        <xsl:when test="normalize-space(lower-case(.))='deu' or normalize-space(lower-case(.))='german'">
-                            <languageTerm type="code" authority="iso639-2b">deu</languageTerm>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <languageTerm type="text"><xsl:value-of select="normalize-space(.)"/></languageTerm>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </language>
-            </xsl:if>
+            <xsl:for-each select="tokenize(normalize-space(.), ' and ')">
+                <xsl:if test="normalize-space(.)!=''">
+                    <language>
+                        <xsl:choose>
+                            <xsl:when test="starts-with(normalize-space(lower-case(.)), 'english')">
+                                <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+                            </xsl:when>
+                            <xsl:when test="starts-with(normalize-space(lower-case(.)), 'dutch')">
+                                <languageTerm type="code" authority="iso639-2b">dut</languageTerm>
+                            </xsl:when>
+                            <xsl:when test="starts-with(normalize-space(lower-case(.)), 'french')">
+                                <languageTerm type="code" authority="iso639-2b">fre</languageTerm>
+                            </xsl:when>
+                            <xsl:when test="normalize-space(lower-case(.))='german'">
+                                <languageTerm type="code" authority="iso639-2b">deu</languageTerm>
+                            </xsl:when>
+                            <xsl:when test="normalize-space(lower-case(.))='italian'">
+                                <languageTerm type="code" authority="iso639-2b">ita</languageTerm>
+                            </xsl:when>
+                            <xsl:when test="normalize-space(lower-case(.))='spanish'">
+                                <languageTerm type="code" authority="iso639-2b">spa</languageTerm>
+                            </xsl:when>
+                            <xsl:when test="contains(normalize-space(lower-case(.)),'baptist')">
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <languageTerm type="text"><xsl:value-of select="normalize-space(.)"/></languageTerm>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </language>
+                </xsl:if>
+            </xsl:for-each>
         </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:publisher"> 
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
-                <xsl:if test="matches(normalize-space(.), 'Chattanooga (Tenn.)')">
-                    <place><xsl:value-of select="normalize-space(.)"/></place>
-                </xsl:if>
+            <xsl:if test="normalize-space(.)!='' and not(contains(normalize-space(.), 'Archives')) and not(contains(normalize-space(.), 'Special Collections')) and not(contains(normalize-space(.), 'Metro'))">
+                <xsl:for-each select="tokenize(normalize-space(.), ':')">
+                    <xsl:choose>
+                        <xsl:when test="contains(normalize-space(.), 'New York') or contains(normalize-space(.), 'San Fran')">
+                            <place><xsl:value-of select="normalize-space(.)"/></place>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <publisher><xsl:value-of select="normalize-space(.)"/></publisher>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:publisher" mode="repository"> 
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
-                <xsl:if test="contains(normalize-space(.), 'University')">
+            <xsl:if test="normalize-space(.)!='' and not(starts-with(normalize-space(.), 'U.S. and international copyright laws'))">
+                <xsl:if test="contains(normalize-space(.), 'Archives') or contains(normalize-space(.), 'Metro') or contains(normalize-space(.), 'Special Collections')">
                     <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
+                </xsl:if>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="dc:publisher" mode="rights"> 
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!=''">
+                <xsl:if test="starts-with(normalize-space(.), 'U.S. and international copyright laws')">
+                    <accessCondition type="use and repoduction"><xsl:value-of select="normalize-space(.)"/></accessCondition>
                 </xsl:if>
             </xsl:if>
         </xsl:for-each>
@@ -719,8 +775,15 @@
                             </location>
                         </relatedItem>
                     </xsl:when>
+                    <xsl:when test="contains(.,'Atlas of the city')"> 
+                        <relatedItem type='host'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                        </relatedItem>
+                    </xsl:when>
                     <xsl:otherwise>
-                        <relatedItem type='host' displayLabel='Project'>
+                        <relatedItem type='host' displayLabel='Collection'>
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
@@ -744,12 +807,51 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="dc:subject">
+    <xsl:template match="dc:source">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
+                <xsl:choose>
+                    <xsl:when test="contains(normalize-space(lower-case(.)),'donation')"> 
+                        <note><xsl:value-of select="normalize-space(.)"/></note>
+                    </xsl:when>
+                    <xsl:when test="starts-with(normalize-space(.), 'Wilson ')">
+                        <relatedItem>
+                            <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Collection ')">
+                        <relatedItem>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                        </relatedItem>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="dc:source" mode="physicalNote">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!=''">
+                <xsl:choose>
+                    <xsl:when test="not(contains(normalize-space(lower-case(.)),'donation')) and not(starts-with(normalize-space(.), 'Wilson ')) and not(contains(normalize-space(.), 'Collection '))"> 
+                        <note><xsl:value-of select="normalize-space(.)"/></note>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="dc:subject">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!='' and not(starts-with(normalize-space(.), '58 x 75 cm'))">
                 <subject>
                     <topic><xsl:value-of select="normalize-space(.)"/></topic>
                 </subject>
+            </xsl:if>
+            <xsl:if test="starts-with(normalize-space(.), '58 x 75 cm')">
+                <abstract><xsl:value-of select="normalize-space(.)"/></abstract>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
@@ -757,164 +859,182 @@
     <xsl:template match="dc:type">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:choose>
-                <xsl:when test="matches(normalize-space(.), 'Administrative records')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027425">administrative records</genre>
+                <xsl:when test="matches(normalize-space(.), 'Advertisements')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300193993">advertisements</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Admission tickets')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300133073">admission tickets</genre>
+                <xsl:when test="matches(normalize-space(.), 'Aerial photographs')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300128222">aerial photographs</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Agreements')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027628">agreements</genre>
+                <xsl:when test="matches(normalize-space(.), 'Architectural photographs')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300046300">photographs</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Articles')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300048715">articles</genre>
+                <xsl:when test="matches(normalize-space(.), 'Book')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028051">books</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Biograhies (Documents)')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300080102">biographies (documents)</genre>
+                <xsl:when test="matches(normalize-space(.), 'Book covers')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300197210">covers (closures)</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Comprehensive plans (Reports)')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027299">comprehensive plans (reports)</genre>
+                <xsl:when test="matches(normalize-space(.), 'Bookplates')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028731">bookplates</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Correspondence')">
+                <xsl:when test="matches(normalize-space(.), 'Broadside')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026739">broadsides (notices)</genre>
+                </xsl:when>
+                <xsl:when test="contains(normalize-space(.), 'Brochure')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300248280">brochures</genre>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(.), 'Cabinet photographs')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127131">cabinet photographs</genre>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(.), 'Calendars')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026741">calendars</genre>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(.), 'Cards')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026756">cards (information artifacts)</genre>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(.), 'Caricatures')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300015634">caricatures</genre>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(.), 'Cartes-de-visite')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127141">cartes-de-visite (card photographs)</genre>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(.), 'Cartoons (Commentary)')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300123431">editorial cartoons</genre>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(.), 'Chart')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026848">charts (graphic documents)</genre>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(.), 'Christmas cards')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026782">Christmas cards</genre>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(.), 'Clippings')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026867">clippings (information artifacts)</genre>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(.), 'Commercial correspondence')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026914">commercial correspondence</genre>
+                </xsl:when>
+                <xsl:when test="contains(normalize-space(.), 'Correspondence')">
                     <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026877">correspondence</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Decisions')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027857">decisions</genre>
+                <xsl:when test="contains(normalize-space(.), 'Digital prints')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300312222">digital prints</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Dedications (Documents)')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026114">dedications (documents)</genre>
+                <xsl:when test="contains(normalize-space(.), 'Document')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026030">documents</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Diaries')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027112">diaries</genre>
+                <xsl:when test="contains(normalize-space(.), 'Drawings')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300033973">drawings (visual works)</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Employment references')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026896">letters of recommendation</genre>
+                <xsl:when test="contains(normalize-space(.), 'Editorial cartoons')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300123431">editorial cartoons</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Essays')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026291">essays</genre>
+                <xsl:when test="contains(normalize-space(.), 'Envelope')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300197601">envelopes</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Field recordings')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300265794">field recordings</genre>
+                <xsl:when test="contains(normalize-space(.), 'Ephemera')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028881">ephemera (general)</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'First drafts')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026932">first drafts</genre>
+                <xsl:when test="contains(normalize-space(.), 'Film negatives')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127173">negatives (photographic)</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Greeting cards')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026778">greeting cards</genre>
+                <xsl:when test="contains(normalize-space(.), 'Film transparencies')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127478">transparencies</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Histories (Literature genre)')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026358">histories (literature genre)</genre>
+                <xsl:when test="contains(normalize-space(.), 'Government records')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027777">government records</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Legal correspondence')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026920">legal correspondence</genre>
+                <xsl:when test="contains(normalize-space(.), 'Image')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300264387">images (object genre)</genre>
                 </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Legal documents')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027590">legal documents</genre>
+                <xsl:when test="contains(normalize-space(.), 'Invitation')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027083">invitations</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Line drawings')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300100194">line drawings (drawings)</genre>
+                <xsl:when test="contains(normalize-space(.), 'Letters (correspondence)')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026879">letters (correspondence)</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Local histories')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300251993">local histories</genre>
+                <xsl:when test="contains(normalize-space(.), 'Maps')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028094">maps (documents)</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Manuscript maps')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028461">manuscript maps</genre>
+                <xsl:when test="contains(normalize-space(.), 'Military records')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027822">military records</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Memorandums')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026906">memorandums</genre>
+                <xsl:when test="contains(normalize-space(.), 'Monthly reports')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027288">monthly reports</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Minutes (Administrative records)')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027440">minutes (administrative records)</genre>
+                <xsl:when test="contains(normalize-space(.), 'Negative')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127173">negatives (photographic)</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Moving image')">
+                <xsl:when test="contains(normalize-space(.), 'Official reports')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027294">official reports</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Newsletters')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026652">newsletters</genre>
+                <xsl:when test="contains(normalize-space(.), 'oral histories')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300202595">oral histories (document genres)</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Newspapers')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026656">newspapers</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Notes')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027200">notes</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Oil paintings')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300033799">oil paintings (visual works)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Outlines')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027207">outlines (documents)</genre>
+                <xsl:when test="contains(normalize-space(.), 'Paintings')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300033618">paintings (visual works)</genre>
                 </xsl:when>
                 <xsl:when test="contains(normalize-space(.), 'Pamphlets')">
                     <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300220572">pamphlets</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Petitions')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027219">petitions</genre>
+                <xsl:when test="contains(normalize-space(lower-case(.)), 'photograph album')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026695">photograph albums</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Photographic prints')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127104">photographic prints</genre>
+                <xsl:when test="contains(normalize-space(lower-case(.)), 'photo')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300046300">photographs</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Picture postcards')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026819">picture postcards</genre>
+                <xsl:when test="contains(normalize-space(.), 'sculpture')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300047090">sculpture (visual work)</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Portraits')">
+                <xsl:when test="contains(normalize-space(.), 'Portrait')">
                     <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300015637">portraits</genre>
                 </xsl:when>
                 <xsl:when test="contains(normalize-space(.), 'Postcards')">
                     <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026816">postcards</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Programs (Documents)')">
+                <xsl:when test="contains(normalize-space(.), 'Print advertising')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300213176">print advertising</genre>
+                </xsl:when>
+                <xsl:when test="contains(normalize-space(.), 'Programs')">
                     <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027240">programs (documents)</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Questionnaires')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027265">questionnaires</genre>
+                <xsl:when test="contains(normalize-space(.), 'Reports')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027267">reports</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Receipts')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027573">receipts (financial records)</genre>
+                <xsl:when test="contains(normalize-space(.), 'Scores')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026427">scores</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Records')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026685">records (documents)</genre>
+                <xsl:when test="contains(normalize-space(.), 'Sheet music covers')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026430">sheet music</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Registers')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027168">registers (lists)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Resolutions (Administrative records)')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027457">resolutions (administrative records)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Rosters')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027178">rosters</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Rules (Administrative instructions)')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027458">rules (administrative instructions)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'School yearbooks')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028024">school yearbooks</genre>
+                <xsl:when test="contains(normalize-space(.), 'Sketchbooks')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027354">sketchbooks</genre>
                 </xsl:when>
                 <xsl:when test="contains(normalize-space(.), 'Sketches')">
                     <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300015617">sketches</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Speeches')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026671">speeches (documents)</genre>
+                <xsl:when test="contains(normalize-space(.), 'Slide')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300128371">slides (photographs)</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Still image')">
+                <xsl:when test="contains(normalize-space(.), 'Snapshots')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300134745">snapshots</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Studies')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300081053">studies (visual works)</genre>
+                <xsl:when test="contains(normalize-space(.), 'Interview')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026392">interviews</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Text')">
+                <xsl:when test="contains(normalize-space(.), 'Souvenir programs')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026392">souvenir programs</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Thumbnail sketches')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300075467">thumbnail sketches</genre>
+                <xsl:when test="contains(normalize-space(.), 'Stock certificates')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027558">stock certificates</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Tone drawings')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300100222">tone drawings</genre>
+                <xsl:when test="contains(normalize-space(.), 'Telegrams')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026909">telegrams</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Transcripts')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027388">transcripts</genre>
+                <xsl:when test="contains(normalize-space(.), 'Transparencies')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127478">transparencies</genre>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Watercolors')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300078925">watercolors (paintings)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Woodcuts (Prints)')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300041405">woodcuts (prints)</genre>
+                <xsl:when test="contains(normalize-space(.), 'Wills')">
+                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027764">wills</genre>
                 </xsl:when>
                 <xsl:otherwise>
                     <genre><xsl:value-of select="normalize-space(lower-case(.))"/></genre>
@@ -934,18 +1054,27 @@
     <xsl:template match="dc:type" mode="type">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:choose>
-                <xsl:when test="contains(normalize-space(.), 'Still image')">
+                <xsl:when test="contains(normalize-space(lower-case(.)), 'text')">
+                    <typeOfResource>text</typeOfResource>
+                </xsl:when>
+                <xsl:when test="contains(normalize-space(lower-case(.)), 'map')">
+                    <typeOfResource>cartographic</typeOfResource>
+                </xsl:when>
+                <xsl:when test="contains(normalize-space(lower-case(.)), 'score')">
+                    <typeOfResource>notated music</typeOfResource>
+                </xsl:when>
+                <xsl:when test="contains(normalize-space(lower-case(.)), 'sound')">
+                    <typeOfResource>sound recording</typeOfResource>
+                </xsl:when>
+                <xsl:when test="contains(normalize-space(lower-case(.)), 'still image') or contains(normalize-space(lower-case(.)), 'image')">
                     <typeOfResource>still image</typeOfResource>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Moving image')">
+                <xsl:when test="contains(normalize-space(lower-case(.)), 'video')">
                     <typeOfResource>moving image</typeOfResource>
                 </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Text')">
-                    <typeOfResource>text</typeOfResource>
+                <xsl:when test="contains(normalize-space(lower-case(.)), 'sculpture')">
+                    <typeOfResource>three dimensional object</typeOfResource>
                 </xsl:when>
-                <xsl:otherwise>
-                    <typeOfResource>text</typeOfResource>
-                </xsl:otherwise>
             </xsl:choose>
         </xsl:for-each>
     </xsl:template>
