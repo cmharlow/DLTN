@@ -513,6 +513,9 @@
                 <xsl:when test="contains(normalize-space(.), 'Text')">
                     <typeOfResource>text</typeOfResource>
                 </xsl:when>
+                <xsl:otherwise>
+                    <typeOfResource>text</typeOfResource>
+                </xsl:otherwise>
             </xsl:choose>
         </xsl:for-each>
     </xsl:template>
