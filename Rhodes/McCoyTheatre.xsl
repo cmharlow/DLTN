@@ -42,10 +42,10 @@
             <xsl:apply-templates select="dc:title" mode="seriesTitle"/>
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Alumni Magazine</title>
+                    <title>McCoy Theatre Productions 1982-</title>
                 </titleInfo>
                 <location>
-                    <url>https://dlynx.rhodes.edu/jspui/handle/10267/4752</url>
+                    <url>https://dlynx.rhodes.edu/jspui/handle/10267/5853</url>
                 </location>
             </relatedItem>
             <recordInfo>
