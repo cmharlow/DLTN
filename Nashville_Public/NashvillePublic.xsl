@@ -21,6 +21,7 @@
                 <xsl:apply-templates select="dc:contributor" mode="date" /> <!-- stray dates in contributor field -->
                 <xsl:apply-templates select="dc:publisher"/> <!-- place of origin - publishers all repositories -->
                 <xsl:apply-templates select="dc:contributor" mode="publisher" /> <!-- publisher of physical item parsed form contributor field -->
+                <xsl:apply-templates select="dc:creator" mode="publisher" /> <!-- publisher of physical item parsed form creator field -->
             </originInfo>
             
             <physicalDescription>
@@ -67,14 +68,6 @@
                     <xsl:when test="matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}$')">
                         <!-- will be handled in contributor mode date -->
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Introduction')">
-                        <name>
-                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Introduction)', '')"/></namePart>
-                            <role>
-                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/aui">Author of introduction, etc.</roleTerm>
-                            </role> 
-                        </name> 
-                    </xsl:when>
                     <xsl:when test="contains(normalize-space(.), 'Illustrator and Designer')">
                         <name>
                             <namePart><xsl:value-of select="replace(normalize-space(.), ' (Illustrator and Designer)', '')"/></namePart>
@@ -86,54 +79,101 @@
                             </role> 
                         </name> 
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Designer')">
+                    <xsl:when test="contains(normalize-space(.), 'Illlustrator and Designer')">
                         <name>
-                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Designer)', '')"/></namePart>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Illlustrator and Designer)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ill">Illustrator</roleTerm>
+                            </role> 
                             <role>
                                 <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/dsr">Designer</roleTerm>
                             </role> 
                         </name> 
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Illustrator')">
+                    <xsl:when test="contains(normalize-space(.), 'Desiger and Illustrator')">
                         <name>
-                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Illustrator)', '')"/></namePart>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Desiger and Illustrator)', '')"/></namePart>
                             <role>
                                 <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ill">Illustrator</roleTerm>
-                            </role>  
+                            </role> 
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/dsr">Designer</roleTerm>
+                            </role> 
                         </name> 
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Publisher')">
-                        <!-- mapped to publisher in contributor mode:publisher -->
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Translator')">
+                    <xsl:when test="contains(normalize-space(.), 'Editor and Introduction')">
                         <name>
-                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Translator)', '')"/></namePart>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Editor and Introduction)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/edt">Editor</roleTerm>
+                            </role> 
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/aui">Author of introduction, etc.</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Introduction and Translator')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Introduction and Translator)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/aui">Author of introduction, etc.</roleTerm>
+                            </role>
                             <role>
                                 <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/trl">Translator</roleTerm>
                             </role> 
                         </name> 
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Donor')">
+                    <xsl:when test="contains(normalize-space(.), 'Translator and Editor')">
                         <name>
-                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Donor)', '')"/></namePart>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Introduction and Translator)', '')"/></namePart>
                             <role>
-                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/dnr">Donor</roleTerm>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/edt">Editor</roleTerm>
                             </role> 
-                        </name>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/trl">Translator</roleTerm>
+                            </role> 
+                        </name> 
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Transcriber')">
+                    <xsl:when test="contains(normalize-space(.), 'Translator and Introduction')">
                         <name>
-                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Transcriber)', '')"/></namePart>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Introduction and Translator)', '')"/></namePart>
                             <role>
-                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/trc">Transcriber</roleTerm>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/aui">Author of introduction, etc.</roleTerm>
+                            </role>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/trl">Translator</roleTerm>
                             </role> 
-                        </name>
+                        </name> 
                     </xsl:when>
                     <xsl:when test="contains(normalize-space(.), 'Architect')">
                         <name>
                             <namePart><xsl:value-of select="replace(normalize-space(.), ' (Architect)', '')"/></namePart>
                             <role>
                                 <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/arc">Architect</roleTerm>
+                            </role> 
+                        </name>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Arranger')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Arranger)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/arr">Architect</roleTerm>
+                            </role> 
+                        </name>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Co-author')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Co-author)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/aut">Author</roleTerm>
+                            </role> 
+                        </name>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Collector')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Collector)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/col">Collector</roleTerm>
                             </role> 
                         </name>
                     </xsl:when>
@@ -145,11 +185,134 @@
                             </role> 
                         </name>
                     </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Designer')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Designer)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/dsr">Designer</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Distributor')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Distributor)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/dst">Distributor</roleTerm>
+                            </role> 
+                        </name>
+                    </xsl:when>
                     <xsl:when test="contains(normalize-space(.), 'Digitization, Metadata Cataloger')">
                         <name>
                             <namePart><xsl:value-of select="replace(normalize-space(.), ' (Digitization, Metadata Cataloger)', '')"/></namePart>
                             <role>
                                 <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/mdc">Metadata contact</roleTerm>
+                            </role> 
+                        </name>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'donor')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (donor)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/dnr">Donor</roleTerm>
+                            </role> 
+                        </name>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Donor')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Donor)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/dnr">Donor</roleTerm>
+                            </role> 
+                        </name>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Forward')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Forward)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/aui">Author of introduction, etc.</roleTerm>
+                            </role> 
+                        </name>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Illustrator')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Illustrator)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ill">Illustrator</roleTerm>
+                            </role>  
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Introduction')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Introduction)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/aui">Author of introduction, etc.</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Lyricist')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Lyricist)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/lyr">Lyricist</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Photographer')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Photographer)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Preface')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Preface)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/wpr">Writer of preface</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Printer')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Printer)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prt">Printer</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Publisher')">
+                        <!-- mapped to publisher in contributor mode:publisher -->
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Sculptor')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Sculptor)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/scl">Sculptor</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Translator')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Translator)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/trl">Translator</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Transcriber')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Transcriber)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/trc">Transcriber</roleTerm>
+                            </role> 
+                        </name>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Videographer')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Videographer)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/vdg">Videographer</roleTerm>
                             </role> 
                         </name>
                     </xsl:when>
@@ -280,26 +443,181 @@
     <xsl:template match="dc:creator">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
-                <name>
-                    <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
-                    <role>
-                        <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
-                    </role>
-                </name>
+                <xsl:choose>
+                    <xsl:when test="contains(normalize-space(.), 'Artist')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Artist)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/art">Artist</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Author')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Author)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/aut">Author</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Cartographer')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Cartographer)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctg">Cartographer</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Cartoonist')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Cartoonist)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text">Cartoonist</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Collector')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Collector)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/col">Collector</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Compiler')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Compiler)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/com">Compiler</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Composer')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Composer)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cmp">Composer</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Correspondent')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Correspondent)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/crp">Correspondent</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Interviewee')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Interviewee)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ive">Interviewee</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Interviewer')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Interviewer)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ivr">Interviewer</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Photographer')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Photographer)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'photographer')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (photographer)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Photographers')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (Photographers)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Publisher')">
+                        <!-- mapped to publisher in creator mode:publisher -->
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'storyteller')">
+                        <name>
+                            <namePart><xsl:value-of select="replace(normalize-space(.), ' (storyteller)', '')"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/edt">Storyteller</roleTerm>
+                            </role> 
+                        </name> 
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <name>
+                            <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+                            </role>
+                        </name>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:if>  
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="dc:creator" mode="publisher">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="contains(normalize-space(.), 'Publisher')">
+                <publisher><xsl:value-of select="replace(normalize-space(.), ' (Publisher)', '')"/></publisher>
+            </xsl:if>
         </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:date"> 
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and not(matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}T.'))">
+            <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
                     <xsl:when test="matches(normalize-space(.), '^\d{4}$') or matches(normalize-space(.), '^\d{4}-\d{2}$') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="."/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
+                        <subject>
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="."/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(.), '^\d{2}-\d{2}-\d{4}$') or matches(normalize-space(.), '^\d{2}/\d{2}/\d{4}$')">
+                        <subject>
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,7, 10),'-'), substring(., 1, 5))"/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(.), '^\d{1}-\d{2}-\d{4}$') or matches(normalize-space(.), '^\d{1}/\d{2}/\d{4}$')">
+                        <subject>
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,6, 9),'-'), substring(., 1, 4))"/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(.), '^\d{4}-\d{4}$')">
+                        <subject>
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(normalize-space(.),0, 3),'/'), substring(., 5, 8))"/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:when test="starts-with(normalize-space(.), 'c. ')">
+                        <subject>
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(replace(normalize-space(.), 'c. ', ''), '~')"/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:when test="starts-with(normalize-space(.), 'ca. ')">
+                        <subject>
+                            <temporal encoding="edtf" keyDate="yes"><xsl:value-of select="concat(replace(normalize-space(.), 'ca. ', ''), '~')"/></temporal>
+                        </subject>
                     </xsl:when>
                     <xsl:otherwise>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
+                        <dateCreated>
+                            <xsl:value-of select="normalize-space(.)"/>
+                        </dateCreated>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
