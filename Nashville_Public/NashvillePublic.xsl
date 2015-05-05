@@ -4,8 +4,6 @@
     xmlns:oai="http://www.openarchives.org/OAI/2.0/"
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
-    <xsl:variable name="rb">(</xsl:variable>
-    <xsl:variable name="rd">)</xsl:variable>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
