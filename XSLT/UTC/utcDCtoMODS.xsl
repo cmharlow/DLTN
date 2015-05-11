@@ -243,7 +243,6 @@
         <xsl:variable name="idvalue" select="normalize-space(.)"/>
         <xsl:if test="starts-with($idvalue,'http')"> 
             <!-- CONTENTdm puts the URI in an <identifier> field in the OAI record -->
-            <location><url usage="primary display" access="object in context"><xsl:value-of select="$idvalue"/></url></location> <!-- ref url-->          
             <!-- process identifier into CONTENTdm 6.5 thumbnail urls --> 
             <xsl:variable name="contentdmroot" select="substring-before($idvalue,'/cdm/ref/')"/>
             <xsl:variable name="recordinfo" select="substring-after($idvalue,'/cdm/ref/collection/')"/>
