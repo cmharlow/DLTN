@@ -441,7 +441,7 @@
             <location><url usage="primary display" access="object in context"><xsl:value-of select="$idvalue"/></url></location> <!-- ref url-->          
             <!-- process Fedora thumbnail urls -->           
             <xsl:variable name="PID" select="substring-after($idvalue,'rds:')"/>
-            <location><url access="preview"><xsl:value-of select="concat('http://crossroads.rhodes.edu:9090/fedora/get/rds:',$PID,'/thumbnail_100x75.jpg')"/></url></location> <!--CONTENTdm thumbnail url-->
+            <url access="preview"><xsl:value-of select="concat('http://crossroads.rhodes.edu:9090/fedora/get/rds:',$PID,'/thumbnail_100x75.jpg')"/></url> <!--CONTENTdm thumbnail url-->
             <!-- end Crossroads thumbnail url processing -->           
         </xsl:if>
     </xsl:template>
