@@ -33,6 +33,7 @@
             
             <location>
                 <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
+                <xsl:apply-templates select="dc:identifier" mode="locationurl"/>
             </location>
             
             <xsl:apply-templates select="dc:format" mode="itemType"/> <!-- Item Type -->
@@ -579,6 +580,20 @@
             <xsl:if test="starts-with(., 'http://')">
                 <url usage="primary" access="object in context"><xsl:value-of select="normalize-space(.)"/></url>
             </xsl:if>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="dc:identifier" mode="locationurl">
+        <xsl:variable name="idvalue" select="normalize-space(.)"/>
+        <xsl:if test="starts-with($idvalue,'http')"> 
+            <!-- CONTENTdm puts the URI in an <identifier> field in the OAI record -->
+            <!-- process identifier into CONTENTdm 6.5 thumbnail urls --> 
+            <xsl:variable name="contentdmroot" select="substring-before($idvalue,'/cdm/ref/')"/>
+            <xsl:variable name="recordinfo" select="substring-after($idvalue,'/cdm/ref/collection/')"/>
+            <xsl:variable name="alias" select="substring-before($recordinfo,'/id/')"/>
+            <xsl:variable name="pointer" select="substring-after($recordinfo,'/id/')"/>
+            <url access="preview"><xsl:value-of select="concat($contentdmroot,'/utils/getthumbnail/collection/',$alias,'/id/',$pointer)"/></url> <!--CONTENTdm thumbnail url-->
+            <!-- end CONTENTdm thumbnail url processing -->           
         </xsl:if>
     </xsl:template>
     
