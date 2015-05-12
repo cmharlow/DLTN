@@ -12,6 +12,7 @@
             xmlns="http://www.loc.gov/mods/v3" version="3.5" 
             xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
             <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
+            <xsl:apply-templates select="dc:identifier" mode="part"/>
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             <xsl:apply-templates select="dc:contributor" /> <!-- name/role -->
             <xsl:apply-templates select="dc:creator" /> <!-- name/role -->
@@ -24,12 +25,12 @@
             <physicalDescription>
                 <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
                 <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
-                <xsl:apply-templates select="dc:source" mode="physicalNote"/> <!-- some physical notes type fields -->
             </physicalDescription>
             
             <location>
                 <xsl:apply-templates select="dc:contributor" mode="repository" /> <!-- repository of physical item parsed form contributor field -->
                 <xsl:apply-templates select="dc:creator" mode="repository" /> <!-- repository of physical item parsed form creator field -->
+                <xsl:apply-templates select="dc:publisher" mode="repository" /> <!-- repository of physical item parsed form publisher field -->
                 <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
                 <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
             </location>
@@ -615,25 +616,35 @@
         <xsl:for-each select="tokenize(replace(normalize-space(.), '\)', ''), '\(')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jp2') or matches(normalize-space(lower-case(.)), 'image/jpeg') or matches(normalize-space(lower-case(.)), 'image/pdf') or matches(normalize-space(lower-case(.)), 'image/tiff') or matches(normalize-space(lower-case(.)), 'text/plain') or matches(normalize-space(lower-case(.)), 'video/mp4') or matches(normalize-space(lower-case(.)), 'audio/mp3') or matches(normalize-space(lower-case(.)), 'video/vob')">
-                        <internetMediaType><xsl:value-of select="normalize-space(.)"/></internetMediaType>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)), 'image') and contains(normalize-space(lower-case(.)), 'jpeg')">
-                        <internetMediaType>image/jpeg</internetMediaType>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), '\d+')">
+                <!-- EXTENT -->
+                    <xsl:when test="matches(normalize-space(lower-case(.)), '\d+') and not(contains(normalize-space(lower-case(.)), 'mp3')) and not(contains(normalize-space(lower-case(.)), 'jp2')) and not(contains(normalize-space(lower-case(.)), 'jpeg2000'))">
                         <extent><xsl:value-of select="normalize-space(.)"/></extent>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'insert size and time')">
+                <!-- INTERNETMEDIATYPE -->
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'jpeg2000')">
+                        <internetMediaType>image/jpeg2000</internetMediaType>
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)), 'dvd')">
-                        <form>DVD</form>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'jpeg') or contains(normalize-space(lower-case(.)), 'jpg')">
+                        <internetMediaType>image/jpeg</internetMediaType>
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)), 'photographs')">
-                        <form>photographs</form>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'jp2')">
+                        <internetMediaType>image/jp2</internetMediaType>
                     </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'pdf')">
+                        <internetMediaType>application/pdf</internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'mp3')">
+                        <internetMediaType>audio/mp3</internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'tif')">
+                        <internetMediaType>image/tiff</internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'mov')">
+                        <internetMediaType>video/mov</internetMediaType>
+                    </xsl:when>
+                <!-- FORM -->
                     <xsl:otherwise>
-                        <note><xsl:value-of select="normalize-space(.)"/></note>
+                        <form><xsl:value-of select="normalize-space(lower-case(.))"/></form>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
@@ -644,11 +655,140 @@
         <xsl:for-each select="tokenize(replace(normalize-space(.), '\)', ''), '\(')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(normalize-space(lower-case(.)), 'dvd')">
-                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300264677">DVDs</genre>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'advertisement')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300193993">advertisements</genre>
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)), 'photographs')">
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'album')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026690">albums (books)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'article')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300048715">articles</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'autobiography')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300080104">autobiographies</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'bibliography')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026497">bibliographies</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'biography')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300080102">biographies (documents)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'book')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028051">books</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'booklet')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300311670">booklets</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'brochure')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300248280">brochures</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'clipping')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026867">clippings (information artifacts)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'computer disk')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300266292">hard disks</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'correspondence')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026877">correspondence</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'directory')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026234">directories</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'drawings')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300033973">drawings (visual works)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'ephemera')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028881">ephemera (general)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'fieldnotes')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027201">field notes</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'film')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300014637">film (material by form)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'government publication')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027777">government records</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'handbook')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300311807">handbooks</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'image')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300264387">images (object genre)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'index')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026554">indexes (reference sources)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'instruction')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027042">instructions (document genre)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'interview')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026392">interviews</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'invitation')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027083">invitations</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'leaflet')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300211825">leaflets (printed works)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'legal case and case notes')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027200">notes</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'map')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028094">maps (documents)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'memoir')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300202559">memoirs</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'newspaper')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026656">newspapers</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'oral history')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300202595">oral histories (document genres)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'painting')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300033618">paintings (visual works)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'pamphlet')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300220572">pamphlets</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'paper')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300199056">papers (document genres)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'periodical')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026657">periodicals</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'photograph')">
                         <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300046300">photographs</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'portrait')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300015637">portraits</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'postcard')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026816">postcards</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'poster')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027221">posters</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'program')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027240">programs (documents)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'slide')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300128371">slides (photographs)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'speech')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026671">speeches (documents)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'survey')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300226986">surveys (documents)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'technical report')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027323">technical reports</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'text')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300263751">texts (document genres)</genre>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'thesis')">
+                        <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028028">theses</genre>
                     </xsl:when>
                 </xsl:choose>
             </xsl:if>
@@ -675,6 +815,16 @@
         </xsl:if>
     </xsl:template>
     
+    <xsl:template match="dc:identifier" mode="part">
+        <xsl:if test="normalize-space(.)!='' and starts-with(lower-case(normalize-space(.)), 'volume')">
+            <part>
+                <detail>
+                    <number><xsl:value-of select="normalize-space(.)"/></number>
+                </detail>
+            </part>
+        </xsl:if>
+    </xsl:template>
+    
     <xsl:template match="dc:identifier" mode="locationurl">
         <xsl:variable name="idvalue" select="normalize-space(.)"/>
         <xsl:if test="starts-with($idvalue,'http')"> 
@@ -695,13 +845,13 @@
                 <xsl:if test="normalize-space(.)!=''">
                     <language>
                         <xsl:choose>
-                            <xsl:when test="starts-with(normalize-space(lower-case(.)), 'english')">
+                            <xsl:when test="starts-with(normalize-space(lower-case(.)), 'eng')">
                                 <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
                             </xsl:when>
                             <xsl:when test="starts-with(normalize-space(lower-case(.)), 'dutch')">
                                 <languageTerm type="code" authority="iso639-2b">dut</languageTerm>
                             </xsl:when>
-                            <xsl:when test="starts-with(normalize-space(lower-case(.)), 'french')">
+                            <xsl:when test="starts-with(normalize-space(lower-case(.)), 'fr')">
                                 <languageTerm type="code" authority="iso639-2b">fre</languageTerm>
                             </xsl:when>
                             <xsl:when test="normalize-space(lower-case(.))='german'">
@@ -712,8 +862,6 @@
                             </xsl:when>
                             <xsl:when test="normalize-space(lower-case(.))='spanish'">
                                 <languageTerm type="code" authority="iso639-2b">spa</languageTerm>
-                            </xsl:when>
-                            <xsl:when test="contains(normalize-space(lower-case(.)),'baptist')">
                             </xsl:when>
                             <xsl:otherwise>
                                 <languageTerm type="text"><xsl:value-of select="normalize-space(.)"/></languageTerm>
@@ -727,25 +875,16 @@
     
     <xsl:template match="dc:publisher"> 
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and not(contains(normalize-space(.), 'Archives')) and not(contains(normalize-space(.), 'Special Collections')) and not(contains(normalize-space(.), 'Metro'))">
-                <xsl:for-each select="tokenize(normalize-space(.), ':')">
-                    <xsl:choose>
-                        <xsl:when test="contains(normalize-space(.), 'New York') or contains(normalize-space(.), 'San Fran')">
-                            <place><xsl:value-of select="normalize-space(.)"/></place>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <publisher><xsl:value-of select="normalize-space(.)"/></publisher>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:for-each>
+            <xsl:if test="normalize-space(.)!='' and not(contains(normalize-space(lower-case(.)), 'albert gore')) and not(contains(normalize-space(lower-case(.)), 'arts center')) and not(contains(normalize-space(lower-case(.)), 'center for historic preservation')) and not(contains(normalize-space(lower-case(.)), 'james e. walker library')) and not(contains(normalize-space(lower-case(.)), 'tennessee state library'))">
+                <publisher><xsl:value-of select="normalize-space(.)"/></publisher>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:publisher" mode="repository"> 
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and not(starts-with(normalize-space(.), 'U.S. and international copyright laws'))">
-                <xsl:if test="contains(normalize-space(.), 'Archives') or contains(normalize-space(.), 'Metro') or contains(normalize-space(.), 'Special Collections')">
+            <xsl:if test="normalize-space(.)!=''">
+                <xsl:if test="contains(normalize-space(lower-case(.)), 'albert gore') or contains(normalize-space(lower-case(.)), 'arts center') or contains(normalize-space(lower-case(.)), 'center for historic preservation') or contains(normalize-space(lower-case(.)), 'james e. walker library') or contains(normalize-space(lower-case(.)), 'tennessee state library')">
                     <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
                 </xsl:if>
             </xsl:if>
@@ -763,7 +902,14 @@
                             </location>
                         </relatedItem>
                     </xsl:when>
-                    <xsl:when test="contains(.,'Atlas of the city')"> 
+                    <xsl:when test="contains(normalize-space(lower-case(.)),'collection')"> 
+                        <relatedItem type='host' displayLabel='Collection'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)),'publication')"> 
                         <relatedItem type='host'>
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
@@ -771,7 +917,7 @@
                         </relatedItem>
                     </xsl:when>
                     <xsl:otherwise>
-                        <relatedItem type='host' displayLabel='Collection'>
+                        <relatedItem>
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
@@ -798,269 +944,75 @@
     <xsl:template match="dc:source">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
-                <xsl:choose>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'donation')"> 
-                        <note><xsl:value-of select="normalize-space(.)"/></note>
-                    </xsl:when>
-                    <xsl:when test="starts-with(normalize-space(.), 'Wilson ')">
-                        <relatedItem>
-                            <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
-                        </relatedItem>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Collection ')">
-                        <relatedItem>
-                            <titleInfo>
-                                <title><xsl:value-of select="normalize-space(.)"/></title>
-                            </titleInfo>
-                        </relatedItem>
-                    </xsl:when>
-                </xsl:choose>
-            </xsl:if>
-        </xsl:for-each>
-    </xsl:template>
-    
-    <xsl:template match="dc:source" mode="physicalNote">
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
-                <xsl:choose>
-                    <xsl:when test="not(contains(normalize-space(lower-case(.)),'donation')) and not(starts-with(normalize-space(.), 'Wilson ')) and not(contains(normalize-space(.), 'Collection '))"> 
-                        <note><xsl:value-of select="normalize-space(.)"/></note>
-                    </xsl:when>
-                </xsl:choose>
+                <note><xsl:value-of select="normalize-space(.)"/></note>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:subject">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and not(starts-with(normalize-space(.), '58 x 75 cm'))">
+            <xsl:if test="normalize-space(.)!=''">
                 <subject>
                     <topic><xsl:value-of select="normalize-space(.)"/></topic>
                 </subject>
             </xsl:if>
-            <xsl:if test="starts-with(normalize-space(.), '58 x 75 cm')">
-                <abstract><xsl:value-of select="normalize-space(.)"/></abstract>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="dc:type" mode="MIME">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!=''">
+                <xsl:choose>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'application/pdf')">
+                        <internetMediaType><xsl:value-of select="normalize-space(lower-case(.))"/></internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'audio/mp3')">
+                        <internetMediaType><xsl:value-of select="normalize-space(lower-case(.))"/></internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'image/jpeg')">
+                        <internetMediaType><xsl:value-of select="normalize-space(lower-case(.))"/></internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'video/mov')">
+                        <internetMediaType><xsl:value-of select="normalize-space(lower-case(.))"/></internetMediaType>
+                    </xsl:when>
+                </xsl:choose>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:type">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:choose>
-                <xsl:when test="matches(normalize-space(.), 'Advertisements')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300193993">advertisements</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Aerial photographs')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300128222">aerial photographs</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Architectural photographs')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300046300">photographs</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Book')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028051">books</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Book covers')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300197210">covers (closures)</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Bookplates')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028731">bookplates</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Broadside')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026739">broadsides (notices)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Brochure')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300248280">brochures</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Cabinet photographs')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127131">cabinet photographs</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Calendars')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026741">calendars</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Cards')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026756">cards (information artifacts)</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Caricatures')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300015634">caricatures</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Cartes-de-visite')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127141">cartes-de-visite (card photographs)</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Cartoons (Commentary)')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300123431">editorial cartoons</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Chart')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026848">charts (graphic documents)</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Christmas cards')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026782">Christmas cards</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Clippings')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026867">clippings (information artifacts)</genre>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), 'Commercial correspondence')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026914">commercial correspondence</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Correspondence')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026877">correspondence</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Digital prints')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300312222">digital prints</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Document')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026030">documents</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Drawings')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300033973">drawings (visual works)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Editorial cartoons')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300123431">editorial cartoons</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Envelope')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300197601">envelopes</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Ephemera')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028881">ephemera (general)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Film negatives')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127173">negatives (photographic)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Film transparencies')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127478">transparencies</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Government records')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027777">government records</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Image')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300264387">images (object genre)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Invitation')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027083">invitations</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Letters (correspondence)')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026879">letters (correspondence)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Maps')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028094">maps (documents)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Military records')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027822">military records</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Monthly reports')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027288">monthly reports</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Negative')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127173">negatives (photographic)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Official reports')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027294">official reports</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'oral histories')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300202595">oral histories (document genres)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Paintings')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300033618">paintings (visual works)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Pamphlets')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300220572">pamphlets</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'photograph album')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026695">photograph albums</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'photo')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300046300">photographs</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'sculpture')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300047090">sculpture (visual work)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Portrait')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300015637">portraits</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Postcards')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026816">postcards</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Print advertising')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300213176">print advertising</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Programs')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027240">programs (documents)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Reports')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027267">reports</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Scores')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026427">scores</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Sheet music covers')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026430">sheet music</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Sketchbooks')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027354">sketchbooks</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Sketches')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300015617">sketches</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Slide')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300128371">slides (photographs)</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Snapshots')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300134745">snapshots</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Interview')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026392">interviews</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Souvenir programs')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026392">souvenir programs</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Stock certificates')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027558">stock certificates</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Telegrams')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026909">telegrams</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Transparencies')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127478">transparencies</genre>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(.), 'Wills')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027764">wills</genre>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:for-each>
-    </xsl:template>
-    
-    <xsl:template match="dc:type" mode="form">
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
-                <form><xsl:value-of select="normalize-space(lower-case(.))"/></form>
+                <xsl:choose>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'text') or contains(normalize-space(lower-case(.)), 'pdf')">
+                        <typeOfResource>text</typeOfResource>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'text')">
+                        <typeOfResource>text</typeOfResource>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'map')">
+                        <typeOfResource>cartographic</typeOfResource>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'object')">
+                        <typeOfResource>three dimensional object </typeOfResource>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'score')">
+                        <typeOfResource>notated music</typeOfResource>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'sound') or contains(normalize-space(lower-case(.)), 'audio')">
+                        <typeOfResource>sound recording</typeOfResource>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'video') or contains(lower-case(normalize-space(.)), 'moving image')">
+                        <typeOfResource>moving image</typeOfResource>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'still image') or contains(normalize-space(lower-case(.)), 'image')">
+                        <typeOfResource>still image</typeOfResource>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(lower-case(.)), 'collection')">
+                        <typeOfResource>mixed material</typeOfResource>
+                    </xsl:when>
+                </xsl:choose>
             </xsl:if>
-        </xsl:for-each>
-    </xsl:template>
-    
-    <xsl:template match="dc:type" mode="type">
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:choose>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'text')">
-                    <typeOfResource>text</typeOfResource>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'map')">
-                    <typeOfResource>cartographic</typeOfResource>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'score')">
-                    <typeOfResource>notated music</typeOfResource>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'sound')">
-                    <typeOfResource>sound recording</typeOfResource>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'still image') or contains(normalize-space(lower-case(.)), 'image')">
-                    <typeOfResource>still image</typeOfResource>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'video')">
-                    <typeOfResource>moving image</typeOfResource>
-                </xsl:when>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'sculpture')">
-                    <typeOfResource>three dimensional object</typeOfResource>
-                </xsl:when>
-            </xsl:choose>
         </xsl:for-each>
     </xsl:template>
     
