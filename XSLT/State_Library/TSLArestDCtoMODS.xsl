@@ -33,7 +33,6 @@
             
             <location>
                 <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                <xsl:apply-templates select="dc:source" mode="repository"/> <!-- repository -->
             </location>
             
             <xsl:apply-templates select="dc:format" mode="itemType"/> <!-- Item Type -->
