@@ -368,11 +368,9 @@
     </xsl:template>
     
     <xsl:template match="dc:description">
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
-                <abstract><xsl:value-of select="normalize-space(.)"/></abstract>
-            </xsl:if>
-        </xsl:for-each>
+        <xsl:if test="normalize-space(.)!=''">
+            <abstract><xsl:value-of select="normalize-space(.)"/></abstract>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="dc:format"> <!-- should go into PhysicalDescription wrapper -->
