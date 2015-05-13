@@ -249,33 +249,19 @@
                 </xsl:when>
                 <!--here be dragons, dude-->
                 <xsl:when test="matches(normalize-space(.), '^\d{2}-\d{2}-\d{4}$') or matches(normalize-space(.), '^\d{2}/\d{2}/\d{4}$')">
-                    <dateCreated encoding="edtf" keyDate="yes">
-                        <xsl:value-of select="concat(concat(substring(.,7, 10),'-'), substring(., 1, 5))"/> 
-                    </dateCreated>
-                    <dateCreated>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </dateCreated>
+                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,7, 10),'-'), substring(., 1, 5))"/> </dateCreated>
+                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                 </xsl:when>
                 <xsl:when test="matches(normalize-space(.), '^\d{1}-\d{2}-\d{4}$') or matches(normalize-space(.), '^\d{1}/\d{2}/\d{4}$')">
-                    <dateCreated encoding="edtf" keyDate="yes">
-                        <xsl:value-of select="concat(concat(substring(.,6, 9),'-'), substring(., 1, 4))"/> 
-                    </dateCreated>
-                    <dateCreated>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </dateCreated>
+                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,6, 9),'-'), substring(., 1, 4))"/> </dateCreated>
+                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                 </xsl:when>
                 <xsl:when test="matches(normalize-space(.), '^\d{2}-\d{2}$')">
-                    <dateCreated encoding="edtf" keyDate="yes">
-                        <xsl:value-of select="concat('uuuu-', normalize-space(.))"/> 
-                    </dateCreated>
-                    <dateCreated>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </dateCreated>
+                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="concat('uuuu-', normalize-space(.))"/> </dateCreated>
+                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                 </xsl:when>
                 <xsl:otherwise>
-                    <dateCreated>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </dateCreated>
+                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
@@ -534,9 +520,9 @@
     <xsl:template match="dc:provenance">
         <xsl:if test="not(contains(lower-case(.), 'n/a') or contains(lower-case(.), 'born digital'))">
             <relatedItem type="host" displayLabel="Collection">
-                <title>
-                    <titleInfo><xsl:value-of select="."/></titleInfo>
-                </title>
+                <titleInfo>
+                    <title><xsl:value-of select="."/></title>
+                </titleInfo>
             </relatedItem>
         </xsl:if>
     </xsl:template>
