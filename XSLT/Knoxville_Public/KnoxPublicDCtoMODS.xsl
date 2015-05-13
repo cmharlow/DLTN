@@ -25,14 +25,18 @@
                 </originInfo>
             </xsl:if>
             
-            <physicalDescription>
-                <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
-            </physicalDescription>
+            <xsl:if test="dc:format">
+                <physicalDescription>
+                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
+                </physicalDescription>
+            </xsl:if>
             
-            <location>
-                <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
-            </location>
+            <xsl:if test="dc:identifier">
+                <location>
+                    <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
+                </location>
+            </xsl:if>
             
             <xsl:apply-templates select="dc:language"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
@@ -283,7 +287,7 @@
             <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='unknown' and normalize-space(lower-case(.))!='uknown'">
                 <xsl:choose>
                 <!-- DIRECT EDTF MATCHES -->
-                    <xsl:when test="matches(normalize-space(.), '^\d{4}$') or matches(normalize-space(.), '^\d{4}-[0-1][1-9]$') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}$')">
+                    <xsl:when test="matches(normalize-space(.), '^\d{4}$') or matches(normalize-space(.), '^\d{4}-\d{2}$') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}$')">
                         <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="."/></dateCreated>
                         <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                     </xsl:when>
@@ -369,51 +373,51 @@
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
                         <!-- Match [Month YYYY] formatting -->
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\january \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[january \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-01')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\february \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[february \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-02')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\march \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[march \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-03')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\april \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[april \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-04')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\may \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[may \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-05')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\june \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[june \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-06')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\july \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[july \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-07')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\august \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[august \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-08')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\september \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[september \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-09')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\october \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[october \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-10')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\november \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[november \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-11')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
-                            <xsl:when test="matches(lower-case(normalize-space(.)), '^[\december \d{4}\]$')">
+                            <xsl:when test="matches(lower-case(normalize-space(.)), '^\[december \d{4}\]$')">
                                 <dateCreated encoding="edtf" qualifier="inferred" keyDate="yes"><xsl:value-of select="concat(normalize-space(substring-after(lower-case(translate(normalize-space(.), '\[\]', '')), ' ')), '-12')"/></dateCreated>
                                 <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                             </xsl:when>
@@ -422,11 +426,11 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
-                <!-- QUESTIONABLE -->
+                    <!-- QUESTIONABLE -->
                     <xsl:when test="contains(normalize-space(lower-case(.)), '?')">
                         <dateCreated qualifier="questionable"><xsl:value-of select="normalize-space(.)"/></dateCreated>
                     </xsl:when>
-                <!-- APPROXIMATE -->
+                    <!-- APPROXIMATE -->
                     <xsl:when test="contains(normalize-space(lower-case(.)), 'circa') or contains(normalize-space(lower-case(.)), 'c.') or contains(normalize-space(lower-case(.)), 'ca.')">
                         <xsl:choose>
                             <xsl:when test="matches(normalize-space(.), '^c. \d{4}$') or matches(normalize-space(.), '^c. \d{4}-\d{2}$') or matches(normalize-space(.), '^c. \d{4}-\d{2}-\d{2}$')">
