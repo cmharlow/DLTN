@@ -14,23 +14,29 @@
             <xsl:apply-templates select="dc:contributor"/> <!-- name -->
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             
-            <originInfo> 
-                <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                <xsl:apply-templates select="dc:publisher"/> <!-- publisher NOT digital library -->
-            </originInfo>
+            <xsl:if test="dc:date|dc:publisher">
+                <originInfo> 
+                    <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
+                    <xsl:apply-templates select="dc:publisher"/> <!-- publisher NOT digital library -->
+                </originInfo>
+            </xsl:if>
             
-            <physicalDescription>
-                <xsl:apply-templates select="dc:medium" mode="form"/> <!-- form -->
-                <xsl:apply-templates select="dc:format" /> <!-- internetMediaType -->
-                <xsl:apply-templates select="dc:hasversion" /> <!-- digitalOrigin -->
-                <xsl:apply-templates select="dc:provenance" mode="digitalOrigin"/> <!-- digitalOrigin sometimes -->
-            </physicalDescription>
+            <xsl:if test="dc:medium|dc:format|dc:hasversion|dc:provenance">
+                <physicalDescription>
+                    <xsl:apply-templates select="dc:medium" mode="form"/> <!-- form -->
+                    <xsl:apply-templates select="dc:format" /> <!-- internetMediaType -->
+                    <xsl:apply-templates select="dc:hasversion" /> <!-- digitalOrigin -->
+                    <xsl:apply-templates select="dc:provenance" mode="digitalOrigin"/> <!-- digitalOrigin sometimes -->
+                </physicalDescription>
+            </xsl:if>
             
-            <location>
-                <xsl:apply-templates select="dc:source" mode="physicalLocation"/> <!-- repository -->
-                <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates> <!-- preview -->
-            </location>
+            <xsl:if test="dc:source|dc:identifier">
+                <location>
+                    <xsl:apply-templates select="dc:source" mode="physicalLocation"/> <!-- repository -->
+                    <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates> <!-- preview -->
+                </location>
+            </xsl:if>
             
             <xsl:apply-templates select="dc:medium" /> <!-- genre -->
             <xsl:apply-templates select="dc:language"/> <!-- language -->
@@ -67,26 +73,20 @@
     <xsl:template match="dc:title">
         <xsl:if test="normalize-space(.)!=''">
             <titleInfo>
-                <title>
-                    <xsl:value-of select="normalize-space(.)"/>
-                </title>
+                <title><xsl:value-of select="normalize-space(.)"/></title>
             </titleInfo>
         </xsl:if>
     </xsl:template>
     
     <xsl:template match="dc:availability">
         <extension xmlns:dcterms="http://purl.org/dc/terms/">
-            <dcterms:available encoding="edtf">
-                <xsl:value-of select="."/>
-            </dcterms:available>
+            <dcterms:available encoding="edtf"><xsl:value-of select="."/></dcterms:available>
         </extension>
     </xsl:template>
     
     <xsl:template match="dc:bibliographiccitation">
         <xsl:if test="lower-case(normalize-space(.)) != 'n/a'">
-            <accessCondition type="use and reproduction">
-                <xsl:value-of select="."/>
-            </accessCondition>
+            <accessCondition type="use and reproduction"><xsl:value-of select="."/></accessCondition>
         </xsl:if>
     </xsl:template>
     
@@ -95,25 +95,17 @@
             <xsl:choose>
                 <xsl:when test="contains(., 'interviewer')">
                     <name>
-                        <namePart>
-                            <xsl:value-of select="replace(., ', interviewer', '')"/>
-                        </namePart>
+                        <namePart><xsl:value-of select="replace(., ', interviewer', '')"/></namePart>
                         <role>
-                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ivr">
-                                <xsl:text>Interviewer</xsl:text>
-                            </roleTerm>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ivr"><xsl:text>Interviewer</xsl:text></roleTerm>
                         </role> 
                     </name>
                 </xsl:when>
                 <xsl:when test="contains(., 'digitization')">
                     <name>
-                        <namePart>
-                            <xsl:value-of select="replace(., ', digitization', '')"/>
-                        </namePart>
+                        <namePart><xsl:value-of select="replace(., ', digitization', '')"/></namePart>
                         <role>
-                            <roleTerm type="text">
-                                <xsl:text>Digitizer</xsl:text>
-                            </roleTerm>
+                            <roleTerm type="text"><xsl:text>Digitizer</xsl:text></roleTerm>
                         </role> 
                     </name>
                 </xsl:when>
@@ -123,57 +115,39 @@
                             <xsl:value-of select="replace(., ' (processing)', '')"/>
                         </namePart>
                         <role>
-                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prc">
-                                <xsl:text>Process contact</xsl:text>
-                            </roleTerm>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prc"><xsl:text>Process contact</xsl:text></roleTerm>
                         </role> 
                     </name>
                 </xsl:when>
                 <xsl:when test="contains(., 'processor')">
                     <name>
-                        <namePart>
-                            <xsl:value-of select="replace(., ', processor', '')"/>
-                        </namePart>
+                        <namePart><xsl:value-of select="replace(., ', processor', '')"/></namePart>
                         <role>
-                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prc">
-                                <xsl:text>Process contact</xsl:text>
-                            </roleTerm>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prc"><xsl:text>Process contact</xsl:text></roleTerm>
                         </role> 
                     </name>
                 </xsl:when>
                 <xsl:when test="contains(., ', camera')">
                     <name>
-                        <namePart>
-                            <xsl:value-of select="replace(., ', camera', '')"/>
-                        </namePart>
+                        <namePart><xsl:value-of select="replace(., ', camera', '')"/></namePart>
                         <role>
-                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/vdg">
-                                <xsl:text>Videographer</xsl:text>
-                            </roleTerm>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/vdg"><xsl:text>Videographer</xsl:text></roleTerm>
                         </role> 
                     </name>
                 </xsl:when>
                 <xsl:when test="contains(., '(camera)')">
                     <name>
-                        <namePart>
-                            <xsl:value-of select="replace(., ' (camera)', '')"/>
-                        </namePart>
+                        <namePart><xsl:value-of select="replace(., ' (camera)', '')"/></namePart>
                         <role>
-                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/vdg">
-                                <xsl:text>Videographer</xsl:text>
-                            </roleTerm>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/vdg"><xsl:text>Videographer</xsl:text></roleTerm>
                         </role> 
                     </name>
                 </xsl:when>
                 <xsl:otherwise>
                     <name>
-                        <namePart>
-                            <xsl:value-of select="normalize-space(.)"/>
-                        </namePart>
+                        <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
                         <role>
-                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb">
-                                <xsl:text>Contributor</xsl:text>
-                            </roleTerm>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb"><xsl:text>Contributor</xsl:text></roleTerm>
                         </role> 
                     </name>
                 </xsl:otherwise>
@@ -191,18 +165,14 @@
                         <xsl:when test='matches(.,"\d+\.\d+")'>
                             <subject>
                                 <cartographics>
-                                    <coordinates>
-                                        <xsl:value-of select="normalize-space(.)"/>
-                                    </coordinates>
+                                    <coordinates><xsl:value-of select="normalize-space(.)"/></coordinates>
                                 </cartographics>
                             </subject>
                         </xsl:when>
                         <!-- if there's no coordinate pattern, it's probably temporal data; put it in temporal -->
                         <xsl:otherwise>
                             <subject>
-                                <temporal>
-                                    <xsl:value-of select="normalize-space(.)"/>
-                                </temporal>
+                                <temporal><xsl:value-of select="normalize-space(.)"/></temporal>
                             </subject>
                         </xsl:otherwise>
                     </xsl:choose>
@@ -210,9 +180,7 @@
                 <!-- if there are no numbers, it's probably geo data as text --> 
                 <xsl:otherwise>
                     <subject>
-                        <geographic>
-                            <xsl:value-of select="normalize-space(.)"/>
-                        </geographic>
+                        <geographic><xsl:value-of select="normalize-space(.)"/></geographic>
                     </subject>
                 </xsl:otherwise>
             </xsl:choose>
@@ -227,9 +195,7 @@
                     <name>
                         <namePart>Rhodes College. Crossroads to Freedom Digital Archive</namePart>
                         <role>
-                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prv">
-                                <xsl:text>Provider</xsl:text>
-                            </roleTerm>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prv"><xsl:text>Provider</xsl:text></roleTerm>
                         </role>
                     </name>
                 </xsl:when>
@@ -237,21 +203,15 @@
                     <name>
                         <namePart>Unknown</namePart>
                         <role>
-                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">
-                                <xsl:text>Creator</xsl:text>
-                            </roleTerm>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre"><xsl:text>Creator</xsl:text></roleTerm>
                         </role>
                     </name> 
                 </xsl:when>
                 <xsl:otherwise>
                     <name>
-                        <namePart>
-                            <xsl:value-of select="normalize-space(.)"/>
-                        </namePart>
+                        <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
                         <role>
-                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">
-                                <xsl:text>Creator</xsl:text>
-                            </roleTerm>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre"><xsl:text>Creator</xsl:text></roleTerm>
                         </role>
                     </name> 
                 </xsl:otherwise>
@@ -264,50 +224,28 @@
         <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
             <xsl:choose>
                 <xsl:when test="starts-with(., 'year unknown')">
-                    <dateCreated encoding="edtf" keyDate="yes">
-                        <xsl:value-of select="replace(lower-case(.), 'year unknown', 'uuuu')"/>
-                    </dateCreated>
-                    <dateCreated>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </dateCreated>
+                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(lower-case(.), 'year unknown', 'uuuu')"/></dateCreated>
+                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                 </xsl:when>
                 <xsl:when test="starts-with(lower-case(.), 'xxxx')">
-                    <dateCreated encoding="edtf" keyDate="yes">
-                        <xsl:value-of select="replace(lower-case(.), 'xxxx', 'uuuu')"/>
-                    </dateCreated>
-                    <dateCreated>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </dateCreated>
+                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(lower-case(.), 'xxxx', 'uuuu')"/></dateCreated>
+                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                 </xsl:when>
                 <xsl:when test="ends-with(., 'unknown day')">
-                    <dateCreated encoding="edtf" keyDate="yes">
-                        <xsl:value-of select="replace(lower-case(.), 'unknown day', 'uu')"/>
-                    </dateCreated>
-                    <dateCreated>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </dateCreated>
+                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(lower-case(.), 'unknown day', 'uu')"/></dateCreated>
+                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                 </xsl:when>
                 <xsl:when test="contains(lower-case(.), 'unknown') or contains(lower-case(.), 'undated')">
                     <dateCreated encoding="edtf" keyDate="yes">uuuu</dateCreated>
-                    <dateCreated>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </dateCreated>
+                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                 </xsl:when>
                 <xsl:when test="contains(., '[')">
-                    <dateCreated encoding="edtf" keyDate="yes" qualifier="inferred">
-                        <xsl:value-of select="substring(., 2, 5)"/> 
-                    </dateCreated>
-                    <dateCreated>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </dateCreated>
+                    <dateCreated encoding="edtf" keyDate="yes" qualifier="inferred"><xsl:value-of select="substring(., 2, 5)"/> </dateCreated>
+                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                 </xsl:when>
                 <xsl:when test="matches(normalize-space(.), '^\d{4}$') or matches(normalize-space(.), '^\d{4}-\d{2}$') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}$')">
-                    <dateCreated encoding="edtf" keyDate="yes">
-                        <xsl:value-of select="."/> 
-                    </dateCreated>
-                    <dateCreated>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </dateCreated>
+                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="."/></dateCreated>
+                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
                 </xsl:when>
                 <!--here be dragons, dude-->
                 <xsl:when test="matches(normalize-space(.), '^\d{2}-\d{2}-\d{4}$') or matches(normalize-space(.), '^\d{2}/\d{2}/\d{4}$')">
@@ -345,9 +283,7 @@
     
     <xsl:template match="dc:description">
         <xsl:if test="normalize-space(.)!=''">
-            <abstract>
-                <xsl:value-of select="normalize-space(.)"/>
-            </abstract>
+            <abstract><xsl:value-of select="normalize-space(.)"/></abstract>
         </xsl:if>
     </xsl:template>
     
@@ -404,17 +340,13 @@
         <xsl:if test="normalize-space(.)!=''">
             <xsl:choose>
                 <xsl:when test="starts-with(., 'rds')">
-                    <identifier type="pid">
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </identifier>
+                    <identifier type="pid"><xsl:value-of select="normalize-space(.)"/></identifier>
                 </xsl:when>
                 <xsl:when test="starts-with(., 'http://')">
                     <!-- skip, will be handled in identifier mode:URL -->
                 </xsl:when>
                 <xsl:otherwise>
-                    <identifier>
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </identifier>
+                    <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
@@ -445,9 +377,7 @@
                         <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
                     </xsl:when>
                     <xsl:otherwise>
-                        <languageTerm type="text" authority="iso639-2b">
-                            <xsl:value-of select="normalize-space(.)"/>
-                        </languageTerm>
+                        <languageTerm type="text"><xsl:value-of select="normalize-space(.)"/></languageTerm>
                     </xsl:otherwise>
                 </xsl:choose>
             </language>
@@ -598,18 +528,14 @@
     </xsl:template>
     
     <xsl:template match="dc:medium" mode="form">
-        <form>
-            <xsl:value-of select="normalize-space(lower-case(.))"/>
-        </form>
+        <form><xsl:value-of select="normalize-space(lower-case(.))"/></form>
     </xsl:template>
     
     <xsl:template match="dc:provenance">
         <xsl:if test="not(contains(lower-case(.), 'n/a') or contains(lower-case(.), 'born digital'))">
             <relatedItem type="host" displayLabel="Collection">
                 <title>
-                    <titleInfo>
-                        <xsl:value-of select="."/>
-                    </titleInfo>
+                    <titleInfo><xsl:value-of select="."/></titleInfo>
                 </title>
             </relatedItem>
         </xsl:if>
@@ -617,17 +543,13 @@
     
     <xsl:template match="dc:provenance" mode="digitalOrigin">
         <xsl:if test="not(contains(lower-case(.), 'n/a')) and contains(lower-case(.), 'born digital')">
-            <digitalOrigin>
-                <xsl:value-of select="normalize-space(lower-case(.))"/>
-            </digitalOrigin>
+            <digitalOrigin><xsl:value-of select="normalize-space(lower-case(.))"/></digitalOrigin>
         </xsl:if>
     </xsl:template>
     
     <xsl:template match="dc:publisher"> <!-- will block publisher being the institution/collection -->
         <xsl:if test="normalize-space(.)!='' and not(contains(lower-case(normalize-space(dc:publisher)),'crossroads to freedom'))">
-            <publisher>
-                <xsl:value-of select="normalize-space(.)"/>
-            </publisher>
+            <publisher><xsl:value-of select="normalize-space(.)"/></publisher>
         </xsl:if>
     </xsl:template>
     
@@ -643,31 +565,23 @@
                 </xsl:when>
                 <xsl:when test="starts-with(., 'rds:')">
                     <relatedItem>
-                        <identifier type="pid">
-                            <xsl:value-of select="normalize-space(.)"/>
-                        </identifier>
+                        <identifier type="pid"><xsl:value-of select="normalize-space(.)"/></identifier>
                     </relatedItem>
                 </xsl:when>
                 <xsl:when test="contains(normalize-space(lower-case(.)), 'Tennessee')">
                     <subject>
-                        <geographic>
-                            <xsl:value-of select="normalize-space(.)"/>
-                        </geographic>
+                        <geographic><xsl:value-of select="normalize-space(.)"/></geographic>
                     </subject>
                 </xsl:when>
                 <xsl:when test="matches(normalize-space(.), '^\d{4}')">
                     <subject>
-                        <temporal>
-                            <xsl:value-of select="normalize-space(.)"/>
-                        </temporal>
+                        <temporal><xsl:value-of select="normalize-space(.)"/></temporal>
                     </subject>
                 </xsl:when>
                 <xsl:otherwise>
                     <relatedItem>
                         <titleInfo>
-                            <title>
-                                <xsl:value-of select="normalize-space(.)"/>
-                            </title>
+                            <title><xsl:value-of select="normalize-space(.)"/></title>
                         </titleInfo>
                     </relatedItem>
                 </xsl:otherwise>
@@ -682,9 +596,7 @@
             </xsl:when>
             <xsl:otherwise>
                 <xsl:if test="normalize-space(.)!=''">
-                    <accessCondition type="use and reproduction">
-                        <xsl:value-of select="normalize-space(.)"/>
-                    </accessCondition>
+                    <accessCondition type="use and reproduction"><xsl:value-of select="normalize-space(.)"/></accessCondition>
                 </xsl:if>     
             </xsl:otherwise>
         </xsl:choose>
@@ -848,11 +760,9 @@
         <xsl:choose>
             <xsl:when test="contains(lower-case(.), 'collection') or contains(lower-case(.), 'corp')">
                 <relatedItem type="host" displayLabel="Collection">
-                    <title>
-                        <titleInfo>
-                            <xsl:value-of select="normalize-space(.)"/>
-                        </titleInfo>
-                    </title>
+                    <titleInfo>
+                        <title><xsl:value-of select="normalize-space(.)"/></title>
+                    </titleInfo>
                 </relatedItem>
             </xsl:when>
         </xsl:choose>
@@ -860,9 +770,7 @@
     
     <xsl:template match="dc:source" mode="physicalLocation">
         <xsl:if test="contains(lower-case(.), 'archive') or contains(lower-case(.), 'library') or contains(lower-case(.), 'association') or starts-with(lower-case(normalize-space(.)), 'http://')">
-            <physicalLocation> <!-- needs to go into location wrapper element -->
-                <xsl:value-of select="normalize-space(.)"/>
-            </physicalLocation>
+            <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
         </xsl:if>
     </xsl:template>
     
@@ -873,16 +781,12 @@
                 <xsl:choose>
                     <xsl:when test="matches(.,'^\d{4}$')"> <!-- Contains some years -->
                         <subject>
-                            <temporal encoding="edtf">
-                                <xsl:value-of select="."/>
-                            </temporal>
+                            <temporal encoding="edtf"><xsl:value-of select="."/></temporal>
                         </subject>
                     </xsl:when>
                     <xsl:otherwise>
                         <subject>
-                            <topic>
-                                <xsl:value-of select="normalize-space(.)"/>
-                            </topic>
+                            <topic><xsl:value-of select="normalize-space(.)"/></topic>
                         </subject>
                     </xsl:otherwise>
                 </xsl:choose>
@@ -894,25 +798,19 @@
         <xsl:choose>
             <xsl:when test="matches(., '^\d{4}$') or matches(., '^\d{4}-\d{2}$') or matches(., '^\d{4}-\d{2}-\d{2}$')">
                 <subject>
-                    <temporal encoding="edtf">
-                        <xsl:value-of select="."/>
-                    </temporal>
+                    <temporal encoding="edtf"><xsl:value-of select="."/></temporal>
                 </subject>
             </xsl:when>
             <xsl:when test="contains(lower-case(.), 'unknown') or contains(lower-case(.), 'n/a')">
             </xsl:when>
             <xsl:when test="not(contains(., '\d+'))">
                 <subject>
-                    <geographic>
-                        <xsl:value-of select="."/>
-                    </geographic>
+                    <geographic><xsl:value-of select="."/></geographic>
                 </subject>
             </xsl:when>
             <xsl:otherwise>
                 <subject>
-                    <temporal>
-                        <xsl:value-of select="."/>
-                    </temporal>
+                    <temporal><xsl:value-of select="."/></temporal>
                 </subject>
             </xsl:otherwise>
         </xsl:choose>
