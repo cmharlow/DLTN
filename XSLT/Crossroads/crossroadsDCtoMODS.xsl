@@ -421,27 +421,19 @@
     </xsl:template>
     
     <xsl:template match="dc:identifier" mode="URL">
-        <xsl:if test="normalize-space(.)!=''">
-            <xsl:if test="starts-with(., 'http://')">
-                <url usage="primary" access="object in context">
-                    <xsl:value-of select="normalize-space(.)"/>
-                </url>
-            </xsl:if>
+        <xsl:if test="normalize-space(.)!='' and starts-with(., 'http://')">
+            <url usage="primary display" access="object in context"><xsl:value-of select="normalize-space(.)"/></url>
         </xsl:if>
     </xsl:template>
     
     <!-- Crossroads Thumbnails-->
     
-    <xsl:output omit-xml-declaration="yes" indent="yes"/>
-    
     <xsl:template match="dc:identifier" mode="locationurl">
         <xsl:variable name="idvalue" select="normalize-space(.)"/>
         <xsl:if test="starts-with($idvalue,'rds:')"> 
-            <!-- Crossroads Fedora puts the PID in an <identifier> field in the OAI record -->
-            <!-- process Fedora thumbnail urls -->           
+            <!-- Crossroads Fedora puts the PID in an <identifier> field in the OAI record --><!-- process Fedora thumbnail urls -->           
             <xsl:variable name="PID" select="substring-after($idvalue,'rds:')"/>
             <url access="preview"><xsl:value-of select="concat('http://crossroads.rhodes.edu:9090/fedora/get/rds:',$PID,'/thumbnail_100x75.jpg')"/></url> <!--CONTENTdm thumbnail url-->
-            <!-- end Crossroads thumbnail url processing -->           
         </xsl:if>
     </xsl:template>
     
