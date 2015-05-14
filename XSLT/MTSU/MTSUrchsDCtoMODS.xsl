@@ -50,7 +50,15 @@
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/><!-- genre -->
             <xsl:apply-templates select="dc:source"/>
-            <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Rutherford County Historical Society Publications</title>
+                </titleInfo>
+                <abstract>This collection provides digital copies of the occasional publication of the Rutherford County Historical Society. The collection includes Vol. 1 (1973) through Vol. 39 (200?). The digital reproduction the Publication has been done with permission of the Rutherford County Historical Society. Digitization of the Publication was coordinated through the Lyrasis Mass Digitization Collaborative and was funded in part by the Sloan Foundation.</abstract>
+                <location>
+                    <url>http://cdm15838.contentdm.oclc.org/cdm/landingpage/collection/rchs</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Middle Tennessee State University Library</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

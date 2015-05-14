@@ -50,7 +50,15 @@
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/><!-- genre -->
             <xsl:apply-templates select="dc:source"/>
-            <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Shades of Gray and Blue</title>
+                </titleInfo>
+                <abstract>In Tennessee, we have all heard stories of life and death on the state’s Civil War battlefields, but what happened to the men, women, and children who stayed at home? Their stories, seen through the lens of the objects that were a part of their daily lives, reflect the ways Tennesseans adapted, coped, and thrived during a war whose reverberations are still felt today. Visit the Shades of Gray and Blue project site for additional options for browsing the collection, contextual essays, and lesson plans. This project is a collaborative effort of the Middle Tennessee State University Walker Library, the Center for Historic Preservation at Middle Tennessee State University, and Vanderbilt University Libraries.</abstract>
+                <location>
+                    <url>http://cdm15838.contentdm.oclc.org/cdm/landingpage/collection/shades</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Middle Tennessee State University Library</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

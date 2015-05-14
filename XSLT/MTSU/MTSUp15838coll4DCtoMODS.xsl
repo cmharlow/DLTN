@@ -50,7 +50,15 @@
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/><!-- genre -->
             <xsl:apply-templates select="dc:source"/>
-            <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Southern Places</title>
+                </titleInfo>
+                <abstract>Southern Places is a project of MTSU's Center for Historic Preservation and the James E. Walker Library. This database includes images and property histories from the Center's work in preserving churches, schools, cemeteries, and other historic sites.</abstract>
+                <location>
+                    <url>http://cdm15838.contentdm.oclc.org/cdm/landingpage/collection/p15838coll4</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Middle Tennessee State University Library</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

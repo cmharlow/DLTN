@@ -50,7 +50,15 @@
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/><!-- genre -->
             <xsl:apply-templates select="dc:source"/>
-            <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>MTSU Memory</title>
+                </titleInfo>
+                <abstract>Created to commemorate the University's centennial in 2011, this digital collection contains photographs, memorabilia and other materials that document the critical role played by MTSU within the broader community during its first century. Please note that two separate collections also document MTSU History: The Midlanders collection contains complete digital copies of the Midlander yearbook from 1926 to 2004. The Sidelines collection contains digital copies of a nearly-complete run of Sidelines, the student newspaper of the university, from 1938 to 2011. MTSU Memory is a collaborative project of the Albert Gore Research Center and the James E. Walker Library.</abstract>
+                <location>
+                    <url>http://cdm15838.contentdm.oclc.org/cdm/landingpage/collection/mtsu1</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Middle Tennessee State University Library</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

@@ -50,7 +50,15 @@
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/><!-- genre -->
             <xsl:apply-templates select="dc:source"/>
-            <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Midlanders</title>
+                </titleInfo>
+                <abstract>Midlander was the student yearbook of the University from 1926 to 2004. This collection offers a complete digital copy of almost every issue.</abstract>
+                <location>
+                    <url>http://cdm15838.contentdm.oclc.org/cdm/landingpage/collection/p15838coll3</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Middle Tennessee State University Library</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

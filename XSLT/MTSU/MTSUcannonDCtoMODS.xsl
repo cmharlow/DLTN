@@ -50,7 +50,15 @@
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/><!-- genre -->
             <xsl:apply-templates select="dc:source"/>
-            <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Farms of Cannon County, Tennessee</title>
+                </titleInfo>
+                <abstract>This collection includes photographs of agricultural activities in Cannon County, TN that were taken by W.L. Clement, District Conservationist for the U.S. Soil Conservation Service, and his assistants between the mid-1940s and mid-1970s. They document the daily work of the farm families in Cannon County and the agricultural techniques promoted by the U.S. Department of Agriculture during the period.</abstract>
+                <location>
+                    <url>http://cdm15838.contentdm.oclc.org/cdm/landingpage/collection/cannon</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Middle Tennessee State University Library</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

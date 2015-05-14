@@ -50,7 +50,15 @@
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/><!-- genre -->
             <xsl:apply-templates select="dc:source"/>
-            <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Buchanan Family collection</title>
+                </titleInfo>
+                <abstract>This collection documents the family of James McGill Buchanan (1919-2013), MTSU alumnus and 1986 winner of the Nobel Prize for Economics. His family has deep roots in middle Tennessee, including an 18th-century settler of Nashville and 19th-century Governor. Mr. Buchanan earned his B.S. at Middle Tennessee State Teachers College in 1940, followed by his M.A. in Economics at UT-Knoxville and his Ph.D. at the University of Chicago.</abstract>
+                <location>
+                    <url>http://cdm15838.contentdm.oclc.org/cdm/landingpage/collection/buchanan</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Middle Tennessee State University Library</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
