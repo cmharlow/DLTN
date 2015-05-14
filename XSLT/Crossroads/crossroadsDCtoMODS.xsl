@@ -71,8 +71,13 @@
     </xsl:template>
     
     <xsl:template match="dc:title">
-        <xsl:if test="normalize-space(.)!=''">
-            <titleInfo>
+        <xsl:if test="normalize-space(.)!='' and position() = 1">
+            <titleInfo type="alternative">
+                <title><xsl:value-of select="normalize-space(.)"/></title>
+            </titleInfo>
+        </xsl:if>
+        <xsl:if test="normalize-space(.)!='' and position() != 1">
+            <titleInfo >
                 <title><xsl:value-of select="normalize-space(.)"/></title>
             </titleInfo>
         </xsl:if>
