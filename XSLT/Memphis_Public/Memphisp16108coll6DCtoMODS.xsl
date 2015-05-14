@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Roy Cajero Photograph Collection</title>
+                </titleInfo>
+                <abstract>The notable and the unknown. The famous and the infamous. As both artist and journalist, Roy Cajero captures them all and ultimately shows us the soul of Memphis.  Primarily portraiture, this collection of 211 images gives us a glimpse at the faces of Memphis over the span of the past four decades.  Musicians, artists, writers... athletes, politicians... they're all here.  Along with so much more.</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll6</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

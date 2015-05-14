@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>George W. Lee Collection</title>
+                </titleInfo>
+                <abstract>The George W. Lee Collection was given to the library by his daughter Gilda Lee Robinson in 1985. The large collection includes extensive and wide-ranging correspondence, copies of many of Lee's speeches, hundreds of newspaper and magazine clippings, and many awards and certificates presented to Lee over the years. An important part of this collection is the array of more than 400 photographs and the five large scrapbooks which contain photographs, clippings and letters. In addition, there is one box of magazines and one box of personal Christmas cards....</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll7</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

@@ -50,7 +50,7 @@
                 <titleInfo>
                     <title>Manuscript Collection Finding Aids</title>
                 </titleInfo>
-                <abstract>This collection serves as an index of all of the processed manuscript collections in the Memphis & Shelby County Room. The bulk of the information about these collections is from the Guide to the Processed Manuscript Collections in the Memphis and Shelby County Room, written and compiled by our very own Gina Cordell.</abstract>
+                <abstract>This collection serves as an index of all of the processed manuscript collections in the Memphis and Shelby County Room. The bulk of the information about these collections is from the Guide to the Processed Manuscript Collections in the Memphis and Shelby County Room, written and compiled by our very own Gina Cordell.</abstract>
                 <location>
                     <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p13039coll1</url>
                 </location>
@@ -1099,7 +1099,7 @@
     <xsl:template match="dc:identifier" mode="URL">
         <xsl:if test="normalize-space(.)!=''">
             <xsl:if test="starts-with(., 'http://')">
-                <url usage="primary" access="object in context"><xsl:value-of select="normalize-space(.)"/></url>
+                <url usage="primary display" access="object in context"><xsl:value-of select="normalize-space(.)"/></url>
             </xsl:if>
         </xsl:if>
     </xsl:template>

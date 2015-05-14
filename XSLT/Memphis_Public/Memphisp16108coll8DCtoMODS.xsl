@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Board of Adjustment Files</title>
+                </titleInfo>
+                <abstract>The Board of Adjustment Files are an assortment of digital files donated to Dig Memphis by Josh Whitehead, Planning Director at the Memphis and Shelby County Office of Planning and Development and Secretary of the Memphis and Shelby County Board of Adjustment. Established in 1925 by a Private Act of the Tennessee General Assembly, the Board of Adjustment is both the oldest appointed governmental body in Memphis and Shelby County and the oldest administrative zoning board in the State of Tennessee.  The Board hears cases in relation to the Unified Development Code and requests for variances from it. These files span the lifetime of the BOA, and showcase projects both residential and commercial. Included are site plans, renderings, correspondence, photographs and more. Some of these visions were realized and some were not, but all of these images and documents can tell us more about what Memphis was, what it could have been, and what it might be in the future.</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll8</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

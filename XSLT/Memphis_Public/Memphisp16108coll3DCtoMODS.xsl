@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Arthur Webb Collection</title>
+                </titleInfo>
+                <abstract>Arthur L. Webb, one of Memphis' most renowned local historians and genealogists, was born on December 6, 1943, in Memphis. Webb attended Memphis State University, and soon evolved into a noted journalist, genealogist and historian, specializing in local African-American history. Having joined the Tri-State Defender staff in 1978, Webb worked at the newspaper for twenty-eight years, eventually rising to the rank of Associate Editor before his death on October 25, 2006....</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll3</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

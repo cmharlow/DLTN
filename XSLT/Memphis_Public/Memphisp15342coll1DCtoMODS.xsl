@@ -34,7 +34,6 @@
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
                     <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
-                    <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
                 </location>
             </xsl:if>
             
@@ -46,7 +45,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Britton Duke</title>
+                </titleInfo>
+                <abstract>The Britton Duke Papers are a chronicle of an early Germantown, Tennessee, family. The papers were donated to the Memphis and Shelby County Room by Louise Duke Bedford, great granddaughter of Britton Duke, and her nephew, Edward C. Duke. The collection primarily consists of correspondence and business papers which belonged to Britton Duke. Duke, a prominent cotton planter and civic leader, owned property in Shelby County which was adjacent to the Nashoba Plantation, a utopian community founded by Frances Wright. The Duke property, which ran from Massey Road in East Memphis to Poplar Estates and from U.S. Highway 72 to the Wolf River, joined Nashoba on the east. Britton Duke immigrated from Scotland Neck, North Carolina, to Shelby County in 1830. He was accompanied by his second wife, Mary Louise Duke. On their way to Pea Ridge (sometimes called Pea Mount and now a part of Germantown) the Dukes delayed their trip at LaGrange, Tennessee, where their first daughter was born. Once he arrived in Shelby County, Duke immediately established himself as a leading citizen of the area, where he often acted as an agent or witness for his less wealthy and illiterate neighbors. Britton and Mary Louise Duke had seven children. Britton was very interested in the education of his own family and served as a long-time school commissioner for the 11th district of Shelby County. The papers include correspondence relating to his role as school commissioner, school schedules and receipts for the Duke children's tuition and school supplies. The collection, which was previously called The Duke-Bedford Family Papers, serves as a valuable resource on the Nashoba Plantation and Frances Wright. The collection includes a receipt written to Duke for $20 for timber cut from Nashoba, an 1854 newspaper advertisement for Nashoba and correspondence regarding the Nashoba land. In addition to numerous receipts for farming equipment and household supplies, the collection provides important information on slavery, including bills of sale for slaves which list the slaves by name.</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll1</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
@@ -1077,7 +1085,7 @@
     </xsl:template>
     
     <xsl:template match="dc:identifier">
-        <xsl:if test="normalize-space(.)!='' and not(contains(lower-case(.), 'box')) and not(contains(lower-case(.), 'folder')) and not(contains(lower-case(.), 'drawer'))">
+        <xsl:if test="normalize-space(.)!=''">
             <xsl:choose>
                 <xsl:when test="starts-with(., 'http://')">
                 </xsl:when>
@@ -1085,14 +1093,6 @@
                     <identifier type="local"><xsl:value-of select="normalize-space(.)"/></identifier>
                 </xsl:otherwise>
             </xsl:choose>
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:identifier" mode="shelfLocator">
-        <xsl:if test="normalize-space(.)!=''">
-            <xsl:if test="contains(lower-case(.), 'box') or contains(lower-case(.), 'drawer') or contains(lower-case(.), 'folder')">
-                <shelfLocator><xsl:value-of select="normalize-space(.)"/></shelfLocator>
-            </xsl:if>
         </xsl:if>
     </xsl:template>
     

@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>The Schoolyard</title>
+                </titleInfo>
+                <abstract>Students, teachers, classrooms and playgrounds... The Schoolyard has it all. From the late-19th century through the 20th century, we have all sorts of images that will help you relive your school days. (You thought you could forget that class portrait, didn't you?) Unfortunately, many of the images are unidentified, so if you recognize a person or a place, please let us know! We'd love to update the record.</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll8</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

@@ -34,7 +34,6 @@
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
                     <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
-                    <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
                 </location>
             </xsl:if>
             
@@ -46,7 +45,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Memphis Streetscapes</title>
+                </titleInfo>
+                <abstract>It only takes one glance at a photo of Front Street in the 1890s to see how much Memphis has changed... and how so many things have remained the same! The cobblestones and wagons might be long gone, but the fire station and post office are in the same place and the buildings of Cotton Row are unmistakable. This collection includes images of Memphis streets from the late-19th century to the present. It's also a great place to find pictures of homes, buildings, streetcars, automobiles and businesses. Enjoy a trip through historic Memphis!</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p13039dc</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
@@ -1077,7 +1085,7 @@
     </xsl:template>
     
     <xsl:template match="dc:identifier">
-        <xsl:if test="normalize-space(.)!='' and not(contains(lower-case(.), 'box')) and not(contains(lower-case(.), 'folder')) and not(contains(lower-case(.), 'drawer'))">
+        <xsl:if test="normalize-space(.)!=''">
             <xsl:choose>
                 <xsl:when test="starts-with(., 'http://')">
                 </xsl:when>
@@ -1085,14 +1093,6 @@
                     <identifier type="local"><xsl:value-of select="normalize-space(.)"/></identifier>
                 </xsl:otherwise>
             </xsl:choose>
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:identifier" mode="shelfLocator">
-        <xsl:if test="normalize-space(.)!=''">
-            <xsl:if test="contains(lower-case(.), 'box') or contains(lower-case(.), 'drawer') or contains(lower-case(.), 'folder')">
-                <shelfLocator><xsl:value-of select="normalize-space(.)"/></shelfLocator>
-            </xsl:if>
         </xsl:if>
     </xsl:template>
     

@@ -34,7 +34,6 @@
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
                     <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
-                    <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
                 </location>
             </xsl:if>
             
@@ -46,7 +45,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>The M Files</title>
+                </titleInfo>
+                <abstract>A collection of all things Memphis... a little bit of this, a little bit of that. The M Files is a great place to find portraits and newspaper clippings, but also so much more. As the clippings from the Memphis Information File are digitized, they will be added to The M Files, but so will the smaller manuscript collections and most of the items used to create the topical digital displays in the Memphis Room. </abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p13039coll5</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
@@ -1077,7 +1085,7 @@
     </xsl:template>
     
     <xsl:template match="dc:identifier">
-        <xsl:if test="normalize-space(.)!='' and not(contains(lower-case(.), 'box')) and not(contains(lower-case(.), 'folder')) and not(contains(lower-case(.), 'drawer'))">
+        <xsl:if test="normalize-space(.)!=''">
             <xsl:choose>
                 <xsl:when test="starts-with(., 'http://')">
                 </xsl:when>
@@ -1085,14 +1093,6 @@
                     <identifier type="local"><xsl:value-of select="normalize-space(.)"/></identifier>
                 </xsl:otherwise>
             </xsl:choose>
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:identifier" mode="shelfLocator">
-        <xsl:if test="normalize-space(.)!=''">
-            <xsl:if test="contains(lower-case(.), 'box') or contains(lower-case(.), 'drawer') or contains(lower-case(.), 'folder')">
-                <shelfLocator><xsl:value-of select="normalize-space(.)"/></shelfLocator>
-            </xsl:if>
         </xsl:if>
     </xsl:template>
     

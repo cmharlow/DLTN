@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Benjamin L. Hooks Collection</title>
+                </titleInfo>
+                <abstract>Civil rights pioneer Benjamin Lawson Hooks was born in Memphis on January 31, 1925. A graduate of Howard University and DePaul University Law School, Hooks practiced law in Memphis and in 1965 became the first African American Criminal Court Judge in Shelby County. Hooks was also the first African American to serve on the Federal Communications Commission when he was appointed by President Richard M. Nixon in 1972. Elected executive director of the NAACP in 1977, Hooks led that venerable civil rights organization until his retirement in 1993. In recognition of his dedicated public service, the Benjamin L. Hooks Central Library was named in his honor on October 27, 2005. Two years later, on November 5, 2007, President George W. Bush awarded him the Medal of Freedom for being "a calm yet forceful voice for fairness, opportunity and personal responsibility."</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll15</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

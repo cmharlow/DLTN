@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>German Heritage</title>
+                </titleInfo>
+                <abstract>The German Heritage Collection is a combination of several individual collections and items that have been donated to the library over the years. Combined, the items in the collection offer a glimpse at the lives of first- and second-generation German immigrants in Memphis and the impact this group had upon Memphis in the 19th and 20th centuries. The Dorman-Weiner collection was donated in 2006 by Mrs. Juliette Dorman and includes family photos, clippings, documents and letters from the family of Charles A. Wiener. The letters, in English and German, provide details about the lives of Wiener relatives in post-World War II Germany. The Soehner photos and documents were donated by Mrs. Ernestine O. Soehner and include information on the Soehner family from 1860s to 1920s. Several photos of Memphis in 1898 are part of this donation. The Witzmann collection includes immigration documents, portraits of Emile Witzmann and advertisements for Witzmann pianos. Additional information on Emile Witzmann can be found in the Witzmann Collection housed in the Memphis and Shelby County Room.</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll9</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

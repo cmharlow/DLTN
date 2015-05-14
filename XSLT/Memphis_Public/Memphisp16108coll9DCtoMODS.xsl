@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Hallelujah!</title>
+                </titleInfo>
+                <abstract>Hallelujah!, a film released in 1929, was the first all-black musical and was intended to be a dramatic portrayal of the lives of poor African Americans in the South.  The producer and director, King Vidor, filmed on location in Memphis and Arkansas, and the interiors were shot at Metro-Goldwyn-Mayer studios.  Ultimately, this led the director to use post-synchronized sound, another motion picture first which is sometimes credited to the film....</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll9</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

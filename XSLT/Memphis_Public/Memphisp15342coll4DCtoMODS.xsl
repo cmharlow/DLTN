@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Library History</title>
+                </titleInfo>
+                <abstract>The Benjamin L. Hooks Central Library is the largest facility in the Memphis Public Library and Information Center system. Although opened in 2001, the history of Memphis Public began in the 1880s when the city received a $75,000 gift from the estate of merchant Frederick Cossitt to build a public library in honor of the city where he made his fortune. A section of public land near the Mississippi River was donated by City government who agreed to provide operating expenses for the library. With the promise of city funds it was decided that the entire $75,000 would be used for construction of the library building. As a result of this decision Architect L. B. Wheeler designed an elaborate Romanesque red sandstone building which opened on April 12, 1893....</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll4</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

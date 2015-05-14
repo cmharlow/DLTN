@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Mid-South Flood Collection</title>
+                </titleInfo>
+                <abstract>...During the historic flooding event in mid-May, hundreds of Mid-Southerners flocked downtown to snap once-in-a-lifetime shots of Tom Lee Park and parts of Mud Island submerged in water. Now Ellery Ammons, a 17-year-old senior at St. Mary's Episcopal School, wants some of those shots for a 2011 flood photography archive she's spearheading for the Benjamin L. Hooks Central Library....</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll1</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

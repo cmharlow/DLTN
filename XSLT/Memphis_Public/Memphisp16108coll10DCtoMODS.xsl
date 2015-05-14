@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Colton Greene Collection</title>
+                </titleInfo>
+                <abstract>A leading citizen of Memphis in the decades after the Civil War, Colton Greene is best remembered as the originator of the Memphis Mardi Gras.  Little is known of Greene's early life other than that he was born in South Carolina in 1832.  Greene was living in St. Louis when he enlisted in the Confederate Army in 1861 and took part in an unsuccessful effort to seize the U.S. Arsenal in that city.  He served as commander of the 3rd Missouri Cavalry Brigade throughout the war, taking part in many battles in the Trans-Mississippi Military District....</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll10</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

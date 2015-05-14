@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Memphis Chamber of Commerce Files</title>
+                </titleInfo>
+                <abstract>Formed in 1838, the Memphis Chamber of Commerce has played an integral role in the direction of the city’s development.  Beyond just supporting local industry and commerce, the Chamber has influenced decisions in numerous arenas – education, transportation, recreation, etc.  A rather expansive view can be captured when we glimpse the city’s history through the lens of the Chamber. These digital files, spanning the entirety of the organization's history, were donated by the Chamber’s Director of Operations, Eric Elam, to honor the organization’s 175th anniversary in 2013.  The originals remain with the Greater Memphis Chamber (www.memphischamber.com).</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll12</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

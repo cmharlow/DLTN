@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Saul Brown Photograph Collection</title>
+                </titleInfo>
+                <abstract>Saul Brown was born in 1910 in New York to Russian immigrants. As a young adult, Brown attended Tech High School in Memphis and graduated from the Memphis Academy of Fine Arts with a degree in Fine Art. Brown served in the Air Force during World War II. After graduation, he found work with Loew's Theaters, where he created publicity displays. Brown worked as a staff photographer for the Memphis Press-Scimitar for twenty years, retiring in April of 1980 as the newspaper's chief photographer. After retirement, Brown continued taking publicity photographs for various Memphis theaters as well as images of public figures, personal friends, and Memphis and its residents. He received the Freedom Foundation Award in 1972. In 1986, Brown donated $5,000 to Memphis State University to establish the Saul Brown/Memphis Press Scimitar Award, awarded to students in news journalism and news photography beginning in the 1987-1988 academic year. In 1987, due to his financial support of the school's academic fund, Brown was granted membership in the school's Presidents Club. Saul Brown passed away in Memphis on March 13, 1992 at the home of Myron Taylor, the brother of Mildred, his late wife.</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll4</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Pink Palace Photograph Collection</title>
+                </titleInfo>
+                <abstract>A collection of historically significant images acquired from the Pink Palace Museum in 1976, the Pink Palace Collection features a wide variety of wonderful photographs. From the construction of the Harahan Bridge to portraits of Native Americans, there is a little bit of everything. We owe our deepest gratitude to volunteer Becky Muska, who worked so diligently to digitize this collection in its entirety and to solve some of the mysteries contained within it.</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll10</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

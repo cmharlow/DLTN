@@ -46,7 +46,16 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- project -->
+            <xsl:apply-templates select="dc:source"/>
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Postcards from Memphis</title>
+                </titleInfo>
+                <abstract>Postcards provide a truly unique way to view our city; the images on postcards give us a clue as to what previous generations valued and appreciated most - and what they wanted to show off. Volunteer Angie Price has worked dilligently to create this collection which features the front AND back of almost 250 postcards from Memphis. Once you decipher the handwriting, you might find some pretty interesting stories in this collection.</abstract>
+                <location>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll3</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
