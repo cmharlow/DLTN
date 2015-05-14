@@ -16,20 +16,26 @@
             <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             
-            <originInfo> 
-                <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                <xsl:apply-templates select="dc:source"/> <!-- place of origin? -->
-            </originInfo>
+            <xsl:if test="dc:date|dc:source">
+                <originInfo> 
+                    <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
+                    <xsl:apply-templates select="dc:source"/> <!-- place of origin? -->
+                </originInfo>
+            </xsl:if>
             
-            <physicalDescription>
-                <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
-                <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
-            </physicalDescription>
+            <xsl:if test="dc:format">
+                <physicalDescription>
+                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
+                    <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
+                </physicalDescription>
+            </xsl:if>
             
-            <location>
-                <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
-            </location>
+            <xsl:if test="dc:identifier">
+                <location>
+                    <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
+                </location>
+            </xsl:if>
             
             <xsl:apply-templates select="dc:format" mode="itemType"/> <!-- Item Type -->
             <xsl:apply-templates select="dc:language"/> <!-- language -->
@@ -38,6 +44,15 @@
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- genre -->
             <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Looking Back: The Civil War in Tennessee</title>
+                </titleInfo>
+                <abstract>To commemorate the 150th anniversary of the Civil War (2011-2015), the Tennessee State Library and Archives is sending teams of archivists and conservators to communities across Tennessee. Individuals may schedule an appointment, and we will digitally copy and assist in the preservation of your Civil War era manuscripts, artifacts and photographs. Digital copies of these items, representing the rich Civil War heritage of Tennessee families, will become part of a virtual exhibit commemorating the 150th anniversary of the war in Tennessee....</abstract>
+                <location>
+                    <url>http://www.tn.gov/tsla/cwtn/index.htm</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Tennessee State Library and Archives</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

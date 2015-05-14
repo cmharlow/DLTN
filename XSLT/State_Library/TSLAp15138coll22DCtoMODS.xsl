@@ -16,21 +16,27 @@
             <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             
-            <originInfo> 
-                <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                <xsl:apply-templates select="dc:publisher" /> <!-- publisher -->
-            </originInfo>
+            <xsl:if test="dc:date|dc:publisher">
+                <originInfo> 
+                    <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
+                    <xsl:apply-templates select="dc:publisher" /> <!-- publisher -->
+                </originInfo>
+            </xsl:if>
             
-            <physicalDescription>
-                <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
-                <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
-            </physicalDescription>
+            <xsl:if test="dc:format|dc:type">
+                <physicalDescription>
+                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
+                    <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
+                </physicalDescription>
+            </xsl:if>
             
-            <location>
-                <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
-                <xsl:apply-templates select="dc:source" mode="repository"/> <!-- repository -->
-            </location>
+            <xsl:if test="dc:identifier|dc:source">
+                <location>
+                    <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
+                    <xsl:apply-templates select="dc:source" mode="repository"/> <!-- repository -->
+                </location>
+            </xsl:if>
             
             <xsl:apply-templates select="dc:format" mode="itemType"/> <!-- Item Type -->
             <xsl:apply-templates select="dc:format" mode="genre"/> <!-- Genre -->
@@ -41,6 +47,15 @@
             <xsl:apply-templates select="dc:source"/> <!-- series title -->
             <xsl:apply-templates select="dc:type"/> <!-- genre -->
             <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
+            <relatedItem type='host' displayLabel="Project">
+                <titleInfo>
+                    <title>Southern School News Collection</title>
+                </titleInfo>
+                <abstract>Southern School News was published by the Southern Education Reporting Service (SERS) a fact-finding agency established by southern newspaper editors and educators with the aim of providing unbiased information to school administrators, public officials and interested lay citizens on developments in education arising from the U.S. Supreme Court opinion of May 17, 1954, Brown v. Board of Education of Topeka Kansas. This full text searchable digital collection is comprised of 11 volumes with 12 Issues containing twelve to twenty-four pages each which were published from September 1954 through June 1965 in Nashville, Tennessee. Beginning with the publication of the first issue, September 3, 1954, each journal impartially reported desegregation of U.S. public schools state by state through primary documentation and statistical evidence. Changes in public school education in 17 United States southern and border states as well as the District of Columbia was communicated to benefit educational administrators and officials. The goal of the publication was to provide "a reliable, central source of information on developments in education arising from the United States Supreme Court decision declaring compulsory racial segregation in the public schools to be unconstitutional." (Southern School News, Volume 11 Issue 12, p. 1). The Board of Directors for the publication was drawn from a wide divergence of both political and educational backgrounds to include both segregation and desegregation interpretations of the Supreme Court ruling. Members of the Board included such distinguished Tennessee leaders as presidents and chancellors of Fisk and Vanderbilt Universities as well as George Peabody College. Also included were the editors of both The Nashville Banner and The Nashville Tennessean.</abstract>
+                <location>
+                    <url>http://tn.gov/tsla/TeVAsites/SouthernSchoolNews/index.htm</url>
+                </location>
+            </relatedItem>
             <recordInfo>
                 <recordContentSource>Tennessee State Library and Archives</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>

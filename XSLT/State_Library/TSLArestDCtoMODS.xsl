@@ -19,22 +19,28 @@
             <xsl:apply-templates select="dc:contributor"/> <!-- name -->
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             
-            <originInfo> 
-                <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                <xsl:apply-templates select="dc:publisher" /> <!-- publisher -->
-            </originInfo>
+            <xsl:if test="dc:date|dc:publisher">
+                <originInfo> 
+                    <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
+                    <xsl:apply-templates select="dc:publisher" /> <!-- publisher -->
+                </originInfo>
+            </xsl:if>
             
-            <physicalDescription>
-                <xsl:apply-templates select="dc:format"/> <!-- internetMediaTypes -->
-                <xsl:apply-templates select="dc:format" mode="extent"/> <!-- some extent -->
-                <xsl:apply-templates select="dc:coverage" mode="extent"/> <!-- some extent -->
-                <xsl:apply-templates select="dc:relation" mode="form"/> <!-- some forms pulled out -->
-            </physicalDescription>
+            <xsl:if test="dc:format|dc:coverage|dc:relation">
+                <physicalDescription>
+                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaTypes -->
+                    <xsl:apply-templates select="dc:format" mode="extent"/> <!-- some extent -->
+                    <xsl:apply-templates select="dc:coverage" mode="extent"/> <!-- some extent -->
+                    <xsl:apply-templates select="dc:relation" mode="form"/> <!-- some forms pulled out -->
+                </physicalDescription>
+            </xsl:if>
             
-            <location>
-                <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                <xsl:apply-templates select="dc:identifier" mode="locationurl"/>
-            </location>
+            <xsl:if test="dc:identifier">
+                <location>
+                    <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/>
+                </location>
+            </xsl:if>
             
             <xsl:apply-templates select="dc:format" mode="itemType"/> <!-- Item Type -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
@@ -79,7 +85,7 @@
                         </detail>
                     </part>
                 </xsl:when>
-                <xsl:otherwise>
+                <xsl:when test="starts-with(normalize-space(.), 'SSN ')">
                     <titleInfo>
                         <title>Southern School News</title>
                     </titleInfo>
@@ -88,6 +94,11 @@
                             <number><xsl:value-of select="replace(normalize-space(.), 'SSN ', '')"/></number>
                         </detail>
                     </part>
+                </xsl:when>
+                <xsl:otherwise>
+                    <titleInfo>
+                        <title><xsl:value-of select="normalize-space(.)"/></title>
+                    </titleInfo>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
