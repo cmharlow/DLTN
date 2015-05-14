@@ -75,6 +75,9 @@
                             <role>
                                 <roleTerm type="text">Importer</roleTerm>
                             </role> 
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+                            </role> 
                         </name> 
                     </xsl:when>
                     <xsl:when test="contains(normalize-space(.), 'Architect')">
@@ -83,6 +86,9 @@
                             <role>
                                 <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/arc">Architect</roleTerm>
                             </role> 
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
+                            </role> 
                         </name> 
                     </xsl:when>
                     <xsl:when test="contains(normalize-space(.), 'Designed')">
@@ -90,6 +96,9 @@
                             <namePart><xsl:value-of select="replace(normalize-space(.), 'Designed by ', '')"/></namePart>
                             <role>
                                 <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/dsr">Designer</roleTerm>
+                            </role> 
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
                             </role> 
                         </name>
                     </xsl:when>
@@ -101,6 +110,9 @@
                             </role> 
                             <role>
                                 <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prt">Printer</roleTerm>
+                            </role> 
+                            <role>
+                                <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
                             </role> 
                         </name>
                     </xsl:when>
@@ -147,6 +159,9 @@
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/arc">Architect</roleTerm>
                                 </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+                                </role> 
                             </name> 
                         </xsl:when>
                         <xsl:when test="contains(normalize-space(.), 'Architect')">
@@ -154,6 +169,9 @@
                                 <namePart><xsl:value-of select="replace(normalize-space(.), ', Architect', '')"/></namePart>
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/arc">Architect</roleTerm>
+                                </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
                                 </role> 
                             </name> 
                         </xsl:when>
@@ -163,6 +181,9 @@
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/art">Artist</roleTerm>
                                 </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+                                </role> 
                             </name> 
                         </xsl:when>
                         <xsl:when test="contains(normalize-space(.), 'Drawn by')">
@@ -170,6 +191,9 @@
                                 <namePart><xsl:value-of select="replace(normalize-space(.), 'Drawn by ', '')"/></namePart>
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/art">Artist</roleTerm>
+                                </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
                                 </role> 
                             </name> 
                         </xsl:when>
@@ -179,6 +203,9 @@
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/edt">Editor</roleTerm>
                                 </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+                                </role> 
                             </name> 
                         </xsl:when>
                         <xsl:when test="contains(normalize-space(.), 'Edited by')">
@@ -186,6 +213,9 @@
                                 <namePart><xsl:value-of select="replace(normalize-space(.), 'Edited by ', '')"/></namePart>
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/edt">Editor</roleTerm>
+                                </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
                                 </role> 
                             </name> 
                         </xsl:when>
@@ -195,6 +225,9 @@
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
                                 </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+                                </role> 
                             </name> 
                         </xsl:when>
                         <xsl:when test="contains(normalize-space(.), 'Out-Door Photographer')">
@@ -202,6 +235,9 @@
                                 <namePart><xsl:value-of select="replace(normalize-space(.), 'Out-Door Photographer', '')"/></namePart>
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
+                                </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
                                 </role> 
                             </name> 
                         </xsl:when>
@@ -211,6 +247,9 @@
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
                                 </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+                                </role> 
                             </name> 
                         </xsl:when>
                         <xsl:when test="contains(normalize-space(.), 'Photograph by')">
@@ -218,6 +257,9 @@
                                 <namePart><xsl:value-of select="replace(normalize-space(.), 'Photograph by ', '')"/></namePart>
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
+                                </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
                                 </role> 
                             </name> 
                         </xsl:when>
@@ -227,6 +269,9 @@
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
                                 </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+                                </role> 
                             </name> 
                         </xsl:when>
                         <xsl:when test="contains(normalize-space(.), 'Photographer')">
@@ -235,6 +280,9 @@
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
                                 </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+                                </role> 
                             </name> 
                         </xsl:when>
                         <xsl:when test="contains(normalize-space(.), 'Taken by')">
@@ -242,6 +290,9 @@
                                 <namePart><xsl:value-of select="replace(normalize-space(.), 'Taken by ', '')"/></namePart>
                                 <role>
                                     <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
+                                </role> 
+                                <role>
+                                    <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
                                 </role> 
                             </name> 
                         </xsl:when>
