@@ -99,6 +99,9 @@
                         <role>
                             <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ivr"><xsl:text>Interviewer</xsl:text></roleTerm>
                         </role> 
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb"><xsl:text>Contributor</xsl:text></roleTerm>
+                        </role> 
                     </name>
                 </xsl:when>
                 <xsl:when test="contains(., 'digitization')">
@@ -106,6 +109,9 @@
                         <namePart><xsl:value-of select="replace(., ', digitization', '')"/></namePart>
                         <role>
                             <roleTerm type="text"><xsl:text>Digitizer</xsl:text></roleTerm>
+                        </role> 
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb"><xsl:text>Contributor</xsl:text></roleTerm>
                         </role> 
                     </name>
                 </xsl:when>
@@ -117,6 +123,9 @@
                         <role>
                             <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prc"><xsl:text>Process contact</xsl:text></roleTerm>
                         </role> 
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb"><xsl:text>Contributor</xsl:text></roleTerm>
+                        </role> 
                     </name>
                 </xsl:when>
                 <xsl:when test="contains(., 'processor')">
@@ -124,6 +133,9 @@
                         <namePart><xsl:value-of select="replace(., ', processor', '')"/></namePart>
                         <role>
                             <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prc"><xsl:text>Process contact</xsl:text></roleTerm>
+                        </role> 
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb"><xsl:text>Contributor</xsl:text></roleTerm>
                         </role> 
                     </name>
                 </xsl:when>
@@ -133,6 +145,9 @@
                         <role>
                             <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/vdg"><xsl:text>Videographer</xsl:text></roleTerm>
                         </role> 
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb"><xsl:text>Contributor</xsl:text></roleTerm>
+                        </role> 
                     </name>
                 </xsl:when>
                 <xsl:when test="contains(., '(camera)')">
@@ -140,6 +155,9 @@
                         <namePart><xsl:value-of select="replace(., ' (camera)', '')"/></namePart>
                         <role>
                             <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/vdg"><xsl:text>Videographer</xsl:text></roleTerm>
+                        </role> 
+                        <role>
+                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb"><xsl:text>Contributor</xsl:text></roleTerm>
                         </role> 
                     </name>
                 </xsl:when>
@@ -197,15 +215,12 @@
                         <role>
                             <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prv"><xsl:text>Provider</xsl:text></roleTerm>
                         </role>
-                    </name>
-                </xsl:when>
-                <xsl:when test="contains(., 'nknown')">
-                    <name>
-                        <namePart>Unknown</namePart>
                         <role>
                             <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre"><xsl:text>Creator</xsl:text></roleTerm>
                         </role>
-                    </name> 
+                    </name>
+                </xsl:when>
+                <xsl:when test="contains(., 'nknown')">
                 </xsl:when>
                 <xsl:otherwise>
                     <name>
