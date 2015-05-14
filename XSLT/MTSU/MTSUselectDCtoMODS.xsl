@@ -17,23 +17,29 @@
             <xsl:apply-templates select="dc:contributor" /> <!-- name/role -->
             <xsl:apply-templates select="dc:creator" /> <!-- name/role -->
             
-            <originInfo> 
-                <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                <xsl:apply-templates select="dc:publisher"/> <!-- place of origin - publishers all repositories -->
-            </originInfo>
+            <xsl:if test="dc:date|dc:publisher">
+                <originInfo> 
+                    <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
+                    <xsl:apply-templates select="dc:publisher"/> <!-- place of origin - publishers all repositories -->
+                </originInfo>
+            </xsl:if>
             
-            <physicalDescription>
-                <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
-                <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
-            </physicalDescription>
+            <xsl:if test="dc:format|dc:type">
+                <physicalDescription>
+                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
+                    <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
+                </physicalDescription>
+            </xsl:if>
             
-            <location>
-                <xsl:apply-templates select="dc:contributor" mode="repository" /> <!-- repository of physical item parsed form contributor field -->
-                <xsl:apply-templates select="dc:creator" mode="repository" /> <!-- repository of physical item parsed form creator field -->
-                <xsl:apply-templates select="dc:publisher" mode="repository" /> <!-- repository of physical item parsed form publisher field -->
-                <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
-            </location>
+            <xsl:if test="dc:contributor|dc:creator|dc:publisher|dc:identifier">
+                <location>
+                    <xsl:apply-templates select="dc:contributor" mode="repository" /> <!-- repository of physical item parsed form contributor field -->
+                    <xsl:apply-templates select="dc:creator" mode="repository" /> <!-- repository of physical item parsed form creator field -->
+                    <xsl:apply-templates select="dc:publisher" mode="repository" /> <!-- repository of physical item parsed form publisher field -->
+                    <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
+                </location>
+            </xsl:if>
             
             <xsl:apply-templates select="dc:language"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
@@ -46,7 +52,7 @@
             <xsl:apply-templates select="dc:source"/>
             <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
             <recordInfo>
-                <recordContentSource>Public Library of Nashville and Davidson County</recordContentSource>
+                <recordContentSource>Middle Tennessee State University Library</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
                 <languageOfCataloging>
                     <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
