@@ -163,59 +163,59 @@
     <!-- TEMPLATES WITH NO CHANGES CURRENTLY FOR DLTN -->
     
     <xsl:template match="mods:identifier">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:titleInfo">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:typeOfResource">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:genre">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:originInfo">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:language">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:physicalDescription">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:abstract">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:note">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:subject">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:relatedItem">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:accessCondition">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:part">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:recordInfo">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
 </xsl:stylesheet>
