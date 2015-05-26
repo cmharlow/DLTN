@@ -1,7 +1,9 @@
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
     xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:mods="http://www.loc.gov/mods/v3"
-    version="2.0">
+    version="2.0" exclude-result-prefixes="mods">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
+    
+    
     
     <!-- parsed out top-level elements for ease of tweaking as feedback comes in. 
                 as source feed is worked on, this can be simplified -->
