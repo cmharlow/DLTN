@@ -601,8 +601,7 @@
             <xsl:variable name="recordinfo" select="substring-after($idvalue,'/cdm/ref/collection/')"/>
             <xsl:variable name="alias" select="substring-before($recordinfo,'/id/')"/>
             <xsl:variable name="pointer" select="substring-after($recordinfo,'/id/')"/>
-            <url access="preview"><xsl:value-of select="concat($contentdmroot,'/utils/getthumbnail/collection/',$alias,'/id/',$pointer)"/></url> <!--CONTENTdm thumbnail url-->
-            <!-- end CONTENTdm thumbnail url processing -->           
+            <url access="preview"><xsl:value-of select="concat($contentdmroot,'/utils/getthumbnail/collection/',$alias,'/id/',$pointer)"/></url> <!--CONTENTdm thumbnail url-->        
         </xsl:if>
     </xsl:template>
     
