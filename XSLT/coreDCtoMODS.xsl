@@ -227,8 +227,27 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
+                    <!-- REVISIONS -->
+                    <xsl:when test="matches(normalize-space(.), '^\d{4} \(.+revis.+\)$')">
+                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="substring-before(normalize-space(.), ' \(')"/></dateCreated>
+                    </xsl:when>
                   <!-- QUESTIONABLE -->
-                    <!-- to be filled in -->
+                    <xsl:when test="contains(normalize-space(lower-case(.)), '?')">
+                        <xsl:choose>
+                            <xsl:when test="matches(normalize-space(.), '^\?{4}-\d{2}-\?{2}$') or matches(normalize-space(.), '^\?{4}-\d{2}$') or matches(normalize-space(.), '^\?{4}-\d{2}-\d{2}$')">
+                                <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(.), '\?', 'u')"/></dateCreated>
+                            </xsl:when>
+                            <xsl:when test="matches(normalize-space(.), '^\d{4}-\d{2}-\d{2} (\?)$')">
+                                <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(.), ' (\?)', '')"/></dateCreated>
+                            </xsl:when>
+                            <xsl:when test="matches(normalize-space(.), '^\?{4}-\d{2}-\?{2} \[.+\]$') or matches(normalize-space(.), '^\d{2}\?{2}-\d{2}-\?{2} \[.+\]$') or matches(normalize-space(.), '^\?{4}-\d{2} \[.+\]$') or matches(normalize-space(.), '^\?{4}-\d{2}-\d{2} \[.+\]$')">
+                                <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="substring-before(replace(normalize-space(.), '\?', 'u'), '[')"/></dateCreated>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
                   <!-- APPROXIMATE -->
                     <xsl:when test="contains(normalize-space(lower-case(.)), 'circa') or contains(normalize-space(lower-case(.)), 'c.') or contains(normalize-space(lower-case(.)), 'ca.')">
                         <xsl:choose>
@@ -267,7 +286,7 @@
     </xsl:template>
     
     <xsl:template match="dc:identifier">
-        <xsl:if test="normalize-space(.)!='' and not(starts-with(., 'http://'))">
+        <xsl:if test="normalize-space(.)!='' and not(starts-with(., 'http://'))  and not(contains(lower-case(.), 'box')) and not(contains(lower-case(.), 'folder')) and not(contains(lower-case(.), 'drawer'))">
             <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
         </xsl:if>
     </xsl:template>
@@ -286,16 +305,16 @@
                 <xsl:if test="normalize-space(.)!=''">
                     <language>
                         <xsl:choose>
-                            <xsl:when test="contains(normalize-space(lower-case(.)), 'english') or contains(normalize-space(lower-case(.)), 'englsih') or contains(normalize-space(lower-case(.)), 'enlish')">
+                            <xsl:when test="starts-with(normalize-space(lower-case(.)), 'eng') or contains(normalize-space(lower-case(.)), 'enlish')">
                                 <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
                             </xsl:when>
                             <xsl:when test="contains(normalize-space(lower-case(.)), 'dutch')">
                                 <languageTerm type="code" authority="iso639-2b">dut</languageTerm>
                             </xsl:when>
-                            <xsl:when test="contains(normalize-space(lower-case(.)), 'french')">
+                            <xsl:when test="starts-with(normalize-space(lower-case(.)), 'fre')">
                                 <languageTerm type="code" authority="iso639-2b">fre</languageTerm>
                             </xsl:when>
-                            <xsl:when test="normalize-space(lower-case(.))='german'">
+                            <xsl:when test="starts-with(normalize-space(lower-case(.)),'german')">
                                 <languageTerm type="code" authority="iso639-2b">deu</languageTerm>
                             </xsl:when>
                             <xsl:when test="normalize-space(lower-case(.))='italian'">
