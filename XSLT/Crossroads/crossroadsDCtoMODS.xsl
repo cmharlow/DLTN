@@ -4,6 +4,11 @@
     xmlns:oai="http://www.openarchives.org/OAI/2.0/"
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
+    
+    <xsl:include href="../coreDCtoMODS.xsl"/>
+    <xsl:include href="../!thumbnails/FedorathumbnailDCtoMODS.xsl"/>
+    <xsl:include href="../!remediation/GettyGenre.xsl"/>
+    <xsl:include href="../!remediation/LCSHtopics.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -65,18 +70,35 @@
                 <languageOfCataloging>
                     <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
                 </languageOfCataloging>
-                <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core record by the Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a stylesheet available at https://github.com/cmh2166/DLTN. Metadata originally created in a locally modified version of qualified Dublin Core using DSpace (data dictionary available: https://wiki.lib.utk.edu/display/DPLA/Crossroads+Mapping+Notes.)</recordOrigin>
+                <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core record by the Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a stylesheet available at https://github.com/cmh2166/DLTN. Metadata originally created in a locally modified version of qualified Dublin Core using Fedora (data dictionary available: https://wiki.lib.utk.edu/display/DPLA.)</recordOrigin>
             </recordInfo>
         </mods>
     </xsl:template>
     
-    <xsl:template match="dc:title">
-        <xsl:if test="normalize-space(.)!=''">
-            <titleInfo type="alternative">
-                <title><xsl:value-of select="normalize-space(.)"/></title>
-            </titleInfo>
-        </xsl:if>
-    </xsl:template>
+    <!-- Collection = Institution here, so there is both the collection and institution specific transform. 
+        Included templates:
+        
+        dc:availability
+        dc:bibliographiccitation
+        dc:contributor
+        dc:coverage
+        dc:creator
+        dc:format
+        dc:hasversion
+        dc:medium
+        dc:medium mode="form"
+        dc:provenance
+        dc:provenance mode="digitalOrigin"
+        dc:publisher
+        dc:relation
+        dc:source
+        dc:source mode="physicalLocation"
+        dc:spatial
+        dc:subject
+        dc:temporal
+        dc:type
+        -->
+        
     
     <xsl:template match="dc:availability">
         <extension xmlns:dcterms="http://purl.org/dc/terms/">
@@ -86,7 +108,7 @@
     
     <xsl:template match="dc:bibliographiccitation">
         <xsl:if test="lower-case(normalize-space(.)) != 'n/a'">
-            <accessCondition type="use and reproduction"><xsl:value-of select="."/></accessCondition>
+            <accessCondition><xsl:value-of select="."/></accessCondition>
         </xsl:if>
     </xsl:template>
     
@@ -207,20 +229,10 @@
     
     <xsl:template match="dc:creator">
         <xsl:variable name="creatorvalue" select="normalize-space(.)"/>
-        <xsl:if test="normalize-space(.)!='' and lower-case(normalize-space(.)) != 'n/a'">
+        <xsl:if test="normalize-space(.)!='' and lower-case(normalize-space(.)) != 'n/a' and not(contains(., 'nknown'))">
             <xsl:choose>
                 <xsl:when test="contains(., 'Crossroad')">
-                    <name>
-                        <namePart>Rhodes College. Crossroads to Freedom Digital Archive</namePart>
-                        <role>
-                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/prv"><xsl:text>Provider</xsl:text></roleTerm>
-                        </role>
-                        <role>
-                            <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre"><xsl:text>Creator</xsl:text></roleTerm>
-                        </role>
-                    </name>
-                </xsl:when>
-                <xsl:when test="contains(., 'nknown')">
+                    <!-- skip -->
                 </xsl:when>
                 <xsl:otherwise>
                     <name>
@@ -232,60 +244,6 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>          
-    </xsl:template>
-    
-    <xsl:template match="dc:date"> <!-- needs further work to better handle date qualifiers, which aren't used at rhodes -->
-        <xsl:variable name="datevalue" select="normalize-space(.)"/>
-        <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
-            <xsl:choose>
-                <xsl:when test="starts-with(., 'year unknown')">
-                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(lower-case(.), 'year unknown', 'uuuu')"/></dateCreated>
-                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                </xsl:when>
-                <xsl:when test="starts-with(lower-case(.), 'xxxx')">
-                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(lower-case(.), 'xxxx', 'uuuu')"/></dateCreated>
-                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                </xsl:when>
-                <xsl:when test="ends-with(., 'unknown day')">
-                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(lower-case(.), 'unknown day', 'uu')"/></dateCreated>
-                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                </xsl:when>
-                <xsl:when test="contains(lower-case(.), 'unknown') or contains(lower-case(.), 'undated')">
-                    <dateCreated encoding="edtf" keyDate="yes">uuuu</dateCreated>
-                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                </xsl:when>
-                <xsl:when test="contains(., '[')">
-                    <dateCreated encoding="edtf" keyDate="yes" qualifier="inferred"><xsl:value-of select="substring(., 2, 5)"/> </dateCreated>
-                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), '^\d{4}$') or matches(normalize-space(.), '^\d{4}-\d{2}$') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}$')">
-                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="."/></dateCreated>
-                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                </xsl:when>
-                <!--here be dragons, dude-->
-                <xsl:when test="matches(normalize-space(.), '^\d{2}-\d{2}-\d{4}$') or matches(normalize-space(.), '^\d{2}/\d{2}/\d{4}$')">
-                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,7, 10),'-'), substring(., 1, 5))"/> </dateCreated>
-                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), '^\d{1}-\d{2}-\d{4}$') or matches(normalize-space(.), '^\d{1}/\d{2}/\d{4}$')">
-                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="concat(concat(substring(.,6, 9),'-'), substring(., 1, 4))"/> </dateCreated>
-                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                </xsl:when>
-                <xsl:when test="matches(normalize-space(.), '^\d{2}-\d{2}$')">
-                    <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="concat('uuuu-', normalize-space(.))"/> </dateCreated>
-                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                </xsl:when>
-                <xsl:otherwise>
-                    <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:description">
-        <xsl:if test="normalize-space(.)!=''">
-            <abstract><xsl:value-of select="normalize-space(.)"/></abstract>
-        </xsl:if>
     </xsl:template>
     
     <xsl:template match="dc:format"> <!-- should go into PhysicalDescription wrapper -->
@@ -337,195 +295,12 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="dc:identifier">
-        <xsl:if test="normalize-space(.)!=''">
-            <xsl:choose>
-                <xsl:when test="starts-with(., 'rds')">
-                    <identifier type="pid"><xsl:value-of select="normalize-space(.)"/></identifier>
-                </xsl:when>
-                <xsl:when test="starts-with(., 'http://')">
-                    <!-- skip, will be handled in identifier mode:URL -->
-                </xsl:when>
-                <xsl:otherwise>
-                    <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:identifier" mode="URL">
-        <xsl:if test="normalize-space(.)!='' and starts-with(., 'http://')">
-            <url usage="primary display" access="object in context"><xsl:value-of select="normalize-space(.)"/></url>
-        </xsl:if>
-    </xsl:template>
-    
-    <!-- Crossroads Thumbnails-->
-    
-    <xsl:template match="dc:identifier" mode="locationurl">
-        <xsl:variable name="idvalue" select="normalize-space(.)"/>
-        <xsl:if test="starts-with($idvalue,'rds:')"> 
-            <!-- Crossroads Fedora puts the PID in an <identifier> field in the OAI record --><!-- process Fedora thumbnail urls -->           
-            <xsl:variable name="PID" select="substring-after($idvalue,'rds:')"/>
-            <url access="preview"><xsl:value-of select="concat('http://crossroads.rhodes.edu:9090/fedora/get/rds:',$PID,'/thumbnail_100x75.jpg')"/></url> <!--CONTENTdm thumbnail url-->
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:language">
-        <xsl:if test="normalize-space(.)!=''">
-            <language>
-                <xsl:choose>
-                    <xsl:when test="contains(normalize-space(lower-case(.)), 'english') or contains(normalize-space(lower-case(.)), 'englsih') or contains(normalize-space(lower-case(.)), 'enlish')">
-                        <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <languageTerm type="text"><xsl:value-of select="normalize-space(.)"/></languageTerm>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </language>
-        </xsl:if>
-    </xsl:template>
-    
     <xsl:template match="dc:medium">
-        <xsl:choose>
-            <xsl:when test="contains(lower-case(.), 'application')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027002">application forms</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'audio cassette')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028661">audiocassettes</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'audio')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028633">sound recordings</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'interview')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026392">interviews</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'biography')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300080102">biographies (documents)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'book')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028051">books</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'booklet')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300311670">booklets</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'business card')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026767">business cards</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'certificate')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026841">certificates</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'check')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300191339">checks (bank checks)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'digital image')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300215302">digital images</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'digital video')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300312050">digital moving image formats</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'document')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026030">documents</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'email')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300149026">electronic mail</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'exam')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026936">examinations (documents)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'flier') or contains(lower-case(.), 'flyer')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300224742">fliers (printed matter)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'form')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300049060">forms (documents)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'handbill') or contains(lower-case(.), 'handout')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027033">handbills</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'notes')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027200">notes</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'sheet music')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026430">sheet music</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'image')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300264387">images (object genre)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'label')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028730">labels (identifying artifacts)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'letter')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026879">letters (correspondence)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'balance sheet')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027486">balance sheets</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'manual')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026395">manuals (instructional materials)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'map')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028094">maps (documents)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'memo')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026906">memorandums</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'newsletter')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026652">newsletters</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'newspaper')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026656">newspapers</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'magnetic tape')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028558">magnetic tapes</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'pamphlet') or contains(lower-case(.), 'pamplet')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300220572">pamphlets</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'copy')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300257688">copies (document genres)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'photograph') or contains(lower-case(.), 'phothgraph')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300046300">photographs</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'postage')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300037321">postage stamps</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'postcard')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026816">postcards</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'poster')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027221">posters</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'program')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027240">programs (documents)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'receipt')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027573">receipts (financial records)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'speech')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026671">speeches (documents)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'sticker')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300207379">stickers</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'tape')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300014685">tape (materials)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'text')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300263751">texts (document genres)</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'tickets')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300133073">admission tickets</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'video')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028682">video recordings</genre>
-            </xsl:when>
-            <xsl:when test="contains(lower-case(.), 'voucher')">
-                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027574">vouchers (sales records)</genre>
-            </xsl:when>
-            <xsl:otherwise>
-                <genre><xsl:value-of select="normalize-space(lower-case(.))"/></genre>
-            </xsl:otherwise>
-        </xsl:choose>
+        <xsl:if test="normalize-space(.)!=''">
+            <xsl:call-template name="AATgenre">
+                <xsl:with-param name="term"><xsl:value-of select="lower-case(normalize-space(.))"/></xsl:with-param>
+            </xsl:call-template>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="dc:medium" mode="form">
@@ -588,19 +363,6 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:rights">
-        <xsl:choose>
-            <xsl:when test="matches(normalize-space(.),'^Public domain\.$') or matches(normalize-space(.),'^Public Domain$') or matches(normalize-space(.),'^Public Domain\.$')">
-                <accessCondition type="use and reproduction">Public domain</accessCondition>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:if test="normalize-space(.)!=''">
-                    <accessCondition type="use and reproduction"><xsl:value-of select="normalize-space(.)"/></accessCondition>
-                </xsl:if>     
-            </xsl:otherwise>
-        </xsl:choose>
     </xsl:template>
     
     <!-- The top spatial facets that cover about 99% of the total records are accounted for in the template below. This process was semi automated using OpenRefine in the context of this particular collection -->
@@ -841,11 +603,6 @@
             <xsl:when test="string(text()) = 'Text' or string(text()) = 'text'">
                 <typeOfResource>text</typeOfResource>
             </xsl:when>
-            <xsl:otherwise>
-                <genre>
-                    <xsl:value-of select="lower-case(.)"/>
-                </genre>
-            </xsl:otherwise>
         </xsl:choose>  
     </xsl:template>
     
