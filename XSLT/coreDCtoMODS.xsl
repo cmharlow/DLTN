@@ -302,7 +302,7 @@
     <xsl:template match="dc:language">
         <xsl:for-each select="tokenize(normalize-space(lower-case(.)), ';')">
             <xsl:for-each select="tokenize(normalize-space(.), ' &amp; ')">
-                <xsl:if test="normalize-space(.)!=''">
+                <xsl:if test="normalize-space(.)!='' and not(contains(lower-case(.), 'box 3')) and not(contains(lower-case(.), 'europe - 1974'))">
                     <language>
                         <xsl:choose>
                             <xsl:when test="starts-with(normalize-space(lower-case(.)), 'eng') or contains(normalize-space(lower-case(.)), 'enlish')">

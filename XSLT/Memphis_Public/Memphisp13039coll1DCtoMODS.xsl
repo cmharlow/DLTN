@@ -7,6 +7,7 @@
     
     <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
     <xsl:include href="../coreDCtoMODS.xsl"/>
+    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -37,6 +38,7 @@
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
                     <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail URL -->
+                    <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
             </xsl:if>
             
@@ -66,9 +68,17 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
-                    <xsl:when test="matches(normalize-space(.), '^\d{4}s$') or matches(normalize-space(.), '^\d{4}s to \d{4}s$')">
+                    <xsl:when test="matches(normalize-space(.), '\d{4}s$') or matches(normalize-space(.), '^\d{4}-\d{4}$')">
                         <subject>
                             <temporal><xsl:value-of select="."/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'memphis')">
+                        <subject>
+                            <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n2007043373">Memphis (Tenn)</geographic>
+                            <cartographics>
+                                <coordinates>35.14953, -90.04898</coordinates>
+                            </cartographics>
                         </subject>
                     </xsl:when>
                     <xsl:otherwise>
@@ -83,7 +93,7 @@
     
     <xsl:template match="dc:format">
         <xsl:for-each select="tokenize(normalize-space(lower-case(.)), ';')">
-            <xsl:for-each select="tokenize(., ', ')">
+            <xsl:for-each select="tokenize(., ',')">
                 <xsl:if test="normalize-space(.)!=''">
                     <xsl:choose>
                         <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">

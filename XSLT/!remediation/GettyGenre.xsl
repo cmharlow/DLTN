@@ -130,6 +130,9 @@
             <xsl:when test="contains($genreterm, 'catalog')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026059">catalogs (documents)</genre>
             </xsl:when>
+            <xsl:when test="contains($genreterm, 'charter')">
+                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027621">charters</genre>
+            </xsl:when>
             <xsl:when test="contains($genreterm, 'cityscape')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300015571">cityscapes (representations)</genre>
             </xsl:when>
@@ -270,6 +273,9 @@
             </xsl:when>
             <xsl:when test="contains($genreterm, 'miniature')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300033936">miniatures (paintings)</genre>
+            </xsl:when>
+            <xsl:when test="contains($genreterm, 'minutes')">
+                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027440">minutes (administrative records)</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'newsletter')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026652">newsletters</genre>
