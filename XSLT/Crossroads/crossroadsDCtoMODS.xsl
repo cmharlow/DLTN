@@ -9,6 +9,7 @@
     <xsl:include href="../!thumbnails/FedorathumbnailDCtoMODS.xsl"/>
     <xsl:include href="../!remediation/GettyGenre.xsl"/>
     <xsl:include href="../!remediation/LCSHtopics.xsl"/>
+    <xsl:include href="../!remediation/Spatial.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -106,7 +107,7 @@
     
     <xsl:template match="dc:bibliographiccitation">
         <xsl:if test="lower-case(normalize-space(.)) != 'n/a'">
-            <accessCondition><xsl:value-of select="."/></accessCondition>
+            <note><xsl:value-of select="."/></note>
         </xsl:if>
     </xsl:template>
     
@@ -330,16 +331,16 @@
     <xsl:template match="dc:relation">
         <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
             <xsl:choose>
-                <xsl:when test="contains(.,'http')"> 
+                <xsl:when test="contains(.,'http') or starts-with(., 'rdf:')"> 
                     <relatedItem>
-                        <location>
-                            <url><xsl:value-of select="normalize-space(.)"/></url>
-                        </location>
-                    </relatedItem>
-                </xsl:when>
-                <xsl:when test="starts-with(., 'rds:')">
-                    <relatedItem>
-                        <identifier type="pid"><xsl:value-of select="normalize-space(.)"/></identifier>
+                        <xsl:if test="contains(., 'http')">
+                            <location>
+                                <url><xsl:value-of select="normalize-space(.)"/></url>
+                            </location>
+                        </xsl:if>
+                        <xsl:if test="starts-with(., 'rdf:')">
+                            <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
+                        </xsl:if>
                     </relatedItem>
                 </xsl:when>
                 <xsl:when test="contains(normalize-space(lower-case(.)), 'Tennessee')">
@@ -363,156 +364,24 @@
         </xsl:if>
     </xsl:template>
     
-    <!-- The top spatial facets that cover about 99% of the total records are accounted for in the template below. This process was semi automated using OpenRefine in the context of this particular collection -->
+    <xsl:template name="dc:rightsRepair"> <!-- some elements missing rights statement, which is required. Existing mapped, those without, given generic.-->
+        <xsl:choose>
+            <xsl:when test="dc:rights">
+                <accessCondition><xsl:value-of select="dc:rights"/></accessCondition>
+            </xsl:when>
+            <xsl:otherwise>
+                <accessCondition>Crossroads to Freedom Digital Archive is licensed under the Creative Commons Attribution License. Use of the site's content is subject to the conditions and terms of use on our Legal Notices page.</accessCondition>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
     
+    <!-- The top spatial facets that cover about 99% of the total records are accounted for in the template below. This process was semi automated using OpenRefine in the context of this particular collection -->
     <xsl:template match="dc:spatial">
         <xsl:if test="not(matches(., '\d+\S+')) and not(contains(normalize-space(lower-case(.)), 'n/a')) and not(contains(normalize-space(lower-case(.)), 'unknown')) and not(contains(normalize-space(lower-case(.)), 'various'))"> <!-- data contains some random numbers/dates -->
             <xsl:for-each select="tokenize(., ' and ')">
-                <xsl:choose>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'evergreen') and contains(normalize-space(lower-case(.)),'memphis') and contains(normalize-space(lower-case(.)),'tennessee')">
-                        <subject>
-                            <geographic>Evergreen Historic District (Memphis, Tenn.)</geographic>
-                            <cartographics>
-                                <coordinates>35.1479, -90.0072</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'memphis') and contains(normalize-space(lower-case(.)),'tennessee')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n78095779">Memphis (Tenn.)</geographic>
-                            <cartographics>
-                                <coordinates>35.14953, -90.04898</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'albany') and contains(normalize-space(lower-case(.)),'georgia')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n81107844">Albany (Ga.)</geographic>
-                            <cartographics>
-                                <coordinates>31.57851, -84.15574</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'alcoa') and contains(normalize-space(lower-case(.)),'tennessee')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n80022862">Alcoa (Tenn.)</geographic>
-                            <cartographics>
-                                <coordinates>35.78953, -83.97379</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'alexandria') and contains(normalize-space(lower-case(.)),'virginia')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79099306">Alexandria (Va.)</geographic>
-                            <cartographics>
-                                <coordinates>38.80484, -77.04692</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'anderson') and contains(normalize-space(lower-case(.)),'indiana')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n50074868">Anderson (Ind.)</geographic>
-                            <cartographics>
-                                <coordinates>40.10532, -85.68025</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'atlanta') and contains(normalize-space(lower-case(.)),'georgia')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79023214">Atlanta (Ga.)</geographic>
-                            <cartographics>
-                                <coordinates>33.749, -84.38798</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'brownsville') and contains(normalize-space(lower-case(.)),'tennessee')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n84008639">Brownsville (Tenn.)</geographic>
-                            <cartographics>
-                                <coordinates>35.59397, -89.26229</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'attala') and contains(normalize-space(lower-case(.)),'mississippi')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n82101331">Attala County (Miss.)</geographic>
-                            <cartographics>
-                                <coordinates>33.08629, -89.58155</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'hoxie') and contains(normalize-space(lower-case(.)),'arkansas')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n83030241">Hoxie (Ark.)</geographic>
-                            <cartographics>
-                                <coordinates>36.05035, -90.97512</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'tuscaloosa') and contains(normalize-space(lower-case(.)),'alabama')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79133761">Tuscaloosa (Ala.)</geographic>
-                            <cartographics>
-                                <coordinates>33.20984, -87.56917</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'nashville') and contains(normalize-space(lower-case(.)),'tennessee')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n78095801">Nashville (Tenn.)</geographic>
-                            <cartographics>
-                                <coordinates>36.16589, -86.78444</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'birmingham') and contains(normalize-space(lower-case(.)),'alabama')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79042167">Birmingham (Ala.)</geographic>
-                            <cartographics>
-                                <coordinates>33.52066, -86.80249</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'washington') and contains(normalize-space(lower-case(.)),'d.c.') or contains(normalize-space(lower-case(.)),'dc') or contains(normalize-space(lower-case(.)),'district of columbia')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79018774">Washington (D.C.)</geographic>
-                            <cartographics>
-                                <coordinates>38.89511, -77.03637</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'macon') and contains(normalize-space(lower-case(.)),'georgia')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79133192">Macon (Ga.)</geographic>
-                            <cartographics>
-                                <coordinates>32.84069, -83.6324</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'chicago') and contains(normalize-space(lower-case(.)),'illinois')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n78086438">Chicago (Ill.)</geographic>
-                            <cartographics>
-                                <coordinates>41.85003, -87.65005</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(lower-case(.)),'boston') and contains(normalize-space(lower-case(.)),'massachusetts')">
-                        <subject>
-                            <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79045553">Boston (Mass.)</geographic>
-                            <cartographics>
-                                <coordinates>42.35843, -71.05977</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <subject>
-                            <geographic>
-                                <xsl:value-of select="normalize-space(.)"/>
-                            </geographic>
-                        </subject>
-                    </xsl:otherwise>
-                </xsl:choose>
+                <xsl:call-template name="SpatialTopic">
+                    <xsl:with-param name="term"><xsl:value-of select="normalize-space(lower-case(.))"/></xsl:with-param>
+                </xsl:call-template>
             </xsl:for-each>
         </xsl:if>
     </xsl:template>
@@ -537,21 +406,9 @@
     
     <xsl:template match="dc:subject">
         <xsl:if test="normalize-space(.)!=''">
-            <xsl:variable name="subjlist" select="tokenize(., '[;/]')"/><!-- not really applicable for DSpace metadata but left as is -->
-            <xsl:for-each select="$subjlist">
-                <xsl:choose>
-                    <xsl:when test="matches(.,'^\d{4}$')"> <!-- Contains some years -->
-                        <subject>
-                            <temporal encoding="edtf"><xsl:value-of select="."/></temporal>
-                        </subject>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <subject>
-                            <topic><xsl:value-of select="normalize-space(.)"/></topic>
-                        </subject>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:for-each>
+            <xsl:call-template name="LCSHtopic">
+                <xsl:with-param name="term"><xsl:value-of select="lower-case(normalize-space(replace(replace(., ' - ', '--'), ' -- ', '--')))"/></xsl:with-param>
+            </xsl:call-template>
         </xsl:if>
     </xsl:template>
     

@@ -11,7 +11,7 @@
         select="'ABCDEFGIJKLMNOPQRSTUVWXYZ'"/>
     
     
-    <!-- lookup tables for most common AAT genre terms/URIs -->
+    <!-- lookup tables for most common LCSH subject terms/URIs -->
     <xsl:template name="LCSHtopic">
         <xsl:param name="term"/>
         <xsl:variable name="topic" select="normalize-space(lower-case($term))"/>
@@ -154,6 +154,13 @@
                     <topic>Families</topic>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches($topic, 'federal bureau of investigation')">
+                <subject>
+                    <name authority="naf" valueURI="http://id.loc.gov/authorities/names/n78095617">
+                        <namePart>United States. Federal Bureau of Investigation</namePart>
+                    </name>
+                </subject>
+            </xsl:when>
             <xsl:when test="matches($topic, 'flags')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85048969">
                     <topic>Flags</topic>
@@ -243,6 +250,13 @@
                     </name>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches($topic, 'memphis world')">
+                <subject>
+                    <titleInfo>
+                        <title>Memphis World</title>
+                    </titleInfo>
+                </subject>
+            </xsl:when>
             <xsl:when test="matches($topic, 'memphis zoo')">
                 <subject>
                     <name authority="naf" valueURI="http://id.loc.gov/authorities/names/n98045115">
@@ -250,7 +264,7 @@
                     </name>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'memphis')">
+            <xsl:when test="matches($topic, 'memphis') or matches($topic, 'memphis, tenn.')">
                 <subject>
                     <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n2007043373">Memphis (Tenn)</geographic>
                     <cartographics>
@@ -361,6 +375,11 @@
             <xsl:when test="matches($topic, 'rivers')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85114250">
                     <topic>Rivers</topic>
+                </subject>
+            </xsl:when>
+            <xsl:when test="matches($topic, 'sanitation workers strike, memphis, tenn., 1968.')">
+                <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh86001827">
+                    <topic>Sanitation Workers Strike, Memphis, Tenn., 1968</topic>
                 </subject>
             </xsl:when>
             <xsl:when test="matches($topic, 'scrapbooks')">
