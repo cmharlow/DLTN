@@ -12,7 +12,8 @@
         dc:identifier mode=URL
         dc:language
         dc:rights
-        dc:title
+        dc:title[1]
+        dc:title[position()>1]
     -->
     
     <xsl:template match="dc:date"> 
@@ -344,9 +345,14 @@
     </xsl:template>
     
     <xsl:template match="dc:title">
-        <xsl:if test="normalize-space(.)!=''">
+        <xsl:if test="normalize-space(.)!='' and position()=1">
             <titleInfo>
                 <title><xsl:value-of select="normalize-space(.)"/></title>
+            </titleInfo>
+        </xsl:if>
+        <xsl:if test="normalize-space(.)!='' and position()>1">
+            <titleInfo>
+                <title type="alternative"><xsl:value-of select="normalize-space(.)"/></title>
             </titleInfo>
         </xsl:if>
     </xsl:template>
