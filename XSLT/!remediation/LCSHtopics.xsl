@@ -36,6 +36,11 @@
                     <topic>African americans</topic>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches($topic, 'african american churches')">
+                <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85001817">
+                    <topic>African American churches</topic>
+                </subject>
+            </xsl:when>
             <xsl:when test="matches($topic, 'apartments')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85005927">
                     <topic>Apartments</topic>
@@ -104,9 +109,19 @@
                     <topic>Business enterprises</topic>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches($topic, 'cemeteries')">
+                <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85021756">
+                    <topic>Cemeteries</topic>
+                </subject>
+            </xsl:when>
             <xsl:when test="matches($topic, 'children')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85023418">
                     <topic>Children</topic>
+                </subject>
+            </xsl:when>
+            <xsl:when test="matches($topic, 'churches')">
+                <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85025854">
+                    <topic>Church buildings</topic>
                 </subject>
             </xsl:when>
             <xsl:when test="matches($topic, 'civil rights')">
@@ -194,6 +209,11 @@
                     <topic>History</topic>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches($topic, 'historic buildings')">
+                <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85061097">
+                    <topic>Historic buildings</topic>
+                </subject>
+            </xsl:when>
             <xsl:when test="matches($topic, 'hooks, benjamin l.')">
                 <subject>
                     <name authority="naf" valueURI="http://id.loc.gov/authorities/names/n93008751">
@@ -275,6 +295,27 @@
             <xsl:when test="contains($topic, 'military uniforms')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85139693">
                     <topic>Military uniforms</topic>
+                </subject>
+            </xsl:when>
+            <xsl:when test="matches($topic, 'middle tennessee state college')">
+                <subject>
+                    <name authority="naf" valueURI="http://id.loc.gov/authorities/names/n50071680">
+                        <namePart>Middle Tennessee State College</namePart>
+                    </name>
+                </subject>
+            </xsl:when>
+            <xsl:when test="matches($topic, 'middle tennessee state teachers college')">
+                <subject>
+                    <name authority="naf" valueURI="http://id.loc.gov/authorities/names/no94039410">
+                        <namePart>Middle Tennessee State Teachers College</namePart>
+                    </name>
+                </subject>
+            </xsl:when>
+            <xsl:when test="matches($topic, 'middle tennessee state university')">
+                <subject>
+                    <name authority="naf" valueURI="http://id.loc.gov/authorities/names/n50071676">
+                        <namePart>Middle Tennessee State University</namePart>
+                    </name>
                 </subject>
             </xsl:when>
             <xsl:when test="matches($topic, 'mississippi')">
@@ -375,6 +416,14 @@
             <xsl:when test="matches($topic, 'rivers')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85114250">
                     <topic>Rivers</topic>
+                </subject>
+            </xsl:when>
+            <xsl:when test="matches($topic, 'rutherford county (tenn.)')">
+                <subject>
+                    <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n80037722">Rutherford County (Tenn.)</geographic>
+                    <cartographics>
+                        <coordinates>35.8427, -86.41674</coordinates>
+                    </cartographics>
                 </subject>
             </xsl:when>
             <xsl:when test="matches($topic, 'sanitation workers strike, memphis, tenn., 1968.')">

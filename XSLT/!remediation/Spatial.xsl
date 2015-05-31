@@ -25,7 +25,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="contains(normalize-space(lower-case(.)),'evergreen') and contains(normalize-space(lower-case(.)),'memphis') and contains(normalize-space(lower-case(.)),'tennessee')">
+            <xsl:when test="contains($topic,'evergreen') and contains($topic,'memphis') and contains($topic,'tennessee')">
                 <subject>
                     <geographic>Evergreen Historic District (Memphis, Tenn.)</geographic>
                     <cartographics>
@@ -35,7 +35,7 @@
             </xsl:when>
             
             <!-- Cities, States, Countries, etc. -->
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'albany') and contains(normalize-space(lower-case(.)),'georgia')) or matches(., 'albany (ga.)')">
+            <xsl:when test="(contains($topic,'albany') and contains($topic,'georgia')) or matches($topic, 'albany (ga.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n81107844">Albany (Ga.)</geographic>
                     <cartographics>
@@ -43,7 +43,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'alcoa') and contains(normalize-space(lower-case(.)),'tennessee')) or matches(., 'alcoa (tenn.)')">
+            <xsl:when test="(contains($topic,'alcoa') and contains($topic,'tennessee')) or matches($topic, 'alcoa (tenn.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n80022862">Alcoa (Tenn.)</geographic>
                     <cartographics>
@@ -51,7 +51,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'alexandria') and contains(normalize-space(lower-case(.)),'virginia')) or matches(., 'alexandria (va.)')">
+            <xsl:when test="(contains($topic,'alexandria') and contains($topic,'virginia')) or matches($topic, 'alexandria (va.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79099306">Alexandria (Va.)</geographic>
                     <cartographics>
@@ -59,7 +59,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'anderson') and contains(normalize-space(lower-case(.)),'indiana')) or matches(., 'anderson (ind.)')">
+            <xsl:when test="(contains($topic,'anderson') and contains($topic,'indiana')) or matches($topic, 'anderson (ind.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n50074868">Anderson (Ind.)</geographic>
                     <cartographics>
@@ -67,7 +67,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'atlanta') and contains(normalize-space(lower-case(.)),'georgia')) or matches(., 'atlanta (ga.)')">
+            <xsl:when test="(contains($topic,'atlanta') and contains($topic,'georgia')) or matches($topic, 'atlanta (ga.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79023214">Atlanta (Ga.)</geographic>
                     <cartographics>
@@ -75,7 +75,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'attala') and contains(normalize-space(lower-case(.)),'mississippi')) or matches(., 'attala county (miss.)')">
+            <xsl:when test="(contains($topic,'attala') and contains($topic,'mississippi')) or matches($topic, 'attala county (miss.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n82101331">Attala County (Miss.)</geographic>
                     <cartographics>
@@ -83,7 +83,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'brownsville') and contains(normalize-space(lower-case(.)),'tennessee')) or matches(., 'brownsville (tenn.)')">
+            <xsl:when test="(contains($topic,'brownsville') and contains($topic,'tennessee')) or matches($topic, 'brownsville (tenn.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n84008639">Brownsville (Tenn.)</geographic>
                     <cartographics>
@@ -91,7 +91,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'birmingham') and contains(normalize-space(lower-case(.)),'alabama')) or matches(., 'birmingham (ala.)')">
+            <xsl:when test="(contains($topic,'birmingham') and contains($topic,'alabama')) or matches($topic, 'birmingham (ala.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79042167">Birmingham (Ala.)</geographic>
                     <cartographics>
@@ -99,7 +99,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'boston') and contains(normalize-space(lower-case(.)),'massachusetts')) or matches(., 'boston (mass.)')">
+            <xsl:when test="(contains($topic,'boston') and contains($topic,'massachusetts')) or matches($topic, 'boston (mass.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79045553">Boston (Mass.)</geographic>
                     <cartographics>
@@ -107,7 +107,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'chicago') and contains(normalize-space(lower-case(.)),'illinois')) or matches(., 'chicago (ill.)')">
+            <xsl:when test="(contains($topic,'chicago') and contains($topic,'illinois')) or matches($topic, 'chicago (ill.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n78086438">Chicago (Ill.)</geographic>
                     <cartographics>
@@ -123,7 +123,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'hoxie') and contains(normalize-space(lower-case(.)),'arkansas')) or matches(., 'hoxie (ark.)')">
+            <xsl:when test="(contains($topic,'hoxie') and contains($topic,'arkansas')) or matches($topic, 'hoxie (ark.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n83030241">Hoxie (Ark.)</geographic>
                     <cartographics>
@@ -131,7 +131,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains(normalize-space(lower-case(.)),'macon') and contains(normalize-space(lower-case(.)),'georgia')) or matches(., 'macon (ga.)')">
+            <xsl:when test="(contains($topic,'macon') and contains($topic,'georgia')) or matches($topic, 'macon (ga.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79133192">Macon (Ga.)</geographic>
                     <cartographics>
@@ -139,7 +139,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'memphis') or matches($topic, 'memphis, tenn.') or matches(., 'memphis (tenn.)') or (contains(normalize-space(lower-case(.)),'memphis') and contains(normalize-space(lower-case(.)),'tennessee'))">
+            <xsl:when test="matches($topic, 'memphis') or matches($topic, 'memphis, tenn.') or matches($topic, 'memphis (tenn.)') or (contains($topic,'memphis') and contains($topic,'tennessee'))">
                 <subject>
                     <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n2007043373">Memphis (Tenn.)</geographic>
                     <cartographics>
@@ -165,7 +165,7 @@
                     <geographic authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85086206">Mississippi River</geographic>
                 </subject>
             </xsl:when>
-            <xsl:when test="contains(normalize-space(lower-case(.)),'nashville') and contains(normalize-space(lower-case(.)),'tennessee')">
+            <xsl:when test="contains($topic,'nashville') and contains($topic,'tennessee')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n78095801">Nashville (Tenn.)</geographic>
                     <cartographics>
@@ -178,7 +178,7 @@
                     <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n79060965">Tennessee</geographic>
                 </subject>
             </xsl:when>
-            <xsl:when test="contains(normalize-space(lower-case(.)),'tuscaloosa') and contains(normalize-space(lower-case(.)),'alabama')">
+            <xsl:when test="contains($topic,'tuscaloosa') and contains($topic,'alabama')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79133761">Tuscaloosa (Ala.)</geographic>
                     <cartographics>
@@ -186,7 +186,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="contains(normalize-space(lower-case(.)),'washington') and contains(normalize-space(lower-case(.)),'d.c.') or contains(normalize-space(lower-case(.)),'dc') or contains(normalize-space(lower-case(.)),'district of columbia') or matches(., 'washington (d.c.)')">
+            <xsl:when test="contains($topic,'washington') and contains($topic,'d.c.') or contains($topic,'dc') or contains($topic,'district of columbia') or matches($topic, 'washington (d.c.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79018774">Washington (D.C.)</geographic>
                     <cartographics>

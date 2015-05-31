@@ -15,7 +15,7 @@
         <xsl:param name="term"/>
         <xsl:variable name="genreterm" select="normalize-space(lower-case($term))"/>
         
-        <xsl:choose>       
+        <xsl:choose>      
             <xsl:when test="contains($genreterm, 'abstract')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026032">abstracts (summaries)</genre>
             </xsl:when>
