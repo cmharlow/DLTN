@@ -500,8 +500,11 @@
     
     <xsl:template match="dc:publisher"> 
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and not(contains(normalize-space(lower-case(.)), 'albert gore')) and not(contains(normalize-space(lower-case(.)), 'arts center')) and not(contains(normalize-space(lower-case(.)), 'center for historic preservation')) and not(contains(normalize-space(lower-case(.)), 'james e. walker library')) and not(contains(normalize-space(lower-case(.)), 'tennessee state library'))">
+            <xsl:if test="normalize-space(.)!='' and not(matches(., 'Murfreesboro, TN')) and not(contains(normalize-space(lower-case(.)), 'albert gore')) and not(contains(normalize-space(lower-case(.)), 'arts center')) and not(contains(normalize-space(lower-case(.)), 'center for historic preservation')) and not(contains(normalize-space(lower-case(.)), 'james e. walker library')) and not(contains(normalize-space(lower-case(.)), 'tennessee state library'))">
                 <publisher><xsl:value-of select="normalize-space(.)"/></publisher>
+            </xsl:if>
+            <xsl:if test="matches(., 'Murfreesboro, TN')">
+                <place><xsl:value-of select="."/></place>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
