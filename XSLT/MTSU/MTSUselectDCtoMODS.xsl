@@ -8,6 +8,7 @@
     <xsl:include href="../!remediation/GettyGenre.xsl"/>
     <xsl:include href="../!remediation/LCSHtopics.xsl"/>
     <xsl:include href="../!remediation/Spatial.xsl"/>
+    <xsl:include href="../coreDCtoMODS.xsl"/>
     
     <xsl:template match="dc:contributor">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">

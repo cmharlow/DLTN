@@ -7,6 +7,7 @@
     
     <xsl:include href="../!remediation/GettyGenre.xsl"/>
     <xsl:include href="../!remediation/LCSHtopics.xsl"/>
+    <xsl:include href="../coreDCtoMODS.xsl"/>
     
     <!-- OAI-DC to MODS Knoxville Public Institution-Level Transformations. Includes the following templates:
         dc:contributor

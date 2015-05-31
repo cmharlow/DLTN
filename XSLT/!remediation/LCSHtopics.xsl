@@ -99,7 +99,7 @@
                     <topic>Buildings</topic>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'businesses')">
+            <xsl:when test="matches($topic, 'businesses') or matches($topic, 'business')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85018260">
                     <topic>Business</topic>
                 </subject>
@@ -179,6 +179,11 @@
             <xsl:when test="matches($topic, 'flags')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85048969">
                     <topic>Flags</topic>
+                </subject>
+            </xsl:when>
+            <xsl:when test="matches($topic, 'flood damage')">
+                <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85049154">
+                    <topic>Flood damage</topic>
                 </subject>
             </xsl:when>
             <xsl:when test="matches($topic, 'furnishings')">
@@ -292,6 +297,11 @@
                     </cartographics>
                 </subject>
             </xsl:when>
+            <xsl:when test="contains($topic, 'military history')">
+                <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85085207">
+                    <topic>Military history</topic>
+                </subject>
+            </xsl:when>
             <xsl:when test="contains($topic, 'military uniforms')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85139693">
                     <topic>Military uniforms</topic>
@@ -348,6 +358,19 @@
                     </name>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches($topic, 'nashville, tenn.')">
+                <subject>
+                    <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n78095801">Nashville, Tenn.</geographic>
+                    <cartographics>
+                        <coordinates>36.16589, -86.78444</coordinates>
+                    </cartographics>
+                </subject>
+            </xsl:when>
+            <xsl:when test="matches($topic, 'nashville city cemetery (nashville, tenn.)')">
+                <subject>
+                    <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/no2001068756">Nashville City Cemetery (Nashville, Tenn.)</geographic>
+                </subject>
+            </xsl:when>
             <xsl:when test="contains($topic, 'native americans')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85065184">
                     <topic>Indians of North America</topic>
@@ -393,6 +416,11 @@
                     <topic>Politics</topic>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches($topic, 'popular culture')">
+                <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85104904">
+                    <topic>Popular culture</topic>
+                </subject>
+            </xsl:when>
             <xsl:when test="matches($topic, 'portraits')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85105182">
                     <topic>Portraits</topic>
@@ -411,6 +439,11 @@
             <xsl:when test="matches($topic, 'recreation')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85111945">
                     <topic>Recreation</topic>
+                </subject>
+            </xsl:when>
+            <xsl:when test="matches($topic, 'religion')">
+                <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85112549">
+                    <topic>Religion</topic>
                 </subject>
             </xsl:when>
             <xsl:when test="matches($topic, 'rivers')">

@@ -6,7 +6,6 @@
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
     <xsl:include href="KnoxPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
     <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
     
     <xsl:template match="text()|@*"/>     

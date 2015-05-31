@@ -21,7 +21,7 @@
             <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
                 <!-- Record Creation Timestamps in DC record - ignored -->
-                    <xsl:when test="starts-with(normalize-space(lower-case(.)), 'ap') or starts-with(normalize-space(lower-case(.)), 'mt')">
+                    <xsl:when test="starts-with(normalize-space(lower-case(.)), 'ap') or starts-with(normalize-space(lower-case(.)), 'mt') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}T.')">
                         <!-- do nothing -->
                     </xsl:when>
                   <!-- DIRECT EDTF MATCHES -->
@@ -308,19 +308,19 @@
         <xsl:for-each select="tokenize(normalize-space(lower-case(.)), ';')">
             <xsl:for-each select="tokenize(normalize-space(.), ' and ')">
                 <xsl:for-each select="tokenize(normalize-space(.), ' &amp; ')">
-                    <xsl:if test="normalize-space(.)!='' and not(contains(lower-case(.), 'box 3')) and not(contains(lower-case(.), 'europe - 1974')) and not(matches(., 'Language'))">
+                    <xsl:if test="normalize-space(.)!='' and not(contains(lower-case(.), 'box 3')) and not(contains(lower-case(.), 'europe - 1974')) and not(matches(., 'language')) and not(contains(., 'closed stacks')) and not(contains(., 'baptist'))">
                         <language>
                             <xsl:choose>
-                                <xsl:when test="starts-with(normalize-space(lower-case(.)), 'eng') or contains(normalize-space(lower-case(.)), 'enlish')">
+                                <xsl:when test="normalize-space(lower-case(.))='en' or starts-with(normalize-space(lower-case(.)), 'eng') or contains(normalize-space(lower-case(.)), 'enlish')">
                                     <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
                                 </xsl:when>
-                                <xsl:when test="contains(normalize-space(lower-case(.)), 'dutch')">
+                                <xsl:when test="normalize-space(lower-case(.))='deu' or contains(normalize-space(lower-case(.)), 'dutch') or starts-with(normalize-space(lower-case(.)), 'dut')">
                                     <languageTerm type="code" authority="iso639-2b">dut</languageTerm>
                                 </xsl:when>
                                 <xsl:when test="starts-with(normalize-space(lower-case(.)), 'fre')">
                                     <languageTerm type="code" authority="iso639-2b">fre</languageTerm>
                                 </xsl:when>
-                                <xsl:when test="starts-with(normalize-space(lower-case(.)),'german')">
+                                <xsl:when test="starts-with(normalize-space(lower-case(.)),'german') or starts-with(normalize-space(lower-case(.)), 'ger')">
                                     <languageTerm type="code" authority="iso639-2b">deu</languageTerm>
                                 </xsl:when>
                                 <xsl:when test="normalize-space(lower-case(.))='italian'">

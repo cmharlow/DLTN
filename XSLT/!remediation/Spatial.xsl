@@ -107,6 +107,14 @@
                     </cartographics>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches(normalize-space(.), 'Chattanooga (Tenn.)')">
+                <subject>
+                    <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79075123">Chattanooga (Tenn.)</geographic>
+                    <cartographics>
+                        <coordinates>35.04563, -85.30968</coordinates>
+                    </cartographics> 
+                </subject> 
+            </xsl:when>
             <xsl:when test="(contains($topic,'chicago') and contains($topic,'illinois')) or matches($topic, 'chicago (ill.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n78086438">Chicago (Ill.)</geographic>
@@ -114,6 +122,22 @@
                         <coordinates>41.85003, -87.65005</coordinates>
                     </cartographics>
                 </subject>
+            </xsl:when>
+            <xsl:when test="matches(normalize-space(.), 'Chickamauga (Ga.)')">
+                <subject>
+                    <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n91047626">Chickamauga (Ga.)</geographic>
+                    <cartographics>
+                        <coordinates>34.87119, -85.29079</coordinates>
+                    </cartographics> 
+                </subject> 
+            </xsl:when>
+            <xsl:when test="matches(normalize-space(.), 'Columbia (Tenn.)')">
+                <subject>
+                    <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n83226061">Columbia (Tenn.)</geographic>
+                    <cartographics>
+                        <coordinates>35.61507, -87.03528</coordinates>
+                    </cartographics> 
+                </subject> 
             </xsl:when>
             <xsl:when test="matches($topic, 'great smoky mountains')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85057008">
@@ -131,6 +155,14 @@
                     </cartographics>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches(normalize-space(.), 'Indianapolis (Ind.)')">
+                <subject>
+                    <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79055094">Indianapolis (Ind.)</geographic>
+                    <cartographics>
+                        <coordinates>39.76838, -86.15804</coordinates>
+                    </cartographics> 
+                </subject> 
+            </xsl:when>
             <xsl:when test="(contains($topic,'macon') and contains($topic,'georgia')) or matches($topic, 'macon (ga.)')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79133192">Macon (Ga.)</geographic>
@@ -146,6 +178,14 @@
                         <coordinates>35.14953, -90.04898</coordinates>
                     </cartographics>
                 </subject>
+            </xsl:when>
+            <xsl:when test="matches(normalize-space(.), 'Murfreesboro (Tenn.)')">
+                <subject>
+                    <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n50071679">Murfreesboro (Tenn.)</geographic>
+                    <cartographics>
+                        <coordinates>35.84562, -86.39027</coordinates>
+                    </cartographics> 
+                </subject> 
             </xsl:when>
             <xsl:when test="matches($topic, 'mississippi')">
                 <subject>
@@ -173,6 +213,22 @@
                     </cartographics>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches(normalize-space(.), 'Royal Air Force Station, Martlesham Heath (Suffolk)')">
+                <subject>
+                    <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n84120766">Royal Air Force Station, Martlesham Heath (Suffolk)</geographic>
+                    <cartographics>
+                        <coordinates>52.058, 1.266</coordinates>
+                    </cartographics> 
+                </subject> 
+            </xsl:when>
+            <xsl:when test="matches(normalize-space(.), 'Sand Mountain (Ala.)')">
+                <subject>
+                    <geographic>Sand Mountain (Ala.)</geographic>
+                    <cartographics>
+                        <coordinates>32.85485, -86.91249</coordinates>
+                    </cartographics> 
+                </subject> 
+            </xsl:when>
             <xsl:when test="matches($topic, 'tennessee')">
                 <subject>
                     <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n79060965">Tennessee</geographic>
@@ -185,6 +241,14 @@
                         <coordinates>33.20984, -87.56917</coordinates>
                     </cartographics>
                 </subject>
+            </xsl:when>
+            <xsl:when test="matches(normalize-space(.), 'Walden Ridge (Tenn.)')">
+                <subject>
+                    <geographic>Walden Ridge (Tenn.)</geographic>
+                    <cartographics>
+                        <coordinates>35.54035, -85.06079</coordinates>
+                    </cartographics> 
+                </subject> 
             </xsl:when>
             <xsl:when test="contains($topic,'washington') and contains($topic,'d.c.') or contains($topic,'dc') or contains($topic,'district of columbia') or matches($topic, 'washington (d.c.)')">
                 <subject>
