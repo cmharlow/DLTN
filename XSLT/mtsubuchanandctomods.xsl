@@ -8,52 +8,49 @@
     <xsl:template match="text()|@*"/>
     
     <xsl:template match="//oai_dc:dc">
-        <xsl:choose>
-            <xsl:when test="dc:title[matches(.,'Page ')]"/>
-            <xsl:otherwise>
-                <mods xmlns:xlink="http://www.w3.org/1999/xlink" 
-                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-                    xmlns="http://www.loc.gov/mods/v3" version="3.5" 
-                    xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
-                    <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
-                    <xsl:apply-templates select="dc:identifier" mode="part"/>
-                    <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
-                    <xsl:apply-templates select="dc:contributor" /> <!-- name/role -->
-                    <xsl:apply-templates select="dc:creator" /> <!-- name/role -->
+        <mods xmlns:xlink="http://www.w3.org/1999/xlink" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xmlns="http://www.loc.gov/mods/v3" version="3.5" 
+            xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+            <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
+            <xsl:apply-templates select="dc:identifier" mode="part"/>
+            <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
+            <xsl:apply-templates select="dc:contributor" /> <!-- name/role -->
+            <xsl:apply-templates select="dc:creator" /> <!-- name/role -->
             
-                    <xsl:if test="dc:date|dc:publisher">
-                        <originInfo> 
-                            <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                            <xsl:apply-templates select="dc:publisher"/> <!-- place of origin - publishers all repositories -->
-                        </originInfo>
-                    </xsl:if>
+            <xsl:if test="dc:date|dc:publisher">
+                <originInfo> 
+                    <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
+                    <xsl:apply-templates select="dc:publisher"/> <!-- place of origin - publishers all repositories -->
+                </originInfo>
+            </xsl:if>
             
-                    <xsl:if test="dc:format|dc:type">
-                        <physicalDescription>
-                            <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
-                            <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
-                        </physicalDescription>
-                    </xsl:if>
+            <xsl:if test="dc:format|dc:type">
+                <physicalDescription>
+                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
+                    <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
+                </physicalDescription>
+            </xsl:if>
             
-                    <xsl:if test="dc:contributor|dc:creator|dc:publisher|dc:identifier">
-                        <location>
-                            <xsl:apply-templates select="dc:contributor" mode="repository" /> <!-- repository of physical item parsed form contributor field -->
-                            <xsl:apply-templates select="dc:creator" mode="repository" /> <!-- repository of physical item parsed form creator field -->
-                            <xsl:apply-templates select="dc:publisher" mode="repository" /> <!-- repository of physical item parsed form publisher field -->
-                            <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                            <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
-                        </location>
-                    </xsl:if>
+            <xsl:if test="dc:contributor|dc:creator|dc:publisher|dc:identifier">
+                <location>
+                    <xsl:apply-templates select="dc:contributor" mode="repository" /> <!-- repository of physical item parsed form contributor field -->
+                    <xsl:apply-templates select="dc:creator" mode="repository" /> <!-- repository of physical item parsed form creator field -->
+                    <xsl:apply-templates select="dc:publisher" mode="repository" /> <!-- repository of physical item parsed form publisher field -->
+                    <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
+                </location>
+            </xsl:if>
             
-                    <xsl:apply-templates select="dc:language"/> <!-- language -->
-                    <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-                    <xsl:apply-templates select="dc:relation" /> <!-- collections -->
-                    <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
-                    <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
-                    <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
-                    <xsl:apply-templates select="dc:format" mode="genre"/>
-                    <xsl:apply-templates select="dc:type"/><!-- genre -->
-                    <xsl:apply-templates select="dc:source"/>
+            <xsl:apply-templates select="dc:language"/> <!-- language -->
+            <xsl:apply-templates select="dc:description"/> <!-- abstract -->
+            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
+            <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
+            <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
+            <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
+            <xsl:apply-templates select="dc:format" mode="genre"/>
+            <xsl:apply-templates select="dc:type"/><!-- genre -->
+            <xsl:apply-templates select="dc:source"/>
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
                     <title>Buchanan Family collection</title>
@@ -72,8 +69,6 @@
                 <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core record by the Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a stylesheet available at https://github.com/cmh2166/DLTN. Metadata originally created in a locally modified version of qualified Dublin Core using DSpace (data dictionary available: https://wiki.lib.utk.edu/display/DPLA/Crossroads+Mapping+Notes.)</recordOrigin>
             </recordInfo>
         </mods>
-            </xsl:otherwise>
-        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="dc:title">
