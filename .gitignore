@@ -7,3 +7,6 @@
 # Vim swap files
 .*.swp
 .*~
+
+# DESTROY ALL .DS_Store FILES
+.DS_Store
