@@ -4,24 +4,25 @@
     xmlns:oai="http://www.openarchives.org/OAI/2.0/"
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
+
+    <xsl:include href="knoxpublicdctomods.xsl"/>
+    <xsl:include href="coredctomods.xsl"/>
+    <xsl:include href="contentdmthumbnaildctomods.xsl"/>
     
-    <xsl:include href="KnoxPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
-    
-    <xsl:template match="text()|@*"/>     
+    <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
         <mods xmlns:xlink="http://www.w3.org/1999/xlink" 
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
             xmlns="http://www.loc.gov/mods/v3" version="3.5" 
             xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
-            <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
+            <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title -->
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             <xsl:apply-templates select="dc:creator" /> <!-- name/role -->
             
             <xsl:if test="dc:date|dc:publisher">
                 <originInfo> 
-                    <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
+                    <xsl:apply-templates select="dc:date"/> <!-- dateCreated (EDTF if possible) -->
+                    <xsl:apply-templates select="dc:contributor" mode="publisher"/> <!-- publisher parsed from contributor -->
                     <xsl:apply-templates select="dc:creator" mode="publisher"/> <!-- publisher parsed from creator -->
                     <xsl:apply-templates select="dc:publisher"/> <!-- place of origin - publishers all repositories -->
                 </originInfo>
@@ -37,33 +38,32 @@
             <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/>
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/><!-- thumbnail URL for ContentDM -->
                 </location>
             </xsl:if>
             
             <xsl:call-template name="photocollLanguage"/>
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:call-template name="dc:rightsTypoRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
+            <xsl:apply-templates select="dc:format" mode="relatedItem"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
             <xsl:apply-templates select="dc:type" mode="genre"/> <!-- genres -->
             <xsl:apply-templates select="dc:source"/> <!-- collections -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>The Knox County Two Centuries Photograph Collection</title>
+                    <title>The Thompson Photograph Collection</title>
                 </titleInfo>
-                <abstract>During the celebration of Knox County’s two hundredth birthday in 1992, the Calvin M. McClung Historical Collection of the Knox County Public Library System copied over 3,000 photographs owned by over 230 Knox County citizens and organizations. The aim of the project was to collect as large a body of photographs as possible documenting Knox County from the early days of photography in the 1840s to the 1970s. Library staff went on-site to 28 locations in Knox County on 44 different days during 1991. The resulting collection of photographs documents the daily lives of individuals, families, communities, and institutions of Knox County during two centuries. The book Two Centuries of Knox County, Tennessee: A Celebration in Photographs, published in 1992 by the Friends of the Knox County Public Library, was able to offer only a small cross section of the hundreds of photographs copied during this project.</abstract>
+                <abstract>James E. (Jim) Thompson (1881-1976) was one of Knoxville’s pioneer commercial and professional photographers. He captured a rich visual legacy of East Tennessee from 1907 to 1960.  This growing digital collection will eventually contain 10,000 images covering the years from the early 1920s to mid-1930s. The Thompson Photograph Collection includes an estimated 75,000 negatives, providing a rich visual legacy of Knoxville and East Tennessee from 1907 to 1960. Preservation printing of these negatives has been the major focus of the McClung Historical Collection for two decades. Jim Thompson and his younger brother Robin Thompson (1895-1977) were business partners from 1920 to 1926 as Thompson Brothers. Both men were pioneer commercial photographers. By the late 1920s, Jim Thompson’s photographs (Jim Thompson Co.) and those of his brother Robin Thompson (Robin Thompson, Inc.) were appearing in local and national commercial publications.</abstract>
                 <location>
-                    <url>http://cdm16311.contentdm.oclc.org/cdm/landingpage/collection/p265301coll005</url>
+                    <url>http://cdm16311.contentdm.oclc.org/cdm/landingpage/collection/p265301coll7</url>
                 </location>
             </relatedItem>
-            <xsl:call-template name="recordInfo"/> <!-- record info for Knoxville Public Libraries collections -->
+            <xsl:call-template name="recordInfo"/>
         </mods>
     </xsl:template>
-    
-    <!-- Typo Repairs, Static Additions -->
-    
+        
+<!-- Typo Repairs, Static Additions -->
     <xsl:template name="dc:rightsTypoRepair">
         <accessCondition>To use photographs or to order reproductions, contact DigitalCollections@knoxlib.org or phone 865 215-8808. Please refer to Image Number and provide a brief description of the photograph.</accessCondition>
     </xsl:template>
@@ -73,5 +73,5 @@
             <languageTerm type="code" authority="iso639-2b">zxx</languageTerm>
         </language>
     </xsl:template>
-    
+        
 </xsl:stylesheet>

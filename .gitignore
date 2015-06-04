@@ -1,0 +1,9 @@
+# ignore stuff
+
+# IDEA files & directories
+*.iml
+.idea
+
+# Vim swap files
+.*.swp
+.*~

@@ -4,10 +4,10 @@
     xmlns:oai="http://www.openarchives.org/OAI/2.0/"
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
-    
-    <xsl:include href="KnoxPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+
+    <xsl:include href="knoxpublicdctomods.xsl"/>
+    <xsl:include href="coredctomods.xsl"/>
+    <xsl:include href="contentdmthumbnaildctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -43,7 +43,6 @@
             
             <xsl:call-template name="photocollLanguage"/>
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
             <xsl:apply-templates select="dc:format" mode="relatedItem"/>
@@ -52,19 +51,18 @@
             <xsl:apply-templates select="dc:source"/>
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Great Smoky Mountains Photograph Collection - Thompson Brothers</title>
+                    <title>Roger H. Howell Collection</title>
                 </titleInfo>
-                <abstract>Jim Thompson (1881-1976) and his younger brother Robin Thompson (1895-1977) were business partners in Knoxville from 1920 to 1926 as Thompson Brothers. Both men, individually and in partnership, were successful commercial photographers. Both brothers loved to hike and were pioneers in documenting the beauty of the Great Smoky Mountains in photographs in the 1910s and 1920s, which were used to help promote the creation of the Great Smoky Mountains National Park.</abstract>
+                <abstract>Roger Hoffman Howell (1897-1962) was a native of Pittsburgh, Pennsylvania.  He came to Knoxville in 1936 to work as an engineering draftsman for the new Tennessee Valley Authority.  He and his future wife, Alice Lynn, met hiking with the Smoky Mountains Hiking Club.  Roger Howell was a keen and meticulous photographer, who carefully labeled all of his photographs made on hikes in the Great Smoky Mountains.  Alice Lynn Howell donated this collection of black-and-white negatives and Kodachrome slides to the Calvin M. McClung Historical Collection in 1984.  The Roger H. Howell Collection contains 1,733 negatives taken from 1935 to 1940 and 400 color slides.</abstract>
                 <location>
-                    <url>http://cdm16311.contentdm.oclc.org/cdm/landingpage/collection/p15136coll2</url>
+                    <url>http://cdm16311.contentdm.oclc.org/cdm/landingpage/collection/p16311coll2</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/> <!-- record info for Knoxville Public Libraries collections -->
         </mods>
     </xsl:template>
     
-    <!-- Typo Repairs, Static Additions -->
-    
+<!-- Typo Repairs, Static Additions -->
     <xsl:template name="photocollLanguage">
         <language>
             <languageTerm type="code" authority="iso639-2b">zxx</languageTerm>

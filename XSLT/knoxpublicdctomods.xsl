@@ -5,8 +5,8 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="../!remediation/GettyGenre.xsl"/>
-    <xsl:include href="../!remediation/LCSHtopics.xsl"/>
+    <xsl:include href="gettygenre.xsl"/>
+    <xsl:include href="lcshtopics.xsl"/>
     
     <!-- OAI-DC to MODS Knoxville Public Institution-Level Transformations. Includes the following templates:
         dc:contributor
