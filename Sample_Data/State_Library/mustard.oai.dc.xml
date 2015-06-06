@@ -1,0 +1,916 @@
+<repository xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"      xmlns:dc="http://purl.org/dc/elements/1.1/"      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instanc">
+<record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/0</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/1</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/2</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/3</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/4</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/5</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/6</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/7</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/8</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/9</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/10</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/11</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/12</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/13</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/14</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/15</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/16</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/17</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/18</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/19</identifier><datestamp>2012-02-09</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/20</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/21</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/22</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/23</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/24</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/25</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/26</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/27</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/28</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/29</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/30</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/31</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/32</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/33</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/34</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/35</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/36</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/37</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/38</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/39</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/40</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/41</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/42</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/43</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/44</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/45</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/46</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/47</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/48</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/49</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/50</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/51</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/52</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/53</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/54</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/55</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/56</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/57</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/58</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/59</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/60</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/61</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Making Window Screens</dc:title>
+<dc:subject>African Americans; Windows; Construction; Screens</dc:subject>
+<dc:description>A group of students are making window screens.  The completed screens would probably have been used to keep out mosquitos.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, durning the 1930's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 144</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32880</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/61</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/62</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Outdoor Play</dc:title>
+<dc:subject>Children; Children playing</dc:subject>
+<dc:description>A group of children play outdoors with a teacher standing nearby.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1930's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 22</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32881</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/62</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/63</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Typical Negro Cabin and some of the children</dc:title>
+<dc:subject>African Americans; Boys; Poverty; Log cabins</dc:subject>
+<dc:description>A group of poverty-stricken children stand on a porch.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, durning the 1930's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 23</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32882</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/63</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/64</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Two Poor Children</dc:title>
+<dc:subject>Children; Poverty</dc:subject>
+<dc:description>Two children in dirty clothes stand on a porch.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll)</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, durning the 1930's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 32</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32883</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/64</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/65</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Poor White Family</dc:title>
+<dc:subject>Women; Children; Poverty</dc:subject>
+<dc:description>A mother poses with her four children.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, durning the 1930's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 31</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32884</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/65</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/66</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>The Fast Colored Nurse</dc:title>
+<dc:subject>African Americans; Women; Nurses; Horses; Carriages and coaches</dc:subject>
+<dc:description>A woman in a carriage prepares for travel in order to assist a patient.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1926</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, durning the 1930's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 124</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32885</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/66</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/67</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>En Route to the Clinic for Inoculations</dc:title>
+<dc:subject>Horses; Children; Carriages and coaches; Houses; Dirt roads</dc:subject>
+<dc:description>Two children sit in a carriage, apparently en route to a clinic.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, durning the 1930's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 130</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32886</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/67</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/68</identifier><datestamp>2014-02-11</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Fourth Grade studying Health Rules</dc:title>
+<dc:subject>Children; Teachers; Schools; Blackboards; Health; Education</dc:subject>
+<dc:description>A teacher instructs school children on the basics of good health and hygiene.  The title of her outline reads &quot;Health Rules&quot;.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, durning the 1930's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 133</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32887</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/68</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/69</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Heating One Hot Dish at School</dc:title>
+<dc:subject>Teachers; Students; Health; Eating and drinking</dc:subject>
+<dc:description>A teacher instructs young students about proper health and hygiene, including eating habits.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, durning the 1930's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 138</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32888</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/69</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/70</identifier><datestamp>2014-02-11</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Putting Stars on Clean Teeth Chart</dc:title>
+<dc:subject>African Americans; Children; Health; Teeth; Schools; Classrooms</dc:subject>
+<dc:description>A teacher instructs a group of boys about the importance of brushing teeth twice a day.  Caption reads &quot;Health Lesson Cemetery School.&quot;</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, durning the 1930's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 142</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32889</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/70</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/71</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Blue Ribbon Children, Lavergne</dc:title>
+<dc:subject>Children; Health; Education; Awards; Rural schools</dc:subject>
+<dc:description>View of children holding their hands up to signify that they were blue ribbon winners in Lavergne (Tenn.).</dc:description>
+<dc:coverage>Lavergne (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1930s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 101</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32890</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/71</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/72</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>End of Mail Route at Sulphur Springs</dc:title>
+<dc:subject>Postal service; Advertising; Country life; Trees</dc:subject>
+<dc:description>Shows multiple mail boxes attached to a pole on the street with a cola advertisement printed on a concrete block.  Several homes appear behind the mail boxes as well as trees that have lost their leaves.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1930s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 97</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32891</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/72</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/73</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Homemade Crib</dc:title>
+<dc:subject>Backyards; Child rearing; Domestic life; Children's furniture</dc:subject>
+<dc:description>View of two women who are outdoors watching a baby in a crib. Also shown is a clothesline with two quilts/blankets at the side of a house where a tub sits to collect water.  A bed spring can be seen leaning against the house.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1930s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 111</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32892</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/73</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/74</identifier><datestamp>2014-02-11</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Vaccinations - Fosterville (Colored)</dc:title>
+<dc:subject>African Americans; School children; Students; Teenagers; Vaccinations; Preventive medicine</dc:subject>
+<dc:description>Seven African American boys and girls of varying ages display their vaccinations as they stand outdoors against a building.  It is assumed that the building is the Fosterville Colored School.  Sepia tone.</dc:description>
+<dc:coverage>Fosterville (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1930s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 59</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32895</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/74</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/75</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Gladeview School (Colored)</dc:title>
+<dc:subject>Schools; Rural schools; Teenagers; School children; Students; Country life; African Americans; Automobiles</dc:subject>
+<dc:description>Group of African American children and teenagers stand in front of Gladeville Colored School off Bradyville Pike.  An old automobile is in view.  Sepia tone.</dc:description>
+<dc:coverage>Gladeville (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1930s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 43</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32896</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/75</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/76</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Home Hygiene and Care of the Sick Class - 1925 - Christiana</dc:title>
+<dc:subject>Girls; Teenagers; School children; Students; Country life; Rural schools; Schools; Health; Hygiene; Sanitation; Preventive medicine</dc:subject>
+<dc:description>Eleven female members of the Home Hygiene and Care of the Sick Class of 1925 pose in front of a building in Christiana, Tennessee.  Sepia tone.</dc:description>
+<dc:coverage>Christiana (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1930s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 33</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32897</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/76</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/77</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Opening of Rutherford Hospital</dc:title>
+<dc:subject>Rites &amp; ceremonies; Building dedications; Buildings; Hospitals; Health care facilities; Health &amp; hygiene facilities; Crowds; People</dc:subject>
+<dc:description>Crowds gathered around Rutherford Hospital building at its opening ceremony.  Sepia tone.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1930s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 228</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32898</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/77</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/78</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Raising Guinea Pigs</dc:title>
+<dc:subject>Rodents; Livestock; Animals; Animal feeding</dc:subject>
+<dc:description>Young woman pictured outdoors feeding two guinea pigs with a dropper.  Sepia tone.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1930s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 46</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32899</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/78</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/79</identifier><datestamp>2014-02-11</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Nurses standing on steps</dc:title>
+<dc:subject>Women; Nurses</dc:subject>
+<dc:description>Group of fourteen females standing on steps outside of a building. Twelve of them are wearing nurse-type uniforms with red cross emblems on their hats and sashes marked with the name &quot;Christiana&quot;.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children.; Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 189</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32900</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/79</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/80</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Bradley students taking part in demonstration following classes in home hygiene and care of sick</dc:title>
+<dc:subject>Women; African Americans; Public health nursing</dc:subject>
+<dc:description>Group of eleven young African American females participating in a demonstration of health care procedures. They are all wearing nurse-type dresses with caps showing the red cross symbol.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children.; Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 190</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32901</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/80</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/81</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Flooded road - very common following heavy rain</dc:title>
+<dc:subject>Automobiles; Floods; Landscapes</dc:subject>
+<dc:description>Vintage automobile driving through a flooded rural area in Tennessee.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children.; Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 193</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32902</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/81</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/82</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Not an unusual experience in public health nursing visits</dc:title>
+<dc:subject>Automobiles; Floods; Stone walls; Public health nursing</dc:subject>
+<dc:description>Vintage automobile traversing flooded rural area with stone wall in background.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children.; Dr. Harry Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 194</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32903</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/82</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/83</identifier><datestamp>2014-02-11</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Group of teenage boys and girls playing games</dc:title>
+<dc:subject>Games; Children; Physical fitness; Health</dc:subject>
+<dc:description>Group of teenage boys and girls playing a game outdoors. In background are basketball goals, cornfields, and telephone poles. Game is known as &quot;Fox and Rabbit&quot;.</dc:description>
+<dc:coverage>Walter Hill (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children.; Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 171</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32904</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/83</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/84</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Preparations for Waste Disposal Eagleville School</dc:title>
+<dc:subject>Sewer-pipe; Health; Laborers; Sewers; Sanitation</dc:subject>
+<dc:description>Three men laying sewer line. One has shovel, one has wheelbarrow, and one is sitting on ground with feet in ditch. He is surrounded with pieces of terra cotta pipe. Line is set up to be laid.</dc:description>
+<dc:coverage>Eagleville (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children.; Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 168</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32905</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/84</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/85</identifier><datestamp>2014-02-11</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Bradley Health Center</dc:title>
+<dc:subject>Infants; Scales; Health</dc:subject>
+<dc:description>Smiling African American child sitting in infant weight scale. Child is approximately 10 months old.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children.; Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 155</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32906</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/85</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/86</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Bradley Health Center</dc:title>
+<dc:subject>Children; Health; Scales</dc:subject>
+<dc:description>Young African-American boy stands facing the camera while standing on a weight measure scale. He is wearing a white gown and has his right hand on the base weight located on a horizontal bar. The device can also measure his height.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children.; Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 149</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32907</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/86</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/87</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Giving a Health Play</dc:title>
+<dc:subject>Children; African Americans; Schools; Accordions</dc:subject>
+<dc:description>Six children in the yard of an unidentified school. The females are similarly dressed in white skirts and bows. The male is playing an accordion.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children.; Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 143</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32908</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/87</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/88</identifier><datestamp>2014-02-11</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>At clinic for anti-rabie[s] treatment</dc:title>
+<dc:subject>Women; Children; Clinics; Healthcare</dc:subject>
+<dc:description>Two women and three children in front of the Rutherford County Child Health Demonstration Building.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children.; Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 139</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32909</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/88</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/89</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Home hygiene class - selecting a meal</dc:title>
+<dc:subject>Women; Children; Health education; Nutrition; Students; Eating &amp; drinking</dc:subject>
+<dc:description>Group of students in a classroom setting serving a meal to two children as an older woman looks on.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children.; Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 135</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32910</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/89</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/90</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Home hygiene class making layette</dc:title>
+<dc:subject>Women; Home economics; Sewing; Layettes; Sewing equipment &amp; supplies</dc:subject>
+<dc:description>Eight unidentified women in a classroom making layettes.  A singer sewing machine stand is pictured. A layette is a collection of clothing and bedding items for a newborn child.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 131</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32911</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/90</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/91</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Cleaning teeth during class period</dc:title>
+<dc:subject>Dental hygiene; Health education; Children; School children; Teachers; Classrooms</dc:subject>
+<dc:description>A dental hygienist cleans the teeth of a young boy during a class period.  The other students are seated at their desks and are doing their work.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.  Even though Mustard's efforts were often met with resistance and skepticism, children were encouraged to form better health habits, such as brushing their teeth twice daily.</dc:description>
+<dc:relation>CN 233</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32912</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/91</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/92</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Oil spraying for mosquito control</dc:title>
+<dc:subject>Pest control; Equipment; Health</dc:subject>
+<dc:description>An African-American man uses an oil sprayer to aid in mosquito control.  He wears the equipment on his back, which includes a large metal can and a spraying device.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 126</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32913</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/92</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/93</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Nurse explaining maternity exhibit and prenatal exhibit</dc:title>
+<dc:subject>Nurses; Prenatal care; Medical education</dc:subject>
+<dc:description>Using an educational exhibit, a nurse explains to a woman the basics of prenatal care.  The exhibit includes examples of baby clothing, supplies, a basket, a crib, and bedding.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1966</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 120</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32914</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/93</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/94</identifier><datestamp>2014-02-11</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Health lesson in fourth grade</dc:title>
+<dc:subject>Nutrition; Education; Health; Food; Children; School children; Classrooms; Teachers</dc:subject>
+<dc:description>A young girl learns the basics of a healthy breakfast with the help of a teacher.  The blackboard reads, &quot;Menu for breakfast, Oatmeal and cream, Egg on toast, Milk, Baked apple.&quot; The young girl is wearing a dress but no shoes.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.  Mustard and his staff determined that successful public health initiatives began at the grassroots level and usually involved women and children.</dc:description>
+<dc:relation>CN 118</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32915</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/94</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/95</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Spread at Lavergne and Blue Ribbon Contest</dc:title>
+<dc:subject>Picnics; Contests</dc:subject>
+<dc:description>A group of men, women, and children gather together for a contest or celebration of some sort.</dc:description>
+<dc:coverage>Lavergne (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920's on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of a five-year study of health and sanitation conditions of rural children.  Dr. Mustard; went on to become a very prominent public health administrator.  Blue ribbon health contests provided local citizens with an opportunity and competitive incentive to practice their school health lessons.</dc:description>
+<dc:relation>CN 115</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32916</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/95</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/96</identifier><datestamp>2014-02-11</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Lesson in Sanitation at Country Store</dc:title>
+<dc:subject>Country life; Sanitation; Hygiene; General stores; Men; Signs (Notices); Horses</dc:subject>
+<dc:description>Shows a group of men on the front porch of a country store with a sign hanging in the doorway that says &quot;Headquarters for School Supplies.&quot; One man is sitting on a horse at left.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of; a five-year study of health and sanitation conditions of rural children.  Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 205</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32918</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/96</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/97</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Drinking Fountain Attached to Well Pump - Jefferson School</dc:title>
+<dc:subject>School children; Students; Rural schools; Sanitation; Hygiene; Drinking fountains; Wells</dc:subject>
+<dc:description>A view of a drinking fountain attached to a well pump at Jefferson School.  Shows large group of children lined up to drink from the outdoor fountain.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of; a five-year study of health and sanitation conditions of rural children.  Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 202</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32919</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/97</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/98</identifier><datestamp>2014-02-11</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Health Center poster</dc:title>
+<dc:subject>Posters; Health education; Health care; Vaccinations; School children; Hygiene; Preventive medicine; Children</dc:subject>
+<dc:description>Poster entitled &quot;Has Your Child Won a Decoration in the Army of Health?&quot; used in a health center advocating vaccinations and general good health of children aged 2 to 6 years. A boy and girl standing in profile are pictured.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of; a five-year study of health and sanitation conditions of rural children.  Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 208</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32920</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/98</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/99</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>School Examinations</dc:title>
+<dc:subject>Hygiene; Health care; Physical fitness; Schools; School children; Physicians</dc:subject>
+<dc:description>View of a physician giving a medical examination to a young school boy.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of; a five-year study of health and sanitation conditions of rural children.  Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 210</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32921</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/99</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/100</identifier><datestamp>2014-02-11</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>May Day Float</dc:title>
+<dc:subject>Hygiene; Health care; School children; May poles; Health education; Trucks; Houses; City and town life; Parades and processions; Floats; Streets</dc:subject>
+<dc:description>View of school children in open truck during a May Day parade in 1924. The float is comprised of a May pole and poster stating &quot;Health in Play.&quot;</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1920s on behalf of the Rockefeller Foundation's Commonwealth Fund.  He took photographs as part of; a five-year study of health and sanitation conditions of rural children.  Dr. Mustard went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 226</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32922</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/100</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/101</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Double House</dc:title>
+<dc:subject>Houses; Thatched roof buildings; Chimneys; Country life; Outbuildings</dc:subject>
+<dc:description>View of a double clapboard siding, thatched-roof house with chimneys on each end which shows a sparsely planted yard with one lone tree devoid of leaves and one small outbuilding in the rear. A ladder can be seen on the roof.</dc:description>
+<dc:coverage>Rutherford County (Tenn.)</dc:coverage>
+<dc:date>1924-1928</dc:date>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:description>Dr. Harry Mustard worked in Rutherford County, Tennessee, during the 1930s on behalf of the Rockefeller Foundation's Commonwealth Fund. He took photographs as part of a five-year study of health and sanitation conditions of rural children. Dr. Mustard; went on to become a very prominent public health administrator.</dc:description>
+<dc:relation>CN 98</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>32923</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/101</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/102</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Man (possibly S.B. Christy) turning sod at site of Rutherford Hospital.</dc:title>
+<dc:description>Man (possibly S.B. Christy) turning sod at site of Rutherford Hospital.</dc:description>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:relation>CN 232</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>35197</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/102</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:Mustard/103</identifier><datestamp>2014-02-03</datestamp><setSpec>Mustard</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Architectural rendering of Rutherford Hospital, Berlin and Swern Architects, Chicago.</dc:title>
+<dc:description>Architectural rendering of Rutherford Hospital, Berlin and Swern Architects, Chicago.</dc:description>
+<dc:creator>Mustard, Harry S. (Harry Stoll), 1889-1966</dc:creator>
+<dc:source>Dr. Harry Mustard Photograph Album</dc:source>
+<dc:relation>CV 169</dc:relation>
+<dc:relation>THS 634</dc:relation>
+<dc:source>Tennessee Historical Society</dc:source>
+<dc:identifier>35198</dc:identifier>
+<dc:type>image/jpeg</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:relation>1253</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/Mustard/id/103</dc:identifier></oai_dc:dc>
+</metadata>
+</record>
+</repository>

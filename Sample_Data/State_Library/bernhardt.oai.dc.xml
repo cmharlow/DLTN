@@ -1,0 +1,887 @@
+<repository xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"      xmlns:dc="http://purl.org/dc/elements/1.1/"      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instanc">
+<record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/0</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/1</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/2</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/3</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/4</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/5</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/6</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/7</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/8</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/9</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/10</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/11</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/12</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/13</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/14</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/15</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/16</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/17</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/18</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/19</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/20</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/21</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/22</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/23</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/24</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/25</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/26</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/27</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/28</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/29</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/30</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/31</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/32</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/33</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/34</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/35</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/36</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/37</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/38</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/39</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/40</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/41</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/42</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/43</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/44</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/45</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/46</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/47</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/48</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/49</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/50</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/51</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/52</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/53</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/54</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/55</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/56</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/57</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/58</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/59</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/60</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/61</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/62</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/63</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/64</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/65</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/66</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/67</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/68</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/69</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/70</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/71</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/72</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/73</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/74</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/75</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/76</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/77</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/78</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/79</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/80</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/81</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/82</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/83</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/84</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header status="deleted"><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/85</identifier><datestamp>2012-02-09</datestamp><setSpec>bernhardt</setSpec></header>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/86</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33696</dc:identifier>
+<dc:title>Hermitage</dc:title>
+<dc:subject>Log cabins</dc:subject>
+<dc:description>A simple log cabin is depicted. According to the text, the home is The Hermitage of Andrew Jackson, built in 1804. The print was inspired by an image from the collection of the Ladies' Hermitage Association in Nashville, Tennessee.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Hermitage (Tenn.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>The Jacksons occupied this simple log cabin in 1804. Later, a mansion was constructed; they expanded their property and eventually developed a 1,100-acre plantation that was home to about 150 slaves.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/86</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/87</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33697</dc:identifier>
+<dc:title>Nashville Inn</dc:title>
+<dc:subject>Taverns (Inns); Carriages &amp; coaches</dc:subject>
+<dc:description>The Nashville Inn is pictured. The text indicates that this site was Andrew Jackson's headquarters. The print was inspired by an image once held by the Carnegie Public Library in Nashville, Tennessee.  The inn as well as two other buildings can be seen, one of which has three stories with balconies. A horse-drawn stagecoach and few men in top hats can be seen in front of the buildings.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Nashville (Tenn.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>The Nashville Inn was often frequented by Andrew and Rachel Jackson. According to one of  Jackson's contemporaries, Jackson &quot;frequently spent weeks at the Inn, always surrounded by a coterie of his friends…It was nothing to see the crowd gathered in the vacant lot and witness a cock fight, or even a set-to between some of the lookers-on.&quot;  The inn was destroyed by fire in 1856; it was originally located near the Davidson County Courthouse in downtown Nashville. Other famous guests include Andrew Johnson.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/87</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/88</identifier><datestamp>2015-03-06</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33698</dc:identifier>
+<dc:title>Map of the Battle of Horseshoe Bend</dc:title>
+<dc:subject>Maps</dc:subject>
+<dc:description>Map detailing the battle at Horseshoe Bend during the Creek War (1813-1814).</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>The Battle of Horseshoe Bend was fought on March 27, 1814, between the warring faction of the Creek Indians and American forces led by General Andrew Jackson. The battle resulted in the near destruction of the Creek warriors and is considered to be the climactic action of the Creek War.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/88</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/89</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33699</dc:identifier>
+<dc:title>General Jackson's Headquarters</dc:title>
+<dc:subject>Buildings; Houses</dc:subject>
+<dc:description>Front view of the building on Royal Street in New Orleans, Louisiana, used by Andrew Jackson as headquarters during the campaign against the British in the War of 1812.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>New Orleans (La.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>General Andrew Jackson came to New Orleans in early December 1814 to stave off the impending attack on New Orleans by British forces during the War of 1812. The building at 106 Royal Street served as Jackson's headquarters during his stay in the city.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/89</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/90</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33700</dc:identifier>
+<dc:title>Jackson's Headquarters on New Orleans Battlefield</dc:title>
+<dc:subject>Military headquarters; Battlefields; Houses</dc:subject>
+<dc:description>Drawing of the plantation house that served as General Andrew Jackson's headquarters on the battlefield outside of New Orleans during the final phase of the War of 1812.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>New Orleans (La.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>After the British forces landed south of New Orleans in late December 1814, General Andrew Jackson staved off the initial assault on the night of December 23. Afterwards, Jackson built a defensive line on the plains of Chalmette, a few miles south of the city of New Orleans. Jackson used the McCarty plantation house, depicted here, for his headquarters.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/90</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/91</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33701</dc:identifier>
+<dc:title>Chalmette Monument</dc:title>
+<dc:subject>Monuments &amp; memorials</dc:subject>
+<dc:description>Drawing of the Chalmette Monument erected to commemorate the Battle of New Orleans during the War of 1812.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>New Orleans (La.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>The monument at Chalmette has a long history that goes back to 1839, when interest rose in creating a suitable memorial to the American victory at the Battle of New Orleans. After several aborted attempts, the monument was finally erected in 1908 and the formal dedication of the 100-foot obelisk occurred on January 8, 1915, the centennial of the Battle of New Orleans.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/91</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/92</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33702</dc:identifier>
+<dc:title>St. Louis Cathedral in New Orleans</dc:title>
+<dc:subject>Churches; Cathedrals</dc:subject>
+<dc:description>Drawing of the Cathedral of St. Louis in New Orleans, Louisiana. Site of the victory celebration for Andrew Jackson at the conclusion of the campaign at New Orleans during the War of 1812.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>New Orleans (La.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>On January 21, 1815, New Orleans celebrated the victory of the American forces over the British army during the campaign by the English to capture the city. A grateful populace turned out to see Jackson crowned with a wreath of laurel outside this Catholic cathedral.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/92</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/93</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33703</dc:identifier>
+<dc:title>Judge Dominick Hall's Court</dc:title>
+<dc:subject>Buildings</dc:subject>
+<dc:description>Drawing of the building on Royal Street in New Orleans, Louisiana, that served as the courtroom where General Andrew Jackson was tried for contempt of court in April 1815. He was fined $1,000 by Judge Dominick Hall.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>New Orleans (La.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>After the climactic battle of the War of 1812 at New Orleans, General Andrew Jackson maintained a decree of martial law on the city until he received official notice of the war's end from Washington.  Judge Dominick Hall challenged Jackson's legality to suspend a writ of habeas corpus and fined Jackson $1,000 on a contempt of court charge. Jackson paid the fine and years later he was reimbursed by the U. S. Congress the full amount plus interest.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/93</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/94</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33704</dc:identifier>
+<dc:title>The Second Hermitage</dc:title>
+<dc:subject>Historic buildings; Historic sites; Houses</dc:subject>
+<dc:description>Etching of the second Hermitage featuring a front view of the house and side building surrounded by trees with horses in the foreground. The original inspiration image is credited to the collection of Mr. Herbert Fletcher.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Hermitage (Tenn.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Construction on the second Hermitage began in 1819.  This large, brick Federal-style house replaced the grouping of log structures erected on the property after Andrew Jackson purchased the farm in 1804. A central hall opened to four rooms on each of the two stories.  Lafayette visited the Hermitage in 1825. This house was damaged by fire in 1834 and rebuilt.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/94</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/95</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33705</dc:identifier>
+<dc:title>Bell Tavern</dc:title>
+<dc:subject>Taverns (Inns)</dc:subject>
+<dc:description>Etching features side and front views of the Bell Tavern that was located in Lynchburg, Virginia, during the time of Andrew Jackson. The original inspiration image is credited to the Collection of Jones Memorial Library.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Lynchburg (Va.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Andrew Jackson met up with Thomas Jefferson at Jefferson's estate of Poplar Forest in late April of 1815 as Jackson was traveling to Washington.  Jefferson accompanied Jackson to Lynchburg, where they attended a banquet in honor of Jackson.  Both men spent the night at Bell Tavern.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/95</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/96</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33706</dc:identifier>
+<dc:title>Octagon House, Washington, D.C.</dc:title>
+<dc:subject>Historic buildings; Houses</dc:subject>
+<dc:description>Etching of the front entry area of the Octagon House in Washington, D.C.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Washington (D.C.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Andrew Jackson was entertained at this house in Washington, D.C. on November 15, 1815.  The house was constructed between 1798 and 1800 for Colonel John Tayloe, a wealthy Virginia plantation owner. The architect of the U.S. Capitol, Dr. William Thornton, designed this structure as well. After the British burned the White House, Tayloe offered his home to President and Mrs. Madision.  Madision signed the Treaty of Ghent ending the War of 1812 at the Octagon House.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/96</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/97</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33707</dc:identifier>
+<dc:title>A Gold Medal</dc:title>
+<dc:subject>Dedications; Anniversaries</dc:subject>
+<dc:description>Etching features a two-sided coin commemorating the Battle of New Orleans, Louisiana, 1815. Obverse shows General Andrew Jackson in profile and uniform.  Reverse shows Lady Liberty instructing an angel to write a resolution commemorating the event. This item was in the Collection of Howard Memorial Library, New Orleans, La.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>New Orleans (La.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/97</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/98</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33708</dc:identifier>
+<dc:title>City Hotel, New York</dc:title>
+<dc:subject>Celebrations; Balls (Parties); Hotels; Streets</dc:subject>
+<dc:description>Etching of the City Hotel, New York, where a grand ball was given for General Jackson on February 22, 1819. This item is a part of the New York Historical Society collections.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>New York (N.Y.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/98</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/99</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33709</dc:identifier>
+<dc:title>New York City Hall</dc:title>
+<dc:subject>City &amp; town halls; Government facilities; Municipal government; Awards; Rewards of Merit</dc:subject>
+<dc:description>A pen and ink drawing of the front entrance of the New York City Hall. There are several citizens in front of the building. The inscription reads: &quot;City Hall, New York City, where Andrew Jackson was presented with the Freedom of the City, Feb. 23, 1819. Collection of New York Historical Society, New York City.&quot;</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>New York (N.Y.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Construction of the new New York City Hall began in 1803 was delayed after the City Council objected that the design was too extravagant. In response, McComb and Mangin, the architects, reduced the size of the building and used brownstone at the rear of;  the building to lower costs.  Labor disputes and an outbreak of yellow fever further slowed construction. The building was not dedicated until 1811. It officially opened in 1812.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/99</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/100</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33710</dc:identifier>
+<dc:title>Tammany Hall, New York City</dc:title>
+<dc:subject>Awards; Rewards of Merit; Political parties; Partisan politics; Political organizations; Political patronage; Municipal government</dc:subject>
+<dc:description>A pen and ink drawing of Tammany Hall in New York City. The three-story building is located on a street corner. The inscription reads: &quot;Tammany Hall, New York City, where Andrew Jackson attended a public dinner on February 23, 1819. Collection of New York Historical Society.&quot;</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>New York (N.Y.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Tammany Hall was the Democratic Party political machine that played a major role in controlling New York City politics from the 1790s to the 1960s. The Tammany Society was founded on May 12, 1789. By 1798, the Society's activities had grown increasingly politicized, and eventually Tammany Hall emerged as the center for Democratic-Republican Party politics in the city. The sketch shows the original building where the society met.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/100</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/101</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33711</dc:identifier>
+<dc:title>Baltimore City Assembly Room and Library</dc:title>
+<dc:subject>Banquet halls; Banquets; Private libraries; Awards</dc:subject>
+<dc:description>A pen and ink drawing of the Baltimore City Assembly Room. Shows a large two-story Georgian building.  On the roof is an American flag. The caption reads: &quot;City Assembly Room and Library, Baltimore, Md., where a banquet was given Andrew Jackson, March 1, 1819.  Collection of Enoch Pratt Free Library, Baltimore, Md.&quot;</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Baltimore (Md.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Begun in 1797, the building was completed in 1799. It was used for social and civic gatherings. A private library company occupied the first floor, while the principal floor was used as a ballroom and banquet hall.  The building burned to the ground in 1873.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/101</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/102</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33712</dc:identifier>
+<dc:title>Washington Hall and Hotel, Philadelphia</dc:title>
+<dc:subject>Hotels; Awards; Banquet halls; Banquets; Rewards of merit</dc:subject>
+<dc:description>A pen and ink drawing showing the front of Washington Hall and the adjoining hotel. Both are two-story buildings. The caption reads: Washington Hall and Hotel, Philadelphia, Pa., where Andrew Jackson was banqueted February 1819.  Collection of the Free Library of Philadelphia.&quot;</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Philadelphia (Pa.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Also known as the Mansion House, the hotel was established by William Renshaw in 1809. Next to it, the Washington Benevolent Association, which had been recently formed, erected a large building which they named Washington Hall.  The Building was constructed with an entrance to the hotel. The hotel operated until 1831.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/102</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/103</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33713</dc:identifier>
+<dc:title>Hermitage Church</dc:title>
+<dc:subject>Churches; Presbyterian churches; Religious facilities; Religious dwellings</dc:subject>
+<dc:description>A pen and ink drawing of the Hermitage Church. Shows a one-room building with double doors used to separate the sexes. A chimney is set between the two front doors. A man stands in front of the entrance.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Hermitage (Tenn.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>In 1823, Jackson along with several of his neighbors donated money to build a neighborhood church.  Jackson also donated the land and possibly slave labor from The Hermitage.  When finished in January 1824, the finished brick building measured fifty by thirty feet.  The church’s interior featured a brick floor with benches in a semicircle arranged around a pulpit on the building’s west wall.   Fireplaces on the north and south walls heated this simple rural church. The church became Presbyterian.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/103</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/104</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33714</dc:identifier>
+<dc:title>Capitol, Washington D.C.</dc:title>
+<dc:subject>Legislative bodies; Politics &amp; government; Capitols; Government facilities; Rotundas</dc:subject>
+<dc:description>A pen and ink drawing of the United States Capitol building in Washington D.C. The drawing shows both houses of Congress and the rotunda before the dome was built. The caption reads: &quot;The Capitol, Washington D.C. where Andrew Jackson sat as U.S. Senator, 1823-1824. He also served in the same capacity in 1797.&quot;</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Washington (D.C.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>The United States Capitol serves as the seat of government for the United States Congress, the legislative branch of the federal government. It is located in Washington, D.C., on top of Capitol Hill at the east end of the National Mall.  George Washington laid the cornerstone on September 18, 1793. The Senate wing was completed in 1800, while the House wing was completed in 1811.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/104</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/105</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33715</dc:identifier>
+<dc:title>National Hotel, Washington D.C.</dc:title>
+<dc:subject>Hotels</dc:subject>
+<dc:description>A pen and ink drawing of the National Hotel in Washington, D.C. Drawing shows the entrance to the three-story hotel.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Washington (D.C.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>This hotel was considered to be the most fashionable of Washington D.C.'s hotels. Andrew Jackson stayed here in 1829.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/105</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/106</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33716</dc:identifier>
+<dc:title>Andrew Jackson Postage Stamp</dc:title>
+<dc:subject>Postage stamps</dc:subject>
+<dc:description>A pen and ink drawing of the 1861 postage stamp honoring Andrew Jackson. The authentic stamp is surrounded by the drawing. The caption reads: &quot;Andrew Jackson, Seventh President of the U.S.A.,1829-1837.  Postage Stamp with Portrait of Andrew Jackson issued  1861.&quot;</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>A full face of Andrew Jackson fills the entire tablet, which is as wide as the stamp, three-fourths of an inch, and only 1/16 less in its long diameter than the stamp, 15/16 of an inch, space being left at the top for the words &quot;U.S. postage&quot; above the  elliptical ground, which is cross-hatched. It is a two-cent stamp and engraved by Joseph Pease.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/106</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/107</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33717</dc:identifier>
+<dc:title>The White House, Washington, D.C.</dc:title>
+<dc:subject>Official residences; Historic buildings</dc:subject>
+<dc:description>This etching features a front view of the White House that includes the fountain on the front lawn.  At the bottom of the drawing, the Wall name appears with the date 1937, and Wall signed the etching below.  The inspiration image comes from the collection of Jennie Hunter Wall of Connecticut.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Washington (D.C.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>This image is used to highlight Andrew Jackson's tenure as President of the United States from 1829 until 1837.  As the seventh President of the United States, Jackson made reform the focus of his two terms in office. Key issues of his administration included the spoils system, the National Bank, the Nullification crisis, and Indian removal.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/107</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/108</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33718</dc:identifier>
+<dc:title>Tremont House, Boston, Massachusetts</dc:title>
+<dc:subject>Hotels; Historic buildings</dc:subject>
+<dc:description>This etching pictures the front of Tremont House, also known as Tremont Hotel.  A scant view of Beacon Street is provided at the right side of the image--the hotel being located at the intersection of Tremont and Beacon Streets.  Flavor is provided with the addition of people and a carriage with horses in the foreground.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Boston (Mass.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Andrew Jackson and his party stayed at the Tremont House in 1833.  This four-story, granite-faced hotel was designed by noted architect Isaiah Rogers in 1829. It was the first hotel in the nation to be equipped with running water and indoor plumbing and it set the standard for luxury that other major hotels in the nation followed.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/108</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/109</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33719</dc:identifier>
+<dc:title>Harvard University, Cambridge, Massachusetts</dc:title>
+<dc:subject>Universities &amp; colleges; Educational facilities; Lecture halls</dc:subject>
+<dc:description>This etching presents the front of some of the college buildings at Harvard University at the time Jackson was honored in 1833. The Wall name appears at the bottom of the drawing with the date 1937; Wall signed below the etching. The inspiration image comes from the collection of the Harvard College Library.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Cambridge (Mass.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Andrew Jackson acquired his license to practice law in 1787 after spending three years in Salisbury, North Carolina studying law with two prominent lawyers.  He began his practice in North Carolina's western district of Washington County.; A 1788 appointment to a position as district attorney in the Mero District brought him to Nashville. He received from Harvard University an honorary degree of Doctor of Laws in 1833.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/109</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/110</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33720</dc:identifier>
+<dc:title>The Hermitage of today</dc:title>
+<dc:subject>Historic buildings; Dwellings; Houses; Historic sites</dc:subject>
+<dc:description>Front view of The Hermitage with trees overhanging the sidewalk where a couple walks toward the building.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Hermitage (Tenn.)</dc:coverage>
+<dc:date>1935</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>This image shows how The Hermitage was believed to have looked at the time Andrew Jackson resided there, 1834-1835.  When Bernardt Wall visited The Hermitage, the building was under the management of the Ladies' Hermitage Association. This image was etched from studies made at the time of his stopover</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/110</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/111</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33721</dc:identifier>
+<dc:title>Andrew Jackson's private coach</dc:title>
+<dc:subject>Carriages &amp; coaches; Stagecoaches</dc:subject>
+<dc:description>This etching shows the private coach of Andrew Jackson as it appeared to Bernardt Wall on his visit to the Hermitage Farm, as he called the property.  The door, to the coach, is open and the steps are down.  This drawing was made available through the courtesy of the Ladies' Hermitage Association.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Hermitage (Tenn.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/111</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/112</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33722</dc:identifier>
+<dc:title>Sarcophagus of Roman Emperor</dc:title>
+<dc:subject>Sarcophagi; Coffins</dc:subject>
+<dc:description>This etching features the ornate sarcophagus of the Roman Emperor Severus Alexander  (who reigned from 222 to 235 AD).</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Washington (D.C.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>The sarcophagus of Roman Emperor Severus Alexander  which Commodore J. D. Elliott, United States Navy had brought to America.  Commodore Elliott offered this sarcophagus to Andrew Jackson as a coffin, but he graciously declined.  This etching was provided through the courtesy of the Smithsonian Institution,  Washington, D. C.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/112</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/113</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33723</dc:identifier>
+<dc:title>Senator Sam Houston of Texas, Mrs. Houston and Sam, Jr., at the deathbed of Andrew Jackson, June 9, 1845</dc:title>
+<dc:subject>Deathbeds; Bedrooms; Women; Politicians; Presidents; Children</dc:subject>
+<dc:description>A group of mourners, which include Sam Houston, his wife, and his son, surround the deathbed of former President Andrew Jackson. Two lit candles can be seen next to his bed.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Nashville (Tenn.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Andrew Jackson died in 1845 while living at his home in Hermitage, Tennessee, after suffering from an extended period of declining health. He was 78. Two days after his death, he was buried in the Hermitage garden. Jackson and Houston had long been acquainted; Houston had been a staunch supporter of Andrew Jackson during the 1820s.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/113</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/114</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33724</dc:identifier>
+<dc:title>The tomb of Andrew and Rachel Jackson in the Hermitage Garden</dc:title>
+<dc:subject>Politicians; Presidents; Tombs &amp; sepulchral monuments</dc:subject>
+<dc:description>This print shows the tomb of Andrew and Rachel Jackson in the gardens of The Hermitage, Jackson's home near Nashville, Tennessee. It is surrounded by trees and a fence.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Nashville (Tenn.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Andrew Jackson died in 1845 while living at his home in Hermitage, Tennessee, after suffering from an extended period of declining health. He was 78. Two days after his death, he was buried in the Hermitage garden. Rachel Jackson was buried in 1828, in the white dress that she had purchased for her husband's inaugural ceremonies.  She died from a heart attack, and had been under great stress in the weeks before her death. Jackson's political opponents had long cast doubts on his wife's honor.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/114</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/115</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33725</dc:identifier>
+<dc:title>Bernhardt Wall, Etcher</dc:title>
+<dc:subject>Horses; Cowboys</dc:subject>
+<dc:description>This small print of a man on a horse (with the words, &quot;Bernhardt Wall, Etcher,&quot; underneath it) serves as the signature page or insignia of Bernhardt Wall, the artist who created this book of Andrew Jackson prints.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Bernhardt Wall completed books of etchings on a number of important historical figures, including Lincoln, Jackson, Mark Twain, Jefferson, and Lafayette, in addition to diverse subjects, including World War I, Greenwich Village, and &quot;Man's Best Friend,&quot;  dogs.  His art was exhibited at a number of locations, and his works are now located in various repositories throughout the world. Wall received a degree of Doctor of Humane Letters from Lincoln Memorial University in 1939. During his lifetime, his art was exhibited at a number of locations and his works are now located in various repositories throughout the world.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/115</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/116</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33683</dc:identifier>
+<dc:title>Following Andrew Jackson</dc:title>
+<dc:subject>Title pages</dc:subject>
+<dc:description>The title pages of a series of sketches dealing with Andrew Jackson. Drawing is entitled &quot;Following Andrew Jackson, 1767-1845,&quot; and shows the image of the famous equestrian statue of Andrew Jackson. The artist's name and date are also given.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Andrew Jackson, lawyer, military leader, was the seventh President of the United States, serving from 1829-1837. As president he redefined and strengthened the executive office, and championed the concept of a united nation against rising threats of disunion. He died at The Hermitage in 1845.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/116</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/117</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33684</dc:identifier>
+<dc:title>Jackson Portrait after Samuel Waldo</dc:title>
+<dc:subject>Military uniforms; Portraits</dc:subject>
+<dc:description>A portrait of Andrew Jackson. Drawing shows Jackson in his military uniform. Caption reads, &quot;From the painting by Samuel Waldo.&quot;</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Andrew Jackson, lawyer and military leader, was the seventh President of the United States, serving from 1829 to 1837. As president he redefined and strengthened the executive office, and championed the concept of a united nation against rising threats of disunion. He died at The Hermitage in 1845.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/117</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/118</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33685</dc:identifier>
+<dc:title>Jackson Copyright Page</dc:title>
+<dc:subject>Copyright; Stars</dc:subject>
+<dc:description>A drawing used as a copyright page. The drawing is covered with stars, and it states: &quot;Copyright 1937 by Bernhardt Wall.&quot;</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/118</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/119</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33686</dc:identifier>
+<dc:title>Jackson Dedication Page</dc:title>
+<dc:subject>Dedications; State seals</dc:subject>
+<dc:description>A dedicatory page to Herbert Godwin. The drawing shows the state seals of both Tennessee and Texas. The dedication states: &quot;To Herbert Godwin Esq., Tennessee by Birth, Texan by Adoption. A Public Spirited Citizen and Lover of the Arts.&quot;</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/119</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/120</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33687</dc:identifier>
+<dc:title>Notes</dc:title>
+<dc:description>A notes page, consists primarily of acknowledgments and sources used in compiling the work.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/120</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/121</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33688</dc:identifier>
+<dc:title>Orleans Theatre</dc:title>
+<dc:subject>Theaters; Streets</dc:subject>
+<dc:description>A pen and ink sketch of the Orleans Theatre. Shows the building as well as a street scene.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>New Orleans (La.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>&quot;The Orleans Theatre, conducted by John Davis, who also owned the Davis Hotel, very likely a part of  the theater building. General and Mrs. Jackson stopped at Davis Hotel, where a grand dinner was given them.&quot; The drawing was taken from the Collection of the Howard Memorial Library.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/121</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/122</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33689</dc:identifier>
+<dc:title>Andrew Jackson, Sr., Grave</dc:title>
+<dc:subject>Graves; Tombs &amp; sepulchral monuments; Monuments &amp; memorials</dc:subject>
+<dc:description>Grave of Andrew Jackson, Sr., in the old Waxhaw Cemetery, Lancaster County, South Carolina. The inscription of the monument reads: &quot;Here lies buried Andrew Jackson Sr., Father of the President of the United States. Born in Ireland; Died February 1767. Erected by Catawba Chapter, Daughters of the American Revolution, Rock Hill, South Carolina, April 9, 1931.&quot;</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Waxhaw (N.C. and S.C.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/122</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/123</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33690</dc:identifier>
+<dc:title>Here was born March 15, 1767 Andrew Jackson Seventh President of the United States</dc:title>
+<dc:subject>Monuments &amp; memorials</dc:subject>
+<dc:description>An etching of the stone monument commemorating the birthplace of Andrew Jackson near Monroe County, N. C. The drawing is quite large and is inset with an image of the George McCamie house, said to be the site of the birth.  It is inscribed: &quot;Here was born Andrew Jackson our seventh President, March 15, 1767.&quot;  This item was in the collection of the Monroe County Chamber of Commerce.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Monroe (N. C.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/123</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/124</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33691</dc:identifier>
+<dc:title>Site of the Crawford Home</dc:title>
+<dc:subject>Tombs &amp; sepulchral monuments; Monuments &amp; memorials</dc:subject>
+<dc:description>A stone monument shown behind an iron fence and gate. The inscription on this sketch states that this was the site of the Crawford Home, Lancaster County, S. C., where Andrew Jackson was reared. This item was a part of a collection owned by Mr. and Mrs. C. G. Bennett, Lancaster, S. C.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Lancaster (S.C.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/124</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/125</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33692</dc:identifier>
+<dc:title>Capitol of the &quot;State of Franklin,&quot; Greeneville, Tennessee</dc:title>
+<dc:subject>Capitols; Log cabins</dc:subject>
+<dc:description>Capitol structure of the &quot;State of Franklin,&quot; an attempted community of settlers from Virginia and North Carolina who hoped to settle in the area which became East Tennessee.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Greenville (Tenn.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>The men who established the State of Franklin did not have the backing of North Carolina or Virginia.  They also had to contend with the Native Americans who felt that the land belonged to them.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/125</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/126</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33693</dc:identifier>
+<dc:title>The House, near Natchez, Mississippi, where, it is said, Andrew Jackson was married, August 1791</dc:title>
+<dc:subject>Houses; Chimneys; Columns</dc:subject>
+<dc:description>Large two-story house with  columns across the front.  There appears to be a man and a dog walking in front.  It is part of the collection of Mr. W. H. Braden of Natchez, Mississippi.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Natchez (Miss.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Andrew Jackson took Rachel (Donelson) Robards to Natchez, Mississippi, believing she was divorced at the time.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/126</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/127</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33694</dc:identifier>
+<dc:title>Rachel Jackson</dc:title>
+<dc:subject>Women; Presidents' spouses</dc:subject>
+<dc:description>A portrait of Rachel Jackson as a young woman with a bonnet in her hair. The print was inspired by an image located at the Houston Public Library.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Rachel Jackson was the wife of President Andrew Jackson. Their 1791 marriage was later subject to controversy and criticism, as it was discovered that Rachel's first husband, Lewis Robards, had never completed the divorce proceedings. After the Robards' divorce was granted, Rachel and Andrew remarried in 1794. Jackson was always very sensitive to criticism about his wife and her honor.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/127</dc:identifier></oai_dc:dc>
+</metadata>
+</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:bernhardt/128</identifier><datestamp>2014-04-07</datestamp><setSpec>bernhardt</setSpec></header>
+<metadata>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:identifier>33695</dc:identifier>
+<dc:title>Independence Hall</dc:title>
+<dc:subject>Capitols; Government facilities</dc:subject>
+<dc:description>The image is of a reddish hue and pictures Independence Hall in Philadelphia. The text indicates that this is where Andrew Jackson represented Tennessee from 1796 to 1798 as Congressman and Senator. The print was inspired by an image from the collection of Mr. Theodore Fred Kuper in New York City. A group of people can be seen from the distance outside of Independence Hall. Individual faces cannot be discerned.</dc:description>
+<dc:creator>Wall, Bernhardt, 1872-1956</dc:creator>
+<dc:coverage>Philadelphia (Penn.)</dc:coverage>
+<dc:date>1937</dc:date>
+<dc:type>IMAGE</dc:type>
+<dc:format>TIFF</dc:format>
+<dc:source>Bernhardt Wall Collection, ca. 1914-1953</dc:source>
+<dc:description>Independence Hall was built between 1732 and 1756 to serve as the State House of the Province of Pennsylvania. It was later the meeting place for the Second Continental Congress. Other critical founding documents for the United States were conceived and signed in this building, including the Declaration of Independence.</dc:description>
+<dc:relation>150</dc:relation>
+<dc:source>Tennessee State Library &amp; Archives</dc:source>
+<dc:relation>http://tennessee.gov/tsla/history/manuscripts/findingaids/149+.pdf</dc:relation>
+<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/bernhardt/id/128</dc:identifier></oai_dc:dc>
+</metadata>
+</record>
+</repository>
