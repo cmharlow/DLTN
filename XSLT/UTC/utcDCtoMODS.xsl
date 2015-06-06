@@ -48,7 +48,7 @@
             <xsl:apply-templates select="dc:language"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:apply-templates select="dc:relation" /> <!-- collections -->
-            <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
+            <xsl:call-template select="rightsRepair"/> <!-- accessCondition, not all records have rights statements -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- genre -->
@@ -59,7 +59,7 @@
                 <languageOfCataloging>
                     <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
                 </languageOfCataloging>
-                <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core record by the Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a stylesheet available at https://github.com/cmh2166/DLTN. Metadata originally created in a locally modified version of qualified Dublin Core using DSpace (data dictionary available: https://wiki.lib.utk.edu/display/DPLA/Crossroads+Mapping+Notes.)</recordOrigin>
+                <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core record by the Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a stylesheet available at https://github.com/cmh2166/DLTN. Metadata originally created in a locally modified version of qualified Dublin Core using ContentDM (data dictionary available: https://wiki.lib.utk.edu/display/DPLA.)</recordOrigin>
             </recordInfo>
         </mods>
     </xsl:template>
@@ -253,10 +253,21 @@
         </xsl:for-each>
     </xsl:template>
     
+    <xsl:template name="rightsRepair">
+        <xsl:choose>
+            <xsl:when test="dc:rights">
+                <xsl:apply-templates select="dc:rights"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <accessCondition>Under copyright.</accessCondition>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
     <xsl:template match="dc:subject">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:call-template name="LCSHtopic">
-                <xsl:with-param name="term"><xsl:value-of select="."/></xsl:with-param>
+                <xsl:with-param name="term"><xsl:value-of select="replace(., ' -- ', '--')"/></xsl:with-param>
             </xsl:call-template>
         </xsl:for-each>
     </xsl:template>

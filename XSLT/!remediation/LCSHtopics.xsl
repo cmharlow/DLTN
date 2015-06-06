@@ -41,6 +41,11 @@
                     <topic>African American churches</topic>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches($topic, 'agriculture')">
+                <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85002415">
+                    <topic>Agriculture</topic>
+                </subject>
+            </xsl:when>
             <xsl:when test="matches($topic, 'apartments')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85005927">
                     <topic>Apartments</topic>
@@ -92,6 +97,11 @@
             <xsl:when test="matches($topic, 'bridges')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85016829">
                     <topic>Bridges</topic>
+                </subject>
+            </xsl:when>
+            <xsl:when test="matches($topic, 'broadsides')">
+                <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85017011">
+                    <topic>Broadsides</topic>
                 </subject>
             </xsl:when>
             <xsl:when test="matches($topic, 'buildings')">

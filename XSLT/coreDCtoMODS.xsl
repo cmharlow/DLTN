@@ -24,6 +24,13 @@
                     <xsl:when test="starts-with(normalize-space(lower-case(.)), 'ap') or starts-with(normalize-space(lower-case(.)), 'mt') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}T.')">
                         <!-- do nothing -->
                     </xsl:when>
+                <!-- Text Terms -->
+                    <xsl:when test="normalize-space(lower-case(.))='pre civil war' or normalize-space(lower-case(.))='pre-civil war' or normalize-space(lower-case(.))='antebellum'">
+                        <dateCreated encoding="edtf" keyDate="yes">unknown/1861</dateCreated>
+                    </xsl:when>
+                    <xsl:when test="normalize-space(lower-case(.))='postwar' or normalize-space(lower-case(.))='post-civil war' or normalize-space(lower-case(.))='postbellum'">
+                        <dateCreated encoding="edtf" keyDate="yes">1865/unknown</dateCreated>
+                    </xsl:when>
                   <!-- DIRECT EDTF MATCHES -->
                     <xsl:when test="matches(normalize-space(.), '^\d{4}$') or matches(normalize-space(.), '^\d{4}-\d{2}$') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}$')">
                         <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="."/></dateCreated>

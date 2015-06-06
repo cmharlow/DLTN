@@ -17,17 +17,18 @@
             xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
             <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
+            <xsl:apply-templates select="dc:creator"/> <!-- creator -->
             
-            <xsl:if test="dc:date|dc:source">
+            <xsl:if test="dc:date">
                 <originInfo> 
                     <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                    <xsl:apply-templates select="dc:source"/> <!-- place of origin -->
+                    <xsl:apply-templates select="dc:publisher"/> <!-- publisher -->
                 </originInfo>
             </xsl:if>
             
             <xsl:if test="dc:format">
                 <physicalDescription>
-                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
+                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaType -->
                 </physicalDescription>
             </xsl:if>
             
@@ -35,20 +36,23 @@
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
                     <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
+                    <xsl:apply-templates select="dc:source" mode="repository"/>
                 </location>
             </xsl:if>
             
+            <xsl:apply-templates select="dc:subject"/> <!-- subject -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
-            <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info, 1 temporal -->
-            <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
+            <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
+            <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
+            <xsl:apply-templates select="dc:type"/> <!-- item types -->
+            <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Looking Back: The Civil War in Tennessee</title>
+                    <title>Throwaway History - The Broadside in American Culture</title>
                 </titleInfo>
-                <abstract>To commemorate the 150th anniversary of the Civil War (2011-2015), the Tennessee State Library and Archives is sending teams of archivists and conservators to communities across Tennessee. Individuals may schedule an appointment, and we will digitally copy and assist in the preservation of your Civil War era manuscripts, artifacts and photographs. Digital copies of these items, representing the rich Civil War heritage of Tennessee families, will become part of a virtual exhibit commemorating the 150th anniversary of the war in Tennessee....</abstract>
+                <abstract>Intended for wide distribution, broadsides were traditionally used as a tool to disseminate information.  Printed on large sheets of paper and sometimes rich in illustration, broadsides were posted on buildings or handed out to the general population.  These ephemera were often produced in mass quantities to advertise, promote or announce official proclamations, public meetings, and entertainment events.  Originally designed to have an immediate impact on the observer, broadsides were created for disposable and temporary use...</abstract>
                 <location>
-                    <url>http://www.tn.gov/tsla/cwtn/index.htm</url>
+                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/broadsides</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
@@ -83,12 +87,6 @@
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'tiff')">
                         <internetMediaType>image/tiff</internetMediaType>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'photographed')">
-                        <digitalOrigin>reformatted digital</digitalOrigin>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'scanned')">
-                        <digitalOrigin>reformatted digital</digitalOrigin>
-                    </xsl:when>
                     <xsl:otherwise>
                         <note><xsl:value-of select="normalize-space(.)"/></note>
                     </xsl:otherwise>
@@ -97,22 +95,44 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template name="rightsRepair">
-        <xsl:choose>
-            <xsl:when test="dc:rights">
-                <xsl:apply-templates select="dc:rights"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <accessCondition>While TSLA houses an item, it does not necessarily hold the copyright on the item, nor may it be able to determine if the item is still protected under current copyright law. Users are solely responsible for determining the existence of such instances and for obtaining any other permissions and paying associated fees that may be necessary for the intended use.</accessCondition>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
     
     <xsl:template match="dc:source">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
-                <place><xsl:value-of select="normalize-space(.)"/></place>
+                <xsl:choose>
+                    <xsl:when test="contains(., 'State Library') or contains(., 'Society')">
+                        <!-- becomes physicalLocation - repository -->
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <relatedItem type='host' displayLabel="Collection">
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                        </relatedItem>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="dc:source" mode="repository">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!='' and (contains(., 'Society') or contains(., 'State Library'))">
+                <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="dc:type">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:choose>
+                <xsl:when test="contains(normalize-space(lower-case(.)), 'image') or contains(lower-case(.), 'tiff')">
+                    <typeOfResource>still image</typeOfResource>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(lower-case(.)), 'text')">
+                    <typeOfResource>text</typeOfResource>
+                </xsl:when>
+            </xsl:choose>
         </xsl:for-each>
     </xsl:template>
     

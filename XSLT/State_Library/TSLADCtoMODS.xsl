@@ -26,20 +26,6 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="dc:coverage">
-        <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='unknown'">
-            <xsl:call-template name="SpatialTopic">
-                <xsl:with-param name="term"><xsl:value-of select="."/></xsl:with-param>
-            </xsl:call-template>
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:coverage" mode="extent">
-        <xsl:if test="matches(normalize-space(.), '\d+')">
-            <extent><xsl:value-of select="normalize-space(.)"/></extent>
-        </xsl:if>
-    </xsl:template>
-    
     <xsl:template match="dc:creator">
         <xsl:if test="normalize-space(.)!='' and lower-case(normalize-space(.)) != 'n/a'">
             <name>
@@ -55,64 +41,21 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="dc:format">
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
-                <xsl:choose>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'audio/wav')">
-                        <internetMediaType>audio/wav</internetMediaType>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jp2')">
-                        <internetMediaType>image/jp2</internetMediaType>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jpeg') or matches(normalize-space(lower-case(.)), 'image/jpg') or matches(normalize-space(lower-case(.)), 'jpg') or matches(normalize-space(lower-case(.)), 'jpeg')">
-                        <internetMediaType>image/jpeg</internetMediaType>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'mp3')">
-                        <internetMediaType>audio/mp3</internetMediaType>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'mpeg')">
-                        <internetMediaType>audio/mpeg</internetMediaType>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'tiff')">
-                        <internetMediaType>image/tiff</internetMediaType>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'wmv')">
-                        <internetMediaType>video/wmv</internetMediaType>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <note><xsl:value-of select="normalize-space(.)"/></note>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:if>
-        </xsl:for-each>
-    </xsl:template>
-        
-    <xsl:template match="dc:format" mode="extent"> 
-        <xsl:if test="matches(normalize-space(.), '\d+') and not(contains(lower-case(.), 'jp2')) and not(contains(lower-case(.), 'mp3'))">
-            <extent><xsl:value-of select="normalize-space(.)"/></extent>
+    <xsl:template match="dc:publisher">
+        <xsl:if test="normalize-space(.)!=''">
+            <publisher><xsl:value-of select="normalize-space(.)"/></publisher>
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="dc:format" mode="itemType"> 
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
-                <xsl:choose>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'audio/wav') or matches(normalize-space(lower-case(.)), 'mpeg') or matches(normalize-space(lower-case(.)), 'mp3')">
-                        <typeOfResource>sound recording</typeOfResource>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'image') or matches(normalize-space(lower-case(.)), 'tiff') or matches(normalize-space(lower-case(.)), 'image/jp2') or matches(normalize-space(lower-case(.)), 'image/jpeg') or matches(normalize-space(lower-case(.)), 'image/jpg') or matches(normalize-space(lower-case(.)), 'jpg') or matches(normalize-space(lower-case(.)), 'jpeg')">
-                        <typeOfResource>still image</typeOfResource>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'wmv')">
-                        <typeOfResource>moving image</typeOfResource>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'text') or matches(normalize-space(lower-case(.)), 'scanned')">
-                        <typeOfResource>text</typeOfResource>
-                    </xsl:when>
-                </xsl:choose>
-            </xsl:if>
-        </xsl:for-each>
+    <xsl:template name="recordSource">
+        <recordInfo>
+            <recordContentSource>Tennessee State Library and Archives</recordContentSource>
+            <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
+            <languageOfCataloging>
+                <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+            </languageOfCataloging>
+            <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core record by the Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a stylesheet available at https://github.com/cmh2166/DLTN. Metadata originally created in a locally modified version of qualified Dublin Core using ContentDM (data dictionary available: https://wiki.lib.utk.edu/display/DPLA.)</recordOrigin>
+        </recordInfo>
     </xsl:template>
     
     <xsl:template match="dc:relation"> <!-- mix of notes, related item ids, related item URLs, and form/genre terms -->
@@ -181,33 +124,11 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="dc:source">
-        <xsl:if test="normalize-space(.)!=''">
-            <xsl:choose>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'collection') or contains(normalize-space(lower-case(.)), 'papers') or contains(normalize-space(lower-case(.)), 'records')">
-                    <relatedItem type="host" displayLabel="Collection">
-                        <titleInfo>
-                            <title><xsl:value-of select="normalize-space(.)"/></title>
-                        </titleInfo>
-                    </relatedItem>
-                </xsl:when>
-                <xsl:otherwise>
-                    <relatedItem type="host">
-                        <titleInfo>
-                            <title><xsl:value-of select="normalize-space(.)"/></title>
-                        </titleInfo>
-                    </relatedItem>
-                </xsl:otherwise>
-            </xsl:choose>
-            
-        </xsl:if>
-    </xsl:template>
-    
     <xsl:template match="dc:subject">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:call-template name="LCSHtopic">
-                    <xsl:with-param name="term"><xsl:value-of select="."></xsl:value-of></xsl:with-param>
+                    <xsl:with-param name="term"><xsl:value-of select="replace(., ' -- ', '--')"></xsl:value-of></xsl:with-param>
                 </xsl:call-template>
             </xsl:if>
         </xsl:for-each>

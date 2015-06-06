@@ -4,16 +4,16 @@
     xmlns:oai="http://www.openarchives.org/OAI/2.0/"
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
+    
+    <xsl:include href="TSLADCtoMODS.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
-        <!-- if statement blocks output of TSLA records that are at item/part-level-->
-        <xsl:if test="not(matches(dc:title/text(), '_\d+$'))">
         <mods xmlns:xlink="http://www.w3.org/1999/xlink" 
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
             xmlns="http://www.loc.gov/mods/v3" version="3.5" 
             xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
-            <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
+            <xsl:apply-templates select="dc:title" mode="SSN"/> <!-- titleInfo/title and part/detail|date parsed out -->
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             
             <xsl:if test="dc:date|dc:publisher">
@@ -40,7 +40,6 @@
             
             <xsl:apply-templates select="dc:format" mode="itemType"/> <!-- Item Type -->
             <xsl:apply-templates select="dc:format" mode="genre"/> <!-- Genre -->
-            <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subject - parsed -->
             <xsl:apply-templates select="dc:coverage"/> <!-- subject info -->
@@ -56,19 +55,11 @@
                     <url>http://tn.gov/tsla/TeVAsites/SouthernSchoolNews/index.htm</url>
                 </location>
             </relatedItem>
-            <recordInfo>
-                <recordContentSource>Tennessee State Library and Archives</recordContentSource>
-                <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
-                <languageOfCataloging>
-                    <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
-                </languageOfCataloging>
-                <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core record by the Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a stylesheet available at https://github.com/cmh2166/DLTN. Metadata originally created in a locally modified version of qualified Dublin Core using DSpace (data dictionary available: https://wiki.lib.utk.edu/display/DPLA/Crossroads+Mapping+Notes.)</recordOrigin>
-            </recordInfo>
+            <xsl:call-template name="recordSource"/>
         </mods>
-        </xsl:if>
     </xsl:template>
     
-    <xsl:template match="dc:title">
+    <xsl:template match="dc:title" mode="SSN">
         <xsl:if test="normalize-space(.)!=''">
             <xsl:choose>
                 <xsl:when test="starts-with(normalize-space(.), 'SSchNno')">
@@ -282,12 +273,6 @@
             <xsl:variable name="pointer" select="substring-after($recordinfo,'/id/')"/>
             <url access="preview"><xsl:value-of select="concat($contentdmroot,'/utils/getthumbnail/collection/',$alias,'/id/',$pointer)"/></url> <!--CONTENTdm thumbnail url-->
             <!-- end CONTENTdm thumbnail url processing -->           
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:publisher">
-        <xsl:if test="normalize-space(.)!=''">
-            <publisher><xsl:value-of select="normalize-space(.)"/></publisher>
         </xsl:if>
     </xsl:template>
     
