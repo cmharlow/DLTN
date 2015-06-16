@@ -17,18 +17,18 @@
             xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
             <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
-            <xsl:apply-templates select="dc:creator"/> <!-- creator -->
+            <xsl:apply-templates select="dc:creator"/> <!-- creators -->
             
             <xsl:if test="dc:date">
                 <originInfo> 
                     <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                    <xsl:apply-templates select="dc:publisher"/> <!-- publisher -->
+                    <xsl:apply-templates select="pulbisher" mode="repair"/> <!-- publisher with places parsed out (already separate publ fields in orig data -->
                 </originInfo>
             </xsl:if>
             
             <xsl:if test="dc:format">
                 <physicalDescription>
-                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaType -->
+                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaType, extent -->
                 </physicalDescription>
             </xsl:if>
             
@@ -36,7 +36,6 @@
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
                     <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
-                    <xsl:apply-templates select="dc:source" mode="repository"/>
                 </location>
             </xsl:if>
             
@@ -45,14 +44,19 @@
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
+            <xsl:if test="dc:relation">
+                <relatedItem>
+                    <xsl:apply-templates select="dc:relation"/>
+                </relatedItem>
+            </xsl:if>
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Throwaway History - The Broadside in American Culture</title>
+                    <title>Hardy A. Mitchener, Jr. Journal</title>
                 </titleInfo>
-                <abstract>Intended for wide distribution, broadsides were traditionally used as a tool to disseminate information.  Printed on large sheets of paper and sometimes rich in illustration, broadsides were posted on buildings or handed out to the general population.  These ephemera were often produced in mass quantities to advertise, promote or announce official proclamations, public meetings, and entertainment events.  Originally designed to have an immediate impact on the observer, broadsides were created for disposable and temporary use...</abstract>
+                <abstract>Hardy A. Mitchener, Jr. was a 2nd Lieutenant in the 509th Bombardment Squadron, 351st Bombardment Group, 8th Air Force, stationed in Polebrook, England, during World War II. He was shot down and captured on May 30, 1944, after a bombing mission in Oschersleben, Germany, and sent to Stalag Luft III shortly thereafter. During his stay at this POW camp in Sagan, Germany, known principally for the famous “Great Escape” that took place in March 1944, Mitchener kept a diary of his experiences. The diary contains detailed drawings of life at the camp as well as documentation of the prisoners’ rapid evacuation of Stalag Luft III on January 27, 1945. Mitchener was fond of writing songs and poems in his diary, and has included numerous examples of works that speak to the prisoners’ depression, boredom, frustration, and overpowering desire for freedom...</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/broadsides</url>
+                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/mitchener</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
@@ -61,26 +65,31 @@
     </xsl:template>
     
     <xsl:template match="dc:coverage">
-        <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='unknown'">
-            <xsl:choose>
-                <xsl:when test="matches(., '\d+')">
-                    <subject>
-                        <temporal><xsl:value-of select="normalize-space(.)"/></temporal>
-                    </subject>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:call-template name="SpatialTopic">
-                        <xsl:with-param name="term"><xsl:value-of select="."/></xsl:with-param>
-                    </xsl:call-template>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='unknown'">
+                <xsl:choose>
+                    <xsl:when test="matches(., '\d+')">
+                        <subject>
+                            <temporal><xsl:value-of select="normalize-space(.)"/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="SpatialTopic">
+                            <xsl:with-param name="term"><xsl:value-of select="."/></xsl:with-param>
+                        </xsl:call-template>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:if>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:format"> <!-- should go into PhysicalDescription wrapper -->
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
+                    <xsl:when test="matches(., '\d+')">
+                        <extent><xsl:value-of select="normalize-space(.)"/></extent>
+                    </xsl:when>
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jpeg')">
                         <internetMediaType>image/jpeg</internetMediaType>
                     </xsl:when>
@@ -95,12 +104,32 @@
         </xsl:for-each>
     </xsl:template>
     
+    <xsl:template match="dc:publisher" mode="repair">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!=''">
+                <xsl:choose>
+                    <xsl:when test="contains(., 'Meadville') or contains(., 'Nashville') or contains(., 'Washington')">
+                        <place><xsl:value-of select="normalize-space(.)"/></place>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <publisher><xsl:value-of select="normalize-space(.)"/></publisher>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="dc:relation"> <!-- odd mix of identifiers - some are identifiers for collections? can't verify -->
+        <xsl:if test="normalize-space(.)!=''">
+            <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
+        </xsl:if>
+    </xsl:template>
     
     <xsl:template match="dc:source">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or contains(., 'Society')">
+                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -115,11 +144,16 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="dc:source" mode="repository">
+    <xsl:template match="dc:type">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and (contains(., 'Society') or contains(., 'State Library'))">
-                <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
-            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="contains(normalize-space(lower-case(.)), 'image') or contains(lower-case(.), 'tiff')">
+                    <typeOfResource>still image</typeOfResource>
+                </xsl:when>
+                <xsl:when test="matches(normalize-space(lower-case(.)), 'text')">
+                    <typeOfResource>text</typeOfResource>
+                </xsl:when>
+            </xsl:choose>
         </xsl:for-each>
     </xsl:template>
     

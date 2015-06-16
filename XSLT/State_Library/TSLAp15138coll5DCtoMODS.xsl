@@ -42,17 +42,22 @@
             
             <xsl:apply-templates select="dc:subject"/> <!-- subject -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
+            <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
+            <xsl:if test="dc:relation">
+                <relatedItem>
+                    <xsl:apply-templates select="dc:relation"/> <!-- collection identifiers -->
+                </relatedItem>
+            </xsl:if>
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Throwaway History - The Broadside in American Culture</title>
+                    <title>Civil War Soldier Photographs</title>
                 </titleInfo>
-                <abstract>Intended for wide distribution, broadsides were traditionally used as a tool to disseminate information.  Printed on large sheets of paper and sometimes rich in illustration, broadsides were posted on buildings or handed out to the general population.  These ephemera were often produced in mass quantities to advertise, promote or announce official proclamations, public meetings, and entertainment events.  Originally designed to have an immediate impact on the observer, broadsides were created for disposable and temporary use...</abstract>
+                <abstract>When the Civil War erupted, the new medium of photography had only been in existence for a little over twenty years. The daguerreotype had emerged as the most common early photographic type, but each image was unique (a positive image rather than a negative) and proved to be a challenge to reproduce. Most of the Civil War photographers were accustomed to working with daguerreotypes; one scholar notes that “the roots of Civil War photography came out of the daguerreian era and coursed through the lives of the men who made the pictures” (Zeller 5)...</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/broadsides</url>
+                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll5</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
@@ -61,20 +66,22 @@
     </xsl:template>
     
     <xsl:template match="dc:coverage">
-        <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='unknown'">
-            <xsl:choose>
-                <xsl:when test="matches(., '\d+')">
-                    <subject>
-                        <temporal><xsl:value-of select="normalize-space(.)"/></temporal>
-                    </subject>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:call-template name="SpatialTopic">
-                        <xsl:with-param name="term"><xsl:value-of select="."/></xsl:with-param>
-                    </xsl:call-template>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='unknown'">
+                <xsl:choose>
+                    <xsl:when test="matches(., '\d+')">
+                        <subject>
+                            <temporal><xsl:value-of select="normalize-space(.)"/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="SpatialTopic">
+                            <xsl:with-param name="term"><xsl:value-of select="."/></xsl:with-param>
+                        </xsl:call-template>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:if>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:format"> <!-- should go into PhysicalDescription wrapper -->
@@ -84,8 +91,14 @@
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jpeg')">
                         <internetMediaType>image/jpeg</internetMediaType>
                     </xsl:when>
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jp2')">
+                        <internetMediaType>image/jp2</internetMediaType>
+                    </xsl:when>
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'tiff')">
                         <internetMediaType>image/tiff</internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(.), '\d+')">
+                        <extent><xsl:value-of select="normalize-space(.)"/></extent>
                     </xsl:when>
                     <xsl:otherwise>
                         <note><xsl:value-of select="normalize-space(.)"/></note>
@@ -95,12 +108,37 @@
         </xsl:for-each>
     </xsl:template>
     
+    <xsl:template match="dc:relation">
+        <xsl:if test="normalize-space(.)!=''">
+            <xsl:choose>
+                <xsl:when test="starts-with(., 'http')">
+                    <location>
+                        <url><xsl:value-of select="normalize-space(.)"/></url>
+                    </location>
+                </xsl:when>
+                <xsl:otherwise>
+                    <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:if>
+    </xsl:template>
     
+    <xsl:template name="rightsRepair">
+        <xsl:choose>
+            <xsl:when test="dc:rights">
+                <accessCondition><xsl:value-of select="normalize-space(.)"/></accessCondition>
+            </xsl:when>
+            <xsl:otherwise>
+                <accessCondition>While TSLA houses an item, it does not necessarily hold the copyright on the item, nor may it be able to determine if the item is still protected under current copyright law. Users are solely responsible for determining the existence of such instances and for obtaining any other permissions and paying associated fees, that may be necessary for the intended use.</accessCondition>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+ 
     <xsl:template match="dc:source">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or contains(., 'Society')">
+                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -117,7 +155,7 @@
     
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and (contains(., 'Society') or contains(., 'State Library'))">
+            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA'))">
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>

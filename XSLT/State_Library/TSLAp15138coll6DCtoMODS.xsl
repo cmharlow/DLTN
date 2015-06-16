@@ -59,7 +59,7 @@
     <xsl:template match="dc:coverage">
         <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='unknown'">
             <xsl:choose>
-                <xsl:when test="matches(., '\d+')">
+                <xsl:when test="matches(., '\d+s')">
                     <subject>
                         <temporal><xsl:value-of select="normalize-space(.)"/></temporal>
                     </subject>

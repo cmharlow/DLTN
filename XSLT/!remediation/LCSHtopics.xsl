@@ -574,6 +574,13 @@
                     <topic>Views</topic>
                 </subject>
             </xsl:when>
+            <xsl:when test="matches($topic, 'york, alvin cullum, 1887-1964')">
+                <subject>
+                    <name authority="naf" valueURI="http://id.loc.gov/authorities/names/n84048479">
+                        <namePart>York, Alvin Cullum, 1887-1964</namePart>
+                    </name>
+                </subject>
+            </xsl:when>
             <xsl:when test="matches($topic, 'zoning')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85149959">
                     <topic>Zoning</topic>

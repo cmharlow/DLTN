@@ -43,16 +43,20 @@
             <xsl:apply-templates select="dc:subject"/> <!-- subject -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
-            <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
+            <xsl:if test="dc:relation">
+                <relatedItem>
+                    <xsl:apply-templates select="dc:relation"/>
+                </relatedItem>
+            </xsl:if>
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Throwaway History - The Broadside in American Culture</title>
+                    <title>Hal Nineteenth Century Native American Prints</title>
                 </titleInfo>
-                <abstract>Intended for wide distribution, broadsides were traditionally used as a tool to disseminate information.  Printed on large sheets of paper and sometimes rich in illustration, broadsides were posted on buildings or handed out to the general population.  These ephemera were often produced in mass quantities to advertise, promote or announce official proclamations, public meetings, and entertainment events.  Originally designed to have an immediate impact on the observer, broadsides were created for disposable and temporary use...</abstract>
+                <abstract></abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/broadsides</url>
+                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/mckenneyHal</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
@@ -84,8 +88,14 @@
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jpeg')">
                         <internetMediaType>image/jpeg</internetMediaType>
                     </xsl:when>
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jp2')">
+                        <internetMediaType>image/jp2</internetMediaType>
+                    </xsl:when>
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'tiff')">
                         <internetMediaType>image/tiff</internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(.), '\d+')">
+                        <extent><xsl:value-of select="normalize-space(.)"/></extent>
                     </xsl:when>
                     <xsl:otherwise>
                         <note><xsl:value-of select="normalize-space(.)"/></note>
@@ -96,12 +106,21 @@
     </xsl:template>
     
     
+    <xsl:template match="dc:relation"> <!-- off mix of identifiers - some are identifiers for collections? can't verify -->
+        <xsl:if test="normalize-space(.)!=''">
+            <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
+        </xsl:if>
+    </xsl:template>
+ 
     <xsl:template match="dc:source">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
                     <xsl:when test="contains(., 'State Library') or contains(., 'Society')">
                         <!-- becomes physicalLocation - repository -->
+                    </xsl:when>
+                    <xsl:when test="starts-with(., 'History of')">
+                        <abstract><xsl:value-of select="normalize-space(.)"/></abstract>
                     </xsl:when>
                     <xsl:otherwise>
                         <relatedItem type='host' displayLabel="Collection">
