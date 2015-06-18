@@ -7,11 +7,11 @@
     <xsl:variable name="rb">(</xsl:variable>
     <xsl:variable name="rd">)</xsl:variable>
     
-    <xsl:include href="../!remediation/GettyGenre.xsl"/>
-    <xsl:include href="../!remediation/LCSHtopics.xsl"/>
-    <xsl:include href="../!remediation/Spatial.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="remediationgettygenre.xsl"/>
+    <xsl:include href="remediationlcshtopics.xsl"/>
+    <xsl:include href="remediationspatial.xsl"/>
+    <xsl:include href="coredctomods.xsl"/>
+    <xsl:include href="thumbnailscontentdmdctomods.xsl"/>
     
     <xsl:template match="dc:contributor">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
@@ -319,12 +319,12 @@
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(.), '^\d{4}-\d{4}$')">
                         <subject>
-                            <temporal encoding="edtf"><xsl:value-of select="concat(concat(substring(normalize-space(.),1, 3),'/'), substring(., 5, 8))"/></temporal>
+                            <temporal encoding="edtf"><xsl:value-of select="replace(normalize-space(.), '-', '/')"/></temporal>
                         </subject>
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(.), '^\d{4} - \d{4}$')">
                         <subject>
-                            <temporal encoding="edtf"><xsl:value-of select="concat(concat(substring(normalize-space(.),1, 3),'/'), substring(., 7, 10))"/></temporal>
+                            <temporal encoding="edtf"><xsl:value-of select="replace(normalize-space(.), ' - ', '/')"/></temporal>
                         </subject>
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(lower-case(.)), '19th century')">
