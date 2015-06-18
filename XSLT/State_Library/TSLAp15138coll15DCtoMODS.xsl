@@ -43,19 +43,14 @@
             <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:if test="dc:relation">
-                <relatedItem>
-                    <xsl:apply-templates select="dc:relation"/> <!-- collection identifiers -->
-                </relatedItem>
-            </xsl:if>
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Tennessee School for the Deaf</title>
+                    <title>Women in the Civil War</title>
                 </titleInfo>
-                <abstract>Tennessee’s School for the Deaf, created by law in 1844, boasts a remarkably long and stable history of educating the state’s students with hearing disabilities.  The school has operated since 1845 in Knoxville, closing only for the Civil War and relocating only once (from downtown to an inner suburb).  This unit of the Tennessee Virtual Archive features images of this unique institution’s buildings, many of which were designed by noted architect and alumnus Thomas Scott Marr...</abstract>
+                <abstract>The 150th anniversary of the Civil War offers an extended opportunity for commemorating all aspects of a period that is central to American history. The stories of women in the Civil War are perhaps even more varied than those of the men who served on the front lines. Females of all classes experienced the war in some way, whether through deprivation, loss of loved ones, disintegration of social norms, a renewed sense of patriotism, or, in at least a few hundred documented cases, actual battlefield experience. While the curiosity of women serving on Civil War battlefields has attracted some attention, the women featured here each contributed to the Union or Confederate cause in her own fashion. “Women in the Civil War” digital collection showcases the musings of three affluent Tennesseans who experienced the war just as deeply as the soldiers who fought. Throughout the South, women with Confederate and Union sympathies alike endured a traumatic war just as much as their sons, husbands, and fathers.</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll11</url>
+                    <url>http://www.tn.gov/tsla/TeVAsites/CWwomen/index.htm</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
@@ -94,6 +89,9 @@
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'tiff')">
                         <internetMediaType>image/tiff</internetMediaType>
                     </xsl:when>
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'wmv')">
+                        <internetMediaType>video/x-ms-wmv</internetMediaType>
+                    </xsl:when>
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'mp3')">
                         <internetMediaType>audio/mp3</internetMediaType>
                     </xsl:when>
@@ -106,21 +104,6 @@
                 </xsl:choose>
             </xsl:if>
         </xsl:for-each>
-    </xsl:template>
-    
-    <xsl:template match="dc:relation">
-        <xsl:if test="normalize-space(.)!=''">
-            <xsl:choose>
-                <xsl:when test="starts-with(., 'http')">
-                    <location>
-                        <url><xsl:value-of select="normalize-space(.)"/></url>
-                    </location>
-                </xsl:when>
-                <xsl:otherwise>
-                    <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
     </xsl:template>
     
     <xsl:template name="rightsRepair">
@@ -138,7 +121,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA')">
+                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -155,7 +138,7 @@
     
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA'))">
+            <xsl:if test="normalize-space(.)!='' and contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>

@@ -16,6 +16,7 @@
             <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             <xsl:apply-templates select="dc:creator"/> <!-- creator -->
+            <xsl:apply-templates select="dc:contributor"/> <!-- contributor -->
             
             <xsl:if test="dc:date|dc:publisher">
                 <originInfo> 
@@ -26,7 +27,7 @@
             
             <xsl:if test="dc:format">
                 <physicalDescription>
-                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaType -->
+                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaType, some extent for this collection only -->
                 </physicalDescription>
             </xsl:if>
             
@@ -51,11 +52,11 @@
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Tennessee School for the Deaf</title>
+                    <title>Rose Music Collection</title>
                 </titleInfo>
-                <abstract>Tennessee’s School for the Deaf, created by law in 1844, boasts a remarkably long and stable history of educating the state’s students with hearing disabilities.  The school has operated since 1845 in Knoxville, closing only for the Civil War and relocating only once (from downtown to an inner suburb).  This unit of the Tennessee Virtual Archive features images of this unique institution’s buildings, many of which were designed by noted architect and alumnus Thomas Scott Marr...</abstract>
+                <abstract>The Kenneth D. Rose Sheet Music Collection contains first editions and imprints of sheet music pertaining to a variety of subjects, including the American Civil War (particularly the Confederacy), politics and presidents, wars, ships and shipping, sports, minstrels, and comic songs. The collection has more than 20,000 pieces of music, most of which was acquired by the Tennessee State Library and Archives prior to 1956. The remainder of the collection was bequeathed in 1956...</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll11</url>
+                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/rosemusic</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
@@ -138,7 +139,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA')">
+                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -155,7 +156,7 @@
     
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA'))">
+            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society'))">
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>

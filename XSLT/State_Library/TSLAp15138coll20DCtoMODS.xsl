@@ -43,19 +43,14 @@
             <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:if test="dc:relation">
-                <relatedItem>
-                    <xsl:apply-templates select="dc:relation"/> <!-- collection identifiers -->
-                </relatedItem>
-            </xsl:if>
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Tennessee School for the Deaf</title>
+                    <title>Puryear Family Photograph Albums, 1890-1945</title>
                 </titleInfo>
-                <abstract>Tennessee’s School for the Deaf, created by law in 1844, boasts a remarkably long and stable history of educating the state’s students with hearing disabilities.  The school has operated since 1845 in Knoxville, closing only for the Civil War and relocating only once (from downtown to an inner suburb).  This unit of the Tennessee Virtual Archive features images of this unique institution’s buildings, many of which were designed by noted architect and alumnus Thomas Scott Marr...</abstract>
+                <abstract>This collection documents the careers in the United States Army Air Service during and after World War I of two brothers from Gallatin, Tennessee. George Wright Puryear was a fighter pilot with the 95th Aero Squadron, was taken prisoner by the Germans, and subsequently became the first American officer to escape from a German prisoner of war camp. Alfred Isaac Puryear spent the war stationed in Paris, France, as a supply officer with the Army Air Service, and became an airship (dirigible) pilot after the war. This collection provides a fascinating visual record of the early history and aircraft of the Army Air Service, which would become the United States Air Force after World War II.</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll11</url>
+                    <url>http://www.tn.gov/tsla/TeVAsites/Puryear/index.htm</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
@@ -85,7 +80,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jpeg')">
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jpeg') or matches(normalize-space(lower-case(.)), 'image/jpg') or matches(normalize-space(lower-case(.)), 'jpeg') or matches(normalize-space(lower-case(.)), 'jpg')">
                         <internetMediaType>image/jpeg</internetMediaType>
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jp2')">
@@ -93,6 +88,9 @@
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'tiff')">
                         <internetMediaType>image/tiff</internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'wmv')">
+                        <internetMediaType>video/x-ms-wmv</internetMediaType>
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'mp3')">
                         <internetMediaType>audio/mp3</internetMediaType>
@@ -106,21 +104,6 @@
                 </xsl:choose>
             </xsl:if>
         </xsl:for-each>
-    </xsl:template>
-    
-    <xsl:template match="dc:relation">
-        <xsl:if test="normalize-space(.)!=''">
-            <xsl:choose>
-                <xsl:when test="starts-with(., 'http')">
-                    <location>
-                        <url><xsl:value-of select="normalize-space(.)"/></url>
-                    </location>
-                </xsl:when>
-                <xsl:otherwise>
-                    <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
     </xsl:template>
     
     <xsl:template name="rightsRepair">
@@ -138,7 +121,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA')">
+                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -155,7 +138,7 @@
     
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA'))">
+            <xsl:if test="normalize-space(.)!='' and contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>

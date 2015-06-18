@@ -17,10 +17,9 @@
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             <xsl:apply-templates select="dc:creator"/> <!-- creator -->
             
-            <xsl:if test="dc:date|dc:publisher">
+            <xsl:if test="dc:date">
                 <originInfo> 
                     <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                    <xsl:apply-templates select="dc:publisher"/> <!-- publisher -->
                 </originInfo>
             </xsl:if>
             
@@ -43,19 +42,14 @@
             <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:if test="dc:relation">
-                <relatedItem>
-                    <xsl:apply-templates select="dc:relation"/> <!-- collection identifiers -->
-                </relatedItem>
-            </xsl:if>
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Tennessee School for the Deaf</title>
+                    <title>Tennessee State Parks Folklife Project Collection, 1979-1984</title>
                 </titleInfo>
-                <abstract>Tennessee’s School for the Deaf, created by law in 1844, boasts a remarkably long and stable history of educating the state’s students with hearing disabilities.  The school has operated since 1845 in Knoxville, closing only for the Civil War and relocating only once (from downtown to an inner suburb).  This unit of the Tennessee Virtual Archive features images of this unique institution’s buildings, many of which were designed by noted architect and alumnus Thomas Scott Marr...</abstract>
+                <abstract>The Tennessee State Parks Folklife Project produced more than 500 hours of audio tape, 9600 slides, and 2200 black and white negatives, including duplicates of scores of historic photographs which had been cached for years by their owners. Several years ago, TSLA initiated a project to digitize selections of the audio recordings and photographs from the collection in order to improve public access. The recordings, held originally on reel-to-reel and cassettes, and the accompanying photographs, include material on traditional quilting, burial customs, storytelling, blacksmithing, herbal medicine, fishing, logging, farming techniques, and music. Nationally recognized ballad singers Dee and Delta Hicks and Joe, Ethel, and Creed Birchfield (founding members of the Roan Mountain Hilltoppers) are just a few of the musical artists featured in the collection. To date, the bulk of the collection remains unprocessed and in the original formats. Approximately twenty percent of the audio recordings have been digitized. The recordings and images found in this TeVA collection represent just a sample of the rich material yet to be discovered. The digitization project is ongoing, and we will add items as they become available.</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll11</url>
+                    <url>http://www.tn.gov/tsla/TeVAsites/TSPFolklife/index.htm</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
@@ -85,7 +79,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jpeg')">
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jpeg') or matches(normalize-space(lower-case(.)), 'image/jpg') or matches(normalize-space(lower-case(.)), 'jpeg') or matches(normalize-space(lower-case(.)), 'jpg')">
                         <internetMediaType>image/jpeg</internetMediaType>
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'image/jp2')">
@@ -94,8 +88,14 @@
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'tiff')">
                         <internetMediaType>image/tiff</internetMediaType>
                     </xsl:when>
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'wmv')">
+                        <internetMediaType>video/x-ms-wmv</internetMediaType>
+                    </xsl:when>
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'mp3')">
                         <internetMediaType>audio/mp3</internetMediaType>
+                    </xsl:when>
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'wav')">
+                        <internetMediaType>audio/wav</internetMediaType>
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(.), '\d+')">
                         <extent><xsl:value-of select="normalize-space(.)"/></extent>
@@ -106,21 +106,6 @@
                 </xsl:choose>
             </xsl:if>
         </xsl:for-each>
-    </xsl:template>
-    
-    <xsl:template match="dc:relation">
-        <xsl:if test="normalize-space(.)!=''">
-            <xsl:choose>
-                <xsl:when test="starts-with(., 'http')">
-                    <location>
-                        <url><xsl:value-of select="normalize-space(.)"/></url>
-                    </location>
-                </xsl:when>
-                <xsl:otherwise>
-                    <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
     </xsl:template>
     
     <xsl:template name="rightsRepair">
@@ -138,7 +123,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA')">
+                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -155,7 +140,7 @@
     
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA'))">
+            <xsl:if test="normalize-space(.)!='' and contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>

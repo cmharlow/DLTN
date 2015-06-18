@@ -30,7 +30,7 @@
     
     <xsl:template match="dc:creator">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and lower-case(normalize-space(.)) != 'n/a'">
+            <xsl:if test="normalize-space(.)!='' and lower-case(normalize-space(.)) != 'n/a'  and not(contains(normalize-space(lower-case(.)), 'approximately')) and not(matches(., '^\d+$'))">
                 <name>
                     <namePart>
                         <xsl:value-of select="normalize-space(.)"/>
@@ -46,7 +46,7 @@
     </xsl:template>
     
     <xsl:template match="dc:publisher">
-        <xsl:if test="normalize-space(.)!=''">
+        <xsl:if test="normalize-space(.)!='' and not(contains(normalize-space(lower-case(.)), 'approximately')) and not(contains(normalize-space(lower-case(.)), 'unknown'))">
             <publisher><xsl:value-of select="normalize-space(.)"/></publisher>
         </xsl:if>
     </xsl:template>

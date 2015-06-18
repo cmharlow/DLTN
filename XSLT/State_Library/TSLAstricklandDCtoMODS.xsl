@@ -17,16 +17,15 @@
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             <xsl:apply-templates select="dc:creator"/> <!-- creator -->
             
-            <xsl:if test="dc:date|dc:publisher">
+            <xsl:if test="dc:date">
                 <originInfo> 
                     <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                    <xsl:apply-templates select="dc:publisher"/> <!-- publisher -->
                 </originInfo>
             </xsl:if>
             
             <xsl:if test="dc:format">
                 <physicalDescription>
-                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaType -->
+                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaType, some extent for this collection only -->
                 </physicalDescription>
             </xsl:if>
             
@@ -51,11 +50,11 @@
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Tennessee School for the Deaf</title>
+                    <title>William Strickland Sketchbook, 1838</title>
                 </titleInfo>
-                <abstract>Tennessee’s School for the Deaf, created by law in 1844, boasts a remarkably long and stable history of educating the state’s students with hearing disabilities.  The school has operated since 1845 in Knoxville, closing only for the Civil War and relocating only once (from downtown to an inner suburb).  This unit of the Tennessee Virtual Archive features images of this unique institution’s buildings, many of which were designed by noted architect and alumnus Thomas Scott Marr...</abstract>
+                <abstract>The images in this section of the Tennessee Virtual Archive are the watercolor drawings and sketches of famed architect William Strickland (1788-1854). While traveling in Europe in 1838, William Strickland produced a series of elegantly rendered watercolor sketches. In their detail, the sketches chronicle the deep appreciation Strickland had for the classical forms of architecture...</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll11</url>
+                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/Strickland</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
@@ -138,7 +137,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA')">
+                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -155,7 +154,7 @@
     
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA'))">
+            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society'))">
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>

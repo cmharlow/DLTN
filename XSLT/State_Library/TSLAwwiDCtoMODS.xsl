@@ -26,7 +26,7 @@
             
             <xsl:if test="dc:format">
                 <physicalDescription>
-                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaType -->
+                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaType, some extent for this collection only -->
                 </physicalDescription>
             </xsl:if>
             
@@ -38,6 +38,7 @@
                 </location>
             </xsl:if>
             
+            <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026816">postcards</genre>
             <xsl:apply-templates select="dc:subject"/> <!-- subject -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
@@ -51,11 +52,11 @@
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Tennessee School for the Deaf</title>
+                    <title>Tennessee in World War I</title>
                 </titleInfo>
-                <abstract>Tennessee’s School for the Deaf, created by law in 1844, boasts a remarkably long and stable history of educating the state’s students with hearing disabilities.  The school has operated since 1845 in Knoxville, closing only for the Civil War and relocating only once (from downtown to an inner suburb).  This unit of the Tennessee Virtual Archive features images of this unique institution’s buildings, many of which were designed by noted architect and alumnus Thomas Scott Marr...</abstract>
+                <abstract>The photographs in this online exhibit, selected from the Frierson-Warfield Papers and Karl Kleeman World War I Photographs, provide a thoughtful look at the Western Front during World War I from an American perspective. The photographs were chosen for their high quality and because they present a visual history of the 30th (Old Hickory) Division. Those researching this collection may find some of the images disturbing, especially the ones of dead soldiers. Some of the pictures were taken by individuals fighting in the war, while others were made by the U.S. Army Signal Corps and mass produced. Both types are striking in their portrayal of the horrors of the Great War...</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll11</url>
+                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/WWI</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
@@ -138,7 +139,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA')">
+                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -155,7 +156,7 @@
     
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA'))">
+            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society'))">
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>

@@ -26,7 +26,7 @@
             
             <xsl:if test="dc:format">
                 <physicalDescription>
-                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaType -->
+                    <xsl:apply-templates select="dc:format"/> <!-- internetMediaType, some extent for this collection only -->
                 </physicalDescription>
             </xsl:if>
             
@@ -38,24 +38,21 @@
                 </location>
             </xsl:if>
             
+            <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026816">postcards</genre>
             <xsl:apply-templates select="dc:subject"/> <!-- subject -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:if test="dc:relation">
-                <relatedItem>
-                    <xsl:apply-templates select="dc:relation"/> <!-- collection identifiers -->
-                </relatedItem>
-            </xsl:if>
+            <xsl:apply-templates select="dc:relation"/> <!-- collection identifiers, some genres? -->
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Tennessee School for the Deaf</title>
+                    <title>Tennessee Postcard Collection</title>
                 </titleInfo>
-                <abstract>Tennessee’s School for the Deaf, created by law in 1844, boasts a remarkably long and stable history of educating the state’s students with hearing disabilities.  The school has operated since 1845 in Knoxville, closing only for the Civil War and relocating only once (from downtown to an inner suburb).  This unit of the Tennessee Virtual Archive features images of this unique institution’s buildings, many of which were designed by noted architect and alumnus Thomas Scott Marr...</abstract>
+                <abstract>The items in the Tennessee Postcard Collection span a broad timeframe and include images from across the state. Unlike other collections at the Tennessee State Library and Archives, the items in this grouping are similar only in format. The postcards that comprise the Tennessee Postcard Collection have been gathered from various manuscript collections and placed in a central repository to facilitate research and to ease storage...</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll11</url>
+                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/tpc</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
@@ -109,7 +106,7 @@
     </xsl:template>
     
     <xsl:template match="dc:relation">
-        <xsl:if test="normalize-space(.)!=''">
+        <xsl:if test="normalize-space(.)!='' and not(contains(., 'postcard'))">
             <xsl:choose>
                 <xsl:when test="starts-with(., 'http')">
                     <location>
@@ -138,7 +135,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA')">
+                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -155,7 +152,7 @@
     
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA'))">
+            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society'))">
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>
