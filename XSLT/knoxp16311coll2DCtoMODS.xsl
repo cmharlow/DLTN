@@ -5,8 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="KnoxPublicDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="knoxpublicdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -20,8 +19,7 @@
             
             <xsl:if test="dc:date|dc:publisher">
                 <originInfo> 
-                    <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                    <xsl:apply-templates select="dc:contributor" mode="publisher"/> <!-- publisher parsed from contributor -->
+                    <xsl:apply-templates select="dc:date[1]"/> <!-- date (text + key) -->
                     <xsl:apply-templates select="dc:creator" mode="publisher"/> <!-- publisher parsed from creator -->
                     <xsl:apply-templates select="dc:publisher"/> <!-- place of origin - publishers all repositories -->
                 </originInfo>
@@ -41,32 +39,32 @@
                 </location>
             </xsl:if>
             
+            <xsl:call-template name="photocollLanguage"/>
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
-            <xsl:call-template name="dc:rightsTypoRepair"/> <!-- accessCondition -->
+            <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
             <xsl:apply-templates select="dc:format" mode="relatedItem"/>
-            <xsl:apply-templates select="dc:type" mode="genre"/> <!-- genres -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
+            <xsl:apply-templates select="dc:type" mode="genre"/> <!-- genres -->
             <xsl:apply-templates select="dc:source"/>
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Women's Suffrage Collection</title>
+                    <title>Roger H. Howell Collection</title>
                 </titleInfo>
-                <abstract>Women from East Tennessee played a critical role in the women’s suffrage movement, especially Lizzie Crozier French, Mrs. Hugh L. White and Abby Crawford Milton.  The Harry T. Burn Papers related to his decisive vote in favor of women’s suffrage in the Tennessee House of Representatives in 1920 is a key component of this collection.</abstract>
+                <abstract>Roger Hoffman Howell (1897-1962) was a native of Pittsburgh, Pennsylvania.  He came to Knoxville in 1936 to work as an engineering draftsman for the new Tennessee Valley Authority.  He and his future wife, Alice Lynn, met hiking with the Smoky Mountains Hiking Club.  Roger Howell was a keen and meticulous photographer, who carefully labeled all of his photographs made on hikes in the Great Smoky Mountains.  Alice Lynn Howell donated this collection of black-and-white negatives and Kodachrome slides to the Calvin M. McClung Historical Collection in 1984.  The Roger H. Howell Collection contains 1,733 negatives taken from 1935 to 1940 and 400 color slides.</abstract>
                 <location>
-                    <url>http://cdm16311.contentdm.oclc.org/cdm/landingpage/collection/p265301coll8</url>
+                    <url>http://cdm16311.contentdm.oclc.org/cdm/landingpage/collection/p16311coll2</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/> <!-- record info for Knoxville Public Libraries collections -->
         </mods>
     </xsl:template>
     
-    <!-- Typo Repairs, Static Additions -->
-    
-    <xsl:template name="dc:rightsTypoRepair">
-        <accessCondition>To use material or to order reproductions, contact DigitalCollections@knoxlib.org or phone 865 215-8808. Please provide a brief description of the material.</accessCondition>
+<!-- Typo Repairs, Static Additions -->
+    <xsl:template name="photocollLanguage">
+        <language>
+            <languageTerm type="code" authority="iso639-2b">zxx</languageTerm>
+        </language>
     </xsl:template>
-    
     
 </xsl:stylesheet>

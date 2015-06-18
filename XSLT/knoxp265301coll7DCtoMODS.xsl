@@ -5,8 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="KnoxPublicDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="knoxpublicdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -20,7 +19,7 @@
             
             <xsl:if test="dc:date|dc:publisher">
                 <originInfo> 
-                    <xsl:apply-templates select="dc:date"/> <!-- dateCreated (EDTF if possible) -->
+                    <xsl:apply-templates select="dc:date[1]"/> <!-- date (text + key) -->
                     <xsl:apply-templates select="dc:contributor" mode="publisher"/> <!-- publisher parsed from contributor -->
                     <xsl:apply-templates select="dc:creator" mode="publisher"/> <!-- publisher parsed from creator -->
                     <xsl:apply-templates select="dc:publisher"/> <!-- place of origin - publishers all repositories -->

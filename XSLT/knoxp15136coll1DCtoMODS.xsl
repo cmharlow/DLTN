@@ -5,8 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="KnoxPublicDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="knoxpublicdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -16,13 +15,11 @@
             xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
             <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
-            <xsl:apply-templates select="dc:contributor" /> <!-- name/role -->
             <xsl:apply-templates select="dc:creator" /> <!-- name/role -->
             
             <xsl:if test="dc:date|dc:publisher">
                 <originInfo> 
-                    <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                    <xsl:apply-templates select="dc:contributor" mode="publisher"/> <!-- publisher parsed from contributor -->
+                    <xsl:apply-templates select="dc:date[1]"/> <!-- date (text + key) -->
                     <xsl:apply-templates select="dc:creator" mode="publisher"/> <!-- publisher parsed from creator -->
                     <xsl:apply-templates select="dc:publisher"/> <!-- place of origin - publishers all repositories -->
                 </originInfo>
@@ -42,7 +39,6 @@
                 </location>
             </xsl:if>
             
-            <xsl:apply-templates select="dc:language"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
@@ -53,11 +49,11 @@
             <xsl:apply-templates select="dc:source"/>
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Selected Materials from the McClung Historical Collection</title>
+                    <title>Hugh Tyler Collection</title>
                 </titleInfo>
-                <abstract>The books, pamphlets, ephemera and maps included in this collection are selected from the rare and fragile print materials held by the library. These items are held in closed library stacks and may be missed by the casual researcher.</abstract>
+                <abstract>These photographs from Hugh Tyler's album include photos of James Agee and his mother’s family, some of the few surviving photographs from the time immediately after Agee's father’s death. The photograph album has 37 pages and contains mostly family snapshots. Some photographs appear to have been removed from the album prior to its donation, and there are also several loose photographs. All of the photographs of the photographs in the album have been scanned, even those presently unidentified.</abstract>
                 <location>
-                    <url>http://cdm16311.contentdm.oclc.org/cdm/landingpage/collection/p15136coll4</url>
+                    <url>http://cdm16311.contentdm.oclc.org/cdm/landingpage/collection/p15136coll1/</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/> <!-- record info for Knoxville Public Libraries collections -->
