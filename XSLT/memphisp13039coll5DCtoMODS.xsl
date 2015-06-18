@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -37,8 +35,7 @@
             <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
-                    <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail URL -->
                     <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
             </xsl:if>
@@ -48,20 +45,46 @@
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
-            <xsl:apply-templates select="dc:format" mode="genre"/> <!-- genre -->
+            <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
             <xsl:apply-templates select="dc:source"/> <!-- collections -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>The Schoolyard</title>
+                    <title>The M Files</title>
                 </titleInfo>
-                <abstract>Students, teachers, classrooms and playgrounds... The Schoolyard has it all. From the late-19th century through the 20th century, we have all sorts of images that will help you relive your school days. (You thought you could forget that class portrait, didn't you?) Unfortunately, many of the images are unidentified, so if you recognize a person or a place, please let us know! We'd love to update the record.</abstract>
+                <abstract>A collection of all things Memphis... a little bit of this, a little bit of that. The M Files is a great place to find portraits and newspaper clippings, but also so much more. As the clippings from the Memphis Information File are digitized, they will be added to The M Files, but so will the smaller manuscript collections and most of the items used to create the topical digital displays in the Memphis Room. </abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll8</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p13039coll5</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
         </mods>
+    </xsl:template>
+    
+    <xsl:template match="dc:coverage"> <!-- Subject headings/Geographic Names present, but uniquely formulated - can't currently parse -->
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
+                <xsl:choose>
+                    <xsl:when test="matches(normalize-space(.), '^\d{4}s$') or matches(normalize-space(.), '^\d{4}s to \d{4}s$')">
+                        <subject>
+                            <temporal><xsl:value-of select="."/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Collection')">
+                        <relatedItem type='host' displayLabel='Collection'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <subject>
+                            <topic><xsl:value-of select="normalize-space(.)"/></topic>
+                        </subject>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:if>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:format">
@@ -72,10 +95,22 @@
                         <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
                             <internetMediaType>image/jpeg</internetMediaType>
                         </xsl:when>
-                        <xsl:when test="contains(., 'mounted') or contains(., 'digital only')">
+                        <xsl:when test="contains(., 'mp3')">
+                            <internetMediaType>audio/mp3</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="contains(., 'mp4')">
+                            <internetMediaType>audio/mp4</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="contains(., 'pdf')">
+                            <internetMediaType>application/pdf</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="contains(., 'vhs')">
+                            <internetMediaType>video/vhs</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="contains(.,'handwritten') or contains(.,'mounted')">
                             <note><xsl:value-of select="normalize-space(.)"/></note>
                         </xsl:when>
-                        <xsl:when test="matches(., '\d+.+')">
+                        <xsl:when test="matches(., '\d+.+') or contains(., 'one ') or contains(., 'two ') or contains(., 'three ') or contains(., 'five ') or contains(., 'four') or contains(., 'six') or contains(., 'sixteen')">
                             <extent><xsl:value-of select="normalize-space(.)"/></extent>
                         </xsl:when>
                         <xsl:otherwise>

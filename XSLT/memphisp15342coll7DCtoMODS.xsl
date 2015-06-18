@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -37,7 +35,7 @@
             <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail URL -->
                     <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
                     <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
@@ -47,50 +45,22 @@
             <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
-            <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
             <xsl:apply-templates select="dc:source"/> <!-- collections -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Postcards from Memphis</title>
+                    <title>George W. Lee Collection</title>
                 </titleInfo>
-                <abstract>Postcards provide a truly unique way to view our city; the images on postcards give us a clue as to what previous generations valued and appreciated most - and what they wanted to show off. Volunteer Angie Price has worked dilligently to create this collection which features the front AND back of almost 250 postcards from Memphis. Once you decipher the handwriting, you might find some pretty interesting stories in this collection.</abstract>
+                <abstract>The George W. Lee Collection was given to the library by his daughter Gilda Lee Robinson in 1985. The large collection includes extensive and wide-ranging correspondence, copies of many of Lee's speeches, hundreds of newspaper and magazine clippings, and many awards and certificates presented to Lee over the years. An important part of this collection is the array of more than 400 photographs and the five large scrapbooks which contain photographs, clippings and letters. In addition, there is one box of magazines and one box of personal Christmas cards....</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll3</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll7</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
         </mods>
     </xsl:template>
-    
-    <xsl:template match="dc:coverage">
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
-                <xsl:choose>
-                    <xsl:when test="matches(normalize-space(.), '^\d{4}s$') or matches(normalize-space(.), '^\d{4}s to \d{4}s$')">
-                        <subject>
-                            <temporal><xsl:value-of select="."/></temporal>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(.), 'New Orleans, Louisiana')">
-                        <subject>
-                            <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n79007238">New Orleans (La.)</geographic>
-                            <cartographics>
-                                <coordinates>30.06864, -89.92813</coordinates>
-                            </cartographics>
-                        </subject>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <subject>
-                            <topic><xsl:value-of select="normalize-space(.)"/></topic>
-                        </subject>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:if>
-        </xsl:for-each>
-    </xsl:template>
-    
+   
     <xsl:template match="dc:format">
         <xsl:for-each select="tokenize(normalize-space(lower-case(.)), ';')">
             <xsl:for-each select="tokenize(., ',')">
@@ -99,7 +69,10 @@
                         <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
                             <internetMediaType>image/jpeg</internetMediaType>
                         </xsl:when>
-                        <xsl:when test="matches(., '\d+.+')">
+                        <xsl:when test="contains(., 'various sizes')">
+                            <note><xsl:value-of select="normalize-space(.)"/></note>
+                        </xsl:when>
+                        <xsl:when test="matches(., '\d+.+') or contains(., 'five') or contains(., 'two')">
                             <extent><xsl:value-of select="normalize-space(.)"/></extent>
                         </xsl:when>
                         <xsl:otherwise>

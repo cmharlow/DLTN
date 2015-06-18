@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -37,29 +35,48 @@
             <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
-                    <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail URL -->
                     <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
             </xsl:if>
             
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
+            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
+            <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/>
+            <xsl:apply-templates select="dc:source"/> <!-- collections -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Perre Magness Collection</title>
+                    <title>Memphis Parks</title>
                 </titleInfo>
-                <abstract>Perre Magness is an avid volunteer, historian, and writer. Magness has served many volunteer positions in Memphis, including the founding president of the Volunteer Center of Memphis, President of the Junior League of Memphis, and a board member of LeMoyne-Owen College. In the 1960s, she served on the historic Panel of American Women, helping women learn to overcome racial, religious, and socioeconomic differences. In addition to her philanthropy work, she reviewed books for the Nashville Banner and the Commercial Appeal for several years before she started writing her own column. "Past Times" began in 1987 and was printed in the Commercial Appeal for sixteen years. She also has written ten books, her first one published in 1983. Most of her books are about Memphis and the Mid-South, but topics of these books range. Notable books she has written include Past Times: Stories of Early Memphis, and books about Memphis landmarks, such as In the Shadows of the Elms: Elmwood Cemetery, which won the Memphis Heritage Historical Writing Award in 2002....</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll2</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p13039coll3</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
         </mods>
+    </xsl:template>
+    
+    <xsl:template match="dc:coverage"> <!-- Subject headings/Geographic Names present, but uniquely formulated - can't currently parse -->
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
+                <xsl:choose>
+                    <xsl:when test="matches(lower-case(.), 'memphis zoo')">
+                        <subject>
+                            <name authority="naf" valueURI="http://id.loc.gov/authorities/names/n98045115">Memphis Zoo (Memphis, Tenn.)</name>
+                        </subject>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <subject>
+                            <topic><xsl:value-of select="normalize-space(.)"/></topic>
+                        </subject>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:if>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:format">
@@ -67,11 +84,26 @@
             <xsl:for-each select="tokenize(., ',')">
                 <xsl:if test="normalize-space(.)!=''">
                     <xsl:choose>
-                        <xsl:when test="matches(., '\d+.+') or contains(., 'eight') or contains(., 'eleven') or contains(., 'five') or contains(., 'four') or contains(., 'fourteen') or contains(., 'nine') or contains(., 'one ') or contains(., 'seven') or contains(., 'six') or contains(., 'ten') or contains(., 'three') or contains(., 'two ')">
-                            <extent><xsl:value-of select="normalize-space(.)"/></extent>
+                        <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
+                            <internetMediaType>image/jpeg</internetMediaType>
                         </xsl:when>
-                        <xsl:when test="matches(., 'handwritten') or matches(., 'two-sided') or matches(., 'typed') or matches(., 'various sizes')">
+                        <xsl:when test="contains(., 'mp3')">
+                            <internetMediaType>audio/mp3</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="contains(., 'mp4')">
+                            <internetMediaType>audio/mp4</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="contains(., 'pdf')">
+                            <internetMediaType>application/pdf</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="contains(., 'vhs')">
+                            <internetMediaType>video/vhs</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test=".='Size: varies' or contains(.,'two-sided') or contains(.,'mounted')">
                             <note><xsl:value-of select="normalize-space(.)"/></note>
+                        </xsl:when>
+                        <xsl:when test="matches(., '\d+.+') or contains(., 'one ') or contains(., 'two') or contains(., 'five ') or contains(., 'four') or contains(., 'six')">
+                            <extent><xsl:value-of select="normalize-space(.)"/></extent>
                         </xsl:when>
                         <xsl:otherwise>
                             <form><xsl:value-of select="normalize-space(.)"/></form>
@@ -81,4 +113,5 @@
             </xsl:for-each>
         </xsl:for-each>
     </xsl:template>
+    
 </xsl:stylesheet>

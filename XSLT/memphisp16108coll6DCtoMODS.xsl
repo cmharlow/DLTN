@@ -5,20 +5,15 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MTSUselectDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
-    <xsl:template match="text()|@*"/>  
-    
-    <!-- Page-level items are being mapped to header/status='deleted' since object-level records also exist in this collection -->
-    
+    <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
         <mods xmlns:xlink="http://www.w3.org/1999/xlink" 
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
             xmlns="http://www.loc.gov/mods/v3" version="3.5" 
             xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
             <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
-            <xsl:apply-templates select="dc:identifier" mode="part"/>
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             <xsl:apply-templates select="dc:contributor" /> <!-- name/role -->
             <xsl:apply-templates select="dc:creator" /> <!-- name/role -->
@@ -26,47 +21,60 @@
             <xsl:if test="dc:date|dc:publisher">
                 <originInfo> 
                     <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
+                    <xsl:apply-templates select="dc:contributor" mode="publisher"/> <!-- publisher parsed from contributor -->
                     <xsl:apply-templates select="dc:publisher"/> <!-- place of origin - publishers all repositories -->
                 </originInfo>
             </xsl:if>
             
-            <xsl:if test="dc:format|dc:type">
+            <xsl:if test="dc:format">
                 <physicalDescription>
                     <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
-                    <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
                 </physicalDescription>
             </xsl:if>
             
-            <xsl:if test="dc:contributor|dc:creator|dc:publisher|dc:identifier">
+            <xsl:if test="dc:identifier|dc:source">
                 <location>
-                    <xsl:apply-templates select="dc:contributor" mode="repository" /> <!-- repository of physical item parsed form contributor field -->
-                    <xsl:apply-templates select="dc:creator" mode="repository" /> <!-- repository of physical item parsed form creator field -->
-                    <xsl:apply-templates select="dc:publisher" mode="repository" /> <!-- repository of physical item parsed form publisher field -->
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
                     <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
+                    <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
+                    <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
             </xsl:if>
             
-            <xsl:apply-templates select="dc:language"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
-            <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
-            <xsl:apply-templates select="dc:type"/><!-- genre -->
+            <xsl:apply-templates select="dc:type"/> <!-- item types -->
             <xsl:apply-templates select="dc:source"/>
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Buchanan Family collection</title>
+                    <title>Roy Cajero Photograph Collection</title>
                 </titleInfo>
-                <abstract>This collection documents the family of James McGill Buchanan (1919-2013), MTSU alumnus and 1986 winner of the Nobel Prize for Economics. His family has deep roots in middle Tennessee, including an 18th-century settler of Nashville and 19th-century Governor. Mr. Buchanan earned his B.S. at Middle Tennessee State Teachers College in 1940, followed by his M.A. in Economics at UT-Knoxville and his Ph.D. at the University of Chicago.</abstract>
+                <abstract>The notable and the unknown. The famous and the infamous. As both artist and journalist, Roy Cajero captures them all and ultimately shows us the soul of Memphis.  Primarily portraiture, this collection of 211 images gives us a glimpse at the faces of Memphis over the span of the past four decades.  Musicians, artists, writers... athletes, politicians... they're all here.  Along with so much more.</abstract>
                 <location>
-                    <url>http://cdm15838.contentdm.oclc.org/cdm/landingpage/collection/buchanan</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll6</url>
                 </location>
             </relatedItem>
-            <xsl:call-template name="recordSource"/>
+            <xsl:call-template name="recordInfo"/>
         </mods>
+    </xsl:template>
+    
+    <xsl:template match="dc:format">
+        <xsl:for-each select="tokenize(normalize-space(lower-case(.)), ';')">
+            <xsl:for-each select="tokenize(., ',')">
+                <xsl:if test="normalize-space(.)!=''">
+                    <xsl:choose>
+                        <xsl:when test="matches(., '\d+.+')">
+                            <extent><xsl:value-of select="normalize-space(.)"/></extent>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <form><xsl:value-of select="normalize-space(.)"/></form>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:for-each>
     </xsl:template>
     
 </xsl:stylesheet>

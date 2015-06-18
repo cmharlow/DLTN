@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -34,10 +32,10 @@
                 </physicalDescription>
             </xsl:if>
             
-            <xsl:if test="dc:identifier">
+            <xsl:if test="dc:identifier|dc:source">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
                     <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
                     <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
@@ -47,40 +45,20 @@
             <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
-            <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- collections -->
+            <xsl:apply-templates select="dc:source"/>
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Pink Palace Photograph Collection</title>
+                    <title>Hallelujah!</title>
                 </titleInfo>
-                <abstract>A collection of historically significant images acquired from the Pink Palace Museum in 1976, the Pink Palace Collection features a wide variety of wonderful photographs. From the construction of the Harahan Bridge to portraits of Native Americans, there is a little bit of everything. We owe our deepest gratitude to volunteer Becky Muska, who worked so diligently to digitize this collection in its entirety and to solve some of the mysteries contained within it.</abstract>
+                <abstract>Hallelujah!, a film released in 1929, was the first all-black musical and was intended to be a dramatic portrayal of the lives of poor African Americans in the South.  The producer and director, King Vidor, filmed on location in Memphis and Arkansas, and the interiors were shot at Metro-Goldwyn-Mayer studios.  Ultimately, this led the director to use post-synchronized sound, another motion picture first which is sometimes credited to the film....</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll10</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll9</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
         </mods>
-    </xsl:template>
-    
-    <xsl:template match="dc:coverage"> <!-- Subject headings/Geographic Names present, but uniquely formulated - can't currently parse -->
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
-                <xsl:choose>
-                    <xsl:when test="contains(normalize-space(.), 'Family')">
-                        <subject>
-                            <name><xsl:value-of select="."/></name>
-                        </subject>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <subject>
-                            <topic><xsl:value-of select="normalize-space(.)"/></topic>
-                        </subject>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:if>
-        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:format">
@@ -88,13 +66,10 @@
             <xsl:for-each select="tokenize(., ',')">
                 <xsl:if test="normalize-space(.)!=''">
                     <xsl:choose>
-                        <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
-                            <internetMediaType>image/jpeg</internetMediaType>
-                        </xsl:when>
                         <xsl:when test="matches(., '\d+.+')">
                             <extent><xsl:value-of select="normalize-space(.)"/></extent>
                         </xsl:when>
-                        <xsl:when test="matches(., 'mounted')">
+                        <xsl:when test="contains(., 'mounted')">
                             <note><xsl:value-of select="normalize-space(.)"/></note>
                         </xsl:when>
                         <xsl:otherwise>
@@ -105,5 +80,5 @@
             </xsl:for-each>
         </xsl:for-each>
     </xsl:template>
-    
+ 
 </xsl:stylesheet>

@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -37,7 +35,7 @@
             <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
                     <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
                     <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
@@ -47,20 +45,40 @@
             <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
+            <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
             <xsl:apply-templates select="dc:source"/> <!-- collections -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Benjamin L. Hooks Collection</title>
+                    <title>Library History</title>
                 </titleInfo>
-                <abstract>Civil rights pioneer Benjamin Lawson Hooks was born in Memphis on January 31, 1925. A graduate of Howard University and DePaul University Law School, Hooks practiced law in Memphis and in 1965 became the first African American Criminal Court Judge in Shelby County. Hooks was also the first African American to serve on the Federal Communications Commission when he was appointed by President Richard M. Nixon in 1972. Elected executive director of the NAACP in 1977, Hooks led that venerable civil rights organization until his retirement in 1993. In recognition of his dedicated public service, the Benjamin L. Hooks Central Library was named in his honor on October 27, 2005. Two years later, on November 5, 2007, President George W. Bush awarded him the Medal of Freedom for being "a calm yet forceful voice for fairness, opportunity and personal responsibility."</abstract>
+                <abstract>The Benjamin L. Hooks Central Library is the largest facility in the Memphis Public Library and Information Center system. Although opened in 2001, the history of Memphis Public began in the 1880s when the city received a $75,000 gift from the estate of merchant Frederick Cossitt to build a public library in honor of the city where he made his fortune. A section of public land near the Mississippi River was donated by City government who agreed to provide operating expenses for the library. With the promise of city funds it was decided that the entire $75,000 would be used for construction of the library building. As a result of this decision Architect L. B. Wheeler designed an elaborate Romanesque red sandstone building which opened on April 12, 1893....</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll15</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll4</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
         </mods>
+    </xsl:template>
+    
+    <xsl:template match="dc:coverage"> <!-- Subject headings/Geographic Names present, but uniquely formulated - can't currently parse -->
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
+                <xsl:choose>
+                    <xsl:when test="matches(normalize-space(.), '^\d{4}s$') or matches(normalize-space(.), '^\d{4}s to \d{4}s$')">
+                        <subject>
+                            <temporal><xsl:value-of select="."/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <subject>
+                            <topic><xsl:value-of select="normalize-space(.)"/></topic>
+                        </subject>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:if>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:format">
@@ -71,7 +89,10 @@
                         <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
                             <internetMediaType>image/jpeg</internetMediaType>
                         </xsl:when>
-                        <xsl:when test="matches(., '\d+.+')">
+                        <xsl:when test="contains(., 'handwritten') or contains(., 'mounted') or contains(., 'typed') or contains(., 'varying sizes')">
+                            <note><xsl:value-of select="normalize-space(.)"/></note>
+                        </xsl:when>
+                        <xsl:when test="matches(., '\d+.+') or contains(., 'eight') or contains(., 'five') or contains(., 'four') or contains(., 'ten') or contains(., 'three') or contains(., 'two')">
                             <extent><xsl:value-of select="normalize-space(.)"/></extent>
                         </xsl:when>
                         <xsl:otherwise>

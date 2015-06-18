@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -43,24 +41,47 @@
                 </location>
             </xsl:if>
             
+            <xsl:apply-templates select="dc:language"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
-            <xsl:apply-templates select="dc:format" mode="genre"/> <!-- genre -->
+            <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
+            <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- collection -->
+            <xsl:apply-templates select="dc:source"/>
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Robert Lanier Collection</title>
+                    <title>Saul Brown Photograph Collection</title>
                 </titleInfo>
-                <abstract>Robert A. Lanier was born in Memphis in 1938, and has spent most of his life in the city. His contributions to the Memphis law community began after he received his Bachelor of Science from Memphis State University (now U of M) and his law degree from the University of Mississippi, in 1960 and 1962 respectively. He was a member of the Memphis law firm of Armstrong, McAdden, Allen, Braden and Goodman from 1964-1968, as well as Farris, Hancock, Gilman, Branan, Lanier and Hellen in 1968. After his stints at these two practices, he became the director of the Memphis and Shelby County Junior Bar Association in 1969-1970, as well as secretary of that same organization in 1971. During this time, he was appointed as a special judge at both Circuit and General Sessions Courts, and the Memphis City Court. He served as a Circuit Court judge from 1982 until his retirement in 2004. Lanier also served as an Adjunct Professor at the Memphis State University School of Law (U of M) in 1981, and he was a member of the Shelby County Republican Executive Committee from 1970-1972. He was involved in the Memphis Humane Association and co-founded the Tennessee Humane Association. Starting out as director of the former in 1972, he eventually became president of both, in Memphis in 1974 and as the state’s from 1975-1977....</abstract>
+                <abstract>Saul Brown was born in 1910 in New York to Russian immigrants. As a young adult, Brown attended Tech High School in Memphis and graduated from the Memphis Academy of Fine Arts with a degree in Fine Art. Brown served in the Air Force during World War II. After graduation, he found work with Loew's Theaters, where he created publicity displays. Brown worked as a staff photographer for the Memphis Press-Scimitar for twenty years, retiring in April of 1980 as the newspaper's chief photographer. After retirement, Brown continued taking publicity photographs for various Memphis theaters as well as images of public figures, personal friends, and Memphis and its residents. He received the Freedom Foundation Award in 1972. In 1986, Brown donated $5,000 to Memphis State University to establish the Saul Brown/Memphis Press Scimitar Award, awarded to students in news journalism and news photography beginning in the 1987-1988 academic year. In 1987, due to his financial support of the school's academic fund, Brown was granted membership in the school's Presidents Club. Saul Brown passed away in Memphis on March 13, 1992 at the home of Myron Taylor, the brother of Mildred, his late wife.</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll14</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll4</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
         </mods>
+    </xsl:template>
+    
+    <xsl:template match="dc:coverage"> <!-- Subject headings/Geographic Names present, but uniquely formulated - can't currently parse -->
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
+                <xsl:choose>
+                    <xsl:when test="matches(normalize-space(.), '^\d{4}s$') or matches(normalize-space(.), '^\d{4}s to \d{4}s$')">
+                        <subject>
+                            <temporal><xsl:value-of select="."/></temporal>
+                        </subject>
+                    </xsl:when>
+                    <xsl:when test="starts-with(lower-case(.), 'original order')">
+                        <note><xsl:value-of select="normalize-space(.)"/></note>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <subject>
+                            <topic><xsl:value-of select="normalize-space(replace(., ' - ', '--'))"/></topic>
+                        </subject>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:if>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:format">
@@ -68,11 +89,11 @@
             <xsl:for-each select="tokenize(., ',')">
                 <xsl:if test="normalize-space(.)!=''">
                     <xsl:choose>
-                        <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
-                            <internetMediaType>image/jpeg</internetMediaType>
-                        </xsl:when>
                         <xsl:when test="matches(., '\d+.+')">
                             <extent><xsl:value-of select="normalize-space(.)"/></extent>
+                        </xsl:when>
+                        <xsl:when test="contains(., 'mounted')">
+                            <note><xsl:value-of select="normalize-space(.)"/></note>
                         </xsl:when>
                         <xsl:otherwise>
                             <form><xsl:value-of select="normalize-space(.)"/></form>

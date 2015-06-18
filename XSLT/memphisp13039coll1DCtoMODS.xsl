@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -30,55 +28,62 @@
             
             <xsl:if test="dc:format">
                 <physicalDescription>
-                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
+                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes, form -->
                 </physicalDescription>
             </xsl:if>
             
-            <xsl:if test="dc:identifier|dc:source">
+            <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
-                    <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail URL -->
                     <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
             </xsl:if>
             
+            <xsl:apply-templates select="dc:language"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
+            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
-            <xsl:apply-templates select="dc:format" mode="genre"/>
+            <xsl:apply-templates select="dc:format" mode="genre"/> <!-- genre -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/>
+            <xsl:apply-templates select="dc:source"/> <!-- collections -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Board of Adjustment Files</title>
+                    <title>Manuscript Collection Finding Aids</title>
                 </titleInfo>
-                <abstract>The Board of Adjustment Files are an assortment of digital files donated to Dig Memphis by Josh Whitehead, Planning Director at the Memphis and Shelby County Office of Planning and Development and Secretary of the Memphis and Shelby County Board of Adjustment. Established in 1925 by a Private Act of the Tennessee General Assembly, the Board of Adjustment is both the oldest appointed governmental body in Memphis and Shelby County and the oldest administrative zoning board in the State of Tennessee.  The Board hears cases in relation to the Unified Development Code and requests for variances from it. These files span the lifetime of the BOA, and showcase projects both residential and commercial. Included are site plans, renderings, correspondence, photographs and more. Some of these visions were realized and some were not, but all of these images and documents can tell us more about what Memphis was, what it could have been, and what it might be in the future.</abstract>
+                <abstract>This collection serves as an index of all of the processed manuscript collections in the Memphis and Shelby County Room. The bulk of the information about these collections is from the Guide to the Processed Manuscript Collections in the Memphis and Shelby County Room, written and compiled by our very own Gina Cordell.</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll8</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p13039coll1</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
         </mods>
     </xsl:template>
     
-    <xsl:template match="dc:coverage"> <!-- Subject headings/Geographic Names present, but uniquely formulated - can't currently parse -->
+    <xsl:template match="dc:coverage"> 
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
-                    <xsl:when test="matches(normalize-space(.), '^\d{4}s$') or matches(normalize-space(.), '^\d{4}s to \d{4}s$')">
+                    <xsl:when test="matches(normalize-space(.), '\d{4}s$') or matches(normalize-space(.), '^\d{4}-\d{4}$')">
                         <subject>
                             <temporal><xsl:value-of select="."/></temporal>
                         </subject>
                     </xsl:when>
-                    <xsl:when test="matches(., 'Memphis and Shelby County Board of Adjustment')">
+                    <xsl:when test="matches(normalize-space(lower-case(.)), 'memphis')">
                         <subject>
-                            <name>
-                                <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
-                            </name>
+                            <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n2007043373">Memphis (Tenn)</geographic>
+                            <cartographics>
+                                <coordinates>35.14953, -90.04898</coordinates>
+                            </cartographics>
                         </subject>
                     </xsl:when>
+                    <xsl:otherwise>
+                        <subject>
+                            <topic><xsl:value-of select="normalize-space(.)"/></topic>
+                        </subject>
+                    </xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
         </xsl:for-each>
@@ -89,12 +94,31 @@
             <xsl:for-each select="tokenize(., ',')">
                 <xsl:if test="normalize-space(.)!=''">
                     <xsl:choose>
-                        <xsl:when test="matches(., '.jpg')">
+                        <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
                             <internetMediaType>image/jpeg</internetMediaType>
                         </xsl:when>
+                        <xsl:when test="contains(., 'mp3')">
+                            <internetMediaType>audio/mp3</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="contains(., 'mp4')">
+                            <internetMediaType>audio/mp4</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="contains(., 'pdf')">
+                            <internetMediaType>application/pdf</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="contains(., 'vhs')">
+                            <internetMediaType>video/vhs</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="matches(., '\d+.+')">
+                            <extent><xsl:value-of select="normalize-space(.)"/></extent>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <form><xsl:value-of select="normalize-space(.)"/></form>
+                        </xsl:otherwise>
                     </xsl:choose>
                 </xsl:if>
             </xsl:for-each>
         </xsl:for-each>
     </xsl:template>
+    
 </xsl:stylesheet>

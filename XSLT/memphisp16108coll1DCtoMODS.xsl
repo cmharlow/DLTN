@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -34,29 +32,29 @@
                 </physicalDescription>
             </xsl:if>
             
-            <xsl:if test="dc:identifier|dc:source">
+            <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
                     <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
                     <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
             </xsl:if>
             
-            <xsl:apply-templates select="dc:language"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
+            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
-            <xsl:apply-templates select="dc:format" mode="genre"/>
+            <xsl:apply-templates select="dc:format" mode="genre"/> <!-- genre -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/>
+            <xsl:apply-templates select="dc:source"/> <!-- collections -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Arthur Webb Collection</title>
+                    <title>Mid-South Flood Collection</title>
                 </titleInfo>
-                <abstract>Arthur L. Webb, one of Memphis' most renowned local historians and genealogists, was born on December 6, 1943, in Memphis. Webb attended Memphis State University, and soon evolved into a noted journalist, genealogist and historian, specializing in local African-American history. Having joined the Tri-State Defender staff in 1978, Webb worked at the newspaper for twenty-eight years, eventually rising to the rank of Associate Editor before his death on October 25, 2006....</abstract>
+                <abstract>...During the historic flooding event in mid-May, hundreds of Mid-Southerners flocked downtown to snap once-in-a-lifetime shots of Tom Lee Park and parts of Mud Island submerged in water. Now Ellery Ammons, a 17-year-old senior at St. Mary's Episcopal School, wants some of those shots for a 2011 flood photography archive she's spearheading for the Benjamin L. Hooks Central Library....</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll3</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll1</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
@@ -68,11 +66,14 @@
             <xsl:for-each select="tokenize(., ',')">
                 <xsl:if test="normalize-space(.)!=''">
                     <xsl:choose>
-                        <xsl:when test="matches(., '\d+.+') or contains(., 'one ') or contains(., 'three') or contains(., 'two ')">
-                            <extent><xsl:value-of select="normalize-space(.)"/></extent>
+                        <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
+                            <internetMediaType>image/jpeg</internetMediaType>
                         </xsl:when>
-                        <xsl:when test="matches(., 'handwritten') or matches(., 'two-sided') or matches(., 'handwritten') or matches(., 'typed')">
-                            <note><xsl:value-of select="normalize-space(.)"/></note>
+                        <xsl:when test="contains(., 'mp4')">
+                            <internetMediaType>audio/mp4</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="matches(., '\d+.+')">
+                            <extent><xsl:value-of select="normalize-space(.)"/></extent>
                         </xsl:when>
                         <xsl:otherwise>
                             <form><xsl:value-of select="normalize-space(.)"/></form>

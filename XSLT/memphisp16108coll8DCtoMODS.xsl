@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -30,53 +28,55 @@
             
             <xsl:if test="dc:format">
                 <physicalDescription>
-                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes, form -->
+                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
                 </physicalDescription>
             </xsl:if>
             
-            <xsl:if test="dc:identifier">
+            <xsl:if test="dc:identifier|dc:source">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
+                    <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
                     <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
             </xsl:if>
             
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
-            <xsl:apply-templates select="dc:format" mode="genre"/> <!-- genre -->
+            <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- collections -->
+            <xsl:apply-templates select="dc:source"/>
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Civil Rights Collection</title>
+                    <title>Board of Adjustment Files</title>
                 </titleInfo>
-                <abstract>The Civil Rights Collection is a compilation of materials from numerous sources, including the following manuscript collections: Frank Holloman Collection, George W. Lee Collection (speeches and documents), A.W. Willis, Jr. Collection, Arthur L. Webb Collection, and the Catholic Human Relations Council Papers.  Material will continue to be added to this collection.</abstract>
+                <abstract>The Board of Adjustment Files are an assortment of digital files donated to Dig Memphis by Josh Whitehead, Planning Director at the Memphis and Shelby County Office of Planning and Development and Secretary of the Memphis and Shelby County Board of Adjustment. Established in 1925 by a Private Act of the Tennessee General Assembly, the Board of Adjustment is both the oldest appointed governmental body in Memphis and Shelby County and the oldest administrative zoning board in the State of Tennessee.  The Board hears cases in relation to the Unified Development Code and requests for variances from it. These files span the lifetime of the BOA, and showcase projects both residential and commercial. Included are site plans, renderings, correspondence, photographs and more. Some of these visions were realized and some were not, but all of these images and documents can tell us more about what Memphis was, what it could have been, and what it might be in the future.</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p13039coll2</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll8</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
         </mods>
     </xsl:template>
     
-    <xsl:template match="dc:coverage"> 
-        <xsl:for-each select="tokenize(normalize-space(.), ',')">
+    <xsl:template match="dc:coverage"> <!-- Subject headings/Geographic Names present, but uniquely formulated - can't currently parse -->
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
                     <xsl:when test="matches(normalize-space(.), '^\d{4}s$') or matches(normalize-space(.), '^\d{4}s to \d{4}s$')">
                         <subject>
-                            <temporal encoding="edtf"><xsl:value-of select="replace(normalize-space(.), '-', '/')"/></temporal>
+                            <temporal><xsl:value-of select="."/></temporal>
                         </subject>
                     </xsl:when>
-                    <xsl:otherwise>
+                    <xsl:when test="matches(., 'Memphis and Shelby County Board of Adjustment')">
                         <subject>
-                            <topic><xsl:value-of select="normalize-space(.)"/></topic>
+                            <name>
+                                <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
+                            </name>
                         </subject>
-                    </xsl:otherwise>
+                    </xsl:when>
                 </xsl:choose>
             </xsl:if>
         </xsl:for-each>
@@ -87,34 +87,12 @@
             <xsl:for-each select="tokenize(., ',')">
                 <xsl:if test="normalize-space(.)!=''">
                     <xsl:choose>
-                        <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
+                        <xsl:when test="matches(., '.jpg')">
                             <internetMediaType>image/jpeg</internetMediaType>
                         </xsl:when>
-                        <xsl:when test="contains(., 'mp3')">
-                            <internetMediaType>audio/mp3</internetMediaType>
-                        </xsl:when>
-                        <xsl:when test="contains(., 'mp4')">
-                            <internetMediaType>audio/mp4</internetMediaType>
-                        </xsl:when>
-                        <xsl:when test="contains(., 'pdf')">
-                            <internetMediaType>application/pdf</internetMediaType>
-                        </xsl:when>
-                        <xsl:when test="contains(., 'vhs')">
-                            <internetMediaType>video/vhs</internetMediaType>
-                        </xsl:when>
-                        <xsl:when test=".='20140611_EH_CR018' or .='newspaper clipping with black &amp; white photo 6 x 6.5 in.' or .='black &amp; white photo 8 x 10 in'">
-                            <note><xsl:value-of select="normalize-space(.)"/></note>
-                        </xsl:when>
-                        <xsl:when test="matches(., '\d+.+')">
-                            <extent><xsl:value-of select="normalize-space(.)"/></extent>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <form><xsl:value-of select="normalize-space(.)"/></form>
-                        </xsl:otherwise>
                     </xsl:choose>
                 </xsl:if>
             </xsl:for-each>
         </xsl:for-each>
     </xsl:template>
-    
 </xsl:stylesheet>

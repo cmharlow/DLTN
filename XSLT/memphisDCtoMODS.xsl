@@ -5,10 +5,13 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="../!remediation/GettyGenre.xsl"/>
-    <xsl:include href="../!remediation/LCSHtopics.xsl"/>
+    <xsl:include href="remediationgettygenre.xsl"/>
+    <xsl:include href="remediationlcshtopics.xsl"/>
+    <xsl:include href="remediationspatial.xsl"/>
+    <xsl:include href="thumbnailscontentdmdctomods.xsl"/>
+    <xsl:include href="coredctomods.xsl"/>
     
-    <!-- OAI-DC to MODS Knoxville Public Institution-Level Transformations. Includes the following templates:
+    <!-- OAI-DC to MODS Memphis Public Institution-Level Transformations. Includes the following templates:
         dc:contributor
         dc:contributor mode=publisher
         dc:creator
@@ -18,6 +21,7 @@
         recordInfo (static value for all Knoxville Public Library collections)
         dc:relation
         dc:source
+        dc:source mode=repository
         dc:subject
         dc:type
     -->

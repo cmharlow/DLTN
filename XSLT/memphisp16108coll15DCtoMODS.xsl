@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -34,10 +32,10 @@
                 </physicalDescription>
             </xsl:if>
             
-            <xsl:if test="dc:identifier|dc:source">
+            <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail URL -->
                     <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
                     <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
@@ -49,14 +47,14 @@
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/>
+            <xsl:apply-templates select="dc:source"/> <!-- collections -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Hallelujah!</title>
+                    <title>Benjamin L. Hooks Collection</title>
                 </titleInfo>
-                <abstract>Hallelujah!, a film released in 1929, was the first all-black musical and was intended to be a dramatic portrayal of the lives of poor African Americans in the South.  The producer and director, King Vidor, filmed on location in Memphis and Arkansas, and the interiors were shot at Metro-Goldwyn-Mayer studios.  Ultimately, this led the director to use post-synchronized sound, another motion picture first which is sometimes credited to the film....</abstract>
+                <abstract>Civil rights pioneer Benjamin Lawson Hooks was born in Memphis on January 31, 1925. A graduate of Howard University and DePaul University Law School, Hooks practiced law in Memphis and in 1965 became the first African American Criminal Court Judge in Shelby County. Hooks was also the first African American to serve on the Federal Communications Commission when he was appointed by President Richard M. Nixon in 1972. Elected executive director of the NAACP in 1977, Hooks led that venerable civil rights organization until his retirement in 1993. In recognition of his dedicated public service, the Benjamin L. Hooks Central Library was named in his honor on October 27, 2005. Two years later, on November 5, 2007, President George W. Bush awarded him the Medal of Freedom for being "a calm yet forceful voice for fairness, opportunity and personal responsibility."</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll9</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll15</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
@@ -68,11 +66,11 @@
             <xsl:for-each select="tokenize(., ',')">
                 <xsl:if test="normalize-space(.)!=''">
                     <xsl:choose>
+                        <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
+                            <internetMediaType>image/jpeg</internetMediaType>
+                        </xsl:when>
                         <xsl:when test="matches(., '\d+.+')">
                             <extent><xsl:value-of select="normalize-space(.)"/></extent>
-                        </xsl:when>
-                        <xsl:when test="contains(., 'mounted')">
-                            <note><xsl:value-of select="normalize-space(.)"/></note>
                         </xsl:when>
                         <xsl:otherwise>
                             <form><xsl:value-of select="normalize-space(.)"/></form>
@@ -82,5 +80,5 @@
             </xsl:for-each>
         </xsl:for-each>
     </xsl:template>
- 
+    
 </xsl:stylesheet>

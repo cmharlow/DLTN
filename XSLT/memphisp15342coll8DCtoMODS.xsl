@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -34,7 +32,7 @@
                 </physicalDescription>
             </xsl:if>
             
-            <xsl:if test="dc:identifier|dc:source">
+            <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
                     <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
@@ -44,18 +42,20 @@
             </xsl:if>
             
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
+            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
-            <xsl:apply-templates select="dc:format" mode="genre"/>
+            <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
+            <xsl:apply-templates select="dc:format" mode="genre"/> <!-- genre -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/>
+            <xsl:apply-templates select="dc:source"/> <!-- collections -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Roy Cajero Photograph Collection</title>
+                    <title>The Schoolyard</title>
                 </titleInfo>
-                <abstract>The notable and the unknown. The famous and the infamous. As both artist and journalist, Roy Cajero captures them all and ultimately shows us the soul of Memphis.  Primarily portraiture, this collection of 211 images gives us a glimpse at the faces of Memphis over the span of the past four decades.  Musicians, artists, writers... athletes, politicians... they're all here.  Along with so much more.</abstract>
+                <abstract>Students, teachers, classrooms and playgrounds... The Schoolyard has it all. From the late-19th century through the 20th century, we have all sorts of images that will help you relive your school days. (You thought you could forget that class portrait, didn't you?) Unfortunately, many of the images are unidentified, so if you recognize a person or a place, please let us know! We'd love to update the record.</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll6</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll8</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
@@ -67,6 +67,12 @@
             <xsl:for-each select="tokenize(., ',')">
                 <xsl:if test="normalize-space(.)!=''">
                     <xsl:choose>
+                        <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
+                            <internetMediaType>image/jpeg</internetMediaType>
+                        </xsl:when>
+                        <xsl:when test="contains(., 'mounted') or contains(., 'digital only')">
+                            <note><xsl:value-of select="normalize-space(.)"/></note>
+                        </xsl:when>
                         <xsl:when test="matches(., '\d+.+')">
                             <extent><xsl:value-of select="normalize-space(.)"/></extent>
                         </xsl:when>

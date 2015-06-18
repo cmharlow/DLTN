@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -34,37 +32,37 @@
                 </physicalDescription>
             </xsl:if>
             
-            <xsl:if test="dc:identifier|dc:source">
+            <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
                     <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
                     <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
             </xsl:if>
             
-            <xsl:apply-templates select="dc:language"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
+            <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
             <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/>
+            <xsl:apply-templates select="dc:source"/> <!-- collections -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Saul Brown Photograph Collection</title>
+                    <title>Postcards from Memphis</title>
                 </titleInfo>
-                <abstract>Saul Brown was born in 1910 in New York to Russian immigrants. As a young adult, Brown attended Tech High School in Memphis and graduated from the Memphis Academy of Fine Arts with a degree in Fine Art. Brown served in the Air Force during World War II. After graduation, he found work with Loew's Theaters, where he created publicity displays. Brown worked as a staff photographer for the Memphis Press-Scimitar for twenty years, retiring in April of 1980 as the newspaper's chief photographer. After retirement, Brown continued taking publicity photographs for various Memphis theaters as well as images of public figures, personal friends, and Memphis and its residents. He received the Freedom Foundation Award in 1972. In 1986, Brown donated $5,000 to Memphis State University to establish the Saul Brown/Memphis Press Scimitar Award, awarded to students in news journalism and news photography beginning in the 1987-1988 academic year. In 1987, due to his financial support of the school's academic fund, Brown was granted membership in the school's Presidents Club. Saul Brown passed away in Memphis on March 13, 1992 at the home of Myron Taylor, the brother of Mildred, his late wife.</abstract>
+                <abstract>Postcards provide a truly unique way to view our city; the images on postcards give us a clue as to what previous generations valued and appreciated most - and what they wanted to show off. Volunteer Angie Price has worked dilligently to create this collection which features the front AND back of almost 250 postcards from Memphis. Once you decipher the handwriting, you might find some pretty interesting stories in this collection.</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll4</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p15342coll3</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
         </mods>
     </xsl:template>
     
-    <xsl:template match="dc:coverage"> <!-- Subject headings/Geographic Names present, but uniquely formulated - can't currently parse -->
+    <xsl:template match="dc:coverage">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
@@ -73,12 +71,17 @@
                             <temporal><xsl:value-of select="."/></temporal>
                         </subject>
                     </xsl:when>
-                    <xsl:when test="starts-with(lower-case(.), 'original order')">
-                        <note><xsl:value-of select="normalize-space(.)"/></note>
+                    <xsl:when test="matches(normalize-space(.), 'New Orleans, Louisiana')">
+                        <subject>
+                            <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n79007238">New Orleans (La.)</geographic>
+                            <cartographics>
+                                <coordinates>30.06864, -89.92813</coordinates>
+                            </cartographics>
+                        </subject>
                     </xsl:when>
                     <xsl:otherwise>
                         <subject>
-                            <topic><xsl:value-of select="normalize-space(replace(., ' - ', '--'))"/></topic>
+                            <topic><xsl:value-of select="normalize-space(.)"/></topic>
                         </subject>
                     </xsl:otherwise>
                 </xsl:choose>
@@ -91,11 +94,11 @@
             <xsl:for-each select="tokenize(., ',')">
                 <xsl:if test="normalize-space(.)!=''">
                     <xsl:choose>
+                        <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
+                            <internetMediaType>image/jpeg</internetMediaType>
+                        </xsl:when>
                         <xsl:when test="matches(., '\d+.+')">
                             <extent><xsl:value-of select="normalize-space(.)"/></extent>
-                        </xsl:when>
-                        <xsl:when test="contains(., 'mounted')">
-                            <note><xsl:value-of select="normalize-space(.)"/></note>
                         </xsl:when>
                         <xsl:otherwise>
                             <form><xsl:value-of select="normalize-space(.)"/></form>

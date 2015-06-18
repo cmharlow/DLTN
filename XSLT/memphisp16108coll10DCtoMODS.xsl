@@ -5,9 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MemphisPublicDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="memphisdctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -30,14 +28,15 @@
             
             <xsl:if test="dc:format">
                 <physicalDescription>
-                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes, form -->
+                    <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
                 </physicalDescription>
             </xsl:if>
             
             <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
+                    <xsl:apply-templates select="dc:identifier" mode="shelfLocator"/> <!-- shelf locator parsed from identifier -->
                     <xsl:apply-templates select="dc:source" mode="repository"/><!-- physicalLocation-->
                 </location>
             </xsl:if>
@@ -48,37 +47,29 @@
             <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic, temporal subject info -->
-            <xsl:apply-templates select="dc:format" mode="genre"/> <!-- genre -->
+            <xsl:apply-templates select="dc:format" mode="genre"/>
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:apply-templates select="dc:source"/> <!-- collections -->
+            <xsl:apply-templates select="dc:source"/>
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Manuscript Collection Finding Aids</title>
+                    <title>Colton Greene Collection</title>
                 </titleInfo>
-                <abstract>This collection serves as an index of all of the processed manuscript collections in the Memphis and Shelby County Room. The bulk of the information about these collections is from the Guide to the Processed Manuscript Collections in the Memphis and Shelby County Room, written and compiled by our very own Gina Cordell.</abstract>
+                <abstract>A leading citizen of Memphis in the decades after the Civil War, Colton Greene is best remembered as the originator of the Memphis Mardi Gras.  Little is known of Greene's early life other than that he was born in South Carolina in 1832.  Greene was living in St. Louis when he enlisted in the Confederate Army in 1861 and took part in an unsuccessful effort to seize the U.S. Arsenal in that city.  He served as commander of the 3rd Missouri Cavalry Brigade throughout the war, taking part in many battles in the Trans-Mississippi Military District....</abstract>
                 <location>
-                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p13039coll1</url>
+                    <url>http://cdm16108.contentdm.oclc.org/cdm/landingpage/collection/p16108coll10</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordInfo"/>
         </mods>
     </xsl:template>
     
-    <xsl:template match="dc:coverage"> 
+    <xsl:template match="dc:coverage"> <!-- Subject headings/Geographic Names present, but uniquely formulated - can't currently parse -->
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
-                    <xsl:when test="matches(normalize-space(.), '\d{4}s$') or matches(normalize-space(.), '^\d{4}-\d{4}$')">
+                    <xsl:when test="matches(normalize-space(.), '^\d{4}s$') or matches(normalize-space(.), '^\d{4}s to \d{4}s$')">
                         <subject>
                             <temporal><xsl:value-of select="."/></temporal>
-                        </subject>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'memphis')">
-                        <subject>
-                            <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n2007043373">Memphis (Tenn)</geographic>
-                            <cartographics>
-                                <coordinates>35.14953, -90.04898</coordinates>
-                            </cartographics>
                         </subject>
                     </xsl:when>
                     <xsl:otherwise>
@@ -99,19 +90,10 @@
                         <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
                             <internetMediaType>image/jpeg</internetMediaType>
                         </xsl:when>
-                        <xsl:when test="contains(., 'mp3')">
-                            <internetMediaType>audio/mp3</internetMediaType>
+                        <xsl:when test="contains(., 'affixed') or contains(., 'folded') or contains(., 'Front cover') or contains(., 'mounted')">
+                            <note><xsl:value-of select="normalize-space(.)"/></note>
                         </xsl:when>
-                        <xsl:when test="contains(., 'mp4')">
-                            <internetMediaType>audio/mp4</internetMediaType>
-                        </xsl:when>
-                        <xsl:when test="contains(., 'pdf')">
-                            <internetMediaType>application/pdf</internetMediaType>
-                        </xsl:when>
-                        <xsl:when test="contains(., 'vhs')">
-                            <internetMediaType>video/vhs</internetMediaType>
-                        </xsl:when>
-                        <xsl:when test="matches(., '\d+.+')">
+                        <xsl:when test="matches(., '\d+.+') or contains(., 'three ')">
                             <extent><xsl:value-of select="normalize-space(.)"/></extent>
                         </xsl:when>
                         <xsl:otherwise>
