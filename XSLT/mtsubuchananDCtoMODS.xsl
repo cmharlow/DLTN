@@ -5,12 +5,9 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="MTSUselectDCtoMODS.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="mtsudctomods.xsl"/>
     
     <xsl:template match="text()|@*"/>  
-    
-    <!-- Page-level items are being mapped to header/status='deleted' since object-level records also exist in this collection -->
     
     <xsl:template match="//oai_dc:dc">
         <mods xmlns:xlink="http://www.w3.org/1999/xlink" 

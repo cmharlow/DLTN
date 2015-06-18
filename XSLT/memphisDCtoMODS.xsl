@@ -18,7 +18,7 @@
         dc:format mode=genre
         dc:identifier mode=shelfLocator
         dc:publisher (left at institution level to remove/block institution that digitized as publisher)
-        recordInfo (static value for all Knoxville Public Library collections)
+        recordInfo (static value for all Memphis Public Library collections)
         dc:relation
         dc:source
         dc:source mode=repository

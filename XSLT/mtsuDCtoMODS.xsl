@@ -5,10 +5,28 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="../!remediation/GettyGenre.xsl"/>
-    <xsl:include href="../!remediation/LCSHtopics.xsl"/>
-    <xsl:include href="../!remediation/Spatial.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
+    <xsl:include href="remediationgettygenre.xsl"/>
+    <xsl:include href="remediationlcshtopics.xsl"/>
+    <xsl:include href="remediationspatial.xsl"/>
+    <xsl:include href="thumbnailscontentdmdctomods.xsl"/>
+    <xsl:include href="coredctomods.xsl"/>
+    
+    <!-- OAI-DC to MODS Middle Tennessee State University Institution-Level Transformations. Includes the following templates:
+        dc:contributor
+        dc:contributor mode=repository
+        dc:creator
+        dc:creator mode=repository
+        dc:format
+        dc:publisher (left at institution level to remove/block institution that digitized as publisher)
+        dc:publisher mode=repository
+        recordInfo (static value for all MTSU collections)
+        dc:relation
+        dc:source
+        dc:subject
+        dc:type
+        dc:type mode=MIME
+        dc:type mode=form
+    -->
     
     <xsl:template match="dc:contributor">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
@@ -535,12 +553,20 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(.,'http')"> 
+                    <xsl:when test="starts-with(.,'http')"> 
                         <relatedItem>
                             <location>
                                 <url><xsl:value-of select="normalize-space(.)"/></url>
                             </location>
                         </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(.,'All rights reserved') or contains(.,'Courtesy of')"> 
+                        <accessCondition><xsl:value-of select="normalize-space(.)"/></accessCondition>
+                    </xsl:when>
+                    <xsl:when test="contains(.,', photographer')"> 
+                        <name>
+                            <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
+                        </name>
                     </xsl:when>
                     <xsl:when test="contains(normalize-space(lower-case(.)),'collection')"> 
                         <relatedItem type='host' displayLabel='Collection'>
