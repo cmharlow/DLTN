@@ -5,13 +5,13 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="GettyGenre.xsl"/>
-    <xsl:include href="LCSHtopics.xsl"/>
-    <xsl:include href="remediation/Spatial.xsl"/>
-    <xsl:include href="thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
-    <xsl:include href="coreDCtoMODS.xsl"/>
+    <xsl:include href="../!remediation/GettyGenre.xsl"/>
+    <xsl:include href="../!remediation/LCSHtopics.xsl"/>
+    <xsl:include href="../!remediation/Spatial.xsl"/>
+    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="../coreDCtoMODS.xsl"/>
     
-    <!-- UTC collections are consistent enough and use the relation element consistently/only for sets, so just an institution level record is needed -->
+    <!-- UTC collections are structured such that they use the relation element consistently/only for sets, so just an institution level record is needed -->
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -38,17 +38,18 @@
                 </physicalDescription>
             </xsl:if>
             
-            <xsl:if test="dc:publisher|dc:identifier"></xsl:if>
-            <location>
-                <xsl:apply-templates select="dc:publisher" mode="repository"/>
-                <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
-            </location>
+            <xsl:if test="dc:publisher|dc:identifier">
+                <location>
+                    <xsl:apply-templates select="dc:publisher" mode="repository"/>
+                    <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
+                </location>
+            </xsl:if>
             
             <xsl:apply-templates select="dc:language"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:apply-templates select="dc:relation" /> <!-- collections -->
-            <xsl:call-template select="rightsRepair"/> <!-- accessCondition, not all records have rights statements -->
+            <xsl:call-template name="rightsRepair"/> <!-- accessCondition, not all records have rights statements -->
             <xsl:apply-templates select="dc:subject"/> <!-- subjects -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- genre -->
