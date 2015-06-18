@@ -5,11 +5,11 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="../!remediation/GettyGenre.xsl"/>
-    <xsl:include href="../!remediation/LCSHtopics.xsl"/>
-    <xsl:include href="../!remediation/Spatial.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
-    <xsl:include href="../coreDCtoMODS.xsl"/>
+    <xsl:include href="GettyGenre.xsl"/>
+    <xsl:include href="LCSHtopics.xsl"/>
+    <xsl:include href="remediation/Spatial.xsl"/>
+    <xsl:include href="thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="coreDCtoMODS.xsl"/>
     
     <!-- UTC collections are consistent enough and use the relation element consistently/only for sets, so just an institution level record is needed -->
         
