@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -55,7 +55,7 @@
                 <titleInfo>
                     <title>War and Reunion - The Lost Cause in Southern Memory</title>
                 </titleInfo>
-                <abstract></abstract>
+                <abstract>As the nineteenth century drew to a close, the seeds of Southern mythology idealizing the service of the South’s aging Confederate veterans began to take root. Defeated militarily, in the decades following 1865 the South struggled to vindicate the decisions that had led to secession and to an armed conflict that had cost so many men their lives. From the ashes of war and the turbulence of the Reconstruction period, a cultural identity took shape, grounded in ideas and attitudes referred to collectively as the Lost Cause...</abstract>
                 <location>
                     <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll4</url>
                 </location>

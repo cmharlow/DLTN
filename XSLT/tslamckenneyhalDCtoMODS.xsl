@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -52,9 +52,9 @@
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Hal Nineteenth Century Native American Prints</title>
+                    <title>McKenney-Hall 19th Century Native-American Prints</title>
                 </titleInfo>
-                <abstract></abstract>
+                <abstract>This three-volume set of Native-American portraits, entitled the History of The Indian Tribes of North America, with Biographical Sketches and Anecdotes of the Principal Chiefs, was assembled by Thomas L. McKenney and James Hall between 1836 and 1844. The images document a number of tribes on the cusp of their decline and forcible removal by the United States government.  McKenney, the head of the Bureau of Indian Affairs from 1824 to 1830, commissioned their portraits when Native American chiefs and other representatives visited Washington to negotiate treaties; many of them are wearing peace medals issued by the United States government. Charles Bird King, with the assistance of George Cooke, painted many of the images, as well as James Otto Lewis. The paintings were later lost in a fire, but before their destruction they were copied by Henry Inman and then made into lithographs by the Philadelphia printer Edward C. Biddle. The images selected for this TEVA exhibit represent tribes that were associated with Tennessee and the surrounding area, including the Cherokee, Creeks, and Choctaw Indians. The accompanying text was written by Hall, and, while intriguing, should be viewed through a historiographic lens...</abstract>
                 <location>
                     <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/mckenneyHal</url>
                 </location>

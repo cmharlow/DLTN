@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -54,7 +54,7 @@
                 <titleInfo>
                     <title>Miers River Photo Collection</title>
                 </titleInfo>
-                <abstract></abstract>
+                <abstract>The Earl S. Miers River Photographs date from the first decade of the 20th century (ca. 1900-1912) and show steamboats, buildings, people and scenes along the Mississippi and Tennessee Rivers. There are 69 photographs in the collection, 34 of which are displayed here. Many of the photographs depict steamboats belonging to the St. Louis and Tennessee River Packet Company along with crewmen and laborers who worked on them. There are scenes of riverboat landings and the varied work and activities that occurred there when boats tied up. Images depict mule-drawn ferries, African-American ‘roustabouts,’ drovers loading hogs, oxen hauling cargo, and crossties being loaded at a tieyard.</abstract>
                 <location>
                     <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/miersphotos</url>
                 </location>

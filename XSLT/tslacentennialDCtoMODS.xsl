@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -103,14 +103,14 @@
     </xsl:template>
     
     <xsl:template name="publisherRepair">
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+        <xsl:for-each select="tokenize(normalize-space(dc:publisher/text()), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
                     <xsl:when test="contains(., 'Meadville') or contains(., 'Nashville') or contains(., 'Washington')">
-                        <place><xsl:value-of select="normalize-space(dc:publisher)"/></place>
+                        <place><xsl:value-of select="normalize-space(.)"/></place>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:apply-templates select="dc:publisher"/>
+                        <publisher><xsl:value-of select="normalize-space(.)"/></publisher>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:if>

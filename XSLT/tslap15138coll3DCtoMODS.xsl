@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -55,7 +55,7 @@
                 <titleInfo>
                     <title>Civil War Visual Culture</title>
                 </titleInfo>
-                <abstract></abstract>
+                <abstract>The “Civil War Visual Culture” unit of the Tennessee Virtual Archive showcases a wide variety of Civil War-related materials: sheet music covers, professionally designed lithographs, flags, hand-drawn letters, military drawings, and other images.  These items represent some of the ways in which a tragic era in America’s history was experienced by contemporaries and interpreted by subsequent generations...</abstract>
                 <location>
                     <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll3</url>
                 </location>

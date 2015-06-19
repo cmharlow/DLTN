@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -53,11 +53,11 @@
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Arts, Crafts and Folklife Photos</title>
+                    <title>Arts, Crafts, and Folklife Photographss</title>
                 </titleInfo>
-                <abstract></abstract>
+                <abstract>The images in this collection, depicting individuals and cultural traditions throughout the Appalachian region of the state, are a selection of photographs taken from the Arts, Crafts, and Folklife series of Record Group 82: Tennessee Department of Conservation Photograph Collection, 1937-1976. Record Group 82 as a whole (grouped into 33 series) consists of over 11,000 photographic images and about 21,000 negatives. The record group was retrieved by Mr. Mack S. Pritchard, State Archaeologist, and transferred to the Tennessee State Library and Archives in the early 1970s.</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/conservarts</url>
+                    <url>http://www.tn.gov/tsla/TeVAsites/artscrafts/index.htm</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>

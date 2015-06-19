@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -54,9 +54,9 @@
                 <titleInfo>
                     <title>Dr. Harry Mustard Photo Album</title>
                 </titleInfo>
-                <abstract></abstract>
+                <abstract>This photograph album presents detailed visual documentation of the Commonwealth Fund Child Health Demonstration’s (CHD) study of children from Rutherford County, Tennessee, between 1924 and 1928. The CHD’s philanthropic venture was to promote the welfare of humanity by providing publicly funded child health education and care, building hospitals, and promoting the idea of county appointed health officers. Dr. Harry Stoll Mustard (1889-1966), a physician educated at the College of South Carolina and the College of Charleston, was the on-site director based in Murfreesboro, Rutherford County’s seat of government.</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/mustard</url>
+                    <url>http://www.tn.gov/tsla/TeVAsites/Mustard/index.htm</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>

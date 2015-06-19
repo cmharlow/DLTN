@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -52,9 +52,9 @@
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Andrew Johnson Collection</title>
+                    <title>Andrew Johnson Bicentennial, 1808-2008</title>
                 </titleInfo>
-                <abstract></abstract>
+                <abstract>In celebration of the bicentennial of Andrew Johnson’s birth and to commemorate his legacy, the images exhibited in this collection attempt to examine Johnson’s controversial political career and, at the same time, provide a glimpse at his personal life and humble beginnings.  A significant portion of the material represented in this online exhibit has been selected primarily from TSLA’s Andrew Johnson (1808-1875) Papers, 1846-1875; Military Governor Andrew Johnson (1808-1875) Papers, 1862-1865; and TSLA’s Tennessee Historical Society Civil War Collection, 1860-1982.  The remainder of the images were drawn from various other sources, including the Library Photo and Oversized Photo Collections...</abstract>
                 <location>
                     <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/johnson</url>
                 </location>

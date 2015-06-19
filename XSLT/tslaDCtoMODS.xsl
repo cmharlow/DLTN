@@ -5,11 +5,11 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="../coreDCtoMODS.xsl"/>
-    <xsl:include href="../!remediation/GettyGenre.xsl"/>
-    <xsl:include href="../!remediation/LCSHtopics.xsl"/>
-    <xsl:include href="../!remediation/Spatial.xsl"/>
-    <xsl:include href="../!thumbnails/ContentDMthumbnailDCtoMODS.xsl"/>
+    <xsl:include href="remediationgettygenre.xsl"/>
+    <xsl:include href="remediationlcshtopics.xsl"/>
+    <xsl:include href="remediationspatial.xsl"/>
+    <xsl:include href="coredctomods.xsl"/>
+    <xsl:include href="thumbnailscontentdmdctomods.xsl"/>
         
     <xsl:template match="dc:contributor">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">

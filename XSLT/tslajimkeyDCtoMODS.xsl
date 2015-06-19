@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -47,11 +47,11 @@
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Fisk University Scrapbook</title>
+                    <title>The Beautiful Jim Key Collection</title>
                 </titleInfo>
-                <abstract>William Henry Fort, Jr.’s Fisk University scrapbook comprises part of the Ambrose A. Bennett Family Papers. This scrapbook consists of nineteen pages of images, among these are photographs of various campus buildings, numerous students and significant figures at Fisk, including a photograph of Langston Hughes and a photograph of past Fisk president, Thomas E. Jones. TSLA has chosen to display portions of this scrapbook in order to highlight the contributions of Fisk University, especially the historically significant role that the university played during a time of great social upheaval in the South.</abstract>
+                <abstract>The Beautiful Jim Key Collection (1885 – [1897-1907] – 1933) was donated to TSLA by a relative of Dr. William Key, the self-trained, African-American veterinarian (and former slave) who partnered with promoter A. R. Rogers to showcase the extraordinary talents of the Arabian Hambletonian horse, Beautiful Jim Key. Key performed for nine years around the country during the late nineteenth and early twentieth centuries to large crowds at expositions, world’s fairs, schools, and other venues. Under the direction of Dr. William Key, a native of Bedford County, Tennessee, Beautiful Jim Key demonstrated his ability to read, write, spell, tell time, do simple mathematics, sort mail, and more. Rogers’ traveling show featuring Jim Key helped to promote the growing humane movement in the United States. The message of kindness to animals was directed to all Americans, but to children in particular. This exhibit includes 25 images chosen from the two scrapbooks originally assembled by Dr. William Key or his family. They have been selected to give the viewer an overview of Jim Key and his importance in early twentieth-century animal advocacy.</abstract>
                 <location>
-                    <url>http://www.tn.gov/tsla/TeVAsites/FiskScrapbook/index.htm</url>
+                    <url>http://www.tn.gov/tsla/TeVAsites/JimK/index.htm</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>

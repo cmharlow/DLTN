@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -51,7 +51,7 @@
                 <titleInfo>
                     <title>Civilian Life in the Civil War</title>
                 </titleInfo>
-                <abstract></abstract>
+                <abstract>The items in this collection offer new perspectives into the lives of numerous non-combatants during the Civil War in Tennessee and throughout the southeast.  The correspondence and primary writings touch on several themes relating to the home front, including the diverse roles of women, the relationship between occupying/invading forces and civilians, personal beliefs regarding secession and the war, and the effect of the war on African American Tennesseans.  These sources can offer the public a lens into the lives of many Civil War non-combatant men and women, a subject of increasing importance in Civil War scholarship...</abstract>
                 <location>
                     <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll1</url>
                 </location>

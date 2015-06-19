@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -41,7 +41,7 @@
             
             <xsl:apply-templates select="dc:subject"/> <!-- subject -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
+            <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:source"/> <!-- collections -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
@@ -121,6 +121,17 @@
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template name="rightsRepair">
+        <xsl:choose>
+            <xsl:when test="dc:rights">
+                <xsl:apply-templates select="dc:rights"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <accessCondition>While TSLA houses an item, it does not necessarily hold the copyright on the item, nor may it be able to determine if the item is still protected under current copyright law. Users are solely responsible for determining the existence of such instances and for obtaining any other permissions and paying associated fees that may be necessary for the intended use.</accessCondition>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="dc:type">

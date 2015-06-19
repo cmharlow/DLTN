@@ -5,10 +5,12 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="TSLADCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
+        <!-- if statement blocks output of TSLA records that are at item/part-level-->
+        <xsl:if test="not(matches(dc:title/text(), '_\d+$'))">
         <mods xmlns:xlink="http://www.w3.org/1999/xlink" 
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
             xmlns="http://www.loc.gov/mods/v3" version="3.5" 
@@ -17,10 +19,9 @@
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             <xsl:apply-templates select="dc:creator"/> <!-- creator -->
             
-            <xsl:if test="dc:date|dc:publisher">
+            <xsl:if test="dc:date">
                 <originInfo> 
                     <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                    <xsl:apply-templates select="dc:publisher"/> <!-- publisher -->
                 </originInfo>
             </xsl:if>
             
@@ -30,7 +31,7 @@
                 </physicalDescription>
             </xsl:if>
             
-            <xsl:if test="dc:identifier|dc:source">
+            <xsl:if test="dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
                     <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
@@ -43,18 +44,24 @@
             <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
+            <xsl:if test="dc:relation">
+                <relatedItem>
+                    <xsl:apply-templates select="dc:relation"/> <!-- collection identifiers -->
+                </relatedItem>
+            </xsl:if>
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
-                    <title>Christopher D. Ammons</title>
+                    <title>Quilts</title>
                 </titleInfo>
-                <abstract>The Christopher D. Ammons collection documents his military service during two tours in Vietnam (1967-1970).  The collection includes wartime photographs of Vietnam, letters from the front, military documents typical of the period, and souvenirs collected by Ammons from his time “in country.” The material will be of significance to researchers interested in the Vietnam War and its veterans, the experiences of soldiers in modern warfare, and/or the military aspects of United States political history during the 1960s and 1970s...</abstract>
+                <abstract>This unit of the Tennessee Virtual Archive celebrates the tradition of quilting in Tennessee.  The images displayed here, drawn from a variety of collections at TSLA, portray both quilts themselves and Tennessee quilters engaging in their craft.  Audio files of oral histories provided by quiltmakers are also featured here, offering a richer understanding of the utility and symbolism of quilts throughout the state’s past...</abstract>
                 <location>
-                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll13</url>
+                    <url>http://cdm15138.contentdm.oclc.org/cdm/landingpage/collection/p15138coll8</url>
                 </location>
             </relatedItem>
             <xsl:call-template name="recordSource"/>
         </mods>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="dc:coverage">
@@ -89,9 +96,6 @@
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'tiff')">
                         <internetMediaType>image/tiff</internetMediaType>
                     </xsl:when>
-                    <xsl:when test="matches(normalize-space(lower-case(.)), 'wmv')">
-                        <internetMediaType>video/x-ms-wmv</internetMediaType>
-                    </xsl:when>
                     <xsl:when test="matches(normalize-space(lower-case(.)), 'mp3')">
                         <internetMediaType>audio/mp3</internetMediaType>
                     </xsl:when>
@@ -104,6 +108,21 @@
                 </xsl:choose>
             </xsl:if>
         </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="dc:relation">
+        <xsl:if test="normalize-space(.)!=''">
+            <xsl:choose>
+                <xsl:when test="starts-with(., 'http')">
+                    <location>
+                        <url><xsl:value-of select="normalize-space(.)"/></url>
+                    </location>
+                </xsl:when>
+                <xsl:otherwise>
+                    <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template name="rightsRepair">
@@ -121,7 +140,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
+                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -138,7 +157,7 @@
     
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
+            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society') or matches(., 'TSLA'))">
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>
