@@ -1,47 +1,5 @@
 <repository xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"      xmlns:dc="http://purl.org/dc/elements/1.1/"      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instanc">
-<record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/0</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35651_1</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/0</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/1</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35651_2</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/1</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/2</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35651_3</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/2</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/3</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35651_4</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/3</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/4</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35651_5</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/4</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/5</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35651_6</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/5</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/6</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35651_7</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/6</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/7</identifier><datestamp>2015-03-19</datestamp><setSpec>p15138coll12</setSpec></header>
+<record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/7</identifier><datestamp>2015-03-19</datestamp><setSpec>p15138coll12</setSpec></header>
 <metadata>
 <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
 <dc:title>&quot;The Early Life of My Father,&quot; by Daisy Ryman Coggins</dc:title>
@@ -58,24 +16,6 @@
 <dc:type>Text</dc:type>
 <dc:format>Image/jp2</dc:format>
 <dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/7</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/8</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35653_1</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/8</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/9</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35653_2</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/9</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/10</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35653_3</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/10</dc:identifier></oai_dc:dc>
 </metadata>
 </record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/11</identifier><datestamp>2015-03-19</datestamp><setSpec>p15138coll12</setSpec></header>
 <metadata>
@@ -95,24 +35,6 @@
 <dc:format>Image/jp2</dc:format>
 <dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/11</dc:identifier></oai_dc:dc>
 </metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/12</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35655_1</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/12</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/13</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35655_2</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/13</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/14</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35655_3</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/14</dc:identifier></oai_dc:dc>
-</metadata>
 </record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/15</identifier><datestamp>2015-03-19</datestamp><setSpec>p15138coll12</setSpec></header>
 <metadata>
 <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
@@ -129,24 +51,6 @@
 <dc:type>Text</dc:type>
 <dc:format>Image/jp2</dc:format>
 <dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/15</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/16</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35656_1</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/16</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/17</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35656_2</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/17</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/18</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35656_3</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/18</dc:identifier></oai_dc:dc>
 </metadata>
 </record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/19</identifier><datestamp>2015-03-19</datestamp><setSpec>p15138coll12</setSpec></header>
 <metadata>
@@ -166,30 +70,6 @@
 <dc:format>Image/jp2</dc:format>
 <dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/19</dc:identifier></oai_dc:dc>
 </metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/20</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35658_1</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/20</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/21</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35658_2</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/21</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/22</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35658_3</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/22</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/23</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35658_4</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/23</dc:identifier></oai_dc:dc>
-</metadata>
 </record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/24</identifier><datestamp>2015-03-19</datestamp><setSpec>p15138coll12</setSpec></header>
 <metadata>
 <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
@@ -208,18 +88,6 @@
 <dc:type>Text</dc:type>
 <dc:format>Image/jp2</dc:format>
 <dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/24</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/25</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35661_1</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/25</dc:identifier></oai_dc:dc>
-</metadata>
-</record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/26</identifier><datestamp>2014-03-12</datestamp><setSpec>p15138coll12</setSpec></header>
-<metadata>
-<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-<dc:title>35661_2</dc:title>
-<dc:identifier>http://cdm15138.contentdm.oclc.org/cdm/ref/collection/p15138coll12/id/26</dc:identifier></oai_dc:dc>
 </metadata>
 </record><record><header><identifier>oai:cdm15138.contentdm.oclc.org:p15138coll12/27</identifier><datestamp>2015-03-19</datestamp><setSpec>p15138coll12</setSpec></header>
 <metadata>
