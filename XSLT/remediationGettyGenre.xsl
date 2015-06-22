@@ -157,6 +157,9 @@
             <xsl:when test="matches($genreterm, 'cartoons (commentary)')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300123431">editorial cartoons</genre>
             </xsl:when>
+            <xsl:when test="lower-case($genreterm) = 'cartoons (humorous images)'">
+                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300123430">cartoons (humorous images)</genre>
+            </xsl:when>
             <xsl:when test="contains($genreterm, 'certificate')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026841">certificates</genre>
             </xsl:when>
@@ -193,6 +196,9 @@
             <xsl:when test="matches($genreterm, 'legal correspondence')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026920">legal correspondence</genre>
             </xsl:when>
+            <xsl:when test="lower-case($genreterm) = 'corporation reports'">
+                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027275">corporation reports</genre>
+            </xsl:when>
             <xsl:when test="contains($genreterm, 'correspondence')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026877">correspondence</genre>
             </xsl:when>
@@ -204,6 +210,9 @@
             </xsl:when>
             <xsl:when test="matches($genreterm, 'dedications (documents)')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026114">dedications (documents)</genre>
+            </xsl:when>
+            <xsl:when test="lower-case($genreterm) = 'diagrams'">
+                <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300015387">diagrams</genre>
             </xsl:when>
             <xsl:when test="matches($genreterm, 'diaries')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027112">diaries</genre>

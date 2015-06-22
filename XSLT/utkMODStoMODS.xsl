@@ -3,8 +3,6 @@
     version="2.0" exclude-result-prefixes="mods">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    
-    
     <!-- parsed out top-level elements for ease of tweaking as feedback comes in. 
                 as source feed is worked on, this can be simplified -->
     
@@ -46,6 +44,10 @@
     
     <xsl:template match="mods:location/*">
         <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="mods:originInfo">
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="mods:dateCreated[@encoding='edtf']" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
     <xsl:template match="mods:physicalDescription/mods:form" mode="form2genre"> <!-- DPLA genre is UTK form - UTK form being copied over -->
@@ -177,10 +179,6 @@
     </xsl:template>
     
     <xsl:template match="mods:genre">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
-    </xsl:template>
-    
-    <xsl:template match="mods:originInfo">
         <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
     
