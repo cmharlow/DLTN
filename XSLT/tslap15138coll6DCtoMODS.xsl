@@ -9,8 +9,6 @@
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
-        <!-- if statement blocks output of TSLA records that are at item/part-level-->
-        <xsl:if test="not(matches(dc:title/text(), '_\d+$'))">
         <mods xmlns:xlink="http://www.w3.org/1999/xlink" 
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
             xmlns="http://www.loc.gov/mods/v3" version="3.5" 
@@ -35,13 +33,14 @@
                 <location>
                     <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
                     <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- thumbnail url -->
+                    <xsl:apply-templates select="dc:source" mode="repository"/> <!-- repository -->
                 </location>
             </xsl:if>
             
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info, 1 temporal -->
-            <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
+            <xsl:apply-templates select="dc:type"/> <!-- item types -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
                     <title>Looking Back: The Civil War in Tennessee</title>
@@ -53,7 +52,6 @@
             </relatedItem>
             <xsl:call-template name="recordSource"/>
         </mods>
-        </xsl:if>
     </xsl:template>
     
     <xsl:template match="dc:coverage">
@@ -110,10 +108,17 @@
     
     <xsl:template match="dc:source">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
+            <xsl:if test="normalize-space(.)!='' and not(contains(normalize-space(lower-case(.)), 'archive'))">
                 <place><xsl:value-of select="normalize-space(.)"/></place>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
     
+    <xsl:template match="dc:source" mode="repository">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!='' and contains(normalize-space(lower-case(.)), 'archive')">
+                <phyiscalLocation><xsl:value-of select="normalize-space(.)"/></phyiscalLocation>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
 </xsl:stylesheet>
