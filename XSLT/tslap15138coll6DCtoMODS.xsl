@@ -117,7 +117,7 @@
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!='' and contains(normalize-space(lower-case(.)), 'archive')">
-                <phyiscalLocation><xsl:value-of select="normalize-space(.)"/></phyiscalLocation>
+                <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
