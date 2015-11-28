@@ -43,7 +43,12 @@
     </xsl:template>
     
     <xsl:template match="mods:location/*">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:copy copy-namespaces="no"><xsl:copy-of select="mods:physicalLocation" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <xsl:template match="mods:url[@access='object in context']">
+        <url access="object in context" usage="primary display"
+            >http://digital.lib.utk.edu/collections/islandora/object/volvoices%3A3778</url>
+        <url access="preview"
+            >http://digital.lib.utk.edu/collections/islandora/object/volvoices%3A3778/datastream/TN/view</url>
     </xsl:template>
     
     <xsl:template match="mods:originInfo">

@@ -40,8 +40,8 @@
             <xsl:if test="dc:source|dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:source" mode="physicalLocation"/> <!-- repository -->
-                    <xsl:apply-templates select="dc:identifier" mode="URL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates> <!-- preview -->
+                    <xsl:apply-templates select="dc:identifier" mode="crossroadsURL"/> <!-- object in context URL -->
+                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- preview -->
                 </location>
             </xsl:if>
             

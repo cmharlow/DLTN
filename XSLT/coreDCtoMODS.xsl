@@ -308,6 +308,11 @@
             <xsl:if test="starts-with(., 'http://')">
                 <url usage="primary" access="object in context"><xsl:value-of select="normalize-space(.)"/></url>
             </xsl:if>
+            <xsl:if test="starts-with(., 'http://')"> <!-- Crossroads test if lacking identifier with http:// identifier -->
+                <xsl:if test="starts-with(., 'rds:')">
+                    <url usage="primary" access="object in context"><xsl:value-of select="normalize-space(.)"/></url>
+                </xsl:if>
+            </xsl:if>
         </xsl:if>
     </xsl:template>
     

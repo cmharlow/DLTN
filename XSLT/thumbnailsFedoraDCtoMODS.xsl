@@ -17,4 +17,13 @@
         </xsl:if>
     </xsl:template>
     
+    <xsl:template match="dc:identifier" mode="crossroadsURL">
+        <xsl:variable name="idvalue" select="normalize-space(.)"/>
+        <xsl:if test="starts-with($idvalue,'rds:')"> 
+            <!-- Crossroads Fedora puts the PID in an <identifier> field in the OAI record --><!-- process Fedora object in context urls -->           
+            <xsl:variable name="PID" select="substring-after($idvalue,'rds:')"/>
+            <url access="object in context" usage="primary"><xsl:value-of select="concat('http://www.crossroadstofreedom.org/view.player?pid=rds:',$PID)"/></url> <!--CONTENTdm thumbnail url-->
+        </xsl:if>
+    </xsl:template>
+    
 </xsl:stylesheet>
