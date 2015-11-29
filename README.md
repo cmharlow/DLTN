@@ -11,7 +11,7 @@ This is XSLT used for the Repox aggregation platform and transformation to the D
 
 ## Documentation
 
-See our DLTN wiki: https://wiki.lib.utk.edu/DPLA
+See our DLTN wiki: https://wiki.lib.utk.edu/display/DPLA
 
 ## Helpful Resources
 
