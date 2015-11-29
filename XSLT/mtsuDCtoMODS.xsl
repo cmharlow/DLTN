@@ -500,7 +500,7 @@
     <xsl:template match="dc:creator" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="contains(normalize-space(lower-case(.)), 'center for historic preservation') and normalize-space(.)!=''">
-                <publisher><xsl:value-of select="replace(normalize-space(.), ' (Publisher)', '')"/></publisher>
+                <physicalLocation><xsl:value-of select="replace(normalize-space(.), ' (Publisher)', '')"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
