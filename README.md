@@ -3,13 +3,15 @@ Digital Library of Tennessee stuff
 
 ## About the Data
 
-These datasets were used just for generated DLTN Metadata documentation.
+These datasets were used just for generated DLTN Metadata documentation and transformation testing.
+
+## About the XSLT
+
+This is XSLT used for the Repox aggregation platform and transformation to the DLTN MODS MAP. Stored in flat directory for easier syncing with Repox servers.
 
 ## Documentation
 
-See the Documentation subdirectory for the DLTN MODS MAP, which has preliminary mapping to DPLA MAP v.4. Local institution > DLTN MODS mappings will be in that folder as well as XSLT for each mapping's proposed transformation.
-
-Local dataset review sheets can be found on the following wiki: https://wiki.lib.utk.edu/pages/viewpage.action?pageId=1901100
+See our DLTN wiki: https://wiki.lib.utk.edu/DPLA
 
 ## Helpful Resources
 
