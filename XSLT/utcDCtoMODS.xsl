@@ -46,7 +46,7 @@
                 </location>
             </xsl:if>
             
-            <xsl:apply-templates select="dc:language"/> <!-- language -->
+            <xsl:call-template name="langRepair"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:apply-templates select="dc:relation" /> <!-- collections -->
             <xsl:call-template name="rightsRepair"/> <!-- accessCondition, not all records have rights statements -->
@@ -113,6 +113,19 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template name="langRepair">
+        <xsl:for-each select="dc:language">
+            <xsl:choose>
+                <xsl:when test="matches(normalize-space(.),'^[a-z]{3}$')">
+                    <!-- skip the 3 letter codes -->
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="."/>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:for-each>
     </xsl:template>
     
@@ -255,14 +268,19 @@
     </xsl:template>
     
     <xsl:template name="rightsRepair">
-        <xsl:choose>
-            <xsl:when test="dc:rights">
-                <xsl:apply-templates select="dc:rights"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <accessCondition>Under copyright.</accessCondition>
-            </xsl:otherwise>
-        </xsl:choose>
+        <xsl:for-each select="dc:rights">
+            <xsl:choose>
+                <xsl:when test="matches(normalize-space(.),'^[a-z]{3}$')">
+                    <!-- skip the 3 letter codes -->
+                </xsl:when>
+                <xsl:when test="not(matches(normalize-space(.),'^[a-z]{3}$')) and normalize-space(.) != ''">
+                    <xsl:apply-templates select="."/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <accessCondition>Under copyright.</accessCondition>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:subject">
@@ -293,6 +311,8 @@
                 <xsl:when test="contains(normalize-space(.), 'Text')">
                     <typeOfResource>text</typeOfResource>
                 </xsl:when>
+                <xsl:otherwise>
+                </xsl:otherwise>
             </xsl:choose>
         </xsl:for-each>
     </xsl:template>
