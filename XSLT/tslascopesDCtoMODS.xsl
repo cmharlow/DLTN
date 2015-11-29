@@ -121,17 +121,6 @@
             </xsl:choose>
         </xsl:if>
     </xsl:template>
-    
-    <xsl:template name="rightsRepair">
-        <xsl:choose>
-            <xsl:when test="dc:rights">
-                <accessCondition><xsl:value-of select="normalize-space(.)"/></accessCondition>
-            </xsl:when>
-            <xsl:otherwise>
-                <accessCondition>While TSLA houses an item, it does not necessarily hold the copyright on the item, nor may it be able to determine if the item is still protected under current copyright law. Users are solely responsible for determining the existence of such instances and for obtaining any other permissions and paying associated fees, that may be necessary for the intended use.</accessCondition>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
  
     <xsl:template match="dc:source">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">

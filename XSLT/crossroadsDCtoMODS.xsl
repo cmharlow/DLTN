@@ -48,7 +48,7 @@
             <xsl:apply-templates select="dc:medium" /> <!-- genre -->
             <xsl:apply-templates select="dc:language"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
+            <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:bibliographiccitation"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject" /> <!-- subject/topical -->
             <xsl:apply-templates select="dc:spatial" /> <!-- subject/geographic-->
@@ -366,10 +366,10 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template name="dc:rightsRepair"> <!-- some elements missing rights statement, which is required. Existing mapped, those without, given generic.-->
+    <xsl:template name="rightsRepair"> <!-- some elements missing rights statement, which is required. Existing mapped, those without, given generic.-->
         <xsl:choose>
             <xsl:when test="dc:rights">
-                <accessCondition><xsl:value-of select="dc:rights"/></accessCondition>
+                <xsl:apply-templates select="dc:rights"/>
             </xsl:when>
             <xsl:otherwise>
                 <accessCondition>Crossroads to Freedom Digital Archive is licensed under the Creative Commons Attribution License. Use of the site's content is subject to the conditions and terms of use on our Legal Notices page.</accessCondition>

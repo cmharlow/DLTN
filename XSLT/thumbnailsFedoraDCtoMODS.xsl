@@ -4,9 +4,7 @@
     xmlns:oai="http://www.openarchives.org/OAI/2.0/"
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
-    <!-- OAI-DC to MODS ContentDM Transformations for Thumbnail URL additions. Includes only the following template:
-        dc:identifier mode="locationurl"
-    -->
+    <!-- OAI-DC to MODS Fedora Transformations for Thumbnail URL additions. -->
     
     <xsl:template match="dc:identifier" mode="locationurl">
         <xsl:variable name="idvalue" select="normalize-space(.)"/>
@@ -18,12 +16,10 @@
     </xsl:template>
     
     <xsl:template match="dc:identifier" mode="crossroadsURL">
-        <xsl:variable name="idvalue" select="normalize-space(.)"/>
-        <xsl:if test="starts-with($idvalue,'rds:')"> 
+        <xsl:if test="starts-with(normalize-space(.),'rds:')"> 
             <!-- Crossroads Fedora puts the PID in an <identifier> field in the OAI record --><!-- process Fedora object in context urls -->           
-            <xsl:variable name="PID" select="substring-after($idvalue,'rds:')"/>
+            <xsl:variable name="PID" select="substring-after(normalize-space(.),'rds:')"/>
             <url access="object in context" usage="primary"><xsl:value-of select="concat('http://www.crossroadstofreedom.org/view.player?pid=rds:',$PID)"/></url> <!--CONTENTdm thumbnail url-->
         </xsl:if>
     </xsl:template>
-    
 </xsl:stylesheet>

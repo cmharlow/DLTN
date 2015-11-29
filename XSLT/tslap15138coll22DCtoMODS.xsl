@@ -40,7 +40,7 @@
             
             <xsl:apply-templates select="dc:format" mode="itemType"/> <!-- Item Type -->
             <xsl:apply-templates select="dc:format" mode="genre"/> <!-- Genre -->
-            <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
+            <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:subject"/> <!-- subject - parsed -->
             <xsl:apply-templates select="dc:coverage"/> <!-- subject info -->
             <xsl:apply-templates select="dc:source"/> <!-- series title -->
@@ -115,81 +115,6 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="dc:date"> 
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='unknown' and normalize-space(lower-case(.))!='undated'">
-                <xsl:choose>
-                    <xsl:when test="matches(normalize-space(.), '^\d{4}$') or matches(normalize-space(.), '^\d{4}-\d{2}$') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="."/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(normalize-space(.), '^\d{4}-\d{4}$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(.), '-', '/')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                <!-- Match YYYY Month formatting -->
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} january$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' january ', '-01')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} february$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' february ', '-02')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} march$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' march ', '-03')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} april$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' april ', '-04')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} may$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' may ', '-05')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} june$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' june ', '-06')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} july$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' july ', '-07')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} august$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' august ', '-08')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} september$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' september ', '-09')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} october$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' october ', '-10')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} november$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' november ', '-11')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:when test="matches(lower-case(normalize-space(.)), '^\d{4} december$')">
-                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(lower-case(.)), ' december ', '-12')"/></dateCreated>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <dateCreated><xsl:value-of select="normalize-space(.)"/></dateCreated>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:if>
-        </xsl:for-each>
-    </xsl:template>
-    
-    <xsl:template match="dc:description">
-        <xsl:if test="normalize-space(.)!=''">
-            <abstract><xsl:value-of select="normalize-space(.)"/></abstract>
-        </xsl:if>
-    </xsl:template>
-    
     <xsl:template match="dc:format"> <!-- should go into PhysicalDescription wrapper -->
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
@@ -241,54 +166,6 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="dc:identifier">
-        <xsl:if test="normalize-space(.)!=''">
-            <xsl:choose>
-                <xsl:when test="starts-with(., 'http://')">
-                    <identifier><xsl:value-of select="normalize-space(.)"/></identifier>
-                </xsl:when>
-                <xsl:otherwise>
-                    <identifier type="local"><xsl:value-of select="normalize-space(.)"/></identifier>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:identifier" mode="URL">
-        <xsl:if test="normalize-space(.)!=''">
-            <xsl:if test="starts-with(., 'http://')">
-                <url usage="primary" access="object in context"><xsl:value-of select="normalize-space(.)"/></url>
-            </xsl:if>
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:identifier" mode="locationurl">
-        <xsl:variable name="idvalue" select="normalize-space(.)"/>
-        <xsl:if test="starts-with($idvalue,'http')"> 
-            <!-- CONTENTdm puts the URI in an <identifier> field in the OAI record -->
-            <!-- process identifier into CONTENTdm 6.5 thumbnail urls --> 
-            <xsl:variable name="contentdmroot" select="substring-before($idvalue,'/cdm/ref/')"/>
-            <xsl:variable name="recordinfo" select="substring-after($idvalue,'/cdm/ref/collection/')"/>
-            <xsl:variable name="alias" select="substring-before($recordinfo,'/id/')"/>
-            <xsl:variable name="pointer" select="substring-after($recordinfo,'/id/')"/>
-            <url access="preview"><xsl:value-of select="concat($contentdmroot,'/utils/getthumbnail/collection/',$alias,'/id/',$pointer)"/></url> <!--CONTENTdm thumbnail url-->
-            <!-- end CONTENTdm thumbnail url processing -->           
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:rights">
-        <xsl:choose>
-            <xsl:when test="matches(normalize-space(.),'^Public domain\.$') or matches(normalize-space(.),'^Public Domain$') or matches(normalize-space(.),'^Public Domain\.$')">
-                <accessCondition type="use and reproduction">Public domain</accessCondition>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:if test="normalize-space(.)!=''">
-                    <accessCondition type="use and reproduction"><xsl:value-of select="normalize-space(.)"/></accessCondition>
-                </xsl:if>     
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    
     <xsl:template match="dc:source">
         <xsl:if test="normalize-space(.)!='' and starts-with(normalize-space(.), 'Southern')">
             <relatedItem type="series">
@@ -303,29 +180,6 @@
         <xsl:if test="normalize-space(.)!='' and starts-with(normalize-space(.), 'Tennessee State Library')">
             <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
         </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="dc:subject">
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
-                <subject>
-                    <topic><xsl:value-of select="normalize-space(.)"/></topic>
-                </subject>
-            </xsl:if>
-        </xsl:for-each>
-    </xsl:template>
-    
-    <xsl:template match="dc:type">
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:choose>
-                <xsl:when test="contains(normalize-space(lower-case(.)), 'text')">
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026656">newspapers</genre>
-                </xsl:when>
-                <xsl:otherwise>
-                    <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300263751">texts (document genres)</genre>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="dc:type" mode="form">

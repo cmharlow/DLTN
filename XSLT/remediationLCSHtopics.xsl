@@ -281,7 +281,7 @@
             <xsl:when test="matches($topic, 'memphis police department')">
                 <subject>
                     <name authority="naf" valueURI="http://id.loc.gov/authorities/names/n2007043373">
-                        <namePart>Memphis (Tenn). Police Department</namePart>
+                        <namePart>Memphis (Tenn.). Police Department</namePart>
                     </name>
                 </subject>
             </xsl:when>
@@ -297,14 +297,6 @@
                     <name authority="naf" valueURI="http://id.loc.gov/authorities/names/n98045115">
                         <namePart>Memphis Zoo (Memphis, Tenn.)</namePart>
                     </name>
-                </subject>
-            </xsl:when>
-            <xsl:when test="matches($topic, 'memphis') or matches($topic, 'memphis, tenn.')">
-                <subject>
-                    <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n2007043373">Memphis (Tenn)</geographic>
-                    <cartographics>
-                        <coordinates>35.14953, -90.04898</coordinates>
-                    </cartographics>
                 </subject>
             </xsl:when>
             <xsl:when test="contains($topic, 'military history')">

@@ -42,7 +42,7 @@
             
             <xsl:apply-templates select="dc:subject"/> <!-- subject -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:apply-templates select="dc:rights"/> <!-- accessCondition -->
+            <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info, 1 temporal -->
             <xsl:apply-templates select="dc:format" mode="type"/> <!-- item types -->
             <xsl:apply-templates select="dc:relation" mode="identifiers"/>
