@@ -161,7 +161,7 @@
                             </location>
                         </relatedItem>
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Raymond B. Witt Chattanooga Public Schools Desegregation records')">
+                    <xsl:when test="contains(normalize-space(.), 'Raymond B. Witt Chattanooga Public Schools Desegregation records') or contains(normalize-space(.), 'Raymond B. Witt legal documents, records, and correspondence')">
                         <relatedItem type='host' displayLabel='Project'>
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
@@ -281,14 +281,6 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="dc:type" mode="form">
-        <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
-                <form><xsl:value-of select="normalize-space(lower-case(.))"/></form>
-            </xsl:if>
-        </xsl:for-each>
-    </xsl:template>
-    
     <xsl:template match="dc:type" mode="type">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:choose>
@@ -301,9 +293,6 @@
                 <xsl:when test="contains(normalize-space(.), 'Text')">
                     <typeOfResource>text</typeOfResource>
                 </xsl:when>
-                <xsl:otherwise>
-                    <typeOfResource>text</typeOfResource>
-                </xsl:otherwise>
             </xsl:choose>
         </xsl:for-each>
     </xsl:template>

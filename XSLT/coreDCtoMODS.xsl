@@ -349,7 +349,10 @@
     
     <xsl:template match="dc:rights">
         <xsl:choose>
-            <xsl:when test="matches(normalize-space(.),'^Public domain\.$') or matches(normalize-space(.),'^Public Domain$') or matches(normalize-space(.),'^Public Domain\.$')">
+            <xsl:when test="matches(normalize-space(.),'^[a-z]{3}$')">
+                <!-- skip the 3 letter codes -->
+            </xsl:when>
+            <xsl:when test="matches(normalize-space(.),'^Public domain\.$') or contains(normalize-space(.),'In the public domain') or matches(normalize-space(.),'^Public Domain$') or matches(normalize-space(.),'^Public Domain\.$')">
                 <accessCondition>Public domain</accessCondition>
             </xsl:when>
             <xsl:otherwise>
