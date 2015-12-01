@@ -35,13 +35,16 @@
                     <xsl:when test="matches(normalize-space(.), '^\d{4}$') or matches(normalize-space(.), '^\d{4}-\d{2}$') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}$')">
                         <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="normalize-space(.)"/></dateCreated>
                     </xsl:when>
+                    <xsl:when test="matches(normalize-space(.), '^\d{4}?$') or matches(normalize-space(.), '^\d{4}-\d{2}?$') or matches(normalize-space(.), '^\d{4}-\d{2}-\d{2}?$')">
+                        <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="normalize-space(.)"/></dateCreated>
+                    </xsl:when>
                     <xsl:when test="matches(normalize-space(.), '^\d{4}-\d{4}$')">
                         <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(.), '-', '/')"/></dateCreated>
                     </xsl:when>
                     <xsl:when test="matches(normalize-space(.), '^\d{4} - \d{4}$')">
                         <dateCreated encoding="edtf" keyDate="yes"><xsl:value-of select="replace(normalize-space(.), ' - ', '/')"/></dateCreated>
                     </xsl:when>
-                    <xsl:when test="normalize-space(lower-case(.))='unknown' or normalize-space(lower-case(.))='uknown' or contains(lower-case(.), 'undated')">
+                    <xsl:when test="normalize-space(lower-case(.))='unknown' or normalize-space(lower-case(.))='uknown' or contains(lower-case(.), 'undated') or contains(lower-case(.), 'n.d.')">
                         <dateCreated encoding="edtf" keyDate="yes">uuuu</dateCreated>
                     </xsl:when>
                     <xsl:when test="starts-with(., 'year unknown')">
