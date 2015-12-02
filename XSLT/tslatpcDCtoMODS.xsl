@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="tslaDCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -108,7 +108,7 @@
     <xsl:template match="dc:relation">
         <xsl:if test="normalize-space(.)!='' and not(contains(., 'postcard'))">
             <xsl:choose>
-                <xsl:when test="starts-with(., 'http')">
+                <xsl:when test="contains(., 'http')">
                     <location>
                         <url><xsl:value-of select="normalize-space(.)"/></url>
                     </location>

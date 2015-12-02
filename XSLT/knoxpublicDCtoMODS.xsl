@@ -427,7 +427,7 @@
     
     <xsl:template match="dc:type" mode="form">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!=''">
+            <xsl:if test="normalize-space(.)!='' and not(matches(normalize-space(.), '^\d+s$'))">
                 <form><xsl:value-of select="normalize-space(.)"/></form>
             </xsl:if>
         </xsl:for-each>

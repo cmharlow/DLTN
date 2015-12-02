@@ -20,7 +20,7 @@
             </xsl:when>
             
             <!-- City Districts/Neighborhoods that need to go before the Cities for matching purposes -->
-            <xsl:when test="matches($topic, 'beale street')">
+            <xsl:when test="matches($topic, '^beale street$')">
                 <subject>
                     <geographic authority="lcsh" valueURI="http://id.loc.gov/authorities/names/sh85012635">Beale Street (Memphis, Tenn.)</geographic>
                     <cartographics>
@@ -38,7 +38,7 @@
             </xsl:when>
             
             <!-- Cities, States, Countries, etc. -->
-            <xsl:when test="(contains($topic,'albany') and contains($topic,'georgia')) or matches($topic, 'albany (ga.)')">
+            <xsl:when test="(contains($topic,'albany') and contains($topic,'georgia')) or matches($topic, '^albany (ga.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n81107844">Albany (Ga.)</geographic>
                     <cartographics>
@@ -46,7 +46,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains($topic,'alcoa') and contains($topic,'tennessee')) or matches($topic, 'alcoa (tenn.)')">
+            <xsl:when test="(contains($topic,'alcoa') and contains($topic,'tennessee')) or matches($topic, '^alcoa (tenn.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n80022862">Alcoa (Tenn.)</geographic>
                     <cartographics>
@@ -54,7 +54,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains($topic,'alexandria') and contains($topic,'virginia')) or matches($topic, 'alexandria (va.)')">
+            <xsl:when test="(contains($topic,'alexandria') and contains($topic,'virginia')) or matches($topic, '^alexandria (va.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79099306">Alexandria (Va.)</geographic>
                     <cartographics>
@@ -62,7 +62,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains($topic,'anderson') and contains($topic,'indiana')) or matches($topic, 'anderson (ind.)')">
+            <xsl:when test="(contains($topic,'anderson') and contains($topic,'indiana')) or matches($topic, '^anderson (ind.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n50074868">Anderson (Ind.)</geographic>
                     <cartographics>
@@ -70,7 +70,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains($topic,'atlanta') and contains($topic,'georgia')) or matches($topic, 'atlanta (ga.)')">
+            <xsl:when test="(contains($topic,'atlanta') and contains($topic,'georgia')) or matches($topic, '^atlanta (ga.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79023214">Atlanta (Ga.)</geographic>
                     <cartographics>
@@ -78,7 +78,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains($topic,'attala') and contains($topic,'mississippi')) or matches($topic, 'attala county (miss.)')">
+            <xsl:when test="(contains($topic,'attala') and contains($topic,'mississippi')) or matches($topic, '^attala county (miss.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n82101331">Attala County (Miss.)</geographic>
                     <cartographics>
@@ -86,7 +86,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains($topic,'brownsville') and contains($topic,'tennessee')) or matches($topic, 'brownsville (tenn.)')">
+            <xsl:when test="(contains($topic,'brownsville') and contains($topic,'tennessee')) or matches($topic, '^brownsville (tenn.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n84008639">Brownsville (Tenn.)</geographic>
                     <cartographics>
@@ -94,7 +94,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains($topic,'birmingham') and contains($topic,'alabama')) or matches($topic, 'birmingham (ala.)')">
+            <xsl:when test="(contains($topic,'birmingham') and contains($topic,'alabama')) or matches($topic, '^birmingham (ala.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79042167">Birmingham (Ala.)</geographic>
                     <cartographics>
@@ -102,7 +102,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains($topic,'boston') and contains($topic,'massachusetts')) or matches($topic, 'boston (mass.)')">
+            <xsl:when test="(contains($topic,'boston') and contains($topic,'massachusetts')) or matches($topic, '^boston (mass.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79045553">Boston (Mass.)</geographic>
                     <cartographics>
@@ -110,7 +110,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'chattanooga (tenn.)')">
+            <xsl:when test="matches($topic, '^chattanooga (tenn.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79075123">Chattanooga (Tenn.)</geographic>
                     <cartographics>
@@ -118,7 +118,7 @@
                     </cartographics> 
                 </subject> 
             </xsl:when>
-            <xsl:when test="(contains($topic,'chicago') and contains($topic,'illinois')) or matches($topic, 'chicago (ill.)')">
+            <xsl:when test="(contains($topic,'chicago') and contains($topic,'illinois')) or matches($topic, '^chicago (ill.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n78086438">Chicago (Ill.)</geographic>
                     <cartographics>
@@ -126,7 +126,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'chickamauga (ga.)')">
+            <xsl:when test="matches($topic, '^chickamauga (ga.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n91047626">Chickamauga (Ga.)</geographic>
                     <cartographics>
@@ -134,7 +134,7 @@
                     </cartographics> 
                 </subject> 
             </xsl:when>
-            <xsl:when test="matches($topic, 'columbia (tenn.)')">
+            <xsl:when test="matches($topic, '^columbia (tenn.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n83226061">Columbia (Tenn.)</geographic>
                     <cartographics>
@@ -142,7 +142,7 @@
                     </cartographics> 
                 </subject> 
             </xsl:when>
-            <xsl:when test="matches($topic, 'great smoky mountains')">
+            <xsl:when test="matches($topic, '^great smoky mountains$')">
                 <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85057008">
                     <geographic>Great Smoky Mountains (N.C. and Tenn.)</geographic>
                     <cartographics>
@@ -150,7 +150,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="(contains($topic,'hoxie') and contains($topic,'arkansas')) or matches($topic, 'hoxie (ark.)')">
+            <xsl:when test="(contains($topic,'hoxie') and contains($topic,'arkansas')) or matches($topic, '^hoxie (ark.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n83030241">Hoxie (Ark.)</geographic>
                     <cartographics>
@@ -158,7 +158,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'indianapolis (ind.)')">
+            <xsl:when test="matches($topic, '^indianapolis (ind.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79055094">Indianapolis (Ind.)</geographic>
                     <cartographics>
@@ -166,7 +166,7 @@
                     </cartographics> 
                 </subject> 
             </xsl:when>
-            <xsl:when test="(contains($topic,'macon') and contains($topic,'georgia')) or matches($topic, 'macon (ga.)')">
+            <xsl:when test="(contains($topic,'macon') and contains($topic,'georgia')) or matches($topic, '^macon (ga.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79133192">Macon (Ga.)</geographic>
                     <cartographics>
@@ -174,7 +174,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'mcminnville (tenn.)')">
+            <xsl:when test="matches($topic, '^mcminnville (tenn.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n96046228">McMinnville (Tenn.)</geographic>
                     <cartographics>
@@ -182,7 +182,7 @@
                     </cartographics> 
                 </subject> 
             </xsl:when>
-            <xsl:when test="matches($topic, 'memphis') or matches($topic, 'memphis, tenn.') or matches($topic, 'memphis (tenn.)') or (contains($topic,'memphis') and contains($topic,'tennessee'))">
+            <xsl:when test="matches($topic, '^memphis$') or matches($topic, '^memphis, tenn.$') or matches($topic, '^memphis (tenn.)$') or (contains($topic,'memphis') and contains($topic,'tennessee'))">
                 <subject>
                     <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n2007043373">Memphis (Tenn.)</geographic>
                     <cartographics>
@@ -190,7 +190,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'murfreesboro (tenn.)')">
+            <xsl:when test="matches($topic, '^murfreesboro (tenn.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n50071679">Murfreesboro (Tenn.)</geographic>
                     <cartographics>
@@ -198,7 +198,7 @@
                     </cartographics> 
                 </subject> 
             </xsl:when>
-            <xsl:when test="matches($topic, 'mississippi')">
+            <xsl:when test="matches($topic, '^mississippi$')">
                 <subject>
                     <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n79138969">Mississippi</geographic>
                     <cartographics>
@@ -206,12 +206,12 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'mississippi delta')">
+            <xsl:when test="matches($topic, '^mississippi delta$')">
                 <subject>
                     <geographic authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh91001124">Delta (Miss. : Region)</geographic>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'mississippi river')">
+            <xsl:when test="matches($topic, '^mississippi river$')">
                 <subject>
                     <geographic authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85086206">Mississippi River</geographic>
                 </subject>
@@ -224,7 +224,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'richmond (va.)')">
+            <xsl:when test="matches($topic, '^richmond (va.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79060700">Richmond (Va.)</geographic>
                     <cartographics>
@@ -232,7 +232,7 @@
                     </cartographics> 
                 </subject> 
             </xsl:when>
-            <xsl:when test="matches($topic, 'royal air force station, martlesham heath (suffolk)')">
+            <xsl:when test="matches($topic, '^royal air force station, martlesham heath (suffolk)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n84120766">Royal Air Force Station, Martlesham Heath (Suffolk)</geographic>
                     <cartographics>
@@ -240,7 +240,7 @@
                     </cartographics> 
                 </subject> 
             </xsl:when>
-            <xsl:when test="matches($topic, 'sand mountain (ala.)')">
+            <xsl:when test="matches($topic, '^sand mountain (ala.)$')">
                 <subject>
                     <geographic>Sand Mountain (Ala.)</geographic>
                     <cartographics>
@@ -248,7 +248,7 @@
                     </cartographics> 
                 </subject> 
             </xsl:when>
-            <xsl:when test="matches($topic, 'tennessee')">
+            <xsl:when test="matches($topic, '^tennessee$')">
                 <subject>
                     <geographic authority="naf" valueURI="http://id.loc.gov/authorities/names/n79060965">Tennessee</geographic>
                 </subject>
@@ -261,7 +261,7 @@
                     </cartographics>
                 </subject>
             </xsl:when>
-            <xsl:when test="matches($topic, 'walden ridge (tenn.)')">
+            <xsl:when test="matches($topic, '^walden ridge (tenn.)$')">
                 <subject>
                     <geographic>Walden Ridge (Tenn.)</geographic>
                     <cartographics>
@@ -269,7 +269,7 @@
                     </cartographics> 
                 </subject> 
             </xsl:when>
-            <xsl:when test="contains($topic,'washington') and contains($topic,'d.c.') or contains($topic,'dc') or contains($topic,'district of columbia') or matches($topic, 'washington (d.c.)')">
+            <xsl:when test="contains($topic,'washington') and contains($topic,'d.c.') or contains($topic,'dc') or contains($topic,'district of columbia') or matches($topic, '^washington (d.c.)$')">
                 <subject>
                     <geographic authority="lcnaf" valueURI="http://id.loc.gov/authorities/names/n79018774">Washington (D.C.)</geographic>
                     <cartographics>

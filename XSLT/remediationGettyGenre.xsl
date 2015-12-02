@@ -28,10 +28,10 @@
             <xsl:when test="contains($genreterm, 'address book')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026689">address books</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'administrative records')">
+            <xsl:when test="matches($genreterm, '^administrative records$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027425">administrative records</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'admission tickets')">
+            <xsl:when test="matches($genreterm, '^admission tickets$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300133073">admission tickets</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'advertisement')">
@@ -49,7 +49,7 @@
             <xsl:when test="contains($genreterm, 'agenda')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027426">agendas (administrative records)</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'agreements')">
+            <xsl:when test="matches($genreterm, '^agreements$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027628">agreements</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'album')">
@@ -70,7 +70,7 @@
             <xsl:when test="contains($genreterm, 'architectural drawing')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300034787">architectural drawings (visual works)</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'architectural photograph')">
+            <xsl:when test="matches($genreterm, '^architectural photograph$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300046300">photographs</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'armband')">
@@ -118,10 +118,10 @@
             <xsl:when test="contains($genreterm, 'booklet')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300311670">booklets</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'bookplate')">
+            <xsl:when test="matches($genreterm, '^bookplate$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028731">bookplates</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'book cover')">
+            <xsl:when test="matches($genreterm, '^book cover$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300197210">covers (closures)</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'book')">
@@ -136,28 +136,28 @@
             <xsl:when test="contains($genreterm, 'business card')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026767">business cards</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'cabinet photograph')">
+            <xsl:when test="matches($genreterm, '^cabinet photograph$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127131">cabinet photographs</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'calendar')">
+            <xsl:when test="matches($genreterm, '^calendar$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026741">calendars</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'christmas card')">
+            <xsl:when test="matches($genreterm, '^christmas card$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026782">Christmas cards</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'card')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026756">cards (information artifacts)</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'caricatures')">
+            <xsl:when test="matches($genreterm, '^caricatures$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300015634">caricatures</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'cartes-de-visite')">
+            <xsl:when test="matches($genreterm, '^cartes-de-visite$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127141">cartes-de-visite (card photographs)</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'cartoons (commentary)')">
+            <xsl:when test="matches($genreterm, '^cartoons (commentary)$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300123431">editorial cartoons</genre>
             </xsl:when>
-            <xsl:when test="lower-case($genreterm) = 'cartoons (humorous images)'">
+            <xsl:when test="matches($genreterm, '^cartoons (humorous images)$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300123430">cartoons (humorous images)</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'certificate')">
@@ -172,7 +172,7 @@
             <xsl:when test="contains($genreterm, 'charter')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027621">charters</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'chart')">
+            <xsl:when test="matches($genreterm, '^chart$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026848">charts (graphic documents)</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'cityscape')">
@@ -181,10 +181,10 @@
             <xsl:when test="contains($genreterm, 'clipping')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026867">clippings (information artifacts)</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'commercial correspondence')">
+            <xsl:when test="matches($genreterm, '^commercial correspondence$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026914">commercial correspondence</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'comprehensive plans (reports)')">
+            <xsl:when test="matches($genreterm, '^comprehensive plans (reports)$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027299">comprehensive plans (reports)</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'computer disk')">
@@ -193,10 +193,10 @@
             <xsl:when test="contains($genreterm, 'copy')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300257688">copies (document genres)</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'legal correspondence')">
+            <xsl:when test="matches($genreterm, '^legal correspondence$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026920">legal correspondence</genre>
             </xsl:when>
-            <xsl:when test="lower-case($genreterm) = 'corporation reports'">
+            <xsl:when test="matches($genreterm, '^corporation reports$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027275">corporation reports</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'correspondence')">
@@ -205,16 +205,16 @@
             <xsl:when test="contains($genreterm, 'daguerreotype case')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300261961">Union cases</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'decisions')">
+            <xsl:when test="matches($genreterm, '^decisions$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027857">decisions</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'dedications (documents)')">
+            <xsl:when test="matches($genreterm, '^dedications (documents)$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026114">dedications (documents)</genre>
             </xsl:when>
-            <xsl:when test="lower-case($genreterm) = 'diagrams'">
+            <xsl:when test="matches($genreterm, '^diagrams$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300015387">diagrams</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'diaries')">
+            <xsl:when test="matches($genreterm, '^diaries$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027112">diaries</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'digital image')">
@@ -241,7 +241,7 @@
             <xsl:when test="contains($genreterm, 'email')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300149026">electronic mail</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'employment references')">
+            <xsl:when test="matches($genreterm, '^employment references$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026896">letters of recommendation</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'envelope')">
@@ -250,7 +250,7 @@
             <xsl:when test="contains($genreterm, 'ephemera')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300028881">ephemera (general)</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'essays')">
+            <xsl:when test="matches($genreterm, '^essays$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026291">essays</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'etching')">
@@ -259,7 +259,7 @@
             <xsl:when test="contains($genreterm, 'exam')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026936">examinations (documents)</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'field recordings')">
+            <xsl:when test="matches($genreterm, '^field recordings$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300265794">field recordings</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'fieldnotes')">
@@ -277,7 +277,7 @@
             <xsl:when test="contains($genreterm, 'film transparencies')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300127478">transparencies</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'first drafts')">
+            <xsl:when test="matches($genreterm, '^first drafts$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026932">first drafts</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'folio')">
@@ -292,7 +292,7 @@
             <xsl:when test="contains($genreterm, 'government record')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027777">government records</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'greeting cards')">
+            <xsl:when test="matches($genreterm, '^greeting cards$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026778">greeting cards</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'group portrait')">
@@ -304,7 +304,7 @@
             <xsl:when test="contains($genreterm, 'handbook')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300311807">handbooks</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'histories (literature genre)')">
+            <xsl:when test="matches($genreterm, '^histories (literature genre)$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026358">histories (literature genre)</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'illustration')">
@@ -337,7 +337,7 @@
             <xsl:when test="contains($genreterm, 'legal case and case notes')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027200">notes</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'legal documents')">
+            <xsl:when test="matches($genreterm, '^legal documents$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300027590">legal documents</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'letterhead')">
@@ -448,7 +448,7 @@
             <xsl:when test="contains($genreterm, 'picture postcards')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026819">picture postcards</genre>
             </xsl:when>
-            <xsl:when test="matches($genreterm, 'pin')"><!-- not sure what kind of pin is meant -->
+            <xsl:when test="matches($genreterm, '^pin$')"><!-- not sure what kind of pin is meant -->
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300311889">objects</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'portrait')">
@@ -514,7 +514,7 @@
             <xsl:when test="contains($genreterm, 'sheet music')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026430">sheet music</genre>
             </xsl:when>
-            <xsl:when test="$genreterm='signs'">
+            <xsl:when test="matches($genreterm, '^signs$')">
                 <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300123013">signs (declatory or advertising artifacts)</genre>
             </xsl:when>
             <xsl:when test="contains($genreterm, 'sketchbook')">

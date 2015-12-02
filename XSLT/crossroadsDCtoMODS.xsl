@@ -305,7 +305,9 @@
     </xsl:template>
     
     <xsl:template match="dc:medium" mode="form">
-        <form><xsl:value-of select="normalize-space(lower-case(.))"/></form>
+        <xsl:if test="normalize-space(.)!='' and not(contains(normalize-space(lower-case(.)), 'tennessee'))">
+            <form><xsl:value-of select="normalize-space(lower-case(.))"/></form>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="dc:provenance">
@@ -379,7 +381,7 @@
     
     <!-- The top spatial facets that cover about 99% of the total records are accounted for in the template below. This process was semi automated using OpenRefine in the context of this particular collection -->
     <xsl:template match="dc:spatial">
-        <xsl:if test="not(matches(., '\d+\S+')) and not(contains(normalize-space(lower-case(.)), 'n/a')) and not(contains(normalize-space(lower-case(.)), 'unknown')) and not(contains(normalize-space(lower-case(.)), 'various'))"> <!-- data contains some random numbers/dates -->
+        <xsl:if test="not(matches(., '^\d+\w+$')) and not(contains(normalize-space(lower-case(.)), 'n/a')) and not(contains(normalize-space(lower-case(.)), 'unknown')) and not(contains(normalize-space(lower-case(.)), 'various'))"> <!-- data contains some random numbers/dates -->
             <xsl:for-each select="tokenize(., ' and ')">
                 <xsl:call-template name="SpatialTopic">
                     <xsl:with-param name="term"><xsl:value-of select="normalize-space(lower-case(.))"/></xsl:with-param>

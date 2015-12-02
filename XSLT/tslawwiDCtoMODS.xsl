@@ -5,7 +5,7 @@
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
-    <xsl:include href="tslaDCtoMODS.xsl"/>
+    <xsl:include href="tsladctomods.xsl"/>
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
@@ -38,17 +38,13 @@
                 </location>
             </xsl:if>
             
-            <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300026816">postcards</genre>
+            <genre authority="aat" valueURI="http://vocab.getty.edu/aat/300046300">photographs</genre>
             <xsl:apply-templates select="dc:subject"/> <!-- subject -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
             <xsl:apply-templates select="dc:coverage"/> <!-- geographic subject info -->
             <xsl:apply-templates select="dc:type"/> <!-- item types -->
-            <xsl:if test="dc:relation">
-                <relatedItem>
-                    <xsl:apply-templates select="dc:relation"/> <!-- collection identifiers -->
-                </relatedItem>
-            </xsl:if>
+            <xsl:apply-templates select="dc:relation"/> <!-- collection identifiers -->
             <xsl:apply-templates select="dc:source"/> <!-- collection -->
             <relatedItem type='host' displayLabel="Project">
                 <titleInfo>
@@ -112,7 +108,7 @@
     <xsl:template match="dc:relation">
         <xsl:if test="normalize-space(.)!=''">
             <xsl:choose>
-                <xsl:when test="starts-with(., 'http')">
+                <xsl:when test="contains(., 'http')">
                     <location>
                         <url><xsl:value-of select="normalize-space(.)"/></url>
                     </location>
@@ -128,7 +124,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
+                    <xsl:when test="contains(., 'State Library') or matches(., '^Tennessee Historical Society$')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -145,7 +141,7 @@
     
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., 'Tennessee Historical Society'))">
+            <xsl:if test="normalize-space(.)!='' and (contains(., 'State Library') or matches(., '^Tennessee Historical Society$'))">
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>

@@ -140,7 +140,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(., 'State Library') or matches(., 'Tennessee Historical Society')">
+                    <xsl:when test="contains(., 'State Library') or matches(., '^Tennessee Historical Society$')">
                         <!-- becomes physicalLocation - repository -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -157,7 +157,7 @@
     
     <xsl:template match="dc:source" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <xsl:if test="normalize-space(.)!='' and (matches(., 'Tennessee Historical Society') or contains(., 'State Library'))">
+            <xsl:if test="normalize-space(.)!='' and (matches(., '^Tennessee Historical Society$') or contains(., 'State Library'))">
                 <physicalLocation><xsl:value-of select="normalize-space(.)"/></physicalLocation>
             </xsl:if>
         </xsl:for-each>

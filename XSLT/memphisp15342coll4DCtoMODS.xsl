@@ -84,7 +84,7 @@
     <xsl:template match="dc:format">
         <xsl:for-each select="tokenize(normalize-space(lower-case(.)), ';')">
             <xsl:for-each select="tokenize(., ',')">
-                <xsl:if test="normalize-space(.)!=''">
+                <xsl:if test="normalize-space(.)!='' and not(matches(normalize-space(.), '^\d+$'))">
                     <xsl:choose>
                         <xsl:when test="contains(., 'jpeg') or contains(., 'jpg')">
                             <internetMediaType>image/jpeg</internetMediaType>

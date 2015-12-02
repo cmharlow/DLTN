@@ -77,7 +77,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:call-template name="LCSHtopic">
-                    <xsl:with-param name="term"><xsl:value-of select="replace(replace(replace(.,' - ', '--'), '-- ', '--'), ' -- ', '--')"></xsl:value-of></xsl:with-param>
+                    <xsl:with-param name="term"><xsl:value-of select="replace(replace(replace(.,' - ', '--'), '-- ', '--'), ' -- ', '--')"/></xsl:with-param>
                 </xsl:call-template>
             </xsl:if>
         </xsl:for-each>
