@@ -682,7 +682,7 @@
     
     <xsl:template name="recordInfo">
         <recordInfo>
-            <recordContentSource>Memphis-Shelby County Public Library and Information Center</recordContentSource>
+            <recordContentSource>Memphis Public Library</recordContentSource>
             <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
             <languageOfCataloging>
                 <languageTerm type="code" authority="iso639-2b">eng</languageTerm>

@@ -67,7 +67,7 @@
                 </location>
             </relatedItem>
             <recordInfo>
-                <recordContentSource>Rhodes College. Crossroads to Freedom Digital Archive</recordContentSource>
+                <recordContentSource>Rhodes College. Crossroads to Freedom</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
                 <languageOfCataloging>
                     <languageTerm type="code" authority="iso639-2b">eng</languageTerm>

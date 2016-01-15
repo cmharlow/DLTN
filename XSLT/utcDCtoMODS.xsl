@@ -55,7 +55,7 @@
             <xsl:apply-templates select="dc:type"/> <!-- genre -->
             <xsl:apply-templates select="dc:type" mode="type"/> <!-- item types -->
             <recordInfo>
-                <recordContentSource>University of Tennessee, Chattanooga. Library</recordContentSource>
+                <recordContentSource>University of Tennessee at Chattanooga</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
                 <languageOfCataloging>
                     <languageTerm type="code" authority="iso639-2b">eng</languageTerm>

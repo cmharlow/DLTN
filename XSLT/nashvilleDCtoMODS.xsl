@@ -566,7 +566,7 @@
     
     <xsl:template name="recordSource">
         <recordInfo>
-            <recordContentSource>Public Library of Nashville and Davidson County</recordContentSource>
+            <recordContentSource>Nashville Public Library</recordContentSource>
             <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
             <languageOfCataloging>
                 <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
