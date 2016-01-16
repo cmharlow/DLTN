@@ -540,7 +540,7 @@
     
     <xsl:template name="recordSource">
         <recordInfo>
-            <recordContentSource>Middle Tennessee State University Library</recordContentSource>
+            <recordContentSource>Middle Tennessee State University</recordContentSource>
             <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
             <languageOfCataloging>
                 <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
