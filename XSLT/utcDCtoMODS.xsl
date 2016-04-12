@@ -163,80 +163,80 @@
                             </location>
                         </relatedItem>
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'University of Tennessee at Chattanooga Echo Student Newspapers')">
+                    <xsl:when test="contains(normalize-space(.), 'Penelope Johnson Allen Brainerd Mission Correspondence and Photographs')">
                         <relatedItem type='host' displayLabel='Project'>
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
-                            <abstract>The University of Tennessee at Chattanooga Echo Student Newspapers digital collection features the issues of newspapers produced by university students from 1888 to 1976. The University Lookout, a precursor to the University Echo, is part literary magazine and part student newspaper and it is also included in this digital collection.</abstract>
-                            <location>
-                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll9</url>
-                            </location>
-                        </relatedItem>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Raymond B. Witt Chattanooga Public Schools Desegregation records') or contains(normalize-space(.), 'Raymond B. Witt legal documents, records, and correspondence')">
-                        <relatedItem type='host' displayLabel='Project'>
-                            <titleInfo>
-                                <title><xsl:value-of select="normalize-space(.)"/></title>
-                            </titleInfo>
-                            <abstract>The Raymond B. Witt Chattanooga Public Schools Desegregation Records digital collection documents Chattanooga's response to the United States Supreme Court decision in Brown v. Board of Education of Topeka that ruled segregation in public schools unconstitutional in 1955. As chair and member of the Chattanooga Board of Education and as the chief attorney for the defendant in the 1960 case, Mapp v. Board of Education of Chattanooga, in which the NAACP supported the case of James Jonathan Mapp to force public school integration in Chattanooga, Raymond B. Witt amassed legal documents, correspondence, meeting minutes, and other records created by the Board of Education, the United States District Court, and many citizens of Chattanooga....</abstract>
-                            <location>
-                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll8</url>
-                            </location>
-                        </relatedItem>
-                    </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Penelope Johnson Allen Brainerd Mission correspondence and photographs')">
-                        <relatedItem type='host' displayLabel='Project'>
-                            <titleInfo>
-                                <title><xsl:value-of select="normalize-space(.)"/></title>
-                            </titleInfo>
-                            <abstract>The Penelope Johnson Allen Brainerd Mission Correspondence and Photographs digital collection features orignal correspondence and receipts created by the United States Department of War, Indian Agent Return J. Meigs, and Brainerd Mission superintendents and founders Gideon Blackburn, Cyrus Kingsbury, and Ard Hoyt. The collection also includes photographs of portraits of the Brainerd missionaries, Daughters of the American Revolution dedication events at Brainerd Mission Cemetery, and copies of etchings of Brainerd Mission. Inspired by the history of John Ross, the Cherokee Nation, and the Trail of Tears, Chattanooga native Penelope Johnson Allen devoted much of her free time to learning more about the history of the Cherokee Indians, including Brainerd Mission, a Christian mission to the Cherokee located in Chattanooga, Tennessee that was created by the American Board of Commissioners for Foreign Missions in 1817. Allen collected books and original documents created by the United States Department of War Indian Agent, Return J. Meigs, as well as missionaries to the Cherokee, Gideon Blackburn, Cyrus Kingsbury, and Ard Hoyt who were responsible for the creation and development of Brainerd Mission. In addition to the correspondence and photographs featured in this digital collection, the Penelope Johnson Allen Research Notes and Correspondence manuscript collection documents the preservation and memorialization of the Brainerd Mission Cemetery through the efforts of the Daughters of the American Revolution.</abstract>
+                            <abstract>The Penelope Johnson Allen Brainerd Mission correspondence and photographs digital collection features orignal correspondence and receipts created by the United States Department of War, Indian Agent Return J. Meigs, and Brainerd Mission superintendents and founders Gideon Blackburn, Cyrus Kingsbury, and Ard Hoyt. The collection also includes photographs of portraits of the Brainerd missionaries, Daughters of the American Revolution dedication events at Brainerd Mission Cemetery, and copies of etchings of Brainerd Mission.</abstract>
                             <location>
                                 <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll7</url>
                             </location>
                         </relatedItem>
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Emma Bell Miles Southern Appalachia art and correspondence')">
+                   <xsl:when test="contains(normalize-space(.), 'R. M. Bigelow Civil War Nursing Correspondence')">
                         <relatedItem type='host' displayLabel='Project'>
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
-                            <abstract>The Emma Bell Miles Southern Appalachia art and correspondence digital collection contains correspondence among members and friends of writer and artist Emma Bell Miles’ family of origin illustrating the personal roots of themes Emma lived out and developed in her work. The heart of the collection is a series of letters written during 1901-1903 concerning Emma’s troubled relationship with her parents, her life as a young woman, and her life as an emerging artist and naturalist; as well as the death of her mother, Emma’s marriage to Frank Miles soon thereafter, and disposition of Bell family property in Walden Ridge, Tennessee. The collection also features numerous examples of Emma's art, including watercolors, oil paintings, and sketches....</abstract>
+                            <abstract>The R. M. Civil War Nursing Correspondence digital collection includes four letters written by R. M. Bigelow, providing documentation about the roles of women during the Civil War. The letters are dated from 1862 to 1866.</abstract>
                             <location>
-                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll6</url>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll18</url>
                             </location>
                         </relatedItem>
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Leroy M. Sullivan World War II diaries and correspondence')">
+                    <xsl:when test="contains(normalize-space(.), 'Cavalier Corporation Histories and Balance Sheets')">
                         <relatedItem type='host' displayLabel='Project'>
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
-                            <abstract>The Leroy M. Sullivan World War II Diaries and Correspondence digital collection features three diaries and sixteen letters authored by Leroy M. Sullivan, a Flight Lieutenant in the Royal Canadian Air Force, during World War II from 1940 to 1943, when Sullivan was killed in action. The diaries document Lieutenant Sullivan's participation in campaigns in England, South Africa, Sudan, and Egypt, and the letters to Sullivan's friend, Grady Long, detail daily life in the military, especially the ways in which he and his fellow soldiers spent their time between operations. Leroy M. Sullivan was a University of Chattanooga student who joined the Royal Canadian Air Force in 1941 and was killed in action in 1943. He quickly rose to the rank of Flight Lieutenant and was a commanding officer of his squadron during a portion of his time in Africa. He was the only American member of the British Royal Air Force, No. 56, Punjab Squadron, created under Article XV of the British Commonwealth Air Training Plan, which allowed the air forces of Australia, Canada and New Zealand to form squadrons for service under Royal Air Force operational control....</abstract>
+                            <abstract>The Cavalier Corporation Histories and Balance Sheets digital collection features corporate histories and balance sheets that document the company's production of soda machines, coolers, and picnic chests for Coca-Cola.</abstract>
                             <location>
-                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll5</url>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll16</url>
                             </location>
                         </relatedItem>
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Lula Ulrica Whitaker Southern Agrarian Writers correspondence')">
+                    <xsl:when test="contains(normalize-space(.), 'Chattanooga Postcards and Viewbooks')">
                         <relatedItem type='host' displayLabel='Project'>
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
-                            <abstract>The Lula Ulrica Whitaker Southern Agrarian Writers Correspondence digital collection contains correspondence from nine of the authors known as the Twelve Southerners. The correspondence, written in 1934, describes each author's understanding of the Southern Agrarian movement....</abstract>
+                            <abstract>The Chattanooga postcards and viewbooks digital collection features souvenir postcards and books dating back to the early 20th century. The collection depicts points of interest in and around Chattanooga, Tennessee including Lookout Mountain, Chickamauga, and downtown.</abstract>
                             <location>
-                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll4</url>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll12</url>
                             </location>
                         </relatedItem>
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'University of Tennessee at Chattanooga Moccasin')">
+                    <xsl:when test="contains(normalize-space(.), 'George Connor Speeches')">
                         <relatedItem type='host' displayLabel='Project'>
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
-                            <abstract>The University of Tennessee at Chattanooga Moccasin Yearbooks digital collection features all 63 volumes of the the Moccasin ranging from 1911 to 1991. Published by students enrolled at the University of Chattanooga (1907-1969) and the University of Tennessee at Chattanooga (1969-present), the Moccasin documents athletics, social functions, and the physical plant, including sections dedicated to student organizations, administrators, academic departments, and more....</abstract>
+                            <abstract>The George Connor speeches digital collection includes manuscripts and drafts of speeches delivered by the University of Tennessee at Chattanooga Guerry Professor of English. Connor dedicated his life to education, and in 1985, his colleagues, former students, and friends endowed the George C. Connor Professorship in American literature in honor of Connor’s 26 years of service to the university.</abstract>
                             <location>
-                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll3</url>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll13</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'George Ayers Cress Artist Studio Photographs')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The George Ayers Cress artist studio photographs digital collection includes photographs taken by Cress while visiting the homes and studios of artists, including Henry Moore, John Piper, and William Scott. George Ayers Cress was a prolific painter who joined the faculty of the University of Chattanooga in 1951. Cress taught at the university of 56 years, serving as the chair of the Department of Art. Cress was also a Alexander and Charlotte Patten Guerry Professor, a distinction awarded to outstanding professors.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll10</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Concha Espina Spanish Literature Correspondence')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The Concha Espina Spanish literature correspondence digital collection features letters written by the Spanish novellist to Terrell Tatum, a professor of Spanish at the University of Chattanooga from 1924 to 1967. The letters range in date from 1931 to 1955 and cover a variety of topics, including Espina's most famous work, La Niña de Luzmela.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll11</url>
                             </location>
                         </relatedItem>
                     </xsl:when>
@@ -245,20 +245,121 @@
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
-                            <abstract>The Ralph W. Hood and W. Paul Williamson Holiness Churches of Appalachia Recordings and Interviews digital collection features a small sample of more than 400 hours of church services and interviews documenting contemporary serpent handlers of Southern Appalachia. Ranging from 1975 to 2004, this collection focuses on the major Pentecostal congregations that practice speaking in tongues, imbibing poisons, and serpent handling in the southeastern United States. For over 20 years, Professors Ralph W. Hood and W. Paul Williamson spent time observing, researching, and engaging in fellowship with believers in the serpent handling tradition....</abstract>
+                            <abstract>The Ralph W. Hood and W. Paul Williamson holiness churches of Appalachia recordings and interviews digital collection features a small sample of more than 400 hours of church services and interviews documenting contemporary serpent handlers of Southern Appalachia. Ranging from 1975 to 2004, this collection focuses on the major Pentecostal congregations that practice speaking in tongues, imbibing poisons, and serpent handling in the southeastern United States.</abstract>
                             <location>
                                 <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll2</url>
                             </location>
                         </relatedItem>
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'John T. Wilder Civil War correspondence and papers')">
+                    <xsl:when test="contains(normalize-space(.), 'Krystal Gazer Newsletters')">
                         <relatedItem type='host' displayLabel='Project'>
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
-                            <abstract>The John T. Wilder Civil War Correspondence and Papers digital collection contains correspondence and military records regarding Brigadier General Wilder's service in the Union Army during the American Civil War from 1861-1865 as well as personal correspondence and papers dating from 1865 to 1937. John T. Wilder was born in Hunter, New York, but began his career as an industrialist in Ohio and Indiana. At the outbreak of the United States Civil War, Wilder closed his foundry in Greensburg, Indiana and enlisted in the United States Army Indiana Infantry Regiment. Because of his leadership skills he was consistently promoted, eventually commanding the 17th Indiana Infantry Regiment as a Lieutenant Colonel. During the war he served in Virginia, Kentucky, Georgia, and Tennessee. Wilder was among the first officers to mount his troops and to supply them with Spencer Repeating Rifles, which they used to great effect in the Battle of Chickamauga in Georgia....</abstract>
+                            <abstract>The Krystal Gazer newsletters digital collection is a corporate newsletter that documents the storied history of Krystal restaurants in Chattanooga, the state of Tennessee, and the South. The newsletters provide valuable insight into the restaurant's work culture and business practices as well as its impact on the community.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll14</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Emma Bell Miles Southern Appalachia Art and Correspondence')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The Emma Bell Miles southern Appalachia art and correspondence digital collection contains correspondence among members and friends of writer and artist Emma Bell Miles’ family of origin illustrating the personal roots of themes Emma lived out and developed in her work. The heart of the collection is a series of letters written during 1901-1903 concerning Emma’s troubled relationship with her parents, her life as a young woman, and her life as an emerging artist and naturalist; as well as the death of her mother, Emma’s marriage to Frank Miles soon thereafter, and disposition of Bell family property in Walden Ridge, Tennessee. The collection also features numerous examples of Emma's art, including watercolors, oil paintings, and sketches.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll6</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Leroy M. Sullivan World War II Diaries and Correspondence')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The Leroy M. Sullivan World War II diaries and correspondence digital collection features three diaries and sixteen letters authored by Leroy M. Sullivan, a Flight Lieutenant in the Royal Canadian Air Force, during World War II from 1940 to 1943, when Sullivan was killed in action. The diaries document Lieutenant Sullivan's participation in campaigns in England, South Africa, Sudan, and Egypt, and the letters to Sullivan's friend, Grady Long, detail daily life in the military, especially the ways in which he and his fellow soldiers spent their time between operations.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll5</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'University of Tennessee at Chattanooga Course Catalogs')">
+                            <relatedItem type='host' displayLabel='Project'>
+                                <titleInfo>
+                                    <title><xsl:value-of select="normalize-space(.)"/></title>
+                                </titleInfo>
+                                <abstract>The University of Tennessee at Chattanooga Course Catalogs digital collection features volumes of bulletins ranging from 1891 to 1959. The course catalogs provide a glimpse into the history of higher education at the university, documenting course offerings, tuition and fees, administrators and faculty, academic calendars, and degree offerings.</abstract>
+                                <location>
+                                    <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll15</url>
+                                </location>
+                            </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'University of Tennessee at Chattanooga Echo Student Newspaper')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The University of Tennessee at Chattanooga Echo student newspapers digital collection features the issues of newspapers produced by university students from 1888 to 2011. The University Lookout, a precursor to the University Echo, is part literary magazine and part student newspaper and it is also included in this digital collection.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll9</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'University of Tennessee at Chattanooga Moccasin Yearbooks')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The University of Tennessee at Chattanooga Moccasin yearbooks digital collection features all 63 volumes of the the Moccasin ranging from 1911 to 1991. Published by students enrolled at the University of Chattanooga (1907-1969) and the University of Tennessee at Chattanooga (1969-present), the Moccasin documents athletics, social functions, and the physical plant, including sections dedicated to student organizations, administrators, and academic departments.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll3</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'University of Tennessee at Chattanooga President and Chancellor Portraits')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The University of Tennessee at Chattanooga President and Chancellor Portraits digital collection features oil paintings of 12 of the 17 presidents and chancellors of the university, including it's predecessor institutions Chattanooga University, Grant University, and University of Chattanooga. University leaders not represented in this collection include Fred W. Hinson, Alexander Guerry, Archie Palmer, E. Grady Bogue, and current chancellor Steven R. Angle.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll17</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Lula Ulrica Whitaker Southern Agrarian Writers Correspondence')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The Lula Ulrica Whitaker Southern Agrarian writers correspondence digital collection contains correspondence from nine of the authors known as the Twelve Southerners. The correspondence, written in 1934, describes each author's understanding of the Southern Agrarian movement.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll4</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'John T. Wilder Civil War Correspondence and Papers')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The John T. Wilder Civil War correspondence and papers digital collection contains correspondence and military records regarding Brigadier General Wilder's service in the Union Army during the American Civil War from 1861-1865 as well as personal correspondence and papers dating from 1865 to 1937.</abstract>
                             <location>
                                 <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll1</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+
+
+                    <xsl:when test="contains(normalize-space(.), 'Raymond B. Witt Chattanooga Public Schools Desegregation Records')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The Raymond B. Witt Chattanooga public schools desegregation records digital collection documents Chattanooga's response to the United States Supreme Court decision in Brown v. Board of Education of Topeka that ruled segregation in public schools unconstitutional in 1955. As chair and member of the Chattanooga Board of Education and as the chief attorney for the defendant in the 1960 case, Mapp v. Board of Education of Chattanooga, in which the NAACP supported the case of James Jonathan Mapp to force public school integration in Chattanooga, Raymond B. Witt amassed legal documents, correspondence, meeting minutes, and other records created by the Board of Education, the United States District Court, and many citizens of Chattanooga.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll8</url>
                             </location>
                         </relatedItem>
                     </xsl:when>
