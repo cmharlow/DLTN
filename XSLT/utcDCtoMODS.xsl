@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xmlns:oai_dc='http://www.openarchives.org/OAI/2.0/oai_dc/' xmlns:dc="http://purl.org/dc/elements/1.1/" 
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:oai_dc='http://www.openarchives.org/OAI/2.0/oai_dc/' xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:oai="http://www.openarchives.org/OAI/2.0/"
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
-    
+
     <xsl:include href="remediationgettygenre.xsl"/>
     <xsl:include href="remediationlcshtopics.xsl"/>
     <xsl:include href="remediationspatial.xsl"/>
     <xsl:include href="thumbnailscontentdmdctomods.xsl"/>
     <xsl:include href="coredctomods.xsl"/>
-    
+
     <!-- UTC collections are structured such that they use the relation element consistently/only for sets, so just an institution level record is needed -->
-        
-    <xsl:template match="text()|@*"/>    
+
+    <xsl:template match="text()|@*"/>
     <xsl:template match="//oai_dc:dc">
-        <mods xmlns:xlink="http://www.w3.org/1999/xlink" 
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xmlns="http://www.loc.gov/mods/v3" version="3.5" 
+        <mods xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://www.loc.gov/mods/v3" version="3.5"
             xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
             <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             <xsl:apply-templates select="dc:contributor" /> <!-- name/role -->
             <xsl:apply-templates select="dc:creator" /> <!-- name/role -->
-            
+
             <xsl:if test="dc:date|dc:publisher">
-                <originInfo> 
+                <originInfo>
                     <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
                     <xsl:apply-templates select="dc:publisher"/> <!-- place of origin and publishers -->
                 </originInfo>
             </xsl:if>
-            
+
             <xsl:if test="dc:format|dc:type">
                 <physicalDescription>
                     <xsl:apply-templates select="dc:format"/> <!-- extent, internetMediaTypes -->
                     <xsl:apply-templates select="dc:type" mode="form"/> <!-- form -->
                 </physicalDescription>
             </xsl:if>
-            
+
             <xsl:if test="dc:publisher|dc:identifier">
                 <location>
                     <xsl:apply-templates select="dc:publisher" mode="repository"/>
@@ -45,7 +45,7 @@
                     <xsl:apply-templates select="dc:identifier" mode="locationurl"></xsl:apply-templates>
                 </location>
             </xsl:if>
-            
+
             <xsl:call-template name="langRepair"/> <!-- language -->
             <xsl:apply-templates select="dc:description"/> <!-- abstract -->
             <xsl:apply-templates select="dc:relation" /> <!-- collections -->
@@ -64,7 +64,7 @@
             </recordInfo>
         </mods>
     </xsl:template>
-    
+
     <xsl:template match="dc:contributor">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
@@ -72,12 +72,12 @@
                     <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
                     <role>
                         <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
-                    </role> 
-                </name>      
+                    </role>
+                </name>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
-    
+
     <xsl:template match="dc:coverage">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
@@ -87,7 +87,7 @@
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
-    
+
     <xsl:template match="dc:creator">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
@@ -97,10 +97,10 @@
                         <roleTerm type="text" valueURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
                     </role>
                 </name>
-            </xsl:if>  
+            </xsl:if>
         </xsl:for-each>
     </xsl:template>
-    
+
     <xsl:template match="dc:format"> <!-- should go into PhysicalDescription wrapper -->
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
@@ -115,7 +115,7 @@
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
-    
+
     <xsl:template name="langRepair">
         <xsl:for-each select="dc:language">
             <xsl:choose>
@@ -128,8 +128,8 @@
             </xsl:choose>
         </xsl:for-each>
     </xsl:template>
-    
-    <xsl:template match="dc:publisher"> 
+
+    <xsl:template match="dc:publisher">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:if test="not(contains(normalize-space(.), 'University of Tennessee at Chattanooga'))">
@@ -141,8 +141,8 @@
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
-    
-    <xsl:template match="dc:publisher" mode="repository"> 
+
+    <xsl:template match="dc:publisher" mode="repository">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:if test="contains(normalize-space(.), 'University of Tennessee at Chattanooga')">
@@ -151,12 +151,12 @@
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
-    
+
     <xsl:template match="dc:relation">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:choose>
-                    <xsl:when test="contains(.,'http')"> 
+                    <xsl:when test="contains(.,'http')">
                         <relatedItem>
                             <location>
                                 <url><xsl:value-of select="normalize-space(.)"/></url>
@@ -367,7 +367,7 @@
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
-    
+
     <xsl:template name="rightsRepair">
         <xsl:for-each select="dc:rights">
             <xsl:choose>
@@ -383,7 +383,7 @@
             </xsl:choose>
         </xsl:for-each>
     </xsl:template>
-    
+
     <xsl:template match="dc:subject">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:call-template name="LCSHtopic">
@@ -391,7 +391,15 @@
             </xsl:call-template>
         </xsl:for-each>
     </xsl:template>
-    
+
+    <xsl:template match="dc:type" mode="form">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!=''">
+                <form><xsl:value-of select="normalize-space(lower-case(.))"/></form>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+
     <xsl:template match="dc:type">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:call-template name="AATgenre">
@@ -417,5 +425,5 @@
             </xsl:choose>
         </xsl:for-each>
     </xsl:template>
-    
+
 </xsl:stylesheet>
