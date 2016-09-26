@@ -14,7 +14,6 @@
             xmlns="http://www.loc.gov/mods/v3" version="3.5" 
             xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
             <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title and part/detail|date parsed out -->
-            <xsl:apply-templates select="dc:identifier" mode="part"/>
             <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
             <xsl:apply-templates select="dc:contributor" /> <!-- name/role -->
             <xsl:apply-templates select="dc:creator" /> <!-- name/role -->
