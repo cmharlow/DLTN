@@ -554,24 +554,20 @@
         </xsl:if>
         <!--</xsl:if>-->
         <recordInfo>
+            <xsl:variable name="pub-count" select="count(dc:publisher)"/>
             <xsl:for-each select="dc:publisher">
                 <xsl:choose>
-                    <xsl:when
-                            test=".[starts-with(., 'Digital Initiatives')] and count(dc:publisher) = 1">
+                    <xsl:when test=".[starts-with(., 'Digital Initiatives')] and $pub-count = 1">
                         <recordContentSource>
                             <xsl:value-of select="."/>
                         </recordContentSource>
                     </xsl:when>
-                    <xsl:when test="matches(., 'Murfreesboro, TN') or
-				                            contains(normalize-space(lower-case(.)), 'albert gore') or
-				                            contains(normalize-space(lower-case(.)), 'arts center') or
-				                            contains(normalize-space(lower-case(.)), 'center for historic preservation') or
-				                            contains(normalize-space(lower-case(.)), 'tennessee state library')">
+                    <xsl:when test=".[not(starts-with(., 'Digital Initiatives'))] and $pub-count > 1">
                         <recordContentSource>
-                            <xsl:value-of select="."/>
+                            <xsl:value-of select=".[not(starts-with(., 'Digitial Initiatives'))]"/>
                         </recordContentSource>
                     </xsl:when>
-                    <xsl:when test="count(dc:publisher) = 1">
+                    <xsl:when test="$pub-count = 1">
                         <recordContentSource>
                             <xsl:value-of select="."/>
                         </recordContentSource>
