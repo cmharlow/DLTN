@@ -539,13 +539,57 @@
     </xsl:template>
     
     <xsl:template name="recordSource">
+        <!--
+      	weird issue(s?) with the logic in the following xsl:if; specific to the in-REPOX transform, i.e. works fine externally
+      	using the saxon-8.7.jar. leaving the original commented for now.
+      -->
+        <!--<xsl:if
+							test="
+									(count(dc:publisher) >= 2) and
+									(some $pub in dc:publisher
+											satisfies not(matches(., 'Digital Initiatives, James E. Walker Library, Middle Tennessee State University')))">-->
+        <xsl:if test="count(dc:publisher) >= 2">
+            <note displayLabel="Intermediate Provider">Digital Initiatives, James E. Walker Library,
+                Middle Tennessee State University</note>
+        </xsl:if>
+        <!--</xsl:if>-->
         <recordInfo>
-            <recordContentSource>Middle Tennessee State University</recordContentSource>
-            <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
+            <xsl:for-each select="dc:publisher">
+                <xsl:choose>
+                    <xsl:when
+                            test=".[starts-with(., 'Digital Initiatives')] and count(dc:publisher) = 1">
+                        <recordContentSource>
+                            <xsl:value-of select="."/>
+                        </recordContentSource>
+                    </xsl:when>
+                    <xsl:when test="matches(., 'Murfreesboro, TN') or
+				                            contains(normalize-space(lower-case(.)), 'albert gore') or
+				                            contains(normalize-space(lower-case(.)), 'arts center') or
+				                            contains(normalize-space(lower-case(.)), 'center for historic preservation') or
+				                            contains(normalize-space(lower-case(.)), 'tennessee state library')">
+                        <recordContentSource>
+                            <xsl:value-of select="."/>
+                        </recordContentSource>
+                    </xsl:when>
+                    <xsl:when test="count(dc:publisher) = 1">
+                        <recordContentSource>
+                            <xsl:value-of select="."/>
+                        </recordContentSource>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <recordChangeDate>
+                <xsl:value-of select="current-date()"/>
+            </recordChangeDate>
             <languageOfCataloging>
                 <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
             </languageOfCataloging>
-            <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core record by the Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a stylesheet available at https://github.com/cmh2166/DLTN. Metadata originally created in a locally modified version of qualified Dublin Core using ContentDM (data dictionary available: https://wiki.lib.utk.edu/display/DPLA.)</recordOrigin>
+            <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core
+                record by the Digital Library of Tennessee, a service hub of the Digital Public
+                Library of America, using a stylesheet available at https://github.com/utkdigitalinitiatives/DLTN.
+                Metadata originally created in a locally modified version of qualified Dublin Core
+                using ContentDM (data dictionary available:
+                https://wiki.lib.utk.edu/display/DPLA.)</recordOrigin>
         </recordInfo>
     </xsl:template>
     
