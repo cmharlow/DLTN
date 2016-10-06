@@ -11,7 +11,7 @@
         <xsl:if test="starts-with($idvalue,'rds:')"> 
             <!-- Crossroads Fedora puts the PID in an <identifier> field in the OAI record --><!-- process Fedora thumbnail urls -->           
             <xsl:variable name="PID" select="substring-after($idvalue,'rds:')"/>
-            <url access="preview"><xsl:value-of select="concat('http://crossroads.rhodes.edu:9090/fedora/get/rds:',$PID,'/thumbnail_100x75.jpg')"/></url> <!--CONTENTdm thumbnail url-->
+            <url access="preview"><xsl:value-of select="concat('http://fedora.crossroadstofreedom.org/fedora/get/rds:',$PID,'/thumbnail_100x75.jpg')"/></url> <!--CONTENTdm thumbnail url-->
         </xsl:if>
     </xsl:template>
     
