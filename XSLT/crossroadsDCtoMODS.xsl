@@ -15,66 +15,82 @@
         
     <xsl:template match="text()|@*"/>    
     <xsl:template match="//oai_dc:dc">
-        <mods xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" version="3.5" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
-            <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title -->
-            <xsl:apply-templates select="dc:creator"/> <!-- name -->
-            <xsl:apply-templates select="dc:contributor"/> <!-- name -->
-            <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
-            
-            <xsl:if test="dc:date|dc:publisher">
-                <originInfo> 
-                    <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
-                    <xsl:apply-templates select="dc:publisher"/> <!-- publisher NOT digital library -->
-                </originInfo>
-            </xsl:if>
-            
-            <xsl:if test="dc:medium|dc:format|dc:hasversion|dc:provenance">
-                <physicalDescription>
-                    <xsl:apply-templates select="dc:medium" mode="form"/> <!-- form -->
-                    <xsl:apply-templates select="dc:format" /> <!-- internetMediaType -->
-                    <xsl:apply-templates select="dc:hasversion" /> <!-- digitalOrigin -->
-                    <xsl:apply-templates select="dc:provenance" mode="digitalOrigin"/> <!-- digitalOrigin sometimes -->
-                </physicalDescription>
-            </xsl:if>
-            
-            <xsl:if test="dc:source|dc:identifier">
-                <location>
-                    <xsl:apply-templates select="dc:source" mode="physicalLocation"/> <!-- repository -->
-                    <xsl:apply-templates select="dc:identifier" mode="crossroadsURL"/> <!-- object in context URL -->
-                    <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- preview -->
-                </location>
-            </xsl:if>
-            
-            <xsl:apply-templates select="dc:medium" /> <!-- genre -->
-            <xsl:apply-templates select="dc:language"/> <!-- language -->
-            <xsl:apply-templates select="dc:description"/> <!-- abstract -->
-            <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
-            <xsl:apply-templates select="dc:bibliographiccitation"/> <!-- accessCondition -->
-            <xsl:apply-templates select="dc:subject" /> <!-- subject/topical -->
-            <xsl:apply-templates select="dc:spatial" /> <!-- subject/geographic-->
-            <xsl:apply-templates select="dc:temporal" /> <!-- subject/temporal-->
-            <xsl:apply-templates select="dc:availability"/> <!-- extension -->
-            <xsl:apply-templates select="dc:type"/> <!-- typeOfResource -->
-            <xsl:apply-templates select="dc:relation" /> <!-- Related Items -->
-            <xsl:apply-templates select="dc:provenance" /> <!-- Related Items mostly -->
-            <xsl:apply-templates select="dc:source" /> <!-- Related Items sometimes -->
-            <relatedItem type='host' displayLabel="Project">
-                <titleInfo>
-                    <title>Crossroads to Freedom Digital Archive</title>
-                </titleInfo>
-                <location>
-                    <url>http://www.crossroadstofreedom.org/</url>
-                </location>
-            </relatedItem>
-            <recordInfo>
-                <recordContentSource>Rhodes College. Crossroads to Freedom</recordContentSource>
-                <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
-                <languageOfCataloging>
-                    <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
-                </languageOfCataloging>
-                <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core record by the Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a stylesheet available at https://github.com/cmh2166/DLTN. Metadata originally created in a locally modified version of qualified Dublin Core using Fedora (data dictionary available: https://wiki.lib.utk.edu/display/DPLA.)</recordOrigin>
-            </recordInfo>
-        </mods>
+        <xsl:if test=".[(every $t in dc:title satisfies $t[not(normalize-space(.) = '')])
+                        and (some $i in dc:identifier satisfies $i[starts-with(normalize-space(.), 'http://')])
+                        and (some $r in dc:rights satisfies $r[not(normalize-space(.) = '')])]">
+            <mods xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns="http://www.loc.gov/mods/v3" version="3.5"
+                  xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+                <xsl:apply-templates select="dc:title"/> <!-- titleInfo/title -->
+                <xsl:apply-templates select="dc:creator"/> <!-- name -->
+                <xsl:apply-templates select="dc:contributor"/> <!-- name -->
+                <xsl:apply-templates select="dc:identifier"/> <!-- identifier -->
+
+                <xsl:if test="dc:date|dc:publisher">
+                    <originInfo>
+                        <xsl:apply-templates select="dc:date"/> <!-- date (text + key) -->
+                        <xsl:apply-templates select="dc:publisher"/> <!-- publisher NOT digital library -->
+                    </originInfo>
+                </xsl:if>
+
+                <xsl:if test="dc:medium|dc:format|dc:hasversion|dc:provenance">
+                    <physicalDescription>
+                        <xsl:apply-templates select="dc:medium" mode="form"/> <!-- form -->
+                        <xsl:apply-templates select="dc:format"/> <!-- internetMediaType -->
+                        <xsl:apply-templates select="dc:hasversion"/> <!-- digitalOrigin -->
+                        <xsl:apply-templates select="dc:provenance"
+                                             mode="digitalOrigin"/> <!-- digitalOrigin sometimes -->
+                    </physicalDescription>
+                </xsl:if>
+
+                <xsl:if test="dc:source|dc:identifier">
+                    <location>
+                        <xsl:apply-templates select="dc:source" mode="physicalLocation"/> <!-- repository -->
+                        <xsl:apply-templates select="dc:identifier"
+                                             mode="crossroadsURL"/> <!-- object in context URL -->
+                        <xsl:apply-templates select="dc:identifier" mode="locationurl"/> <!-- preview -->
+                    </location>
+                </xsl:if>
+
+                <xsl:apply-templates select="dc:medium"/> <!-- genre -->
+                <xsl:apply-templates select="dc:language"/> <!-- language -->
+                <xsl:apply-templates select="dc:description"/> <!-- abstract -->
+                <xsl:call-template name="rightsRepair"/> <!-- accessCondition -->
+                <xsl:apply-templates select="dc:bibliographiccitation"/> <!-- accessCondition -->
+                <xsl:apply-templates select="dc:subject"/> <!-- subject/topical -->
+                <xsl:apply-templates select="dc:spatial"/> <!-- subject/geographic-->
+                <xsl:apply-templates select="dc:temporal"/> <!-- subject/temporal-->
+                <xsl:apply-templates select="dc:availability"/> <!-- extension -->
+                <xsl:apply-templates select="dc:type"/> <!-- typeOfResource -->
+                <xsl:apply-templates select="dc:relation"/> <!-- Related Items -->
+                <xsl:apply-templates select="dc:provenance"/> <!-- Related Items mostly -->
+                <xsl:apply-templates select="dc:source"/> <!-- Related Items sometimes -->
+                <relatedItem type='host' displayLabel="Project">
+                    <titleInfo>
+                        <title>Crossroads to Freedom Digital Archive</title>
+                    </titleInfo>
+                    <location>
+                        <url>http://www.crossroadstofreedom.org/</url>
+                    </location>
+                </relatedItem>
+                <recordInfo>
+                    <recordContentSource>Rhodes College. Crossroads to Freedom</recordContentSource>
+                    <recordChangeDate>
+                        <xsl:value-of select="current-date()"/>
+                    </recordChangeDate>
+                    <languageOfCataloging>
+                        <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+                    </languageOfCataloging>
+                    <recordOrigin>Record has been transformed into MODS 3.5 from a qualified Dublin Core record by the
+                        Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a
+                        stylesheet available at https://github.com/utkdigitalinitiatives/DLTN. Metadata originally
+                        created in a locally modified version of qualified Dublin Core using Fedora (data dictionary
+                        available: https://wiki.lib.utk.edu/display/DPLA.)
+                    </recordOrigin>
+                </recordInfo>
+            </mods>
+        </xsl:if>
+
     </xsl:template>
     
     <!-- Collection = Institution here, so there is both the collection and institution specific transform. 
