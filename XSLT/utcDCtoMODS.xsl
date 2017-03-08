@@ -179,9 +179,20 @@
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
-                            <abstract>The R. M. Civil War Nursing Correspondence digital collection includes four letters written by R. M. Bigelow, providing documentation about the roles of women during the Civil War. The letters are dated from 1862 to 1866.</abstract>
+                            <abstract>The R. M. Bigelow Civil War nursing correspondence digital collection includes four letters written by R. M. Bigelow, providing documentation about the roles of women during the Civil War. The letters are dated from 1862 to 1866.</abstract>
                             <location>
                                 <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll18</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Black United Front Newsletters')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The Black United Front newsletters digital collection documents the Black Power movement in Chattanooga, Tennessee  from 1969 to 1971. The newsletters include powerful language and imagery that preserves African American voices of the early Post-Civil Rights era. Created by Ralph Moore, a native Chattanoogan and member of Black Knights, Inc., the newsletters are a product of Moore's vision and his collaboration with other local activists, many of who had been involved in the Student Nonviolent Coordinating Committee (SNCC).</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll20</url>
                             </location>
                         </relatedItem>
                     </xsl:when>
@@ -190,7 +201,7 @@
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
-                            <abstract>The Cavalier Corporation Histories and Balance Sheets digital collection features corporate histories and balance sheets that document the company's production of soda machines, coolers, and picnic chests for Coca-Cola.</abstract>
+                            <abstract>The Cavalier Corporation histories and balance sheets digital collection features corporate histories and balance sheets that document the company's production of soda machines, coolers, and picnic chests for Coca-Cola.</abstract>
                             <location>
                                 <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll16</url>
                             </location>
@@ -204,6 +215,17 @@
                             <abstract>The Chattanooga postcards and viewbooks digital collection features souvenir postcards and books dating back to the early 20th century. The collection depicts points of interest in and around Chattanooga, Tennessee including Lookout Mountain, Chickamauga, and downtown.</abstract>
                             <location>
                                 <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll12</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Chattanooga Women's Oral Histories')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The Chattanooga women's oral histories digital collection features interviews with women in and around Chattanooga, Tennessee. Interivewees were asked questions such as "What are some of your early memories of Chattanooga?" and "What do you preceive to tbe the core elements of a successful city?" The interviews celebrate the accomplishments and experiences of women business leaders, advocates, educators, social activists, and community builders across generation, socioeconomic, and cultural backgrounds.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll21</url>
                             </location>
                         </relatedItem>
                     </xsl:when>
@@ -257,6 +279,17 @@
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
                             <abstract>The Krystal Gazer newsletters digital collection is a corporate newsletter that documents the storied history of Krystal restaurants in Chattanooga, the state of Tennessee, and the South. The newsletters provide valuable insight into the restaurant's work culture and business practices as well as its impact on the community.</abstract>
+                            <location>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll14</url>
+                            </location>
+                        </relatedItem>
+                    </xsl:when>
+                    <xsl:when test="contains(normalize-space(.), 'Cyrus Griffin Martin World War I Diaries and Military Records')">
+                        <relatedItem type='host' displayLabel='Project'>
+                            <titleInfo>
+                                <title><xsl:value-of select="normalize-space(.)"/></title>
+                            </titleInfo>
+                            <abstract>The Cyrus Griffin Martin World War I diares and correspondence digital collection contains Martin's correspondence, military records, financial records, and notepads created during his service as a Second Lieutenant in the American Expeditionary Forces during World War I. The contents of the collection date from 1917 to 1919.</abstract>
                             <location>
                                 <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll14</url>
                             </location>
@@ -322,7 +355,7 @@
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
                             </titleInfo>
-                            <abstract>The University of Tennessee at Chattanooga President and Chancellor Portraits digital collection features oil paintings of 12 of the 17 presidents and chancellors of the university, including it's predecessor institutions Chattanooga University, Grant University, and University of Chattanooga. University leaders not represented in this collection include Fred W. Hinson, Alexander Guerry, Archie Palmer, E. Grady Bogue, and current chancellor Steven R. Angle.</abstract>
+                            <abstract>The University of Tennessee at Chattanooga president and chancellor portraits digital collection features oil paintings of 12 of the 17 presidents and chancellors of the university, including it's predecessor institutions Chattanooga University, Grant University, and University of Chattanooga. University leaders not represented in this collection include Fred W. Hinson, Alexander Guerry, Archie Palmer, E. Grady Bogue, and current chancellor Steven R. Angle.</abstract>
                             <location>
                                 <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll17</url>
                             </location>
@@ -350,8 +383,6 @@
                             </location>
                         </relatedItem>
                     </xsl:when>
-
-
                     <xsl:when test="contains(normalize-space(.), 'Raymond B. Witt Chattanooga Public Schools Desegregation Records')">
                         <relatedItem type='host' displayLabel='Project'>
                             <titleInfo>
