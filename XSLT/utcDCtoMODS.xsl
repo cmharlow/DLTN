@@ -218,7 +218,7 @@
                             </location>
                         </relatedItem>
                     </xsl:when>
-                    <xsl:when test="contains(normalize-space(.), 'Chattanooga Women's Oral Histories')">
+                    <xsl:when test="contains(normalize-space(.), 'Chattanooga Women''s Oral Histories')">
                         <relatedItem type='host' displayLabel='Project'>
                             <titleInfo>
                                 <title><xsl:value-of select="normalize-space(.)"/></title>
