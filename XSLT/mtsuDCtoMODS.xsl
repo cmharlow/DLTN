@@ -574,6 +574,9 @@
                     </xsl:when>
                 </xsl:choose>
             </xsl:for-each>
+            <xsl:if test="count(dc:publisher) = 0">
+                <recordContentSource>Digital Initiatives, James E. Walker Library, Middle Tennessee State University</recordContentSource>
+            </xsl:if>
             <recordChangeDate>
                 <xsl:value-of select="current-date()"/>
             </recordChangeDate>
