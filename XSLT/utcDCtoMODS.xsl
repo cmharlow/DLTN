@@ -291,7 +291,7 @@
                             </titleInfo>
                             <abstract>The Cyrus Griffin Martin World War I diares and correspondence digital collection contains Martin's correspondence, military records, financial records, and notepads created during his service as a Second Lieutenant in the American Expeditionary Forces during World War I. The contents of the collection date from 1917 to 1919.</abstract>
                             <location>
-                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll14</url>
+                                <url>http://cdm16877.contentdm.oclc.org/cdm/landingpage/collection/p16877coll19</url>
                             </location>
                         </relatedItem>
                     </xsl:when>
