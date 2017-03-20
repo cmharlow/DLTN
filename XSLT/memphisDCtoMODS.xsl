@@ -34,6 +34,7 @@
                         <xsl:for-each select="tokenize(normalize-space(.), '&lt;br&gt;')">
                             <xsl:if test="normalize-space(.)!=''">
                                 <xsl:choose>
+                                    <xsl:when test="starts-with(normalize-space(.), 'Description by')"/>
                                     <xsl:when test="contains(normalize-space(.), 'additional research by')">
                                         <name>
                                             <namePart><xsl:value-of select="replace(normalize-space(.), 'additional research by ', '')"/></namePart>
