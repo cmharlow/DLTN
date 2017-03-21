@@ -562,9 +562,9 @@
                             <xsl:value-of select="."/>
                         </recordContentSource>
                     </xsl:when>
-                    <xsl:when test=".[not(starts-with(., 'Digital Initiatives'))] and $pub-count > 1">
+                    <xsl:when test=".[not(contains(normalize-space(.), 'Digital Initiatives'))] and $pub-count > 1">
                         <recordContentSource>
-                            <xsl:value-of select=".[not(starts-with(., 'Digitial Initiatives'))]"/>
+                            <xsl:value-of select=".[not(contains(normalize-space(.), 'Digitial Initiatives'))]"/>
                         </recordContentSource>
                     </xsl:when>
                     <xsl:when test="$pub-count = 1">
