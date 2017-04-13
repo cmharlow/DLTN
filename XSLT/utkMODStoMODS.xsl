@@ -227,9 +227,4 @@
     <xsl:template match="mods:recordInfo">
         <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
-
-    <xsl:template match="mods:recordContentSource">
-
-    </xsl:template>
-    
 </xsl:stylesheet>
