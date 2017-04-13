@@ -225,6 +225,53 @@
     </xsl:template>
     
     <xsl:template match="mods:recordInfo">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
+        <!--<xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>-->
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*|node()"/>
+            <!--<xsl:copy-of select="@*|node()" copy-namespaces="no"/>-->
+            <!--<xsl:if test="mods:recordContentSource = ''">-->
+                <!--<recordContentSource>-->
+                    <!--<xsl:value-of select="'University of Tennessee'"/>-->
+                <!--</recordContentSource>-->
+            <!--</xsl:if>-->
+        </xsl:copy>
     </xsl:template>
+
+    <xsl:template match="mods:recordIdentifier">
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="mods:recordContentSource">
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="mods:languageOfCataloging">
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="mods:languageTerm">
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="mods:recordOrigin">
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="mods:recordCreationDate">
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="mods:recordChangeDate">
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
+
+
 </xsl:stylesheet>
