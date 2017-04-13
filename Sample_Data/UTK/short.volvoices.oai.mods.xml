@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+  <responseDate>2015-05-26T17:40:05Z</responseDate>
+  <request verb="ListRecords" set="volvoices" metadataPrefix="oai_mods">http://dpla.lib.utk.edu:8080/repox/OAIHandler</request>
+  <ListRecords>
+  <record>
+    <header>
+      <identifier>volvoices_3778</identifier>
+      <datestamp>2015-04-30T15:23:37Z</datestamp>
+      <setSpec>volvoices</setSpec>
+    </header>
+    <metadata>
+      <mods version="3.5" xmlns="http://www.loc.gov/mods/v3"
+        xmlns:iso20775="info:ofi/fmt:xml:xsd:iso20775" xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+        <identifier type="local">0092_000050_000261_0001</identifier>
+        <identifier type="filename">0092_000050_000261_0001.jp2</identifier>
+        <name>
+          <namePart>unknown</namePart>
+          <role>
+            <roleTerm authority="marcrelator" type="text"
+              valueURI="http://id.loc.gov/vocabulary/relators/pht">Photographer</roleTerm>
+          </role>
+        </name>
+        <titleInfo>
+          <title>Bridge Collapse in Unnamed County, Tennessee</title>
+        </titleInfo>
+        <typeOfResource>still image</typeOfResource>
+        <originInfo>
+          <dateCreated>1929</dateCreated>
+          <dateCreated encoding="edtf" keyDate="yes">1929</dateCreated>
+        </originInfo>
+        <physicalDescription>
+          <extent>1 digital image; 1 photograph</extent>
+          <form authority="aat" valueURI="http://vocab.getty.edu/aat/300046300">photographs</form>
+          <internetMediaType>image/jp2</internetMediaType>
+          <digitalOrigin>reformatted digital</digitalOrigin>
+        </physicalDescription>
+        <abstract>This photograph shows a bridge that has collapsed. It appears that the bridge
+          collapsed as a small semi-truck attempted to cross. The county and location where this
+          picture was taken are not given.</abstract>
+        <language>
+          <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+        </language>
+        <location>
+          <physicalLocation>Tennessee. Department of Transportation</physicalLocation>
+          <holdingExternal>
+            <holding
+              xsi:schemaLocation="info:ofi/fmt:xml:xsd:iso20775 http://www.loc.gov/standards/iso20775/N130_ISOholdings_v6_1.xsd">
+              <physicalAddress>
+                <text>City: Nashville</text>
+                <text>County: Davidson County</text>
+                <text>State: Tennessee</text>
+              </physicalAddress>
+            </holding>
+          </holdingExternal>
+        </location>
+        <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85016829">
+          <topic>Bridges</topic>
+        </subject>
+        <subject authority="lcsh" valueURI="http://id.loc.gov/authorities/subjects/sh85136758">
+          <topic>Traffic accidents</topic>
+        </subject>
+        <subject displayLabel="Broad Topics">
+          <topic>Transportation and Internal Improvements</topic>
+        </subject>
+        <subject displayLabel="Tennessee Social Studies K-12 Eras in American History">
+          <temporal>Era 7 - The Emergence of Modern America (1890-1930)</temporal>
+        </subject>
+        <relatedItem displayLabel="Project" type="host">
+          <titleInfo>
+            <title>Volunteer Voices</title>
+          </titleInfo>
+          <location>
+            <url>http://digital.lib.utk.edu/collections/volvoices</url>
+          </location>
+        </relatedItem>
+        <relatedItem displayLabel="Collection" type="host">
+          <titleInfo>
+            <title>Historical Transportation Photographs</title>
+          </titleInfo>
+        </relatedItem>
+        <accessCondition type="use and reproduction">May be protected by copyright. For more
+          information, contact Special Collections at special@utk.edu.</accessCondition>
+        <recordInfo>
+          <recordIdentifier>record_0092_000050_000261_0001</recordIdentifier>
+          <recordContentSource>University of Tennessee, Knoxville. Special
+            Collections</recordContentSource>
+          <languageOfCataloging>
+            <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+          </languageOfCataloging>
+          <recordOrigin>Created and edited in general conformance to MODS Guidelines (Version
+            3.5).</recordOrigin>
+          <recordCreationDate encoding="edtf">2008-04-07</recordCreationDate>
+          <recordChangeDate encoding="edtf">2015-03-23</recordChangeDate>
+          <recordChangeDate encoding="edtf">2015-03-31</recordChangeDate>
+          <recordChangeDate encoding="edtf">2015-04-01</recordChangeDate>
+        </recordInfo>
+        <location>
+          <url access="object in context" usage="primary display"
+            >http://digital.lib.utk.edu/collections/islandora/object/volvoices%3A3778</url>
+          <url access="preview"
+            >http://digital.lib.utk.edu/collections/islandora/object/volvoices%3A3778/datastream/TN/view</url>
+        </location>
+      </mods>
+    </metadata>
+  </record>
+  </ListRecords>
+</OAI-PMH>

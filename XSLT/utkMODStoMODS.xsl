@@ -30,7 +30,9 @@
             <xsl:apply-templates select="mods:name"/> <!-- not handing over unknowns to DLTN, though we do keep in UTK Islandora -->
             <xsl:apply-templates select="mods:physicalDescription/mods:form" mode="form2genre"/> <!-- DPLA genre is UTK form - UTK form being copied over -->
             <location>
-                <xsl:apply-templates select="mods:location/*"/> <!-- error with UTK oai feed making multiple location wrappers - merged here -->
+                <xsl:apply-templates select="mods:location/mods:physicalLocation"/>
+                <xsl:apply-templates select="mods:location/mods:url"/>
+                <xsl:apply-templates select="mods:location/mods:holdingExternal"/>
             </location>
         </mods>
     </xsl:template>
@@ -41,16 +43,19 @@
             <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()" copy-namespaces="no"></xsl:copy-of></xsl:copy>
         </xsl:if>
     </xsl:template>
-    
-    <xsl:template match="mods:location/*">
-        <xsl:copy copy-namespaces="no"><xsl:copy-of select="mods:physicalLocation" copy-namespaces="no"></xsl:copy-of></xsl:copy>
-        <xsl:template match="mods:url[@access='object in context']">
-        <url access="object in context" usage="primary display"
-            >http://digital.lib.utk.edu/collections/islandora/object/volvoices%3A3778</url>
-        <url access="preview"
-            >http://digital.lib.utk.edu/collections/islandora/object/volvoices%3A3778/datastream/TN/view</url>
+
+    <!-- templates for new mods:location -->
+    <xsl:template match="mods:location/mods:physicalLocation">
+        <xsl:copy-of select="." copy-namespaces="no"/>
     </xsl:template>
-    
+    <xsl:template match="mods:location/mods:url">
+        <!-- doesn't work - location is ordered -->
+        <xsl:copy-of select="." copy-namespaces="no"/>
+    </xsl:template>
+    <xsl:template match="mods:location/mods:holdingExternal">
+        <xsl:copy-of select="." copy-namespaces="no"/>
+    </xsl:template>
+
     <xsl:template match="mods:originInfo">
         <xsl:copy copy-namespaces="no"><xsl:copy-of select="mods:dateCreated[@encoding='edtf']" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
@@ -222,5 +227,4 @@
     <xsl:template match="mods:recordInfo">
         <xsl:copy copy-namespaces="no"><xsl:copy-of select="node()|@*" copy-namespaces="no"></xsl:copy-of></xsl:copy>
     </xsl:template>
-    
 </xsl:stylesheet>
