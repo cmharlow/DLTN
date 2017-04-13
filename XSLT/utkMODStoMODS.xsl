@@ -6,7 +6,7 @@
     <!-- parsed out top-level elements for ease of tweaking as feedback comes in. 
                 as source feed is worked on, this can be simplified -->
     
-    <xsl:template match="text()|@*"/>   
+    <xsl:template match="text()|@*"/>
     <xsl:template match="//mods:mods">
         <mods version="3.5" xmlns="http://www.loc.gov/mods/v3"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -239,37 +239,42 @@
 
     <xsl:template match="mods:recordIdentifier">
         <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates select="@*|node()"/>
+            <xsl:copy-of select="@*|node()" copy-namespaces="no"/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="mods:recordContentSource">
+    <xsl:template match="mods:recordContentSource[not(. = '')]">
         <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates select="@*|node()"/>
+            <xsl:copy-of select="@*|node()" copy-namespaces="no"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="mods:recordContentSource[(. = '')]">
+        <xsl:copy copy-namespaces="no">
+            <xsl:value-of select="'University of Tennessee'"/>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="mods:languageOfCataloging">
         <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates select="@*|node()"/>
+            <xsl:copy-of select="@*|node()" copy-namespaces="no"/>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="mods:languageTerm">
         <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates select="@*|node()"/>
+            <xsl:copy-of select="@*|node()" copy-namespaces="no"/>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="mods:recordOrigin">
         <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates select="@*|node()"/>
+            <xsl:copy-of select="@*|node()" copy-namespaces="no"/>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="mods:recordCreationDate">
         <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates select="@*|node()"/>
+            <xsl:copy-of select="@*|node()" copy-namespaces="no"/>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="mods:recordChangeDate">
         <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates select="@*|node()"/>
+            <xsl:copy-of select="@*|node()" copy-namespaces="no"/>
         </xsl:copy>
     </xsl:template>
 
