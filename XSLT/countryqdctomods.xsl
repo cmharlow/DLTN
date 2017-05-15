@@ -120,7 +120,7 @@
   <xsl:template match="dc:identifier[starts-with(., 'http://')]">
     <xsl:variable name="identifier-preview-url" select="replace(., '/cdm/ref', '/utils/getthumbnail')"/>
     <url usage="primary" access="object in context"><xsl:apply-templates/></url>
-    <url usage="primary" access="preview"><xsl:value-of select="$identifier-preview-url"/></url>
+    <url access="preview"><xsl:value-of select="$identifier-preview-url"/></url>
   </xsl:template>
   
   <!-- a template to match identifiers that do *not* start with 'http://' -->
