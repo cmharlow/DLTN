@@ -1,5 +1,3 @@
-# Report an Issue
-
 ## Why are You Reporting an Issue
 
 - [ ] Add New Set(s)
