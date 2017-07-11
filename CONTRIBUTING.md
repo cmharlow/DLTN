@@ -2,7 +2,7 @@
 
 We appreciate contributions to the repository in the form of Issues or Pull Requests.
 
-If you have any questions about contributing, please open and issue or email the committee.
+If you have any questions about contributing, please open an issue or email the committee.
 
 ## Contributing Via Pull Request
 
@@ -15,4 +15,8 @@ If you have any questions about contributing, please open and issue or email the
 	* git commit -m "Change X in MYFILE.xsl"
 5. Push changes to your repository
 	* git push origin master
-6. Open Pull Request Filling Out as Much of the Pull Request Template as Possible
+6. Open Pull Request Filling Out as Much of the Pull Request Template as Possible.
+
+## Contributing an Issue
+
+The Digital Library of Tennessee also encourages contributions in the form of issues.  If you have a problem with an existing set or transform or have a question for the community, feel free to add an issue to discuss this.
