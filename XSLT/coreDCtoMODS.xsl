@@ -15,8 +15,24 @@
         dc:title[1]
         dc:title[position()>1]
     -->
-    
-    <xsl:template match="dc:date"> 
+
+    <!-- variables and parameters-->
+    <xsl:param name="pRights">
+        <rs uri="http://rightsstatements.org/vocab/InC/1.0/" string="">in copyright</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-OW-EU/1.0/" string="">in copyright - eu orphan work</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-EDU/1.0/" string="">in copyright - educational use permitted</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-NC/1.0/" string="">in copyright - non-commercial use permitted</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-RUU/1.0/" string="">in copyright - rights-holder(s) unlocatable or unidentifiable</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-CR/1.0/" string="">no copyright - contractual restrictions</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-NC/1.0/" string="">no copyright - non-commercial use only</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-OKLR/1.0/" string="">no copyright - other known legal restrictions</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-US/1.0/" string="">no copyright - united states</rs>
+        <rs uri="http://rightsstatements.org/vocab/CNE/1.0/" string="">copyright not evaluated</rs>
+        <rs uri="http://rightsstatements.org/vocab/UND/1.0/" string="">copyright undetermined</rs>
+        <rs uri="http://rightsstatements.org/vocab/NKC/1.0/" string="">no known copyright</rs>
+    </xsl:param>
+
+    <xsl:template match="dc:date">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
