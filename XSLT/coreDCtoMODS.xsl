@@ -531,14 +531,29 @@
     </xsl:template>
     
     <xsl:template match="dc:rights">
+        <xsl:variable name="vText"
+                      select="if (contains(normalize-space(.), 'http://'))
+                              then (normalize-space(.))
+                              else (lower-case(normalize-space(.)))"/>
         <xsl:choose>
-            <xsl:when test="contains(normalize-space(lower-case(.)),'public domain')">
-                <accessCondition>Public domain</accessCondition>
+            <xsl:when test="$vText = $pRights/rs/@uri">
+                <accessCondition type="use and reproduction" xlink:href="{$vText}">
+                    <xsl:value-of select="$pRights/rs[@uri = $vText]/@string"/>
+                </accessCondition>
+            </xsl:when>
+            <xsl:when test="$vText = $pRights/rs">
+                <accessCondition type="use and reproduction" xlink:href="{$pRights/r[. = $vText]/@uri}">
+                    <xsl:value-of select="$pRights/rs[. = $vText]/@string"/>
+                </accessCondition>
+            </xsl:when>
+            <!-- keep public domain test but map to no copyright - united states -->
+            <xsl:when test="contains($vText, 'public domain')">
+                <accessCondition type="use and reproduction" xlink:href="http://rightsstatement.org/vocab/NoC-US/1.0/">No Copyright - United States</accessCondition>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:if test="normalize-space(.)!=''">
-                    <accessCondition><xsl:value-of select="normalize-space(.)"/></accessCondition>
-                </xsl:if>     
+                <xsl:if test="$vText != ''">
+                    <accessCondition type="local rights statement"><xsl:value-of select="normalize-space(.)"/></accessCondition>
+                </xsl:if>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
