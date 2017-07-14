@@ -125,10 +125,10 @@
     <xsl:template name="rightsRepair"> <!-- some elements missing rights statement, which is required. Existing mapped, those without, given generic.-->
         <xsl:choose>
             <xsl:when test="dc:rights">
-                <accessCondition><xsl:value-of select="dc:rights"/></accessCondition>
+                <accessCondition type='local rights statement'><xsl:value-of select="dc:rights"/></accessCondition>
             </xsl:when>
             <xsl:otherwise>
-                <accessCondition>Digital Image, Memphis Public Library &amp; Information Center. All rights reserved. While the Memphis Public Library &amp; Information Center may house an item, it does not necessarily hold the copyright on the item, nor may it be able to determine if the item is still protected under current copyright law. Users are solely responsible for determining the existence of such instances and for obtaining any other permissions and paying associated fees that may be necessary for the intended use. Any image from the library's collection published in any form must cite as the source: Memphis and Shelby County Room, Memphis Public Library &amp; Information Center.  For all requests, please contact the History Department at 901.415.2742 or hisref@memphistn.gov.</accessCondition>
+                <accessCondition type='local rights statement'>Digital Image, Memphis Public Library &amp; Information Center. All rights reserved. While the Memphis Public Library &amp; Information Center may house an item, it does not necessarily hold the copyright on the item, nor may it be able to determine if the item is still protected under current copyright law. Users are solely responsible for determining the existence of such instances and for obtaining any other permissions and paying associated fees that may be necessary for the intended use. Any image from the library's collection published in any form must cite as the source: Memphis and Shelby County Room, Memphis Public Library &amp; Information Center.  For all requests, please contact the History Department at 901.415.2742 or hisref@memphistn.gov.</accessCondition>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>

@@ -64,7 +64,7 @@
     <!-- Typo Repairs, Static Additions -->
     
     <xsl:template name="dc:rightsTypoRepair">
-        <accessCondition>To use material or to order reproductions, contact DigitalCollections@knoxlib.org or phone 865 215-8808. Please provide a brief description of the material.</accessCondition>
+        <accessCondition type='local rights statement'>To use material or to order reproductions, contact DigitalCollections@knoxlib.org or phone 865 215-8808. Please provide a brief description of the material.</accessCondition>
     </xsl:template>
     
     

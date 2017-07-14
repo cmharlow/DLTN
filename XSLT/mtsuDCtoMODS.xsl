@@ -604,7 +604,7 @@
                         </relatedItem>
                     </xsl:when>
                     <xsl:when test="contains(.,'All rights reserved') or contains(.,'Courtesy of')"> 
-                        <accessCondition><xsl:value-of select="normalize-space(.)"/></accessCondition>
+                        <accessCondition type='local rights statement'><xsl:value-of select="normalize-space(.)"/></accessCondition>
                     </xsl:when>
                     <xsl:when test="contains(.,', photographer')"> 
                         <name>

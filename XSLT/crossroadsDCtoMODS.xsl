@@ -390,7 +390,7 @@
                 <xsl:apply-templates select="dc:rights"/>
             </xsl:when>
             <xsl:otherwise>
-                <accessCondition>Crossroads to Freedom Digital Archive is licensed under the Creative Commons Attribution License. Use of the site's content is subject to the conditions and terms of use on our Legal Notices page.</accessCondition>
+                <accessCondition type='local rights statement'>Crossroads to Freedom Digital Archive is licensed under the Creative Commons Attribution License. Use of the site's content is subject to the conditions and terms of use on our Legal Notices page.</accessCondition>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>

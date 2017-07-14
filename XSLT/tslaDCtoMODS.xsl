@@ -57,7 +57,7 @@
                 <xsl:apply-templates select="dc:rights"/>
             </xsl:when>
             <xsl:otherwise>
-                <accessCondition>While TSLA houses an item, it does not necessarily hold the copyright on the item, nor may it be able to determine if the item is still protected under current copyright law. Users are solely responsible for determining the existence of such instances and for obtaining any other permissions and paying associated fees that may be necessary for the intended use.</accessCondition>
+                <accessCondition type='local rights statement'>While TSLA houses an item, it does not necessarily hold the copyright on the item, nor may it be able to determine if the item is still protected under current copyright law. Users are solely responsible for determining the existence of such instances and for obtaining any other permissions and paying associated fees that may be necessary for the intended use.</accessCondition>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>

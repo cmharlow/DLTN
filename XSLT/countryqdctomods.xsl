@@ -75,7 +75,7 @@
   
   <!-- accessRights -->
   <xsl:template match="dcterms:accessRights">
-    <accessCondition><xsl:apply-templates/></accessCondition>
+    <accessCondition type='local rights statement'><xsl:apply-templates/></accessCondition>
   </xsl:template>
   
   <!-- description -->
