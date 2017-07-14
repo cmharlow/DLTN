@@ -18,18 +18,18 @@
 
     <!-- variables and parameters-->
     <xsl:param name="pRights">
-        <rs uri="http://rightsstatements.org/vocab/InC/1.0/" string="">in copyright</rs>
-        <rs uri="http://rightsstatements.org/vocab/InC-OW-EU/1.0/" string="">in copyright - eu orphan work</rs>
-        <rs uri="http://rightsstatements.org/vocab/InC-EDU/1.0/" string="">in copyright - educational use permitted</rs>
-        <rs uri="http://rightsstatements.org/vocab/InC-NC/1.0/" string="">in copyright - non-commercial use permitted</rs>
-        <rs uri="http://rightsstatements.org/vocab/InC-RUU/1.0/" string="">in copyright - rights-holder(s) unlocatable or unidentifiable</rs>
-        <rs uri="http://rightsstatements.org/vocab/NoC-CR/1.0/" string="">no copyright - contractual restrictions</rs>
-        <rs uri="http://rightsstatements.org/vocab/NoC-NC/1.0/" string="">no copyright - non-commercial use only</rs>
-        <rs uri="http://rightsstatements.org/vocab/NoC-OKLR/1.0/" string="">no copyright - other known legal restrictions</rs>
-        <rs uri="http://rightsstatements.org/vocab/NoC-US/1.0/" string="">no copyright - united states</rs>
-        <rs uri="http://rightsstatements.org/vocab/CNE/1.0/" string="">copyright not evaluated</rs>
-        <rs uri="http://rightsstatements.org/vocab/UND/1.0/" string="">copyright undetermined</rs>
-        <rs uri="http://rightsstatements.org/vocab/NKC/1.0/" string="">no known copyright</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC/1.0/" string="In Copyright">in copyright</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-OW-EU/1.0/" string="In Copyright - EU Orphan Work">in copyright - eu orphan work</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-EDU/1.0/" string="In Copyright - Educational Use Permitted">in copyright - educational use permitted</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-NC/1.0/" string="In Copyright - Non-Commercial Use Permitted">in copyright - non-commercial use permitted</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-RUU/1.0/" string="In Copyright - Rights-holder(s) Unlocatable or Unidentifiable">in copyright - rights-holder(s) unlocatable or unidentifiable</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-CR/1.0/" string="No Copyright - Contractual Restrictions">no copyright - contractual restrictions</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-NC/1.0/" string="No Copyright - Non-Commercial Use Only">no copyright - non-commercial use only</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-OKLR/1.0/" string="No Copyright - Other Known Legal Restrictions">no copyright - other known legal restrictions</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-US/1.0/" string="No Copyright - United States">no copyright - united states</rs>
+        <rs uri="http://rightsstatements.org/vocab/CNE/1.0/" string="Copyright Not Evaluated">copyright not evaluated</rs>
+        <rs uri="http://rightsstatements.org/vocab/UND/1.0/" string="Copyright Undetermined">copyright undetermined</rs>
+        <rs uri="http://rightsstatements.org/vocab/NKC/1.0/" string="No Known Copyright">no known copyright</rs>
     </xsl:param>
 
     <xsl:template match="dc:date">
