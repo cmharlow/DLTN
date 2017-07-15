@@ -69,7 +69,8 @@
     <xsl:template name="rightsRepair">
         <xsl:choose>
             <xsl:when test="dc:rights!='' and not(starts-with(dc:rights, 'unde'))">
-                <accessCondition type='local rights statement'><xsl:value-of select="normalize-space(dc:rights)"/></accessCondition>
+                <!--<accessCondition type='local rights statement'><xsl:value-of select="normalize-space(dc:rights)"/></accessCondition>-->
+                <xsl:apply-templates select="dc:rights[not(starts-with(., 'unde'))]"/>
             </xsl:when>
             <xsl:otherwise>
                 <accessCondition type='local rights statement'>For rights information of this object, please contact: Metro Nashville Archives, 615 Church Street, Nashville, Tennessee, 37219. Telephone (615) 862-5880.</accessCondition>
