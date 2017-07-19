@@ -63,7 +63,7 @@
         
 <!-- Typo Repairs, Static Additions -->
     <xsl:template name="dc:rightsTypoRepair">
-        <accessCondition>To use photographs or to order reproductions, contact DigitalCollections@knoxlib.org or phone 865 215-8808. Please refer to Image Number and provide a brief description of the photograph.</accessCondition>
+        <accessCondition type='local rights statement'>To use photographs or to order reproductions, contact DigitalCollections@knoxlib.org or phone 865 215-8808. Please refer to Image Number and provide a brief description of the photograph.</accessCondition>
     </xsl:template>
     
     <xsl:template name="photocollLanguage">

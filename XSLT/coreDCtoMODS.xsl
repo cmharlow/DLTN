@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:oai_dc='http://www.openarchives.org/OAI/2.0/oai_dc/' xmlns:dc="http://purl.org/dc/elements/1.1/" 
-    xmlns:oai="http://www.openarchives.org/OAI/2.0/"
+    xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:xlink="http://www.w3.org/1999/xlink"
     version="2.0" xmlns="http://www.loc.gov/mods/v3">
     <xsl:output omit-xml-declaration="yes" method="xml" encoding="UTF-8" indent="yes"/>
     
@@ -15,8 +15,27 @@
         dc:title[1]
         dc:title[position()>1]
     -->
-    
-    <xsl:template match="dc:date"> 
+
+    <!-- variables and parameters-->
+    <xsl:param name="pRights">
+        <rs uri="http://rightsstatements.org/vocab/InC/1.0/" string="In Copyright">in copyright</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-OW-EU/1.0/" string="In Copyright - EU Orphan Work">in copyright - eu orphan work</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-EDU/1.0/" string="In Copyright - Educational Use Permitted">in copyright - educational use permitted</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-NC/1.0/" string="In Copyright - Non-Commercial Use Permitted">in copyright - non-commercial use permitted</rs>
+        <rs uri="http://rightsstatements.org/vocab/InC-RUU/1.0/" string="In Copyright - Rights-holder(s) Unlocatable or Unidentifiable">in copyright - rights-holder(s) unlocatable or unidentifiable</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-CR/1.0/" string="No Copyright - Contractual Restrictions">no copyright - contractual restrictions</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-NC/1.0/" string="No Copyright - Non-Commercial Use Only">no copyright - non-commercial use only</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-OKLR/1.0/" string="No Copyright - Other Known Legal Restrictions">no copyright - other known legal restrictions</rs>
+        <rs uri="http://rightsstatements.org/vocab/NoC-US/1.0/" string="No Copyright - United States">no copyright - united states</rs>
+        <rs uri="http://rightsstatements.org/vocab/CNE/1.0/" string="Copyright Not Evaluated">copyright not evaluated</rs>
+        <rs uri="http://rightsstatements.org/vocab/UND/1.0/" string="Copyright Undetermined">copyright undetermined</rs>
+        <rs uri="http://rightsstatements.org/vocab/NKC/1.0/" string="No Known Copyright">no known copyright</rs>
+    </xsl:param>
+
+    <xsl:variable name="vRightsString" select="normalize-space(string-join(//dc:rights, ' '))"/>
+    <xsl:variable name="vRightsCount" select="count(//dc:rights)"/>
+
+    <xsl:template match="dc:date">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!='' and normalize-space(lower-case(.))!='n/a'">
                 <xsl:choose>
@@ -514,15 +533,37 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="dc:rights">
+    <xsl:template match="dc:rights[1]">
+        <xsl:variable name="vText"
+                      select="if (contains(normalize-space(.), 'http://'))
+                              then (normalize-space(.))
+                              else (lower-case(normalize-space(.)))"/>
         <xsl:choose>
-            <xsl:when test="contains(normalize-space(lower-case(.)),'public domain')">
-                <accessCondition>Public domain</accessCondition>
+            <xsl:when test="$vRightsCount > 1">
+                <accessCondition type="local rights statement"><xsl:value-of select="$vRightsString"/></accessCondition>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:if test="normalize-space(.)!=''">
-                    <accessCondition><xsl:value-of select="normalize-space(.)"/></accessCondition>
-                </xsl:if>     
+                <xsl:choose>
+                    <xsl:when test="$vText = $pRights/rs/@uri">
+                        <accessCondition type="use and reproduction" xlink:href="{$vText}">
+                            <xsl:value-of select="$pRights/rs[@uri = $vText]/@string"/>
+                        </accessCondition>
+                    </xsl:when>
+                    <xsl:when test="$vText = $pRights/rs">
+                        <accessCondition type="use and reproduction" xlink:href="{$pRights/r[. = $vText]/@uri}">
+                            <xsl:value-of select="$pRights/rs[. = $vText]/@string"/>
+                        </accessCondition>
+                    </xsl:when>
+                    <!-- keep public domain test but map to no copyright - united states -->
+                    <xsl:when test="contains($vText, 'public domain')">
+                        <accessCondition type="use and reproduction" xlink:href="http://rightsstatement.org/vocab/NoC-US/1.0/">No Copyright - United States</accessCondition>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:if test="$vText != ''">
+                            <accessCondition type="local rights statement"><xsl:value-of select="normalize-space(.)"/></accessCondition>
+                        </xsl:if>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>

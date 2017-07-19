@@ -558,7 +558,7 @@
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <xsl:if test="normalize-space(.)!=''">
                 <xsl:if test="starts-with(normalize-space(.), 'U.S. and international copyright laws')">
-                    <accessCondition><xsl:value-of select="normalize-space(.)"/></accessCondition>
+                    <accessCondition type='local rights statement'><xsl:value-of select="normalize-space(.)"/></accessCondition>
                 </xsl:if>
             </xsl:if>
         </xsl:for-each>

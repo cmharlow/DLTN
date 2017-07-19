@@ -409,7 +409,7 @@
                     <xsl:apply-templates select="."/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <accessCondition>Under copyright.</accessCondition>
+                    <accessCondition type='local rights statement'>Under copyright.</accessCondition>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:for-each>

@@ -146,10 +146,10 @@
     <xsl:template name="rightsRepair"> <!-- some elements missing rights statement, which is required. Existing mapped, those without, given generic.-->
         <xsl:choose>
             <xsl:when test="dc:rights">
-                <accessCondition><xsl:value-of select="dc:rights"/></accessCondition>
+                <xsl:apply-templates select="dc:rights"/>
             </xsl:when>
             <xsl:otherwise>
-                <accessCondition>Check with the MTSU Digital Collections team to assess copyright. Have the object identifier and title available with your request. http://cdm15838.contentdm.oclc.org/cdm/</accessCondition>
+                <accessCondition type='local rights statement'>Check with the MTSU Digital Collections team to assess copyright. Have the object identifier and title available with your request. http://cdm15838.contentdm.oclc.org/cdm/</accessCondition>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
