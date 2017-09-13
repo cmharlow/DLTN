@@ -152,24 +152,16 @@
     <xsl:param name="arg"/> 
     <xsl:param name="delim"/> 
     
-    <xsl:sequence select=" 
-      if (matches($arg, functx:escape-for-regex($delim)))
-      then replace($arg,
-      concat('^(.*)', functx:escape-for-regex($delim),'.*'),
-      '$1')
-      else ''
-      "/>
+    <xsl:sequence select="if (matches($arg, functx:escape-for-regex($delim)))
+                          then replace($arg, concat('^(.*)', functx:escape-for-regex($delim),'.*'), '$1')
+                          else ''"/>
     
   </xsl:function>
   
   <xsl:function name="functx:escape-for-regex">
     <xsl:param name="arg"/> 
     
-    <xsl:sequence select=" 
-      replace($arg,
-      '(\.|\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\))','\\$1')
-      "/>
-    
+    <xsl:sequence select="replace($arg, '(\.|\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\))','\\$1')"/>
   </xsl:function>
 </xsl:stylesheet>
 
