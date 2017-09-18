@@ -39,8 +39,48 @@
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+      <!-- title -->
+      <xsl:apply-templates select="dc:title"/>
+      <!-- description -->
+      <xsl:apply-templates select="dc:description"/>
+      <!-- identifier(s) that are not URLs -->
+      <xsl:apply-templates select="dc:identifier[not(starts-with(., 'http://'))]"/>
+      <!-- location: physicalLocation and URLs -->
+      <location>
+        <xsl:apply-templates select="dc:identifier[starts-with(., 'http://')]"/>
+      </location>
 
-
+      <!-- physicalDescription -->
+      <physicalDescription>
+        <!-- formats -->
+        <xsl:apply-templates select="dc:format"/>
+      </physicalDescription>
     </mods>
+  </xsl:template>
+
+  <!-- title -->
+  <xsl:template match="dc:title">
+    <titleInfo>
+      <title><xsl:apply-templates/></title>
+    </titleInfo>
+  </xsl:template>
+
+  <!-- description -->
+  <xsl:template match="dc:description">
+    <abstract><xsl:apply-templates/></abstract>
+  </xsl:template>
+  
+  <!-- format(s) -->
+  <!-- for formats that contain something that resembles an xs:time -->
+  <xsl:template match="dc:format[matches(., '\d{2}:\d{2}:\d{2}')]">
+    <extent><xsl:value-of select="."/></extent>
+  </xsl:template>
+
+  <!-- for formats that may contain multiple values separated by ';' -->
+  <xsl:template match="dc:format[not(matches(., '\d{2}:\d{2}:\d{2}'))]">
+    <xsl:variable name="format-tokens" select="tokenize(., ';')"/>
+    <xsl:for-each select="$format-tokens">
+      <internetMediaType><xsl:value-of select="normalize-space(.)"/></internetMediaType>
+    </xsl:for-each>
   </xsl:template>
 </xsl:stylesheet>
