@@ -43,13 +43,14 @@
       <xsl:apply-templates select="dc:title"/>
       <!-- description -->
       <xsl:apply-templates select="dc:description"/>
+      <!-- subject(s) -->
+      <xsl:apply-templates select="dc:subject"/>
       <!-- identifier(s) that are not URLs -->
       <xsl:apply-templates select="dc:identifier[not(starts-with(., 'http://'))]"/>
       <!-- location: physicalLocation and URLs -->
       <location>
         <xsl:apply-templates select="dc:identifier[starts-with(., 'http://')]"/>
       </location>
-
       <!-- physicalDescription -->
       <physicalDescription>
         <!-- formats -->
@@ -69,9 +70,42 @@
   <xsl:template match="dc:description">
     <abstract><xsl:apply-templates/></abstract>
   </xsl:template>
-  
+
+  <!-- subject(s) -->
+  <!-- for subjects with a trailing ';' -->
+  <xsl:template match="dc:subject[ends-with(., ';')]">
+    <xsl:variable name="subj-tokens" select="tokenize(., ';')"/>
+    <xsl:for-each select="$subj-tokens">
+      <subject>
+        <topic><xsl:value-of select="normalize-space(.)"/></topic>
+      </subject>
+    </xsl:for-each>
+  </xsl:template>
+
+  <!-- for subjects that do *not* end with a trailing ';' -->
+  <xsl:template match="dc:subject[not(ends-with(., ';'))]">
+    <subject>
+      <topic><xsl:apply-templates/></topic>
+    </subject>
+  </xsl:template>
+
+  <!-- identifier(s) -->
+  <!-- identifier - location processing -->
+  <xsl:template match="dc:identifier[starts-with(., 'http://')]">
+    <xsl:variable name="identifier-preview-url" select="replace(., 'value', 'value')"/>
+    <url usage="primary" access="object in context"><apply-templates/></url>
+    <url access="preview"><xsl:value-of select="$identifier-preview-url"/></url>
+  </xsl:template>
+
+  <xsl:template match="dc:identifier[not(starts-with(., 'http://'))]">
+    <identifier type="local"><xsl:apply-templates/></identifier>
+  </xsl:template>
+
   <!-- format(s) -->
-  <!-- for formats that contain something that resembles an xs:time -->
+  <!--
+    For formats that contain something that resembles an xs:time, serialize
+    an <extent>.
+  -->
   <xsl:template match="dc:format[matches(., '\d{2}:\d{2}:\d{2}')]">
     <extent><xsl:value-of select="."/></extent>
   </xsl:template>
