@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:oai_qdc="http://worldcat.org/xmlschemas/qdc-1.0/"
                 xmlns:dcterms="http://purl.org/dc/terms"
                 xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -65,6 +66,13 @@
       <xsl:apply-templates select="dc:language"/>
       <!-- identifier(s) that are not URLs -->
       <xsl:apply-templates select="dc:identifier[not(starts-with(., 'http://'))]"/>
+      <!-- originInfo -->
+      <originInfo>
+        <!-- publisher -->
+        <xsl:apply-templates select="dc:publisher"/>
+      </originInfo>
+      <!-- accessCondition -->
+      <xsl:call-template name="build-accessCondition"/>
       <!-- location: physicalLocation and URLs -->
       <location>
         <xsl:apply-templates select="dc:identifier[starts-with(., 'http://')]"/>
@@ -137,6 +145,22 @@
   <!-- ignore everything but the first dc:language element -->
   <xsl:template match="dc:language[position() > 1]"/>
 
+  <!-- publisher -->
+  <xsl:template match="dc:publisher">
+    <publisher><xsl:apply-templates/></publisher>
+  </xsl:template>
+
+  <!-- build accessCondition -->
+  <xsl:template name="build-accessCondition">
+    <xsl:variable name="vAcc"
+                  select="if (/oai_qdc:qualifieddc/dc:rights and /oai_qdc:qualifieddc/dcterms:license)
+                          then (/oai_qdc:qualifieddc/dcterms:license)
+                          else if (/oai_qdc:qualifieddc/dc:rights and not(/oai_qdc:qualifieddc/dcterms:license))
+                            then (/oai_qdc:qualifieddc/dc:rights)
+                            else (/oai_qdc:qualifieddc/dcterms:license)"/>
+    <accessCondition type="use and reproduction" xlink:href="{$vAcc}"/>
+  </xsl:template>
+
   <!-- identifier(s) -->
   <!-- identifier - location processing -->
   <xsl:template match="dc:identifier[starts-with(., 'http://')]">
@@ -165,4 +189,7 @@
       <internetMediaType><xsl:value-of select="normalize-space(.)"/></internetMediaType>
     </xsl:for-each>
   </xsl:template>
+
+  <!-- ignored elements -->
+  <xsl:template match="dc:rights | dcterms:license"/>
 </xsl:stylesheet>
