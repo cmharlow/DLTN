@@ -142,9 +142,6 @@
     </xsl:for-each>
   </xsl:template>
 
-  <!-- ignore everything but the first dc:language element -->
-  <xsl:template match="dc:language[position() > 1]"/>
-
   <!-- publisher -->
   <xsl:template match="dc:publisher">
     <publisher><xsl:apply-templates/></publisher>
@@ -192,4 +189,5 @@
 
   <!-- ignored elements -->
   <xsl:template match="dc:rights | dcterms:license"/>
+  <xsl:template match="dc:language[position() > 1]"/>
 </xsl:stylesheet>
