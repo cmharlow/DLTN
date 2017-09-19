@@ -20,6 +20,22 @@
     Collection/Set = UT Chattanooga's sets as Qualified Dublin Core => MODS
   -->
 
+  <!-- variables and parameters -->
+  <!--
+    dc:language processing parameter: there are multiple language values in the
+    QDC.
+  -->
+  <xsl:param name="pLang">
+    <l string="eng">english</l>
+    <l string="eng">en</l>
+    <l string="eng">eng</l>
+    <l string="deu">german</l>
+    <l string="spa">spanish</l>
+    <l string="zxx">zxx</l>
+    <l string="zxx">no linguistic content.</l>
+  </xsl:param>
+
+
   <!-- identity tranform -->
   <xsl:template match="@*|node()">
     <xsl:copy>
@@ -45,6 +61,8 @@
       <xsl:apply-templates select="dc:description"/>
       <!-- subject(s) -->
       <xsl:apply-templates select="dc:subject"/>
+      <!-- language(s) -->
+      <xsl:apply-templates select="dc:language"/>
       <!-- identifier(s) that are not URLs -->
       <xsl:apply-templates select="dc:identifier[not(starts-with(., 'http://'))]"/>
       <!-- location: physicalLocation and URLs -->
@@ -88,6 +106,36 @@
       <topic><xsl:apply-templates/></topic>
     </subject>
   </xsl:template>
+
+  <!-- language(s) -->
+  <!--
+    There are multiple dc:language elements; e.g.
+      <dc:language>Spanish</dc:language>
+      <dc:language>spa</dc:language>
+      or
+      <dc:language>English; German</dc:language>
+      <dc:language>eng; deu</dc:language>
+    The list of languages (pLang, above) is exhaustive for the current set of
+    records. The following template matches the first dc:language element, tokenizes
+    the value(s), and then does some comparisons vs the values in pLang.
+
+  -->
+  <xsl:template match="dc:language[1]">
+    <xsl:variable name="lang-tokens" select="tokenize(., ';')"/>
+    <xsl:for-each select="$lang-tokens">
+      <xsl:variable name="ltln" select="lower-case(normalize-space(.))"/>
+      <xsl:choose>
+        <xsl:when test="$ltln = $pLang/l">
+          <languageTerm type="code" authority="iso639-2b">
+            <xsl:value-of select="$pLang/l[. = $ltln]/@string"/>
+          </languageTerm>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:for-each>
+  </xsl:template>
+
+  <!-- ignore everything but the first dc:language element -->
+  <xsl:template match="dc:language[position() > 1]"/>
 
   <!-- identifier(s) -->
   <!-- identifier - location processing -->
