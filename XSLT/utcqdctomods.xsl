@@ -8,7 +8,8 @@
                 xmlns:dc="http://purl.org/dc/elements/1.1/"
                 xmlns:oai="http://www.openarchives.org/OAI/2.0/"
                 xmlns="http://www.loc.gov/mods/v3"
-                exclude-result-prefixes="#all"
+                xpath-default-namespace="http://worldcat.org/xmlschema/qdc-1.0/"
+                exclude-result-prefixes="xs xsi oai oai_qdc dcterms dc"
                 version="2.0">
 
   <!-- output settings -->
@@ -51,6 +52,13 @@
 
   <!-- match oai_qdc:qualifieddc -->
   <xsl:template match="oai_qdc:qualifieddc">
+    <!-- document-level variables -->
+    <xsl:variable name="vAC"
+                  select="if ((dcterms:license and dc:rights) or (dcterms:license and not(dc:rights)))
+                          then (dcterms:license)
+                          else if (not(dcterms:license) and dc:rights)
+                            then (dc:rights)
+                            else ()"/>
     <!-- match the document root and return a MODS record -->
     <mods xmlns="http://www.loc.gov/mods/v3" version="3.5"
           xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -72,7 +80,7 @@
         <xsl:apply-templates select="dc:publisher"/>
       </originInfo>
       <!-- accessCondition -->
-      <xsl:call-template name="build-accessCondition"/>
+      <accessCondition type="use and reproduction" xlink:href="{$vAC}"/>
       <!-- location: physicalLocation and URLs -->
       <location>
         <xsl:apply-templates select="dc:identifier[starts-with(., 'http://')]"/>
@@ -147,22 +155,11 @@
     <publisher><xsl:apply-templates/></publisher>
   </xsl:template>
 
-  <!-- build accessCondition -->
-  <xsl:template name="build-accessCondition">
-    <xsl:variable name="vAcc"
-                  select="if (/oai_qdc:qualifieddc/dc:rights and /oai_qdc:qualifieddc/dcterms:license)
-                          then (/oai_qdc:qualifieddc/dcterms:license)
-                          else if (/oai_qdc:qualifieddc/dc:rights and not(/oai_qdc:qualifieddc/dcterms:license))
-                            then (/oai_qdc:qualifieddc/dc:rights)
-                            else (/oai_qdc:qualifieddc/dcterms:license)"/>
-    <accessCondition type="use and reproduction" xlink:href="{$vAcc}"/>
-  </xsl:template>
-
   <!-- identifier(s) -->
   <!-- identifier - location processing -->
   <xsl:template match="dc:identifier[starts-with(., 'http://')]">
     <xsl:variable name="identifier-preview-url" select="replace(., 'value', 'value')"/>
-    <url usage="primary" access="object in context"><apply-templates/></url>
+    <url usage="primary" access="object in context"><xsl:apply-templates/></url>
     <url access="preview"><xsl:value-of select="$identifier-preview-url"/></url>
   </xsl:template>
 
