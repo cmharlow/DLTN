@@ -85,10 +85,14 @@
       <location>
         <xsl:apply-templates select="dc:identifier[starts-with(., 'http://')]"/>
       </location>
+      <!-- type(s) that start with a capital letter -->
+      <xsl:apply-templates select="dc:type[matches(., '^[A-Z]')]"/>
       <!-- physicalDescription -->
       <physicalDescription>
         <!-- formats -->
         <xsl:apply-templates select="dc:format"/>
+        <!-- type(s) that start with a lower-case letter -->
+        <xsl:apply-templates select="dc:type[matches(., '^[a-z]')]"/>
       </physicalDescription>
     </mods>
   </xsl:template>
@@ -157,6 +161,7 @@
 
   <!-- identifier(s) -->
   <!-- identifier - location processing -->
+  <!-- @TODO update identifier-preview-url variable -->
   <xsl:template match="dc:identifier[starts-with(., 'http://')]">
     <xsl:variable name="identifier-preview-url" select="replace(., 'value', 'value')"/>
     <url usage="primary" access="object in context"><xsl:apply-templates/></url>
@@ -167,6 +172,21 @@
     <identifier type="local"><xsl:apply-templates/></identifier>
   </xsl:template>
 
+  <!-- type(s) starting with capital letters -->
+  <xsl:template match="dc:type[matches(., '^[A-Z]')]">
+    <xsl:variable name="type-tokens" select="tokenize(., ';')"/>
+    <xsl:for-each select="$type-tokens">
+      <typeOfResource><xsl:value-of select="normalize-space(.)"/></typeOfResource>
+    </xsl:for-each>
+  </xsl:template>
+
+  <!-- type(s) starting with lower-case letters -->
+  <xsl:template match="dc:type[matches(., '^[a-z]')]">
+    <xsl:variable name="lc-type-tokens" select="tokenize(., ';')"/>
+    <xsl:for-each select="$lc-type-tokens">
+      <form><xsl:value-of select="$lc-type-tokens"/></form>
+    </xsl:for-each>
+  </xsl:template>
   <!-- format(s) -->
   <!--
     For formats that contain something that resembles an xs:time, serialize
