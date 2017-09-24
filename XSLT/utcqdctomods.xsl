@@ -87,6 +87,13 @@
       </location>
       <!-- type(s) that start with a capital letter -->
       <xsl:apply-templates select="dc:type[matches(., '^[A-Z]')]"/>
+      <!-- relatedItem[@type='host'] -->
+      <relatedItem type="host">
+        <!-- dc:source -->
+        <titleInfo>
+          <xsl:apply-templates select="dc:source"/>
+        </titleInfo>
+      </relatedItem>
       <!-- physicalDescription -->
       <physicalDescription>
         <!-- formats -->
@@ -180,6 +187,12 @@
       <form><xsl:value-of select="$lc-type-tokens"/></form>
     </xsl:for-each>
   </xsl:template>
+
+  <!-- source -->
+  <xsl:template match="dc:source">
+    <title><xsl:apply-templates/></title>
+  </xsl:template>
+
   <!-- format(s) -->
   <!--
     For formats that contain something that resembles an xs:time, serialize
