@@ -110,21 +110,14 @@
   </xsl:template>
 
   <!-- subject(s) -->
-  <!-- for subjects with a trailing ';' -->
-  <xsl:template match="dc:subject[ends-with(., ';')]">
+  <!-- for subjects, whether they contains a ';' or not -->
+  <xsl:template match="dc:subject[contains(., ';')] | dc:subject[not(contains(., ';'))]">
     <xsl:variable name="subj-tokens" select="tokenize(., ';')"/>
     <xsl:for-each select="$subj-tokens">
       <subject>
         <topic><xsl:value-of select="normalize-space(.)"/></topic>
       </subject>
     </xsl:for-each>
-  </xsl:template>
-
-  <!-- for subjects that do *not* end with a trailing ';' -->
-  <xsl:template match="dc:subject[not(ends-with(., ';'))]">
-    <subject>
-      <topic><xsl:apply-templates/></topic>
-    </subject>
   </xsl:template>
 
   <!-- language(s) -->
