@@ -118,7 +118,7 @@
 
   <!-- subject(s) -->
   <!-- for subjects, whether they contains a ';' or not -->
-  <xsl:template match="dc:subject[contains(., ';')] | dc:subject[not(contains(., ';'))]">
+  <xsl:template match="dc:subject">
     <xsl:variable name="subj-tokens" select="tokenize(., ';')"/>
     <xsl:for-each select="$subj-tokens">
       <subject>
