@@ -70,6 +70,8 @@
       <xsl:apply-templates select="dc:description"/>
       <!-- creator(s) -->
       <xsl:apply-templates select="dc:creator"/>
+      <!-- rightsHolder(s) -->
+      <xsl:apply-templates select="dcterms:rightsHolder"/>
       <!-- subject(s) -->
       <xsl:apply-templates select="dc:subject"/>
       <xsl:apply-templates select="dcterms:spatial"/>
@@ -139,6 +141,17 @@
         </role>
       </name>
     </xsl:for-each>
+  </xsl:template>
+
+  <!-- rightsHolder(s) -->
+  <xsl:template match="dcterms:rightsHolder">
+    <xsl:variable name="rh-tokens" select="tokenize(., ';')"/>
+    <name>
+      <namePart><xsl:value-of select="$rh-tokens"/></namePart>
+      <role>
+        <roleTerm authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/cph">Copyright holder</roleTerm>
+      </role>
+    </name>
   </xsl:template>
 
   <!-- subject(s) -->
