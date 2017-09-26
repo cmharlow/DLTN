@@ -68,6 +68,8 @@
       <xsl:apply-templates select="dc:title"/>
       <!-- description -->
       <xsl:apply-templates select="dc:description"/>
+      <!-- creator(s) -->
+      <xsl:apply-templates select="dc:creator"/>
       <!-- subject(s) -->
       <xsl:apply-templates select="dc:subject"/>
       <xsl:apply-templates select="dcterms:spatial"/>
@@ -124,6 +126,19 @@
   <!-- description -->
   <xsl:template match="dc:description">
     <abstract><xsl:apply-templates/></abstract>
+  </xsl:template>
+
+  <!-- creator(s) -->
+  <xsl:template match="dc:creator">
+    <xsl:variable name="creator-tokens" select="tokenize(., ';')"/>
+    <xsl:for-each select="$creator-tokens">
+      <name>
+        <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
+        <role>
+          <roleTerm authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+        </role>
+      </name>
+    </xsl:for-each>
   </xsl:template>
 
   <!-- subject(s) -->
