@@ -70,6 +70,7 @@
       <xsl:apply-templates select="dc:description"/>
       <!-- subject(s) -->
       <xsl:apply-templates select="dc:subject"/>
+      <xsl:apply-templates select="dcterms:spatial"/>
       <!-- language(s) -->
       <xsl:apply-templates select="dc:language"/>
       <!-- identifier(s) that are not URLs -->
@@ -78,6 +79,8 @@
       <originInfo>
         <!-- publisher -->
         <xsl:apply-templates select="dc:publisher"/>
+        <!-- dcterms:created -->
+        <xsl:apply-templates select="dcterms:created"/>
       </originInfo>
       <!-- accessCondition -->
       <accessCondition type="use and reproduction" xlink:href="{$vAC}"/>
@@ -92,6 +95,13 @@
         <!-- dc:source -->
         <titleInfo>
           <xsl:apply-templates select="dc:source"/>
+        </titleInfo>
+      </relatedItem>
+      <!-- relatedItem[@displayLabel='Collection'] -->
+      <relatedItem displayLabel="Collection">
+        <!-- dcterms:isPartOf -->
+        <titleInfo>
+          <xsl:apply-templates select="dcterms:isPartOf"/>
         </titleInfo>
       </relatedItem>
       <!-- physicalDescription -->
@@ -123,6 +133,16 @@
     <xsl:for-each select="$subj-tokens">
       <subject>
         <topic><xsl:value-of select="normalize-space(.)"/></topic>
+      </subject>
+    </xsl:for-each>
+  </xsl:template>
+
+  <!-- spatial to subject/geographic -->
+  <xsl:template match="dcterms:spatial">
+    <xsl:variable name="spatial-tokens" select="tokenize(., ';')"/>
+    <xsl:for-each select="$spatial-tokens">
+      <subject>
+        <geographic><xsl:value-of select="normalize-space(.)"/></geographic>
       </subject>
     </xsl:for-each>
   </xsl:template>
@@ -159,6 +179,21 @@
     <publisher><xsl:apply-templates/></publisher>
   </xsl:template>
 
+  <!-- dcterms:created -->
+  <xsl:template match="dcterms:created">
+    <xsl:variable name="date-tokens"
+                  select="if (contains(., ','))
+                          then (tokenize(., ','))
+                          else if (contains(., ';'))
+                            then (tokenize(., ';'))
+                            else (.)"/>
+    <xsl:variable name="dates"
+                  select="if (count($date-tokens) > 1)
+                          then (concat(normalize-space($date-tokens[1]), '/', normalize-space($date-tokens[position() = last()])))
+                          else ($date-tokens)"/>
+    <dateCreated encoding="edtf"><xsl:value-of select="$dates"/></dateCreated>
+  </xsl:template>
+
   <!-- identifier(s) -->
   <!-- identifier - location processing -->
   <!-- @TODO update identifier-preview-url variable -->
@@ -193,6 +228,11 @@
     <title><xsl:apply-templates/></title>
   </xsl:template>
 
+  <!-- dcterms:isPartOf -->
+  <xsl:template match="dcterms:isPartOf">
+    <title><xsl:apply-templates/></title>
+  </xsl:template>
+  
   <!-- format(s) -->
   <!--
     For formats that contain something that resembles an xs:time, serialize
