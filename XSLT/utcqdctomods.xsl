@@ -240,11 +240,12 @@
                           else if (contains(., ';'))
                             then (tokenize(., ';'))
                             else (.)"/>
-    <xsl:variable name="dates"
-                  select="if (count($date-tokens) > 1)
-                          then (concat(normalize-space($date-tokens[1]), '/', normalize-space($date-tokens[position() = last()])))
-                          else ($date-tokens)"/>
-    <dateCreated encoding="edtf"><xsl:value-of select="$dates"/></dateCreated>
+    <dateCreated encoding="edtf" point="start"><xsl:value-of select="$date-tokens[1]"/></dateCreated>
+    <xsl:if test="count($date-tokens) > 1">
+      <dateCreated encoding="edtf" point="end">
+        <xsl:value-of select="normalize-space($date-tokens[position() = last()])"/>
+      </dateCreated>
+    </xsl:if>
   </xsl:template>
   
   <!-- dcterms:modified -->
