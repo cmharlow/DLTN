@@ -153,7 +153,7 @@
       </role>
     </name>
   </xsl:template>
-
+  
   <!-- subject(s) -->
   <!-- for subjects, whether they contains a ';' or not -->
   <xsl:template match="dc:subject">
