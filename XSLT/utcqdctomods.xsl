@@ -73,6 +73,8 @@
       <xsl:apply-templates select="dc:description"/>
       <!-- creator(s) -->
       <xsl:apply-templates select="dc:creator"/>
+      <!-- contributor(s) -->
+      <xsl:apply-templates select="dc:contributor"/>
       <!-- rightsHolder(s) -->
       <xsl:apply-templates select="dcterms:rightsHolder"/>
       <!-- subject(s) -->
@@ -144,6 +146,19 @@
         <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
         <role>
           <roleTerm authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+        </role>
+      </name>
+    </xsl:for-each>
+  </xsl:template>
+
+  <!-- contributor(s) -->
+  <xsl:template match="dc:contributor">
+    <xsl:variable name="contributor-tokens" select="tokenize(., ';')"/>
+    <xsl:for-each select="$contributor-tokens">
+      <name>
+        <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
+        <role>
+          <roleTerm authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/ctb">Contributor</roleTerm>
         </role>
       </name>
     </xsl:for-each>
