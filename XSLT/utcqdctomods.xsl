@@ -90,6 +90,8 @@
         <xsl:apply-templates select="dc:publisher"/>
         <!-- dcterms:created -->
         <xsl:apply-templates select="dcterms:created"/>
+        <!-- dcterms:modified -->
+        <xsl:apply-templates select="dcterms:modified"/>
       </originInfo>
       <!-- accessCondition -->
       <accessCondition type="use and reproduction" xlink:href="{$vAC}"/>
@@ -241,6 +243,11 @@
                           then (concat(normalize-space($date-tokens[1]), '/', normalize-space($date-tokens[position() = last()])))
                           else ($date-tokens)"/>
     <dateCreated encoding="edtf"><xsl:value-of select="$dates"/></dateCreated>
+  </xsl:template>
+  
+  <!-- dcterms:modified -->
+  <xsl:template match="dcterms:modified">
+    <dateModified><xsl:apply-templates/></dateModified>
   </xsl:template>
 
   <!-- identifier(s) -->
