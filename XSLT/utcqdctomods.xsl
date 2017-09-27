@@ -119,6 +119,8 @@
       <physicalDescription>
         <!-- formats -->
         <xsl:apply-templates select="dc:format"/>
+        <!-- dcterms:extent -->
+        <xsl:apply-templates select="dcterms:extent"/>
         <!-- type(s) that start with a lower-case letter -->
         <xsl:apply-templates select="dc:type[matches(., '^[a-z]')]"/>
       </physicalDescription>
@@ -289,13 +291,27 @@
     <title><xsl:apply-templates/></title>
   </xsl:template>
   
-  <!-- format(s) -->
+  <!-- format(s) and dcterms:extent(s) -->
   <!--
     For formats that contain something that resembles an xs:time, serialize
     an <extent>.
   -->
   <xsl:template match="dc:format[matches(., '\d{2}:\d{2}:\d{2}')]">
     <extent><xsl:value-of select="."/></extent>
+  </xsl:template>
+
+  <!--
+    For dcterms:extents that contains something that resembles the following:
+    * an xs:time
+    * a count of leaves
+    * a measurement of dimensions or length
+    This is union of elements that don't start with things that look like an internetMediaType.
+  -->
+  <xsl:template match="dcterms:extent[not(starts-with(., 'image'))] | dcterms:extent[not(starts-with(., 'video'))]">
+    <xsl:variable name="extent-tokens" select="tokenize(., ';')"/>
+    <xsl:for-each select="$extent-tokens">
+      <extent><xsl:value-of select="normalize-space(.)"/></extent>
+    </xsl:for-each>
   </xsl:template>
 
   <!-- for formats that may contain multiple values separated by ';' -->
@@ -306,6 +322,13 @@
     </xsl:for-each>
   </xsl:template>
 
+  <!-- for dcterms:extents that start with something resembling an internetMediaType -->
+  <xsl:template match="dcterms:extent[starts-with(., 'image')] | dcterms:extent[starts-with(., 'video')]">
+    <xsl:variable name="format-tokens" select="tokenize(., ';')"/>
+    <xsl:for-each select="$format-tokens">
+      <internetMediaType><xsl:value-of select="normalize-space(.)"/></internetMediaType>
+    </xsl:for-each>
+  </xsl:template>
   <!-- ignored elements -->
   <xsl:template match="dc:rights | dcterms:license"/>
   <xsl:template match="dc:language[position() > 1]"/>
