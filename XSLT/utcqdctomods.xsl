@@ -329,6 +329,7 @@
       <internetMediaType><xsl:value-of select="normalize-space(.)"/></internetMediaType>
     </xsl:for-each>
   </xsl:template>
+
   <!-- ignored elements -->
   <xsl:template match="dc:rights | dcterms:license"/>
   <xsl:template match="dc:language[position() > 1]"/>
