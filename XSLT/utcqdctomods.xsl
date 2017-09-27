@@ -65,7 +65,10 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
       <!-- title -->
-      <xsl:apply-templates select="dc:title"/>
+      <titleInfo>
+        <xsl:apply-templates select="dc:title"/>
+        <xsl:apply-templates select="dcterms:alternative"/>
+      </titleInfo>
       <!-- description -->
       <xsl:apply-templates select="dc:description"/>
       <!-- creator(s) -->
@@ -120,9 +123,12 @@
 
   <!-- title -->
   <xsl:template match="dc:title">
-    <titleInfo>
-      <title><xsl:apply-templates/></title>
-    </titleInfo>
+    <title><xsl:apply-templates/></title>
+  </xsl:template>
+
+  <!-- alternative title(s) -->
+  <xsl:template match="dcterms:alternative">
+    <title type="alternative"><xsl:apply-templates/></title>
   </xsl:template>
 
   <!-- description -->
