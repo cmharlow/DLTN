@@ -269,7 +269,7 @@
   <xsl:template match="dc:type[matches(., '^[A-Z]')]">
     <xsl:variable name="type-tokens" select="tokenize(., ';')"/>
     <xsl:for-each select="$type-tokens">
-      <typeOfResource><xsl:value-of select="normalize-space(.)"/></typeOfResource>
+      <typeOfResource><xsl:value-of select="lower-case(normalize-space(.))"/></typeOfResource>
     </xsl:for-each>
   </xsl:template>
 
