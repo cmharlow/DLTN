@@ -124,6 +124,14 @@
         <!-- type(s) that start with a lower-case letter -->
         <xsl:apply-templates select="dc:type[matches(., '^[a-z]')]"/>
       </physicalDescription>
+      <recordInfo>
+        <recordContentSource>University of Tennessee at Chattanooga</recordContentSource>
+        <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
+        <languageOfCataloging>
+          <languageTerm term="code" authority="iso639-2b">eng</languageTerm>
+        </languageOfCataloging>
+        <recordOrigin>Record has been transformed into MODS 3.5 from a Qualified Dublin Core record by the Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a stylesheet available at https://github.com/digitallibraryoftennessee/DLTN_XSLT. Metadata originally created in a locally modified version of Qualified Dublin Core using ContentDM (data dictionary available: https://wiki.lib.utk.edu/display/DPLA).</recordOrigin>
+      </recordInfo>
     </mods>
   </xsl:template>
 
