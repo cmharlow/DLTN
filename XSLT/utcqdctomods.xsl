@@ -4,7 +4,7 @@
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:oai_qdc="http://worldcat.org/xmlschemas/qdc-1.0/"
-                xmlns:dcterms="http://purl.org/dc/terms"
+                xmlns:dcterms="http://purl.org/dc/terms/"
                 xmlns:dc="http://purl.org/dc/elements/1.1/"
                 xmlns:oai="http://www.openarchives.org/OAI/2.0/"
                 xmlns="http://www.loc.gov/mods/v3"
