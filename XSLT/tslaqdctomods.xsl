@@ -58,14 +58,26 @@
                     <xsl:apply-templates select="dc:title/text()"/>
                 </title>
             </titleInfo>
-            <recordInfo>
-              <recordContentSource>Tennessee State Library &amp; Archives</recordContentSource></recordInfo>
             <accessCondition type="local rights statement">
               <xsl:apply-templates select="dc:rights"/>
             </accessCondition>
           <location>
             <xsl:apply-templates select="dc:identifier[starts-with(., 'http://')]"/>
           </location>
+          <!-- creator(s) -->
+          <xsl:apply-templates select="dc:creator"/>
+          <!-- description -->
+          <xsl:apply-templates select="dc:description"/>
+          <!-- date -->
+          <xsl:apply-templates select="dc:date"/>
+          <!-- spatial -->
+          <xsl:apply-templates select="dcterms:spatial"/>
+          <recordInfo>
+              <recordContentSource>Tennessee State Library &amp; Archives</recordContentSource>
+              <languageOfCataloging>
+                  <languageTerm term="code" authority="iso639-2b">eng</languageTerm>
+              </languageOfCataloging>
+          </recordInfo>
         </mods>
     </xsl:template>
     
@@ -80,5 +92,33 @@
       <url usage="primary" access="object in context"><xsl:apply-templates/></url>
       <url access="preview"><xsl:value-of select="$identifier-preview-url"/></url>
     </xsl:template>
-  
+    
+    <!-- creator(s) -->
+    <xsl:template match="dc:creator">
+        <xsl:variable name="creator-tokens" select="tokenize(., ';')"/>
+        <xsl:for-each select="$creator-tokens">
+            <name>
+                <namePart><xsl:value-of select="normalize-space(.)"/></namePart>
+                <role>
+                    <roleTerm authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators/cre">Creator</roleTerm>
+                </role>
+            </name>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!-- description -->
+    <xsl:template match="dc:description">
+        <abstract><xsl:apply-templates/></abstract>
+    </xsl:template>
+    
+    <!-- date -->
+    <xsl:template match="dc:date">
+        <originInfo><dateCreated><xsl:apply-templates/></dateCreated></originInfo>
+    </xsl:template>
+    
+    <!-- spatial -->
+    <xsl:template match="dcterms:spatial[not('Unknown' or 'Other')]">
+        <subject><geographic><xsl:apply-templates/></geographic></subject>
+    </xsl:template>
+    
 </xsl:stylesheet>
