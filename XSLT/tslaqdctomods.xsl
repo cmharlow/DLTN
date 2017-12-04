@@ -75,7 +75,7 @@
           <recordInfo>
               <recordContentSource>Tennessee State Library &amp; Archives</recordContentSource>
               <languageOfCataloging>
-                  <languageTerm term="code" authority="iso639-2b">eng</languageTerm>
+                  <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
               </languageOfCataloging>
           </recordInfo>
         </mods>
