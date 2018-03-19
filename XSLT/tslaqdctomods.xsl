@@ -83,14 +83,19 @@
     <!--rights-->
     <xsl:template match="dc:rights">
       <xsl:variable name="vRights" select="normalize-space(.)"/>
-        <xsl:if test="$vRights='Copyright not evaluated: http://rightsstatements.org/vocab/CNE/1.0/'">
+        <xsl:choose>
+        <xsl:when test="$vRights='Copyright not evaluated: http://rightsstatements.org/vocab/CNE/1.0/'">
             <accessCondition type="use and reproduction" xlink:href="http://rightsstatements.org/vocab/CNE/1.0/">Copyright Not Evaluated</accessCondition>
-        </xsl:if>
+        </xsl:when>
+            <xsl:when test="$vRights='No copyright - United States: http://rightsstatements.org/vocab/NoC-US/1.0/'">
+                <accessCondition type="use and reproduction" xlink:href="http://rightsstatements.org/vocab/NoC-US/1.0/">No Copyright - United States</accessCondition>
+        </xsl:when>
         <xsl:otherwise>
             <accessCondition type="local rights statement">
                 <xsl:apply-templates/>
             </accessCondition>
         </xsl:otherwise>
+        </xsl:choose>
       <xsl:apply-templates/>
     </xsl:template>
   
