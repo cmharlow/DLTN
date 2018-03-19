@@ -96,7 +96,6 @@
             </accessCondition>
         </xsl:otherwise>
         </xsl:choose>
-      <xsl:apply-templates/>
     </xsl:template>
   
     <!--identifier-->
