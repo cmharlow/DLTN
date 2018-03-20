@@ -107,7 +107,7 @@
     </xsl:param>
 
     <!-- Drop Unknown Names -->
-    <xsl:template match="name[namePart[matches(text(), lower-case('unknown'))]]"/>
+    <xsl:template match="name[namePart[matches(lower-case(text()), 'unknown')]]"/>
 
     <!-- Apply Creators and Contributors -->
     <xsl:template match="name[namePart[not(matches(text(), lower-case('unknown')))]]">
