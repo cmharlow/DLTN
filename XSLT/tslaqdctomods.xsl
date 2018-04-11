@@ -58,9 +58,8 @@
                     <xsl:apply-templates select="dc:title/text()"/>
                 </title>
             </titleInfo>
-            <accessCondition type="local rights statement">
-              <xsl:apply-templates select="dc:rights"/>
-            </accessCondition>
+          <!-- rights -->
+          <xsl:apply-templates select="dc:rights"/>
           <location>
             <xsl:apply-templates select="dc:identifier[starts-with(., 'http://')]"/>
           </location>
@@ -83,7 +82,20 @@
     
     <!--rights-->
     <xsl:template match="dc:rights">
-      <xsl:apply-templates/>
+      <xsl:variable name="vRights" select="normalize-space(.)"/>
+        <xsl:choose>
+        <xsl:when test="$vRights='Copyright not evaluated: http://rightsstatements.org/vocab/CNE/1.0/'">
+            <accessCondition type="use and reproduction" xlink:href="http://rightsstatements.org/vocab/CNE/1.0/">Copyright Not Evaluated</accessCondition>
+        </xsl:when>
+            <xsl:when test="$vRights='No copyright - United States: http://rightsstatements.org/vocab/NoC-US/1.0/'">
+                <accessCondition type="use and reproduction" xlink:href="http://rightsstatements.org/vocab/NoC-US/1.0/">No Copyright - United States</accessCondition>
+        </xsl:when>
+        <xsl:otherwise>
+            <accessCondition type="local rights statement">
+                <xsl:apply-templates/>
+            </accessCondition>
+        </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
   
     <!--identifier-->
