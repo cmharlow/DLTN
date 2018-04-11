@@ -1,6 +1,5 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.og/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:oai="http://www.openarchives.org/OAI/2.0/"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3"
     xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"
     exclude-result-prefixes="xs" xpath-default-namespace="http://www.loc.gov/mods/v3" version="2.0">
@@ -110,7 +109,7 @@
     <xsl:template match="name[namePart[matches(lower-case(text()), 'unknown')]]"/>
 
     <!-- Apply Creators and Contributors -->
-    <xsl:template match="name[namePart[not(matches(lower-case(text(), 'unknown'))]]">
+    <xsl:template match="name[namePart[not(matches(lower-case(text()), 'unknown'))]]">
         <xsl:variable name="vRole" select="normalize-space(role/roleTerm)"/>
         <xsl:if test="$vRole=$pRole/l">
             <name>
@@ -131,12 +130,12 @@
     <xsl:template match="physicalDescription">
         <xsl:variable name="vForm" select="form"/>
         <xsl:if test="$vForm=$pForm/f">
-            <genre authority="$pForm/[@authority]" valueURI="$pForm/[@valueURI">
-                <xsl:value-of select="$pForm/f"/>
+            <genre authority="{$pForm/f[matches(text(), $vForm)]/@authority}" valueURI="{$pForm/f[matches(text(), $vForm)]/@uri}">
+                <xsl:value-of select="$pForm/f[matches(text(), $vForm)]/text()"/>
             </genre>
             <physicalDesciption>
                 <form>
-                    <xsl:value-of select="$pForm/f"/>
+                    <xsl:value-of select="$pForm/f[matches(text(), $vForm)]/text()"/>
                 </form>
             </physicalDesciption>
         </xsl:if>
