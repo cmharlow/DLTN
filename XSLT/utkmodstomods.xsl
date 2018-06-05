@@ -141,13 +141,15 @@
         </xsl:if>
     </xsl:template>
 
-    <xsl:template match="originInfo">
+    <xsl:template match="originInfo[dateCreated[@encoding = 'edtf']]">
         <xsl:copy>
-            <xsl:apply-templates select="dateCreated[@encoding='edtf']"/>
+            <xsl:apply-templates select="dateCreated[@encoding = 'edtf']"/>
         </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="dateCreated[@encoding='edtf']">
+    <xsl:template match="originInfo[not(dateCreated[@encoding = 'edtf'])]"/>
+
+    <xsl:template match="dateCreated[@encoding = 'edtf']">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
