@@ -110,7 +110,7 @@
 
     <!-- Apply Creators and Contributors -->
     <xsl:template match="name[namePart[not(matches(lower-case(text()), 'unknown'))]]">
-        <xsl:variable name="vRole" select="normalize-space(role/roleTerm)"/>
+        <xsl:variable name="vRole" select="normalize-space(role[1]/roleTerm)"/>
         <xsl:if test="$vRole=$pRole/l">
             <name>
                 <namePart>
@@ -128,7 +128,7 @@
 
     <!-- Convert form to genre if AAT -->
     <xsl:template match="physicalDescription">
-        <xsl:variable name="vForm" select="form"/>
+        <xsl:variable name="vForm" select="form[1]"/>
         <xsl:if test="$vForm=$pForm/f">
             <genre authority="{$pForm/f[matches(text(), $vForm)]/@authority}" valueURI="{$pForm/f[matches(text(), $vForm)]/@uri}">
                 <xsl:value-of select="$pForm/f[matches(text(), $vForm)]/text()"/>
@@ -141,13 +141,15 @@
         </xsl:if>
     </xsl:template>
 
-    <xsl:template match="originInfo">
+    <xsl:template match="originInfo[dateCreated[@encoding = 'edtf']]">
         <xsl:copy>
-            <xsl:apply-templates select="dateCreated[@encoding='edtf']"/>
+            <xsl:apply-templates select="dateCreated[@encoding = 'edtf']"/>
         </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="dateCreated[@encoding='edtf']">
+    <xsl:template match="originInfo[not(dateCreated[@encoding = 'edtf'])]"/>
+
+    <xsl:template match="dateCreated[@encoding = 'edtf']">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
