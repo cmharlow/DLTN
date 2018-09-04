@@ -163,4 +163,10 @@
             Permission granted for reproduction for use in research and teaching, provided proper attribution of source. Credit line should read: [description of item, including photographic number], 'Courtesy of McClung Museum of Natural History and Culture, The University of Tennessee.' For all other uses consult https://mcclungmuseum.utk.edu/research/image-services/rights-reproductions/ or call 865-974-2144.
         </abstract>
     </xsl:template>
+    
+    <xsl:template match="note[@displayLabel='instrumentation']">
+        <abstract>
+                <xsl:value-of select="normalize-space(.)"/>
+        </abstract>
+    </xsl:template>
 </xsl:stylesheet>
