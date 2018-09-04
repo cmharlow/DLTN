@@ -154,6 +154,8 @@
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
+    
+    <xsl:template match="titleInfo[preceding-sibling::titleInfo[@supplied] or following-sibling::titleInfo[@supplied]]"/>
 
     <!-- This is a temporary rule to move local accessConditions to abstract and replace all text since it currently has non-UTF8 characters -->
     <xsl:template match="accessCondition[@type='local']">
