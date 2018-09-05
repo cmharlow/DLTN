@@ -170,4 +170,94 @@
                 <xsl:value-of select="normalize-space(.)"/>
         </abstract>
     </xsl:template>
+
+    <!-- 
+        keep the identifier(s), except for identifier w/
+        'http://', and add the url elements to the pre-existing
+        high level location (not the location under
+        relatedItem.
+    -->
+    <xsl:template match="location[not(parent::relatedItem)]">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+            <!--
+                constructing elements to avoid copied namespaces.
+                also, i'm a bit lazy.
+            -->
+            <xsl:element name="url">
+                <xsl:attribute name="access">
+                    <xsl:value-of select="'object in context'"/>
+                </xsl:attribute>
+                <xsl:attribute name="usage">
+                    <xsl:value-of select="'primary display'"/>
+                </xsl:attribute>
+                <xsl:value-of select="following::identifier[starts-with(.,'http://')]"/>
+            </xsl:element>
+            <xsl:element name="url">
+                <xsl:attribute name="access">
+                    <xsl:value-of select="'preview'"/>
+                </xsl:attribute>
+                <xsl:value-of select="concat(following::identifier[starts-with(.,'http://')],'/datastream/TN/view')"/>
+            </xsl:element>
+        </xsl:copy>
+    </xsl:template>
+
+    <!-- 
+        drop the identifier with the 'http://...'... or 
+        really, replace that unneeded identifier with a location
+        element that suits our purposes.
+        
+        there's a test to make sure that we don't add a second
+        location if there's already one.
+    -->
+    <xsl:template match="/mods/identifier[starts-with(.,'http://')]">
+        <xsl:choose>
+            <!-- do we already have a top-level location? -->
+            <xsl:when test="/mods/location"/>
+            <!-- if we don't, then this test runs -->
+            <xsl:when test="not(/mods/location)">
+                <xsl:element name="location">
+                    <xsl:element name="url">
+                        <xsl:attribute name="access">
+                            <xsl:value-of select="'object in context'"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="usage">
+                            <xsl:value-of select="'primary display'"/>
+                        </xsl:attribute>
+                        <xsl:value-of select="."/>
+                    </xsl:element>
+                    <xsl:element name="url">
+                        <xsl:attribute name="access">
+                            <xsl:value-of select="'preview'"/>
+                        </xsl:attribute>
+                        <xsl:value-of select="concat(.,'/datastream/TN/view')"/>
+                    </xsl:element>
+                </xsl:element>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+
+    <!-- 
+        this template corrects an apparent problem some of the MODS exports.
+        there is an identifier element in relatedItem - it shouldn't be there
+        and this template drops it from the identity transform.
+        
+        note: the problem element is 'identifer'. :)
+    -->
+    <xsl:template match="/mods/relatedItem/identifer[@type='uri']"/>
+
+    <!-- 
+        fixing recordContentSource for DPLA. 
+        
+        matches on recordContentSource, but only when there's a preceding relatedItem, with a @host and @Project, 
+        with a title descendent element containing Volunteer Voices. 
+        
+        this *can* be run against other MODS files without ill effects.
+    -->
+    <xsl:template match="/mods/recordInfo/recordContentSource[preceding::relatedItem[@type='host'][@displayLabel='Project']/titleInfo/title[contains(.,'Volunteer Voices')]]">
+        <xsl:copy>
+            <xsl:apply-templates select="/mods/location/physicalLocation/text()"/>
+        </xsl:copy>
+    </xsl:template>
+    
 </xsl:stylesheet>
