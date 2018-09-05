@@ -215,7 +215,7 @@
         there's a test to make sure that we don't add a second
         location if there's already one.
     -->
-    <xsl:template match="/mods/identifier[starts-with(.,'http://')]">
+    <xsl:template match="/mods/identifier[starts-with(.,'https://')]">
         <xsl:choose>
             <!-- do we already have a top-level location? -->
             <xsl:when test="/mods/location"/>
