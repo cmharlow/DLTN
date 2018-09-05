@@ -184,21 +184,26 @@
                 constructing elements to avoid copied namespaces.
                 also, i'm a bit lazy.
             -->
-            <xsl:element name="url">
-                <xsl:attribute name="access">
-                    <xsl:value-of select="'object in context'"/>
-                </xsl:attribute>
-                <xsl:attribute name="usage">
-                    <xsl:value-of select="'primary display'"/>
-                </xsl:attribute>
-                <xsl:value-of select="following::identifier[starts-with(.,'http://')]"/>
-            </xsl:element>
-            <xsl:element name="url">
-                <xsl:attribute name="access">
-                    <xsl:value-of select="'preview'"/>
-                </xsl:attribute>
-                <xsl:value-of select="concat(following::identifier[starts-with(.,'http://')],'/datastream/TN/view')"/>
-            </xsl:element>
+            <xsl:if test="not(url[@access='object in context'])">
+                <xsl:element name="url">
+                    <xsl:attribute name="access">
+                        <xsl:value-of select="'object in context'"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="usage">
+                        <xsl:value-of select="'primary display'"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="following::identifier[starts-with(.,'https://')]"/>
+                </xsl:element>
+            </xsl:if>
+            <xsl:if test="not(url[@access='preview'])">
+                <xsl:element name="url">
+                    <xsl:attribute name="access">
+                        <xsl:value-of select="'preview'"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="concat(following::identifier[starts-with(.,'https://')],'/datastream/TN/view')"/>
+                </xsl:element>
+            </xsl:if>
+
         </xsl:copy>
     </xsl:template>
 
