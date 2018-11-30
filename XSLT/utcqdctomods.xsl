@@ -84,7 +84,7 @@
       <!-- language(s) -->
       <xsl:apply-templates select="dc:language"/>
       <!-- identifier(s) that are not URLs -->
-      <xsl:apply-templates select="dc:identifier[not(starts-with(., 'http://'))]"/>
+      <xsl:apply-templates select="dc:identifier[not(starts-with(normalize-space(.), 'http://'))]"/>
       <!-- originInfo -->
       <originInfo>
         <!-- publisher -->
@@ -98,7 +98,7 @@
       <accessCondition type="use and reproduction" xlink:href="{$vAC}"/>
       <!-- location: physicalLocation and URLs -->
       <location>
-        <xsl:apply-templates select="dc:identifier[starts-with(., 'http://')]"/>
+        <xsl:apply-templates select="dc:identifier[starts-with(normalize-space(.), 'http://')]"/>
       </location>
       <!-- type(s) that start with a capital letter -->
       <xsl:apply-templates select="dc:type[matches(., '^[A-Z]')]"/>
@@ -264,17 +264,17 @@
 
   <!-- identifier(s) -->
   <!-- identifier - location processing -->
-  <xsl:template match="dc:identifier[starts-with(., 'http://')]">
+  <xsl:template match="dc:identifier[starts-with(normalize-space(.), 'http://')]">
     <xsl:variable name="identifier-preview-url" select="replace(., '/cdm/ref', '/utils/getthumbnail')"/>
     <xsl:variable name="iiif-manifest" select="concat(replace(replace(., 'cdm/ref/collection', 'digital/iiif'), '/id', ''), '/info.json')"/>
     <url usage="primary" access="object in context"><xsl:apply-templates/></url>
     <url access="preview"><xsl:value-of select="$identifier-preview-url"/></url>
-    <xsl:if test=". = $catalog//@id">
+    <xsl:if test="normalize-space(.) = $catalog//@id">
       <url note="iiif-manifest"><xsl:value-of select="$iiif-manifest"/></url>
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="dc:identifier[not(starts-with(., 'http://'))]">
+  <xsl:template match="dc:identifier[not(starts-with(normalize-space(.), 'http://'))]">
     <identifier type="local"><xsl:apply-templates/></identifier>
   </xsl:template>
 
