@@ -8,6 +8,8 @@
         dc:identifier mode="locationurl"
     -->
     
+    <xsl:variable name="catalog" select="document('catalogs/coredc_catalog.xml')"/>
+    
     <xsl:template match="dc:identifier" mode="locationurl">
         <xsl:variable name="idvalue" select="normalize-space(.)"/>
         <xsl:if test="starts-with($idvalue,'http')"> 
@@ -17,7 +19,12 @@
             <xsl:variable name="recordinfo" select="substring-after($idvalue,'/cdm/ref/collection/')"/>
             <xsl:variable name="alias" select="substring-before($recordinfo,'/id/')"/>
             <xsl:variable name="pointer" select="substring-after($recordinfo,'/id/')"/>
-            <url access="preview"><xsl:value-of select="concat($contentdmroot,'/utils/getthumbnail/collection/',$alias,'/id/',$pointer)"/></url> <!--CONTENTdm thumbnail url-->        
+            <url access="preview"><xsl:value-of select="concat($contentdmroot,'/utils/getthumbnail/collection/',$alias,'/id/',$pointer)"/></url> 
+            <!--CONTENTdm thumbnail url-->
+            <xsl:variable name="iiif-manifest" select="concat(replace(replace(., 'cdm/ref/collection', 'digital/iiif'), '/id', ''), '/info.json')"/>
+            <xsl:if test="normalize-space(.) = $catalog//@id">
+                <url note="iiif-manifest"><xsl:value-of select="$iiif-manifest"/></url>
+            </xsl:if>
         </xsl:if>
     </xsl:template>
     
