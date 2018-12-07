@@ -10,6 +10,8 @@
     <xsl:include href="remediationspatial.xsl"/>
     <xsl:include href="coredctomods.xsl"/>
     <xsl:include href="thumbnailscontentdmdctomods.xsl"/>
+    
+    <xsl:variable name="catalog" select="document('catalogs/tsla_catalog.xml')"/>
         
     <xsl:template match="dc:contributor">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">

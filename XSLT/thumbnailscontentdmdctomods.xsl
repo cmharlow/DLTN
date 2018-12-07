@@ -8,8 +8,6 @@
         dc:identifier mode="locationurl"
     -->
     
-    <xsl:variable name="catalog" select="document('catalogs/coredc_catalog.xml')"/>
-    
     <xsl:template match="dc:identifier" mode="locationurl">
         <xsl:variable name="idvalue" select="normalize-space(.)"/>
         <xsl:if test="starts-with($idvalue,'http')"> 
