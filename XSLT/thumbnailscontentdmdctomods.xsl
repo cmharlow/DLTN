@@ -7,6 +7,7 @@
     <!-- OAI-DC to MODS ContentDM Transformations for Thumbnail URL additions. Includes only the following template:
         dc:identifier mode="locationurl"
     -->
+    <xsl:variable name="catalogs" select="collection('catalogs/')"/>
     
     <xsl:template match="dc:identifier" mode="locationurl">
         <xsl:variable name="idvalue" select="normalize-space(.)"/>
@@ -20,7 +21,7 @@
             <url access="preview"><xsl:value-of select="concat($contentdmroot,'/utils/getthumbnail/collection/',$alias,'/id/',$pointer)"/></url> 
             <!--CONTENTdm thumbnail url-->
             <xsl:variable name="iiif-manifest" select="concat(replace(replace(., 'cdm/ref/collection', 'digital/iiif'), '/id', ''), '/info.json')"/>
-            <xsl:if test="normalize-space(.) = $catalog//@id">
+            <xsl:if test="normalize-space(.) = $catalogs//@id">
                 <url note="iiif-manifest"><xsl:value-of select="$iiif-manifest"/></url>
             </xsl:if>
         </xsl:if>
