@@ -81,6 +81,7 @@
           </recordInfo>
           <xsl:apply-templates select="dc:subject"/>
           <xsl:apply-templates select="dc:coverage"/>
+          <xsl:apply-templates select="dc:source"/>
         </mods>
     </xsl:template>
     
@@ -154,6 +155,21 @@
     
     <!-- coverage -->
     <xsl:template match="dc:coverage[not(starts-with(., 'Tape'))]">
-        <subject><geographic><xsl:apply-templates/></geographic></subject>
+        <subject>
+            <geographic>
+                <xsl:apply-templates/>
+            </geographic>
+        </subject>
+    </xsl:template>
+    
+    <!-- source -->
+    <xsl:template match="dc:source[not(starts-with(., 'Box') or starts-with(., 'Folder') or starts-with(., 'Drawer') or starts-with(., 'THS I') or starts-with(., 'XL') or starts-with(., 'VI') or starts-with(., 'RG') or starts-with(., 'IX-A'))]">
+        <relatedItem type="host">
+            <titleInfo>
+                <title>
+                    <xsl:apply-templates/>
+                </title>
+            </titleInfo>
+        </relatedItem>
     </xsl:template>
 </xsl:stylesheet>
