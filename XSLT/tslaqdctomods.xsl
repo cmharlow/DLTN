@@ -82,6 +82,7 @@
           <xsl:apply-templates select="dc:subject"/>
             <xsl:apply-templates select="dc:coverage[not(starts-with(., 'Tape'))]"/>
           <xsl:apply-templates select="dc:source"/>
+            <xsl:apply-templates select="dcterms:medium"/>
         </mods>
     </xsl:template>
     
@@ -171,5 +172,14 @@
                 </title>
             </titleInfo>
         </relatedItem>
+    </xsl:template>
+    
+    <!-- medium -->
+    <xsl:template match="dcterms:medium">
+        <physicalDesription>
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <form><xsl:value-of select="normalize-space(.)"/></form>
+        </xsl:for-each>
+        </physicalDesription>
     </xsl:template>
 </xsl:stylesheet>
