@@ -80,7 +80,7 @@
               </languageOfCataloging>
           </recordInfo>
           <xsl:apply-templates select="dc:subject"/>
-          <xsl:apply-templates select="dc:coverage"/>
+            <xsl:apply-templates select="dc:coverage[not(starts-with(., 'Tape'))]"/>
           <xsl:apply-templates select="dc:source"/>
         </mods>
     </xsl:template>
