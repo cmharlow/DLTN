@@ -11,6 +11,8 @@
     <!-- output settings -->
     <xsl:output encoding="UTF-8" method="xml" omit-xml-declaration="yes" indent="yes"/>
     <xsl:strip-space elements="*"/>
+    
+    <xsl:variable name="catalog" select="document('catalogs/tsla_catalog.xml')"/>
 
     <!-- includes and imports -->
 
