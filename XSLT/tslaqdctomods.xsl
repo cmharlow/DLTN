@@ -79,7 +79,8 @@
                   <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
               </languageOfCataloging>
           </recordInfo>
-          <xsl:apply-templates select="dc:subject"></xsl:apply-templates>
+          <xsl:apply-templates select="dc:subject"/>
+          <xsl:apply-templates select="dc:coverage"/>
         </mods>
     </xsl:template>
     
@@ -151,4 +152,8 @@
         </xsl:for-each>  
     </xsl:template>
     
+    <!-- coverage -->
+    <xsl:template match="dc:coverage[not(starts-with(., 'Tape'))]">
+        <subject><geographic><xsl:apply-templates/></geographic></subject>
+    </xsl:template>
 </xsl:stylesheet>
