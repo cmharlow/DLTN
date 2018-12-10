@@ -27,7 +27,7 @@
     dc:language processing parameter: there are multiple language values in the
     QDC.
   -->
-  <xsl:variable name="catalog" select="document('catalog.xml')"/>
+  <xsl:variable name="catalog" select="document('catalogs/utc_catalog.xml')"/>
   <xsl:param name="pLang">
     <l string="eng">english</l>
     <l string="eng">en</l>
