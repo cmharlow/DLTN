@@ -79,6 +79,7 @@
                   <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
               </languageOfCataloging>
           </recordInfo>
+          <xsl:apply-templates select="dc:subject"></xsl:apply-templates>
         </mods>
     </xsl:template>
     
@@ -137,6 +138,17 @@
     <!-- spatial -->
     <xsl:template match="dcterms:spatial[not('Unknown' or 'Other')]">
         <subject><geographic><xsl:apply-templates/></geographic></subject>
+    </xsl:template>
+    
+    <!-- subjects -->
+    <xsl:template match="dc:subject">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!='' or normalize-space(.)!='unknown'">
+                <subject>
+                    <topic><xsl:value-of select="normalize-space(.)"/></topic>
+                </subject>
+            </xsl:if>
+        </xsl:for-each>  
     </xsl:template>
     
 </xsl:stylesheet>
