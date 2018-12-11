@@ -81,7 +81,7 @@
           </recordInfo>
           <xsl:apply-templates select="dc:subject"/>
           <xsl:apply-templates select="dc:coverage[not(starts-with(., 'Tape'))]"/>
-          <xsl:apply-templates select="dc:source"/>
+            <xsl:apply-templates select="dc:source[not(contains(., 'Box') or contains(., 'Folder') or contains(., 'Drawer') or starts-with(., 'THS I') or starts-with(., 'XL') or starts-with(., 'VI') or starts-with(., 'RG') or starts-with(., 'IX-A'))]"/>
           <xsl:apply-templates select="dcterms:medium"/>
           <xsl:apply-templates select="dc:type"/>
         </mods>
