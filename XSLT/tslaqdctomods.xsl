@@ -80,9 +80,10 @@
               </languageOfCataloging>
           </recordInfo>
           <xsl:apply-templates select="dc:subject"/>
-            <xsl:apply-templates select="dc:coverage[not(starts-with(., 'Tape'))]"/>
+          <xsl:apply-templates select="dc:coverage[not(starts-with(., 'Tape'))]"/>
           <xsl:apply-templates select="dc:source"/>
-            <xsl:apply-templates select="dcterms:medium"/>
+          <xsl:apply-templates select="dcterms:medium"/>
+          <xsl:apply-templates select="dc:type"/>
         </mods>
     </xsl:template>
     
@@ -181,5 +182,12 @@
             <form><xsl:value-of select="normalize-space(.)"/></form>
         </xsl:for-each>
         </physicalDesription>
+    </xsl:template>
+    
+    <!-- type -->
+    <xsl:template match="dc:type">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <typeOfResource><xsl:value-of select="normalize-space(.)"/></typeOfResource>
+        </xsl:for-each>
     </xsl:template>
 </xsl:stylesheet>
