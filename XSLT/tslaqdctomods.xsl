@@ -79,6 +79,11 @@
                   <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
               </languageOfCataloging>
           </recordInfo>
+          <xsl:apply-templates select="dc:subject"/>
+          <xsl:apply-templates select="dc:coverage[not(starts-with(., 'Tape'))]"/>
+            <xsl:apply-templates select="dc:source[not(contains(., 'Box') or contains(., 'Folder') or contains(., 'Drawer') or starts-with(., 'THS I') or starts-with(., 'XL') or starts-with(., 'VI') or starts-with(., 'RG') or starts-with(., 'IX-A'))]"/>
+          <xsl:apply-templates select="dcterms:medium"/>
+          <xsl:apply-templates select="dc:type"/>
         </mods>
     </xsl:template>
     
@@ -139,4 +144,50 @@
         <subject><geographic><xsl:apply-templates/></geographic></subject>
     </xsl:template>
     
+    <!-- subjects -->
+    <xsl:template match="dc:subject">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <xsl:if test="normalize-space(.)!='' or normalize-space(.)!='unknown'">
+                <subject>
+                    <topic><xsl:value-of select="normalize-space(.)"/></topic>
+                </subject>
+            </xsl:if>
+        </xsl:for-each>  
+    </xsl:template>
+    
+    <!-- coverage -->
+    <xsl:template match="dc:coverage[not(starts-with(., 'Tape'))]">
+        <subject>
+            <geographic>
+                <xsl:apply-templates/>
+            </geographic>
+        </subject>
+    </xsl:template>
+    
+    <!-- source -->
+    <xsl:template match="dc:source[not(contains(., 'Box') or contains(., 'Folder') or contains(., 'Drawer') or starts-with(., 'THS I') or starts-with(., 'XL') or starts-with(., 'VI') or starts-with(., 'RG') or starts-with(., 'IX-A'))]">
+        <relatedItem type="host">
+            <titleInfo>
+                <title>
+                    <xsl:apply-templates/>
+                </title>
+            </titleInfo>
+        </relatedItem>
+    </xsl:template>
+    
+    <!-- medium -->
+    <xsl:template match="dcterms:medium">
+        <physicalDescription>
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <form><xsl:value-of select="normalize-space(.)"/></form>
+        </xsl:for-each>
+        </physicalDescription>
+    </xsl:template>
+    
+    <!-- type -->
+    <xsl:template match="dc:type">
+        <xsl:for-each select="tokenize(normalize-space(.), ';')">
+            <typeOfResource><xsl:value-of select="normalize-space(.)"/></typeOfResource>
+        </xsl:for-each>
+    </xsl:template>
 </xsl:stylesheet>
