@@ -177,11 +177,11 @@
     
     <!-- medium -->
     <xsl:template match="dcterms:medium">
-        <physicalDesription>
+        <physicalDescription>
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
             <form><xsl:value-of select="normalize-space(.)"/></form>
         </xsl:for-each>
-        </physicalDesription>
+        </physicalDescription>
     </xsl:template>
     
     <!-- type -->
