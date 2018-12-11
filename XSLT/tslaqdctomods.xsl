@@ -165,7 +165,7 @@
     </xsl:template>
     
     <!-- source -->
-    <xsl:template match="dc:source[not(starts-with(., 'Box') or starts-with(., 'Folder') or starts-with(., 'Drawer') or starts-with(., 'THS I') or starts-with(., 'XL') or starts-with(., 'VI') or starts-with(., 'RG') or starts-with(., 'IX-A'))]">
+    <xsl:template match="dc:source[not(contains(., 'Box') or contains(., 'Folder') or contains(., 'Drawer') or starts-with(., 'THS I') or starts-with(., 'XL') or starts-with(., 'VI') or starts-with(., 'RG') or starts-with(., 'IX-A'))]">
         <relatedItem type="host">
             <titleInfo>
                 <title>
