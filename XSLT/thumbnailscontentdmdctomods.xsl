@@ -11,7 +11,7 @@
     
     <xsl:template match="dc:identifier" mode="locationurl">
         <xsl:variable name="idvalue" select="normalize-space(.)"/>
-        <xsl:if test="starts-with($idvalue,'http')"> 
+        <xsl:if test="starts-with($idvalue,'http') and contains($idvalue, 'contentdm')"> 
             <!-- CONTENTdm puts the URI in an <identifier> field in the OAI record -->
             <!-- process identifier into CONTENTdm 6.5 thumbnail urls --> 
             <xsl:variable name="contentdmroot" select="substring-before($idvalue,'/cdm/ref/')"/>
