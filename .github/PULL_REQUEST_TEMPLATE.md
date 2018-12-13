@@ -1,4 +1,5 @@
-**GitHub Issue: [link](link)
+**GitHub Issue**: [link](link)
+**Jira Issue**: []()
 
 * Other Relevant Links (OAI Feeds, DPLA Records, Metadata Mappings, DLTN Documentation, Etc.)
 
