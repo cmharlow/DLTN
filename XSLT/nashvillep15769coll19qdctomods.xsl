@@ -27,7 +27,7 @@
     dc:language processing parameter: there are multiple language values in the
     QDC.
   -->
-  <xsl:variable name="catalog" select="document('catalogs/utc_catalog.xml')"/>
+  <xsl:variable name="catalog" select="document('catalogs/nashville_catalog.xml')"/>
   <xsl:param name="pLang">
     <l string="eng">english</l>
     <l string="eng">en</l>
@@ -54,12 +54,6 @@
   <!-- match oai_qdc:qualifieddc -->
   <xsl:template match="oai_qdc:qualifieddc">
     <!-- document-level variables -->
-    <xsl:variable name="vAC"
-                  select="if ((dcterms:license and dc:rights) or (dcterms:license and not(dc:rights)))
-                          then (dcterms:license)
-                          else if (not(dcterms:license) and dc:rights)
-                            then (dc:rights)
-                            else ()"/>
     <!-- match the document root and return a MODS record -->
     <mods xmlns="http://www.loc.gov/mods/v3" version="3.5"
           xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -95,27 +89,11 @@
         <xsl:apply-templates select="dcterms:modified"/>
       </originInfo>
       <!-- accessCondition -->
-      <accessCondition type="use and reproduction" xlink:href="{$vAC}"/>
+      <accessCondition type="use and reproduction" xlink:href="http://rightsstatements.org/vocab/InC/1.0/">In Copyright</accessCondition>
       <!-- location: physicalLocation and URLs -->
       <location>
         <xsl:apply-templates select="dc:identifier[starts-with(normalize-space(.), 'http://')]"/>
       </location>
-      <!-- type(s) that start with a capital letter -->
-      <xsl:apply-templates select="dc:type[matches(., '^[A-Z]')]"/>
-      <!-- relatedItem[@type='host'] -->
-      <relatedItem type="host">
-        <!-- dc:source -->
-        <titleInfo>
-          <xsl:apply-templates select="dc:source"/>
-        </titleInfo>
-      </relatedItem>
-      <!-- relatedItem[@displayLabel='Collection'] -->
-      <relatedItem displayLabel="Collection">
-        <!-- dcterms:isPartOf -->
-        <titleInfo>
-          <xsl:apply-templates select="dcterms:isPartOf"/>
-        </titleInfo>
-      </relatedItem>
       <!-- physicalDescription -->
       <physicalDescription>
         <!-- formats -->
@@ -123,10 +101,10 @@
         <!-- dcterms:extent -->
         <xsl:apply-templates select="dcterms:extent"/>
         <!-- type(s) that start with a lower-case letter -->
-        <xsl:apply-templates select="dc:type[matches(., '^[a-z]')]"/>
+        <xsl:apply-templates select="dc:type"/>
       </physicalDescription>
       <recordInfo>
-        <recordContentSource>University of Tennessee at Chattanooga</recordContentSource>
+        <recordContentSource>Nashville Public Library</recordContentSource>
         <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
         <languageOfCataloging>
           <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
@@ -278,19 +256,11 @@
     <identifier type="local"><xsl:apply-templates/></identifier>
   </xsl:template>
 
-  <!-- type(s) starting with capital letters -->
-  <xsl:template match="dc:type[matches(., '^[A-Z]')]">
-    <xsl:variable name="type-tokens" select="tokenize(., ';')"/>
-    <xsl:for-each select="$type-tokens">
-      <typeOfResource><xsl:value-of select="lower-case(normalize-space(.))"/></typeOfResource>
-    </xsl:for-each>
-  </xsl:template>
-
   <!-- type(s) starting with lower-case letters -->
-  <xsl:template match="dc:type[matches(., '^[a-z]')]">
+  <xsl:template match="dc:type">
     <xsl:variable name="lc-type-tokens" select="tokenize(., ';')"/>
     <xsl:for-each select="$lc-type-tokens">
-      <form><xsl:value-of select="$lc-type-tokens"/></form>
+      <form><xsl:value-of select="normalize-space(.)"/></form>
     </xsl:for-each>
   </xsl:template>
 
