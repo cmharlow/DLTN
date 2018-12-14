@@ -27,7 +27,7 @@
     dc:language processing parameter: there are multiple language values in the
     QDC.
   -->
-  <xsl:variable name="catalog" select="document('catalogs/utc_catalog.xml')"/>
+  <xsl:variable name="catalog" select="document('catalogs/nashville_catalog.xml')"/>
   <xsl:param name="pLang">
     <l string="eng">english</l>
     <l string="eng">en</l>
@@ -94,9 +94,6 @@
       <location>
         <xsl:apply-templates select="dc:identifier[starts-with(normalize-space(.), 'http://')]"/>
       </location>
-      <!-- type(s) that start with a capital letter -->
-      <xsl:apply-templates select="dc:type[matches(., '^[A-Z]')]"/>
-      <!-- relatedItem[@type='host'] -->
       <!-- physicalDescription -->
       <physicalDescription>
         <!-- formats -->
@@ -104,13 +101,13 @@
         <!-- dcterms:extent -->
         <xsl:apply-templates select="dcterms:extent"/>
         <!-- type(s) that start with a lower-case letter -->
-        <xsl:apply-templates select="dc:type[matches(., '^[a-z]')]"/>
+        <xsl:apply-templates select="dc:type"/>
       </physicalDescription>
       <recordInfo>
         <recordContentSource>Nashville Public Library</recordContentSource>
         <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
         <languageOfCataloging>
-          <languageTerm term="code" authority="iso639-2b">eng</languageTerm>
+          <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
         </languageOfCataloging>
         <recordOrigin>Record has been transformed into MODS 3.5 from a Qualified Dublin Core record by the Digital Library of Tennessee, a service hub of the Digital Public Library of America, using a stylesheet available at https://github.com/digitallibraryoftennessee/DLTN_XSLT. Metadata originally created in a locally modified version of Qualified Dublin Core using ContentDM (data dictionary available: https://wiki.lib.utk.edu/display/DPLA).</recordOrigin>
       </recordInfo>
@@ -259,19 +256,11 @@
     <identifier type="local"><xsl:apply-templates/></identifier>
   </xsl:template>
 
-  <!-- type(s) starting with capital letters -->
-  <xsl:template match="dc:type[matches(., '^[A-Z]')]">
-    <xsl:variable name="type-tokens" select="tokenize(., ';')"/>
-    <xsl:for-each select="$type-tokens">
-      <typeOfResource><xsl:value-of select="lower-case(normalize-space(.))"/></typeOfResource>
-    </xsl:for-each>
-  </xsl:template>
-
   <!-- type(s) starting with lower-case letters -->
-  <xsl:template match="dc:type[matches(., '^[a-z]')]">
+  <xsl:template match="dc:type">
     <xsl:variable name="lc-type-tokens" select="tokenize(., ';')"/>
     <xsl:for-each select="$lc-type-tokens">
-      <form><xsl:value-of select="$lc-type-tokens"/></form>
+      <form><xsl:value-of select="normalize-space(.)"/></form>
     </xsl:for-each>
   </xsl:template>
 
