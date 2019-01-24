@@ -19,7 +19,7 @@
                 </element>
             </element>
         </element>
-        <element name="date">oai_qdc:qualifieddc
+        <element name="date">
             <element name="accessioned">
                 <element name="none">
                     <field name="value">2017-12-15T20:49:57Z</field>
