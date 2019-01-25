@@ -71,6 +71,7 @@
                 <xsl:apply-templates
                     select='element[@name = "dc"]/element[@name = "date"]/element[@name = "issued"]/element[@name = "none"]/field[@name = "value"]'
                 />
+                <xsl:apply-templates select='element[@name = "dc"]/element[@name = "publisher"]/element[@name = "en_US"]/field[@name = "value"]'/>
             </originInfo>
             
             <!-- recordInfo -->
@@ -177,6 +178,11 @@
                 <xsl:apply-templates/>
             </topic>
         </subject>
+    </xsl:template>
+    
+    <!-- Publisher -->
+    <xsl:template match='element[@name = "dc"]/element[@name = "publisher"]/element[@name = "en_US"]/field[@name = "value"]'>
+        <publisher><xsl:apply-templates/></publisher>
     </xsl:template>
     
 </xsl:stylesheet>
