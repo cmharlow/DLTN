@@ -85,7 +85,7 @@
             </recordInfo>
             
             <!-- typeOfResource -->
-            <xsl:apply-templates select='element[@name="dc"]/element[@name="type"]/element[@name="none"]/field[@name="value"]'/>
+            <xsl:apply-templates select='element[@name="dc"]/element[@name="type"]/element[@name="en_US"]/field[@name="value"]'/>
             
             <!-- identifiers -->
             <xsl:apply-templates select='element[@name="dc"]/element[@name="identifier"]/element[@name="rhodes"]/element[@name="none"]/field[@name="value"]'/>
@@ -153,7 +153,7 @@
     </xsl:template>
     
     <!-- typeOfResource -->
-    <xsl:template match='element[@name="dc"]/element[@name="type"]/element[@name="none"]/field[@name="value"]'>
+    <xsl:template match='element[@name="dc"]/element[@name="type"]/element[@name="en_US"]/field[@name="value"]'>
         <typeOfResource><xsl:apply-templates/></typeOfResource>
     </xsl:template>
     
