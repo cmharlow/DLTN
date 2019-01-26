@@ -65,6 +65,12 @@
             <!-- Creators -->
             <xsl:apply-templates
                 select='element[@name = "dc"]/element[@name = "contributor"]/element[@name = "editor"]/element[@name = "none"]/field[@name = "value"]'/>
+            
+            <xsl:apply-templates
+                select='element[@name = "dc"]/element[@name = "contributor"]/element[@name = "artist"]/element[@name = "none"]/field[@name = "value"]'/>
+            
+            <xsl:apply-templates
+                select='element[@name = "dc"]/element[@name = "contributor"]/element[@name = "author"]/element[@name = "none"]/field[@name = "value"]'/>
 
             <!-- OriginInfo -->
             <originInfo>
@@ -134,6 +140,30 @@
     <!-- Creators -->
     <xsl:template
         match='element[@name = "dc"]/element[@name = "contributor"]/element[@name = "editor"]/element[@name = "none"]/field[@name = "value"]'>
+        <name>
+            <namePart>
+                <xsl:apply-templates/>
+            </namePart>
+            <role>
+                <roleTerm>Creator</roleTerm>
+            </role>
+        </name>
+    </xsl:template>
+    
+    <xsl:template
+        match='element[@name = "dc"]/element[@name = "contributor"]/element[@name = "artist"]/element[@name = "none"]/field[@name = "value"]'>
+        <name>
+            <namePart>
+                <xsl:apply-templates/>
+            </namePart>
+            <role>
+                <roleTerm>Creator</roleTerm>
+            </role>
+        </name>
+    </xsl:template>
+    
+    <xsl:template
+        match='element[@name = "dc"]/element[@name = "contributor"]/element[@name = "author"]/element[@name = "none"]/field[@name = "value"]'>
         <name>
             <namePart>
                 <xsl:apply-templates/>
