@@ -113,13 +113,13 @@
 
     <!-- Thumbnail -->
         <xsl:template match='element[@name="bundles"]/element[@name="bundle"][field[@name="name"][text()="THUMBNAIL"]]/element[@name="bitstreams"]/element[@name="bitstream"]/field[@name="url"]'>
-            <url type="preview"><xsl:apply-templates/></url>
+            <url access="preview"><xsl:apply-templates/></url>
     </xsl:template>
 
     <!-- Handle -->
     <xsl:template
         match='element[@name = "dc"]/element[@name = "identifier"]/element[@name = "uri"]/element[@name = "none"]/field[@name = "value"]'>
-        <url type="object in context">
+        <url access="object in context">
             <xsl:apply-templates/>
         </url>
     </xsl:template>
