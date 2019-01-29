@@ -184,7 +184,7 @@
     
     <!-- typeOfResource -->
     <xsl:template match='element[@name="dc"]/element[@name="type"]/element[@name="en_US"]/field[@name="value"]'>
-        <typeOfResource><xsl:apply-templates/></typeOfResource>
+        <typeOfResource><xsl:value-of select="lower-case(normalize-space(.))"/></typeOfResource>
     </xsl:template>
     
     <!-- identifiers -->
