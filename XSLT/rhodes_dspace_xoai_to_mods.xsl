@@ -82,7 +82,7 @@
             
             <!-- recordInfo -->
             <recordInfo>
-                <recordContentSource>Rhodes College. Crossroads to Freedom</recordContentSource>
+                <recordContentSource valueURI="http://id.loc.gov/authorities/names/n88258779">Rhodes College</recordContentSource>
                 <recordChangeDate><xsl:value-of select="current-date()"/></recordChangeDate>
                 <languageOfCataloging>
                     <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
@@ -99,6 +99,7 @@
             <!-- Subjects -->
             <xsl:apply-templates select='element[@name = "dc"]/element[@name = "subject"]/element[@name = "none"]/field[@name = "value"]'/>
             <xsl:apply-templates select='element[@name = "dc"]/element[@name = "subject"]/element[@name = "en_US"]/field[@name = "value"]'/>
+            <relatedItem displayLabel="Project"><titleInfo><title>Crossroads to Freedom</title></titleInfo></relatedItem>
         </mods>
     </xsl:template>
 
