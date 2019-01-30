@@ -3,6 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:lyncode="http://www.lyncode.com/xoai"
+    xmlns:dltn = "https://github.com/digitallibraryoftennessee"
     xmlns="http://www.loc.gov/mods/v3"
     exclude-result-prefixes="#all"
     xpath-default-namespace="http://www.lyncode.com/xoai" version="2.0">
@@ -16,6 +17,14 @@
     <!--
     Collection/Set = Crossroads Friends and Family
   -->
+
+    <!-- Types -->
+    <xsl:param name="pType">
+        <dltn:type string="moving image">Video</dltn:type>
+        <dltn:type string="text">Text</dltn:type>
+        <dltn:type string="sound recording">Sound</dltn:type>
+    </xsl:param>
+    
 
     <!-- identity transform -->
     <xsl:template match="@* | node()">
@@ -56,7 +65,7 @@
             <!-- urls -->
             <location>
                 <xsl:apply-templates select='element[@name = "dc"]/element[@name = "identifier"]/element[@name = "uri"]/element[@name = "none"]/field[@name = "value"]'/>
-                <xsl:apply-templates select='element[@name="bundles"]/element[@name="bundle"][field[@name="name"][text()="THUMBNAIL"]]/element[@name="bitstreams"]/element[@name="bitstream"]/field[@name="url"]'/>
+                <xsl:apply-templates select='element[@name="bundles"]/element[@name="bundle"][field[@name="name"][text()="THUMBNAIL"]]/element[@name="bitstreams"]/element[@name="bitstream"][1]/field[@name="url"]'/>
             </location>
             
             <!-- Contributors -->
@@ -100,6 +109,12 @@
             <xsl:apply-templates select='element[@name = "dc"]/element[@name = "subject"]/element[@name = "none"]/field[@name = "value"]'/>
             <xsl:apply-templates select='element[@name = "dc"]/element[@name = "subject"]/element[@name = "en_US"]/field[@name = "value"]'/>
             <relatedItem displayLabel="Project"><titleInfo><title>Crossroads to Freedom</title></titleInfo></relatedItem>
+            
+            <!-- abstract -->
+            <xsl:apply-templates select='element[@name="dc"]/element[@name="description"]/element[@name="none"]/field[@name="value"]'/>
+            
+            <!-- streaming video -->
+            <xsl:apply-templates select='element[@name="dc"]/element[@name="relation"]/element[@name="uri"]/element[@name="none"]/field[@name="value"]'/>
         </mods>
     </xsl:template>
 
@@ -113,7 +128,7 @@
     </xsl:template>
 
     <!-- Thumbnail -->
-        <xsl:template match='element[@name="bundles"]/element[@name="bundle"][field[@name="name"][text()="THUMBNAIL"]]/element[@name="bitstreams"]/element[@name="bitstream"]/field[@name="url"]'>
+        <xsl:template match='element[@name="bundles"]/element[@name="bundle"][field[@name="name"][text()="THUMBNAIL"]]/element[@name="bitstreams"]/element[@name="bitstream"][1]/field[@name="url"]'>
             <url access="preview"><xsl:apply-templates/></url>
     </xsl:template>
 
@@ -185,7 +200,14 @@
     
     <!-- typeOfResource -->
     <xsl:template match='element[@name="dc"]/element[@name="type"]/element[@name="en_US"]/field[@name="value"]'>
-        <typeOfResource><xsl:value-of select="lower-case(normalize-space(.))"/></typeOfResource>
+        <xsl:variable name="rtype" select="."/>
+        <xsl:choose>
+            <xsl:when test="$rtype=$pType/dltn:type">
+                <typeOfResource>
+                    <xsl:value-of select="$pType/dltn:type[. = $rtype]/@string"/>
+                </typeOfResource>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
     
     <!-- identifiers -->
@@ -213,7 +235,31 @@
     
     <!-- Publisher -->
     <xsl:template match='element[@name = "dc"]/element[@name = "publisher"]/element[@name = "en_US"]/field[@name = "value"]'>
-        <publisher><xsl:apply-templates/></publisher>
+        <xsl:choose>
+            <xsl:when test=".!='Rhodes College'">
+                <publisher><xsl:apply-templates/></publisher>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- Abstract -->
+    <xsl:template match='element[@name="dc"]/element[@name="description"]/element[@name="none"]/field[@name="value"]'>
+        <abstract><xsl:apply-templates/></abstract>
+    </xsl:template>
+    
+    <!-- Streaming Resource -->
+    <xsl:template match='element[@name="dc"]/element[@name="relation"]/element[@name="uri"]/element[@name="none"]/field[@name="value"]'>
+        <xsl:choose>
+            <xsl:when test="contains(., 'vimeo.com')">
+                <relatedItem displayLabel="streaming resource">
+                    <location>
+                        <url>
+                            <xsl:apply-templates/>
+                        </url>
+                    </location>
+                </relatedItem>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
     
 </xsl:stylesheet>
