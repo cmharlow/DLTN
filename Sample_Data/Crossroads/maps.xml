@@ -1,0 +1,2775 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="static/style.xsl"?><OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>2019-01-28T05:43:49Z</responseDate><request verb="ListRecords" metadataPrefix="xoai" set="col_10267_31149">http://dlynx.rhodes.edu:8080/oai/request</request><ListRecords><record><header><identifier>oai:dlynx.rhodes.edu:10267/31165</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Overton Park</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1902</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31165</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Overton Park 1902 Boundaries Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">Map depicting Overton Park's 1902 boundaries</field>
+</element>
+</element>
+<element name="format">
+<element name="medium">
+<element name="none">
+<field name="value">Drawn</field>
+</element>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Overton Park (Memphis, Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Overton Park Boundary Map, 1902</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Overton Park 1902 Boundaries.jpg.jpg</field>
+<field name="originalName">Overton Park 1902 Boundaries.jpg.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">12487</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31165/2/Overton%20Park%201902%20Boundaries.jpg.jpg</field>
+<field name="checksum">ae87805d1d92515df64d161333d158e2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Overton Park 1902 Boundaries.jpg</field>
+<field name="originalName">Overton Park 1902 Boundaries.jpg</field>
+<field name="format">image/jpeg</field>
+<field name="size">883476</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31165/1/Overton%20Park%201902%20Boundaries.jpg</field>
+<field name="checksum">417d28856a7954ae79da7543fa43339e</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Overton Park 1902 Boundaries.jpg.preview.jpg</field>
+<field name="originalName">Overton Park 1902 Boundaries.jpg.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">59011</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31165/3/Overton%20Park%201902%20Boundaries.jpg.preview.jpg</field>
+<field name="checksum">15c7dcadec08ac03dfaab250712c6ab0</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31165</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31165</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.989</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31151</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+<element name="author">
+<element name="none">
+<field name="value">G. A Davis Printing Co</field>
+</element>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Memphis, Tennessee</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:39Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:39Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1940</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31151</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Pocket Map of Memphis - 1940</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">Memphis 1940 Street Map</field>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">Memphis Chamber of Commerce</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Pocket Map of Memphis, 1940</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Pocket Map of Memphis - 1940.jpg</field>
+<field name="originalName">Pocket Map of Memphis - 1940.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">29637</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31151/2/Pocket%20Map%20of%20Memphis%20-%201940.jpg</field>
+<field name="checksum">eef8fdd1caaf13eca2ff4c2950439f76</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Pocket Map of Memphis - 1940</field>
+<field name="originalName">Pocket Map of Memphis - 1940</field>
+<field name="format">image/jpeg</field>
+<field name="size">4042357</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31151/1/Pocket%20Map%20of%20Memphis%20-%201940</field>
+<field name="checksum">07c47d03a1d0f3a6b4dd7f34b47f742c</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Pocket Map of Memphis - 1940.preview.jpg</field>
+<field name="originalName">Pocket Map of Memphis - 1940.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">169686</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31151/3/Pocket%20Map%20of%20Memphis%20-%201940.preview.jpg</field>
+<field name="checksum">cc6f8a314c1738eafe35a362fe3bbb24</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31151</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31151</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.937</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31263</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-18T21:38:14Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-18T21:38:14Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1950</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31263</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Marvin White - 1950</field>
+</element>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Maps</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Marvin White Memphis Map, 1950</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Marvin White Memphis Map, 1950</field>
+<field name="originalName">Marvin White Memphis Map, 1950</field>
+<field name="format">image/jpeg</field>
+<field name="size">24256686</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31263/1/Marvin%20White%20Memphis%20Map%2c%201950</field>
+<field name="checksum">ea4e18eb025c35258602af35c6ec709c</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Marvin White Memphis Map, 1950.jpg</field>
+<field name="originalName">Marvin White Memphis Map, 1950.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">26935</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31263/2/Marvin%20White%20Memphis%20Map%2c%201950.jpg</field>
+<field name="checksum">4762eb6a16a26c7b0f4a0346d8e047a7</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Marvin White Memphis Map, 1950.preview.jpg</field>
+<field name="originalName">Marvin White Memphis Map, 1950.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">158348</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31263/3/Marvin%20White%20Memphis%20Map%2c%201950.preview.jpg</field>
+<field name="checksum">9fb0518536ffcd37729b9caabb12de86</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31263</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31263</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.92</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31267</identifier><datestamp>2018-05-14T19:47:39Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-18T21:38:15Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-18T21:38:15Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1990</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31267</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Planning Comission Public Services</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">Memphis and Shelby County Planning Commission</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Maps</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Services Plan for Memphis and Shelby County, 1990</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Services Plan for Memphis and Shelby County, 1990</field>
+<field name="originalName">Services Plan for Memphis and Shelby County, 1990</field>
+<field name="format">image/jpeg</field>
+<field name="size">24413643</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31267/1/Services%20Plan%20for%20Memphis%20and%20Shelby%20County%2c%201990</field>
+<field name="checksum">fd4056d4cf0d6da75a8fbf9c9c0388a8</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Services Plan for Memphis and Shelby County, 1990.jpg</field>
+<field name="originalName">Services Plan for Memphis and Shelby County, 1990.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">27038</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31267/2/Services%20Plan%20for%20Memphis%20and%20Shelby%20County%2c%201990.jpg</field>
+<field name="checksum">86972594b71f34b4745a60a794886fad</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Services Plan for Memphis and Shelby County, 1990.preview.jpg</field>
+<field name="originalName">Services Plan for Memphis and Shelby County, 1990.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">150589</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31267/3/Services%20Plan%20for%20Memphis%20and%20Shelby%20County%2c%201990.preview.jpg</field>
+<field name="checksum">c5b79b14e1414e41345bc519002d4b23</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31267</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31267</field>
+<field name="lastModifyDate">2018-05-14 14:47:39.147</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31264</identifier><datestamp>2018-10-31T14:15:26Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-18T21:38:14Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-18T21:38:14Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1970</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31264</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Chamber of Commerce 1970</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">Memphis Chamber of Commerce</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Maps</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Chamber of Commerce Memphis Map, 1970</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">chamber_of_commerce_1970.jpg</field>
+<field name="originalName">chamber_of_commerce_1970.jpg</field>
+<field name="format">image/jpeg</field>
+<field name="size">27100758</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31264/1/chamber_of_commerce_1970.jpg</field>
+<field name="checksum">17a28d80cdc69493b0fe0ca6a9109da2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31264</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31264</field>
+<field name="lastModifyDate">2018-10-31 09:15:26.802</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31166</identifier><datestamp>2018-05-14T19:47:39Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Memphis, Tennessee</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1911</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31166</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">P.F. Collier &amp; Son 1911 Memphis Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">Map depicting Memphis penned in 1911. Produced by P.F. Collier and Sons. Map provides a comprehensive view of how Memphis appeared and was composed prior to the first World War.</field>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">P.F. Collier and Sons</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">P.F. Collier &amp; Son Memphis Map, 1911</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">P.F. Collier &amp; Son 1911 Memphis Map</field>
+<field name="originalName">P.F. Collier &amp; Son 1911 Memphis Map</field>
+<field name="format">image/jpeg</field>
+<field name="size">556065</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31166/1/P.F.%20Collier%20%26%20Son%201911%20Memphis%20Map</field>
+<field name="checksum">1e58ac0e4e9854fe598b55ef3bee088b</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">P.F. Collier &amp; Son 1911 Memphis Map.jpg</field>
+<field name="originalName">P.F. Collier &amp; Son 1911 Memphis Map.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">31965</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31166/2/P.F.%20Collier%20%26%20Son%201911%20Memphis%20Map.jpg</field>
+<field name="checksum">fbd442e992cc3a22dd204fd841b58fd5</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">P.F. Collier &amp; Son 1911 Memphis Map.preview.jpg</field>
+<field name="originalName">P.F. Collier &amp; Son 1911 Memphis Map.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">189504</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31166/3/P.F.%20Collier%20%26%20Son%201911%20Memphis%20Map.preview.jpg</field>
+<field name="checksum">729ad68f2f9e23c47924047c52cdc38f</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31166</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31166</field>
+<field name="lastModifyDate">2018-05-14 14:47:39.055</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31164</identifier><datestamp>2018-05-14T19:47:39Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Shelby County</field>
+<field name="value">Crittenden County</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31164</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Memphis Area Metropolitan Map M-25</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">Map M-25 covering Memphis' metropolitan area.</field>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">Metropoloitan Map Series</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Memphis Area Metropolitan Map, Section M-25</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis Area Metropolitan Map M-25.jpg</field>
+<field name="originalName">Memphis Area Metropolitan Map M-25.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">28263</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31164/2/Memphis%20Area%20Metropolitan%20Map%20M-25.jpg</field>
+<field name="checksum">c49f5f85cb49ff955c7c3da03ad88096</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis Area Metropolitan Map M-25</field>
+<field name="originalName">Memphis Area Metropolitan Map M-25</field>
+<field name="format">image/jpeg</field>
+<field name="size">2531487</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31164/1/Memphis%20Area%20Metropolitan%20Map%20M-25</field>
+<field name="checksum">50feefe31ad45a9a02bc4f964bc4f945</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis Area Metropolitan Map M-25.preview.jpg</field>
+<field name="originalName">Memphis Area Metropolitan Map M-25.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">165668</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31164/3/Memphis%20Area%20Metropolitan%20Map%20M-25.preview.jpg</field>
+<field name="checksum">4606540c5c9b3445355c9aa02d1602d7</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31164</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31164</field>
+<field name="lastModifyDate">2018-05-14 14:47:39.006</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31153</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Shelby County</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:39Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:39Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1927</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31153</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">1927 Shelby County Commission Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">1927 Map of Shelby County from the Shelby County Commission.</field>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">Shelby County Commission</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Shelby County (Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Shelby County Commission Map, 1927</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1927 Shelby County Commission Map.jpg</field>
+<field name="originalName">1927 Shelby County Commission Map.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">19800</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31153/2/1927%20Shelby%20County%20Commission%20Map.jpg</field>
+<field name="checksum">9dabfde71b865f21cb2451dcbff08081</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1927 Shelby County Commission Map</field>
+<field name="originalName">1927 Shelby County Commission Map</field>
+<field name="format">image/jpeg</field>
+<field name="size">1042962</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31153/1/1927%20Shelby%20County%20Commission%20Map</field>
+<field name="checksum">9b1052360afeed5c5e6e7b0ee26f1667</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1927 Shelby County Commission Map.preview.jpg</field>
+<field name="originalName">1927 Shelby County Commission Map.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">127719</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31153/3/1927%20Shelby%20County%20Commission%20Map.preview.jpg</field>
+<field name="checksum">58cbd40f74f815b8b32f75c5b2c2f498</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31153</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31153</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.982</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31268</identifier><datestamp>2018-05-14T21:02:05Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-18T21:38:15Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-18T21:38:15Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1968</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31268</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Planning Comission Roads</field>
+</element>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">African Americans</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Memphis Planning Commission Roads, 1968</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis Planning Commission Roads, 1968</field>
+<field name="originalName">Memphis Planning Commission Roads, 1968</field>
+<field name="format">image/jpeg</field>
+<field name="size">67425828</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31268/1/Memphis%20Planning%20Commission%20Roads%2c%201968</field>
+<field name="checksum">08aed8ddab968c4b92a112ea8c36bfcb</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis Planning Commission Roads, 1968.jpg</field>
+<field name="originalName">Memphis Planning Commission Roads, 1968.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">22422</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31268/2/Memphis%20Planning%20Commission%20Roads%2c%201968.jpg</field>
+<field name="checksum">f5e1084058d42e09978a5d4f3d0a83c3</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis Planning Commission Roads, 1968.preview.jpg</field>
+<field name="originalName">Memphis Planning Commission Roads, 1968.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">160596</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31268/3/Memphis%20Planning%20Commission%20Roads%2c%201968.preview.jpg</field>
+<field name="checksum">cbb45cfae84ae5b5e828a77d279dee6e</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31268</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31268</field>
+<field name="lastModifyDate">2018-05-14 16:02:05.677</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31155</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Orange Mound</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:39Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:39Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1928</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31155</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">1928 Orange Mounds Park Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">Map of the preposed section of land set aside for a "colored" playground" in the Orange Mounds nieghborhood of Memphis</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Orange Mound (Memphis, Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Orange Mound Park Map, 1928</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1928 Orange Mounds Park.jpg.jpg</field>
+<field name="originalName">1928 Orange Mounds Park.jpg.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">9616</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31155/2/1928%20Orange%20Mounds%20Park.jpg.jpg</field>
+<field name="checksum">c6d30c93ff6a172a3c4a3e9abfdd89ce</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1928 Orange Mounds Park.jpg</field>
+<field name="originalName">1928 Orange Mounds Park.jpg</field>
+<field name="format">image/jpeg</field>
+<field name="size">3029420</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31155/1/1928%20Orange%20Mounds%20Park.jpg</field>
+<field name="checksum">e73e302f3d1876c943715e17ed2bdf3c</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1928 Orange Mounds Park.jpg.preview.jpg</field>
+<field name="originalName">1928 Orange Mounds Park.jpg.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">59280</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31155/3/1928%20Orange%20Mounds%20Park.jpg.preview.jpg</field>
+<field name="checksum">37a6772305b0c026d946cb7181eb0a4f</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31155</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31155</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.834</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31159</identifier><datestamp>2018-05-14T19:47:39Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+<element name="author">
+<element name="none">
+<field name="value">Ashburn, Foster J.</field>
+</element>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Memphis, Tennessee</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1937</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31159</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Ashburn 1937 Map of Memphis</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">1937 Map of Memphis</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Ashburn Memphis Map, 1937</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Ashburn 1937 Map of Memphis</field>
+<field name="originalName">Ashburn 1937 Map of Memphis</field>
+<field name="format">image/jpeg</field>
+<field name="size">16449963</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31159/1/Ashburn%201937%20Map%20of%20Memphis</field>
+<field name="checksum">dd2776a76d6a5aa254e5b5dc0dfcf7c4</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Ashburn 1937 Map of Memphis.jpg</field>
+<field name="originalName">Ashburn 1937 Map of Memphis.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">24658</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31159/2/Ashburn%201937%20Map%20of%20Memphis.jpg</field>
+<field name="checksum">309ee7132365f38f974e1bce412e24c3</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Ashburn 1937 Map of Memphis.preview.jpg</field>
+<field name="originalName">Ashburn 1937 Map of Memphis.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">147153</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31159/3/Ashburn%201937%20Map%20of%20Memphis.preview.jpg</field>
+<field name="checksum">dd6bec1c118fcb6abb58bb0c7ac5732b</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31159</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31159</field>
+<field name="lastModifyDate">2018-05-14 14:47:39.048</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31152</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Central Avenue Park</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:39Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:39Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1925</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31152</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">1925 Central Ave. Park Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">1925 Map of the Central Ave Park. Map courtesy of the MPLIC Memphis/Shelby County room</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Central Avenue Park</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Central Ave. Park Map, 1925</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1925 Central Ave. Park.jpg.jpg</field>
+<field name="originalName">1925 Central Ave. Park.jpg.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">15560</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31152/2/1925%20Central%20Ave.%20Park.jpg.jpg</field>
+<field name="checksum">e80680e693d67268e6794cdd7b716ce3</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1925 Central Ave. Park.jpg</field>
+<field name="originalName">1925 Central Ave. Park.jpg</field>
+<field name="format">image/jpeg</field>
+<field name="size">1361475</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31152/1/1925%20Central%20Ave.%20Park.jpg</field>
+<field name="checksum">fe4321b7b09986023437eb882c673592</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1925 Central Ave. Park.jpg.preview.jpg</field>
+<field name="originalName">1925 Central Ave. Park.jpg.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">84372</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31152/3/1925%20Central%20Ave.%20Park.jpg.preview.jpg</field>
+<field name="checksum">80d2331873de1545ab60c538b0941f42</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31152</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31152</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.975</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31163</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Shelby County</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31163</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Memphis and Shelby County Planning Districts Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">Map depicting proposed redistricting of Memphis/Shelby County</field>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">Shelby County Office of Planning and Development</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Urban planning</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Memphis and Shelby County Planning Districts Map</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis/Shelby County District Planning Map.jpg</field>
+<field name="originalName">Memphis/Shelby County District Planning Map.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">16686</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31163/2/Memphis/Shelby%20County%20District%20Planning%20Map.jpg</field>
+<field name="checksum">08357ffa2457254c8350b92973f38293</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis/Shelby County District Planning Map</field>
+<field name="originalName">Memphis/Shelby County District Planning Map</field>
+<field name="format">image/jpeg</field>
+<field name="size">1578640</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31163/1/Memphis/Shelby%20County%20District%20Planning%20Map</field>
+<field name="checksum">48115b4ea715bfe957a03a2d6db61ae3</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis/Shelby County District Planning Map.preview.jpg</field>
+<field name="originalName">Memphis/Shelby County District Planning Map.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">80508</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31163/3/Memphis/Shelby%20County%20District%20Planning%20Map.preview.jpg</field>
+<field name="checksum">1bd6cf2d9cf190d4c158b912cd1b4a87</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31163</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31163</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.912</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31150</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+<element name="author">
+<element name="none">
+<field name="value">Strickland, Harry J.</field>
+</element>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Memphis, Tennessee</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:38Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:38Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1920</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31150</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">R.L. Polk &amp; Co.  1920 Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">Historic map; Railroads; Street car lines; City limits; Churches; Theatres; Ward boundaries; R. R. Depots</field>
+</element>
+</element>
+<element name="format">
+<element name="medium">
+<element name="none">
+<field name="value">Drawn</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">R. L. Polk Company</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">R. L. Polk &amp; Co. Memphis Map, 1920</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">R.L. Polk &amp; Co.  1920 Map.jpg</field>
+<field name="originalName">R.L. Polk &amp; Co.  1920 Map.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">25528</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31150/2/R.L.%20Polk%20%26%20Co.%20%201920%20Map.jpg</field>
+<field name="checksum">50b69864d362f163f86f75f93512f649</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">R.L. Polk &amp; Co.  1920 Map</field>
+<field name="originalName">R.L. Polk &amp; Co.  1920 Map</field>
+<field name="format">image/jpeg</field>
+<field name="size">29917157</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31150/1/R.L.%20Polk%20%26%20Co.%20%201920%20Map</field>
+<field name="checksum">aaa8903369e4d3685645bc3ddc0e1f7e</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">R.L. Polk &amp; Co.  1920 Map.preview.jpg</field>
+<field name="originalName">R.L. Polk &amp; Co.  1920 Map.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">180001</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31150/3/R.L.%20Polk%20%26%20Co.%20%201920%20Map.preview.jpg</field>
+<field name="checksum">9decb6cb67d4cec1a58924323c3942ed</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31150</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31150</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.805</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31266</identifier><datestamp>2018-05-14T19:47:39Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-18T21:38:15Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-18T21:38:15Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1955</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31266</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Memphis Street Ry Co - 1955</field>
+</element>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Maps</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">The Memphis Street Ry. Co., 1955</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis Street Ry.jpg</field>
+<field name="originalName">Memphis Street Ry.jpg</field>
+<field name="format">image/jpeg</field>
+<field name="size">79674412</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31266/1/Memphis%20Street%20Ry.jpg</field>
+<field name="checksum">4e1d40a441bbb66f90192769b54b8232</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31266</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31266</field>
+<field name="lastModifyDate">2018-05-14 14:47:39.0</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31158</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Memphis, Tennessee</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1920</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31158</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">A.B.B.P. Co. 1920 Memphis Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">Map of 1920 Memphis as produced by the A.B.B.P. Company.</field>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">A.B.B.P Company</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">A.B.B.P. Co Memphis Map, 1920</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">A.B.B.P. Co. 1920 Memphis Map.jpg</field>
+<field name="originalName">A.B.B.P. Co. 1920 Memphis Map.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">27611</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31158/2/A.B.B.P.%20Co.%201920%20Memphis%20Map.jpg</field>
+<field name="checksum">09805735152adfc004baba1ca1ab6f3c</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">A.B.B.P. Co. 1920 Memphis Map</field>
+<field name="originalName">A.B.B.P. Co. 1920 Memphis Map</field>
+<field name="format">image/jpeg</field>
+<field name="size">185950</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31158/1/A.B.B.P.%20Co.%201920%20Memphis%20Map</field>
+<field name="checksum">82618c3fa9bc75152960fa25e0289988</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">A.B.B.P. Co. 1920 Memphis Map.preview.jpg</field>
+<field name="originalName">A.B.B.P. Co. 1920 Memphis Map.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">96728</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31158/3/A.B.B.P.%20Co.%201920%20Memphis%20Map.preview.jpg</field>
+<field name="checksum">eb06d34933657caa568089bfcebe21e9</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31158</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31158</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.872</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31161</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Memphis, Tennessee</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1937</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31161</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Kenneth Markwell Associates 1937 Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">1937 Map of Memphis by Kenneth Markwell Associates</field>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">Kenneth Markwell Associates</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Kenneth Markwell Associates Map, 1937</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Kenneth Markwell Associates 1937 Map.jpg</field>
+<field name="originalName">Kenneth Markwell Associates 1937 Map.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">31984</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31161/2/Kenneth%20Markwell%20Associates%201937%20Map.jpg</field>
+<field name="checksum">951a3bc96af0da49e28252db12259918</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Kenneth Markwell Associates 1937 Map</field>
+<field name="originalName">Kenneth Markwell Associates 1937 Map</field>
+<field name="format">image/jpeg</field>
+<field name="size">770050</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31161/1/Kenneth%20Markwell%20Associates%201937%20Map</field>
+<field name="checksum">87b204ae1dc897fcfc4e2bd5989cba1a</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Kenneth Markwell Associates 1937 Map.preview.jpg</field>
+<field name="originalName">Kenneth Markwell Associates 1937 Map.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">167553</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31161/3/Kenneth%20Markwell%20Associates%201937%20Map.preview.jpg</field>
+<field name="checksum">47b75712774b62c94901ae95c9e9e9fd</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31161</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31161</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.878</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31160</identifier><datestamp>2018-06-04T18:02:35Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Evergreen</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1904</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31160</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">F.W. Faxon &amp; Co. 1904 Evergreen Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">1904 Map of the Evergreen area of Memphis as cartographed by the F.W. Faxon &amp; Co.</field>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">F.W. Faxon &amp; Co</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Evergreen Historic District (Memphis, Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">F.W. Faxon &amp; Co. Evergreen Map, 1904</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">F.W. Faxon &amp; Co. 1904 Evergreen Map.jpg</field>
+<field name="originalName">F.W. Faxon &amp; Co. 1904 Evergreen Map.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">26166</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31160/2/F.W.%20Faxon%20%26%20Co.%201904%20Evergreen%20Map.jpg</field>
+<field name="checksum">b0e879900e29ce0105803df2f83ef4e5</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">F.W. Faxon &amp; Co. 1904 Evergreen Map</field>
+<field name="originalName">F.W. Faxon &amp; Co. 1904 Evergreen Map</field>
+<field name="format">image/jpeg</field>
+<field name="size">3291257</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31160/1/F.W.%20Faxon%20%26%20Co.%201904%20Evergreen%20Map</field>
+<field name="checksum">5500da0c640573b3bc52d33f943850d5</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">F.W. Faxon &amp; Co. 1904 Evergreen Map.preview.jpg</field>
+<field name="originalName">F.W. Faxon &amp; Co. 1904 Evergreen Map.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">155178</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31160/3/F.W.%20Faxon%20%26%20Co.%201904%20Evergreen%20Map.preview.jpg</field>
+<field name="checksum">72be8c2221b6e319d77c4adaaecc5ed9</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31160</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31160</field>
+<field name="lastModifyDate">2018-06-04 13:02:35.167</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31154</identifier><datestamp>2018-05-14T19:47:39Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Shelby County</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:39Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:39Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1927</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31154</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">1927 Shelby County Engineers Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">1927 Map of Shelby County by Shelby County Dept. of Engineering.</field>
+</element>
+</element>
+<element name="publisher">
+<element name="none">
+<field name="value">Shelby County Dept. of Engineering</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Shelby County (Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Shelby County Engineers Map, 1927</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1927 Shelby County Engineers Map.jpg</field>
+<field name="originalName">1927 Shelby County Engineers Map.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">16518</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31154/2/1927%20Shelby%20County%20Engineers%20Map.jpg</field>
+<field name="checksum">0477170283a4aec5687d6b12aeee1379</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1927 Shelby County Engineers Map</field>
+<field name="originalName">1927 Shelby County Engineers Map</field>
+<field name="format">image/jpeg</field>
+<field name="size">580648</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31154/1/1927%20Shelby%20County%20Engineers%20Map</field>
+<field name="checksum">f22d52c2620f8e4deb08783a971f3715</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1927 Shelby County Engineers Map.preview.jpg</field>
+<field name="originalName">1927 Shelby County Engineers Map.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">101035</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31154/3/1927%20Shelby%20County%20Engineers%20Map.preview.jpg</field>
+<field name="checksum">80f364c899d2ef33946da152709ec35a</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31154</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31154</field>
+<field name="lastModifyDate">2018-05-14 14:47:39.133</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31156</identifier><datestamp>2018-05-14T19:47:39Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Overton Park</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1978</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31156</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">1978 Overton Park Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">Map of Overton Park as depicted in 1978</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Overton Park (Memphis, Tenn.)</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Overton Park Map, 1978</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1978 Overton Park Map.jpg</field>
+<field name="originalName">1978 Overton Park Map.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">7999</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31156/2/1978%20Overton%20Park%20Map.jpg</field>
+<field name="checksum">7a57882a3e78130d1151abc90da54d1d</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1978 Overton Park Map</field>
+<field name="originalName">1978 Overton Park Map</field>
+<field name="format">image/jpeg</field>
+<field name="size">80137</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31156/1/1978%20Overton%20Park%20Map</field>
+<field name="checksum">f8dc8307dd59ae050ba255a8fc17c02d</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1978 Overton Park Map.preview.jpg</field>
+<field name="originalName">1978 Overton Park Map.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">31605</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31156/3/1978%20Overton%20Park%20Map.preview.jpg</field>
+<field name="checksum">e3f187bfd81de87d3a4da8fb5f1ca3e8</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31156</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31156</field>
+<field name="lastModifyDate">2018-05-14 14:47:39.141</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31265</identifier><datestamp>2018-05-14T19:47:39Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-18T21:38:15Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-18T21:38:15Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1945</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31265</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Memphis Street Ry Co - 1945</field>
+</element>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Maps</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">The Memphis Street Ry. Co., 1945</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis Street Ry Co - 1945</field>
+<field name="originalName">Memphis Street Ry Co - 1945</field>
+<field name="format">image/jpeg</field>
+<field name="size">2807801</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31265/1/Memphis%20Street%20Ry%20Co%20-%201945</field>
+<field name="checksum">95ebef3262040898b8cb88790f79f9d8</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis Street Ry Co - 1945.jpg</field>
+<field name="originalName">Memphis Street Ry Co - 1945.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">19683</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31265/2/Memphis%20Street%20Ry%20Co%20-%201945.jpg</field>
+<field name="checksum">584ce2a214944c8e08d0d5d8d52c20d4</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Memphis Street Ry Co - 1945.preview.jpg</field>
+<field name="originalName">Memphis Street Ry Co - 1945.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">128939</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31265/3/Memphis%20Street%20Ry%20Co%20-%201945.preview.jpg</field>
+<field name="checksum">29ec0b3fd10a642fb4e2c2ac531eaffb</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31265</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31265</field>
+<field name="lastModifyDate">2018-05-14 14:47:39.154</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31157</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Shelby County</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1994</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31157</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">1994 Preposed Shelby County Census Tracts</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">Map of preposed 1994 Census Tracts for Memphis, TN.</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Shelby County (Tenn.)</field>
+<field name="value">Census</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Preposed Shelby County Census Tracts, 1994</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1994 Preposed Shelby County Census Tracts.jpg</field>
+<field name="originalName">1994 Preposed Shelby County Census Tracts.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">28860</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31157/2/1994%20Preposed%20Shelby%20County%20Census%20Tracts.jpg</field>
+<field name="checksum">9e752941cac2e8301ecdb2382e71ba4a</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1994 Preposed Shelby County Census Tracts</field>
+<field name="originalName">1994 Preposed Shelby County Census Tracts</field>
+<field name="format">image/jpeg</field>
+<field name="size">791588</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31157/1/1994%20Preposed%20Shelby%20County%20Census%20Tracts</field>
+<field name="checksum">c8134cd75e5feb4e21ab1632a3bc97a3</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">1994 Preposed Shelby County Census Tracts.preview.jpg</field>
+<field name="originalName">1994 Preposed Shelby County Census Tracts.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">161576</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31157/3/1994%20Preposed%20Shelby%20County%20Census%20Tracts.preview.jpg</field>
+<field name="checksum">9945bf096e8d6335bbe571730122584e</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31157</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31157</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.967</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/31162</identifier><datestamp>2018-05-14T19:47:38Z</datestamp><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31149</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="none">
+<field name="value">Memphis Public Library: Memphis Room</field>
+</element>
+</element>
+<element name="coverage">
+<element name="temporal">
+<element name="none">
+<field name="value">Memphis, Tennessee</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-15T16:50:40Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1880</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/31162</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Memphis 1880 Sewer Map</field>
+</element>
+</element>
+</element>
+<element name="description">
+<element name="none">
+<field name="value">1880 Map of Memphis' sewer system</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Maps</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">Sanitation</field>
+<field name="value">Sewer system</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Memphis Sewer Map, 1880</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Still image</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">memphis_sewers_1880.jpg.jpg</field>
+<field name="originalName">memphis_sewers_1880.jpg.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">16196</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31162/2/memphis_sewers_1880.jpg.jpg</field>
+<field name="checksum">86327268eb2bf695a06887be3dfd4d55</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">memphis_sewers_1880.jpg</field>
+<field name="originalName">memphis_sewers_1880.jpg</field>
+<field name="format">image/jpeg</field>
+<field name="size">869341</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31162/1/memphis_sewers_1880.jpg</field>
+<field name="checksum">3d1bed8809e0810265ee590a2a6f25fa</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">BRANDED_PREVIEW</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">memphis_sewers_1880.jpg.preview.jpg</field>
+<field name="originalName">memphis_sewers_1880.jpg.preview.jpg</field>
+<field name="description">Generated Branded Preview</field>
+<field name="format">image/jpeg</field>
+<field name="size">105360</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/31162/3/memphis_sewers_1880.jpg.preview.jpg</field>
+<field name="checksum">a0e1d983d4cc6edc532f4f2a61403edc</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/31162</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/31162</field>
+<field name="lastModifyDate">2018-05-14 14:47:38.865</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record></ListRecords></OAI-PMH>

@@ -23,6 +23,7 @@
         <dltn:type string="moving image">Video</dltn:type>
         <dltn:type string="text">Text</dltn:type>
         <dltn:type string="sound recording">Sound</dltn:type>
+        <dltn:type string="still image">Still image</dltn:type>
     </xsl:param>
     
 
@@ -87,6 +88,7 @@
                     select='element[@name = "dc"]/element[@name = "date"]/element[@name = "issued"]/element[@name = "none"]/field[@name = "value"]'
                 />
                 <xsl:apply-templates select='element[@name = "dc"]/element[@name = "publisher"]/element[@name = "en_US"]/field[@name = "value"]'/>
+                <xsl:apply-templates select='element[@name="dc"]/element[@name="date"]/element[@name="accessioned"]/element[@name="none"]/field[@name="value"]'/>
             </originInfo>
             
             <!-- recordInfo -->
@@ -261,5 +263,12 @@
             </xsl:when>
         </xsl:choose>
     </xsl:template>
-    
+
+    <!-- Date Other -->
+    <xsl:template match='element[@name="dc"]/element[@name="date"]/element[@name="accessioned"]/element[@name="none"]/field[@name="value"]'>
+        <dateOther>
+            <xsl:apply-templates/>
+        </dateOther>
+    </xsl:template>
+
 </xsl:stylesheet>
