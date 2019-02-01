@@ -7,6 +7,7 @@
                 xmlns:dcterms="http://purl.org/dc/terms/"
                 xmlns:dc="http://purl.org/dc/elements/1.1/"
                 xmlns:oai="http://www.openarchives.org/OAI/2.0/"
+                xmlns:dltn = "https://github.com/digitallibraryoftennessee"
                 xmlns="http://www.loc.gov/mods/v3"
                 xpath-default-namespace="http://worldcat.org/xmlschema/qdc-1.0/"
                 exclude-result-prefixes="xs xsi oai oai_qdc dcterms dc"
@@ -29,13 +30,13 @@
   -->
   <xsl:variable name="catalog" select="document('catalogs/utc_catalog.xml')"/>
   <xsl:param name="pLang">
-    <l string="eng">english</l>
-    <l string="eng">en</l>
-    <l string="eng">eng</l>
-    <l string="deu">german</l>
-    <l string="spa">spanish</l>
-    <l string="zxx">zxx</l>
-    <l string="zxx">no linguistic content.</l>
+    <dltn:l string="eng">english</dltn:l>
+    <dltn:l string="eng">en</dltn:l>
+    <dltn:l string="eng">eng</dltn:l>
+    <dltn:l string="deu">german</dltn:l>
+    <dltn:l string="spa">spanish</dltn:l>
+    <dltn:l string="zxx">zxx</dltn:l>
+    <dltn:l string="zxx">no linguistic content.</dltn:l>
   </xsl:param>
 
 
@@ -227,9 +228,9 @@
     <xsl:for-each select="$lang-tokens">
       <xsl:variable name="ltln" select="lower-case(normalize-space(.))"/>
       <xsl:choose>
-        <xsl:when test="$ltln = $pLang/l">
+        <xsl:when test="$ltln = $pLang/dltn:l">
           <languageTerm type="code" authority="iso639-2b">
-            <xsl:value-of select="$pLang/l[. = $ltln]/@string"/>
+            <xsl:value-of select="$pLang/dltn:l[. = $ltln]/@string"/>
           </languageTerm>
         </xsl:when>
       </xsl:choose>
