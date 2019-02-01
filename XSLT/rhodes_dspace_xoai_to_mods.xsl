@@ -51,17 +51,24 @@
             <xsl:apply-templates select="element[@name = 'dc']/element[@name = 'title']/element/field"/>
             
             <!-- rights-->
-            <accessCondition type="local rights statement">All rights reserved. The accompanying
-                digital object and its associated documentation are provided for online research and
-                access purposes. Permission to use, copy, modify, distribute and present this
-                digital object and the accompanying documentation, without fee, and without written
-                agreement, is hereby granted for educational, non-commercial purposes only. The
-                Rhodes College Archives reserves the right to decide what constitutes educational
-                and commercial use; commercial users may be charged a nominal fee to be determined
-                by current, commercial rates for use of special materials. In all instances of use,
-                acknowledgement must begiven to Rhodes College Archives and Special Collection,
-                Memphis, TN. For information regarding permission to use this image, please email
-                the Archives at archives@rhodes.edu or call 901-843-3334.</accessCondition>
+            <xsl:choose>
+                <xsl:when test="element[@name = 'dc']/element[@name = 'rights']/element/field">
+                    <xsl:apply-templates select="element[@name = 'dc']/element[@name = 'rights']/element/field"/>                   
+                </xsl:when>
+                <xsl:otherwise>
+                    <accessCondition type="local rights statement">All rights reserved. The accompanying
+                        digital object and its associated documentation are provided for online research and
+                        access purposes. Permission to use, copy, modify, distribute and present this
+                        digital object and the accompanying documentation, without fee, and without written
+                        agreement, is hereby granted for educational, non-commercial purposes only. The
+                        Rhodes College Archives reserves the right to decide what constitutes educational
+                        and commercial use; commercial users may be charged a nominal fee to be determined
+                        by current, commercial rates for use of special materials. In all instances of use,
+                        acknowledgement must begiven to Rhodes College Archives and Special Collection,
+                        Memphis, TN. For information regarding permission to use this image, please email
+                        the Archives at archives@rhodes.edu or call 901-843-3334.</accessCondition>
+                </xsl:otherwise>
+            </xsl:choose>
             
             <!-- urls -->
             <location>
@@ -102,7 +109,7 @@
             </recordInfo>
             
             <!-- typeOfResource -->
-            <xsl:apply-templates select='element[@name="dc"]/element[@name="type"]/element[@name="en_US"]/field[@name="value"]'/>
+            <xsl:apply-templates select='element[@name="dc"]/element[@name="type"]/element/field[@name="value"]'/>
             
             <!-- identifiers -->
             <xsl:apply-templates select='element[@name="dc"]/element[@name="identifier"]/element[@name="rhodes"]/element[@name="none"]/field[@name="value"]'/>
@@ -201,7 +208,7 @@
     </xsl:template>
     
     <!-- typeOfResource -->
-    <xsl:template match='element[@name="dc"]/element[@name="type"]/element[@name="en_US"]/field[@name="value"]'>
+    <xsl:template match='element[@name="dc"]/element[@name="type"]/element/field[@name="value"]'>
         <xsl:variable name="rtype" select="."/>
         <xsl:choose>
             <xsl:when test="$rtype=$pType/dltn:type">
@@ -271,4 +278,10 @@
         </dateOther>
     </xsl:template>
 
+    <!-- Rights -->
+    <xsl:template match="element[@name = 'dc']/element[@name = 'rights']/element/field">
+        <accessCondition type="local rights statement">
+            <xsl:apply-templates/>
+        </accessCondition>
+    </xsl:template>
 </xsl:stylesheet>
