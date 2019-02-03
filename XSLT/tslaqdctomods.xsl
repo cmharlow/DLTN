@@ -200,9 +200,11 @@
             <xsl:variable name="ltln" select="lower-case(normalize-space(.))"/>
             <xsl:choose>
                 <xsl:when test="$ltln = $pLang/dltn:l">
+                    <language>
                     <languageTerm type="code" authority="iso639-2b">
                         <xsl:value-of select="$pLang/dltn:l[. = $ltln]/@string"/>
                     </languageTerm>
+                    </language>
                 </xsl:when>
             </xsl:choose>
         </xsl:for-each>
