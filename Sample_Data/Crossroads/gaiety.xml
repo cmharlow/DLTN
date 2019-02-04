@@ -1,0 +1,2149 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="static/style.xsl"?><OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>2019-01-26T13:02:09Z</responseDate><request verb="ListRecords" metadataPrefix="xoai" set="col_10267_31329">http://dlynx.rhodes.edu:8080/oai/request</request><ListRecords><record><header><identifier>oai:dlynx.rhodes.edu:10267/30705</identifier><datestamp>2018-05-14T18:35:11Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="author">
+<element name="none">
+<field name="value">Laughlin, Larry</field>
+<field name="value">Cowart, Mary Jo</field>
+<field name="value">Coates, Cliff</field>
+<field name="value">Dunbar, Pat</field>
+<field name="value">Edwards, Alan</field>
+<field name="value">Haynes, Buddy</field>
+<field name="value">Hedgecock, Rik</field>
+</element>
+</element>
+<element name="editor">
+<element name="none">
+<field name="value">Poe, Gary W.</field>
+<field name="value">Salles, Gary E.</field>
+</element>
+</element>
+<element name="artist">
+<element name="none">
+<field name="value">Coppock, Tony</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:45:45Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:45:45Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1976-11</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30705</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v3n1_1976-11</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, November 1976</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v3n1_1976-11.pdf</field>
+<field name="originalName">Gaiety_v3n1_1976-11.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">21123170</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30705/1/Gaiety_v3n1_1976-11.pdf</field>
+<field name="checksum">786d540fbe2c20fdf016b4617e85f5b3</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30705/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v3n1_1976-11.pdf.txt</field>
+<field name="originalName">Gaiety_v3n1_1976-11.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">44322</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30705/3/Gaiety_v3n1_1976-11.pdf.txt</field>
+<field name="checksum">d12f2b4f8615b4bb564278c7b6d8cf20</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v3n1_1976-11.pdf.jpg</field>
+<field name="originalName">Gaiety_v3n1_1976-11.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">12584</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30705/4/Gaiety_v3n1_1976-11.pdf.jpg</field>
+<field name="checksum">40874277fb4d029e968a327739d8313b</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30705</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30705</field>
+<field name="lastModifyDate">2018-05-14 13:35:11.346</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30693</identifier><datestamp>2018-05-14T18:35:05Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:19:29Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:19:29Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1975-04</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30693</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v1n1_1975-04</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, April 1975</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n1_1975-04.pdf.txt</field>
+<field name="originalName">Gaiety_v1n1_1975-04.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">50744</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30693/3/Gaiety_v1n1_1975-04.pdf.txt</field>
+<field name="checksum">a24bfbfa3fd2e53cb06d063a8e4c993c</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n1_1975-04.pdf.jpg</field>
+<field name="originalName">Gaiety_v1n1_1975-04.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">14422</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30693/4/Gaiety_v1n1_1975-04.pdf.jpg</field>
+<field name="checksum">db70b880fb2dac07c46affc6c106e193</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n1_1975-04.pdf</field>
+<field name="originalName">Gaiety_v1n1_1975-04.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">27540410</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30693/1/Gaiety_v1n1_1975-04.pdf</field>
+<field name="checksum">33548b4f71092c097cdeb21d944b5616</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30693/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30693</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30693</field>
+<field name="lastModifyDate">2018-05-14 13:35:05.223</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30694</identifier><datestamp>2018-05-14T18:35:05Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:20:38Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:20:38Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1975-08</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30694</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v1n2_1975-08</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, August 1975</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n2_1975-08.pdf.txt</field>
+<field name="originalName">Gaiety_v1n2_1975-08.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">72541</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30694/3/Gaiety_v1n2_1975-08.pdf.txt</field>
+<field name="checksum">745675e41241e52a9995c99cdab43f1c</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n2_1975-08.pdf.jpg</field>
+<field name="originalName">Gaiety_v1n2_1975-08.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">17043</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30694/4/Gaiety_v1n2_1975-08.pdf.jpg</field>
+<field name="checksum">29ca17541b95ecd6e50210fa0533b78f</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n2_1975-08.pdf</field>
+<field name="originalName">Gaiety_v1n2_1975-08.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">29088115</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30694/1/Gaiety_v1n2_1975-08.pdf</field>
+<field name="checksum">b7cd4754003470eca30ab4f20353a255</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30694/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30694</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30694</field>
+<field name="lastModifyDate">2018-05-14 13:35:05.0</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30696</identifier><datestamp>2018-05-14T18:35:11Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="editor">
+<element name="none">
+<field name="value">Poe, Gary W.</field>
+<field name="value">Baker, Lila</field>
+<field name="value">Harris, Fred</field>
+</element>
+</element>
+<element name="artist">
+<element name="none">
+<field name="value">Alley, Jim</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:25:17Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:25:17Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1975-10</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30696</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v1n4_1975-10</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, October 1975</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n4_1975-10.pdf.txt</field>
+<field name="originalName">Gaiety_v1n4_1975-10.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">92910</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30696/3/Gaiety_v1n4_1975-10.pdf.txt</field>
+<field name="checksum">71e4a8114e11a2405bcdc66106c66e60</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n4_1975-10.pdf.jpg</field>
+<field name="originalName">Gaiety_v1n4_1975-10.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">17697</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30696/4/Gaiety_v1n4_1975-10.pdf.jpg</field>
+<field name="checksum">2a4fed74287b1897cdafa587259c8504</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n4_1975-10.pdf</field>
+<field name="originalName">Gaiety_v1n4_1975-10.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">49735701</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30696/1/Gaiety_v1n4_1975-10.pdf</field>
+<field name="checksum">4685aec33262308babddf02b4c6be83a</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30696/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30696</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30696</field>
+<field name="lastModifyDate">2018-05-14 13:35:11.195</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30703</identifier><datestamp>2018-05-14T18:35:11Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="author">
+<element name="none">
+<field name="value">Brummett, Martha</field>
+<field name="value">Haynes, Buddy</field>
+<field name="value">Mainord, Dennis</field>
+<field name="value">Laughlin, Larry</field>
+</element>
+</element>
+<element name="editor">
+<element name="none">
+<field name="value">Poe, Gary W.</field>
+<field name="value">Salles, Gary E.</field>
+</element>
+</element>
+<element name="artist">
+<element name="none">
+<field name="value">Cowart, Mary Jo</field>
+<field name="value">Shelton, Jimm</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:43:41Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:43:41Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1976-07</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30703</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v2n1_1976-07</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, July 1976</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v2n1_1976-07.pdf</field>
+<field name="originalName">Gaiety_v2n1_1976-07.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">31465603</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30703/1/Gaiety_v2n1_1976-07.pdf</field>
+<field name="checksum">7187f5f4f0eaf1dbd2498e2ab40d2b0a</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30703/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v2n1_1976-07.pdf.txt</field>
+<field name="originalName">Gaiety_v2n1_1976-07.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">71824</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30703/3/Gaiety_v2n1_1976-07.pdf.txt</field>
+<field name="checksum">3ffad1aac9a792fbe1feb4933865a372</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v2n1_1976-07.pdf.jpg</field>
+<field name="originalName">Gaiety_v2n1_1976-07.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">23043</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30703/4/Gaiety_v2n1_1976-07.pdf.jpg</field>
+<field name="checksum">292f78f2105c8d2b5c7ec670d932f6c0</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30703</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30703</field>
+<field name="lastModifyDate">2018-05-14 13:35:11.318</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30692</identifier><datestamp>2018-05-14T18:35:02Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="editor">
+<element name="none">
+<field name="value">Poe, Gary W.</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:17:54Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:17:54Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1977-03</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30692</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v0n0_1977-03</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, March 1977</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v0n0_1977-03.pdf</field>
+<field name="originalName">Gaiety_v0n0_1977-03.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">13683881</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30692/1/Gaiety_v0n0_1977-03.pdf</field>
+<field name="checksum">2d52f910a5f117decafe068f5e01cc30</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30692/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v0n0_1977-03.pdf.txt</field>
+<field name="originalName">Gaiety_v0n0_1977-03.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">31289</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30692/3/Gaiety_v0n0_1977-03.pdf.txt</field>
+<field name="checksum">758f6794008e7b3135cdb084fca774fe</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v0n0_1977-03.pdf.jpg</field>
+<field name="originalName">Gaiety_v0n0_1977-03.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">12794</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30692/4/Gaiety_v0n0_1977-03.pdf.jpg</field>
+<field name="checksum">5a07650b0ca6ff835b8cafc52cdd598f</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30692</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30692</field>
+<field name="lastModifyDate">2018-05-14 13:35:02.884</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30699</identifier><datestamp>2018-05-14T18:35:04Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="editor">
+<element name="none">
+<field name="value">Poe, Gary W.</field>
+<field name="value">Baker, Lila</field>
+<field name="value">Harris, Fred</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:40:50Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:40:50Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1976-01</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30699</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v1n7_1976-01</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, January 1976</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30699/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n7_1976-01.pdf.txt</field>
+<field name="originalName">Gaiety_v1n7_1976-01.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">85927</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30699/3/Gaiety_v1n7_1976-01.pdf.txt</field>
+<field name="checksum">41c9e9be1ae8cf4d3157a1ec445996fa</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n7_1976-01.pdf.jpg</field>
+<field name="originalName">Gaiety_v1n7_1976-01.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">17259</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30699/4/Gaiety_v1n7_1976-01.pdf.jpg</field>
+<field name="checksum">d5427cc971ac258709befd6e8f71231c</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n7_1976-01.pdf</field>
+<field name="originalName">Gaiety_v1n7_1976-01.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">33502606</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30699/1/Gaiety_v1n7_1976-01.pdf</field>
+<field name="checksum">e4559dac799c7597e49ef51d2cbfa8f6</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30699</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30699</field>
+<field name="lastModifyDate">2018-05-14 13:35:04.885</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30701</identifier><datestamp>2018-05-14T18:35:11Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="author">
+<element name="none">
+<field name="value">Brummett, Martha</field>
+<field name="value">Haynes, Buddy</field>
+</element>
+</element>
+<element name="editor">
+<element name="none">
+<field name="value">Poe, Gary W.</field>
+<field name="value">Harris, Fred</field>
+</element>
+</element>
+<element name="artist">
+<element name="none">
+<field name="value">Cowart, Mary Jo</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:42:24Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:42:24Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1976-04</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30701</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v1n9_1976-04</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, April 1976</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n9_1976-04.pdf.txt</field>
+<field name="originalName">Gaiety_v1n9_1976-04.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">95828</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30701/3/Gaiety_v1n9_1976-04.pdf.txt</field>
+<field name="checksum">a46458cadd5dde895670b7ac3e40756e</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n9_1976-04.pdf.jpg</field>
+<field name="originalName">Gaiety_v1n9_1976-04.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">21034</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30701/4/Gaiety_v1n9_1976-04.pdf.jpg</field>
+<field name="checksum">23a028f8b2a3d152339c9183e6c91dc9</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n9_1976-04.pdf</field>
+<field name="originalName">Gaiety_v1n9_1976-04.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">38731717</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30701/1/Gaiety_v1n9_1976-04.pdf</field>
+<field name="checksum">0786ded11fbb6909e66f2293e659f1bf</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30701/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30701</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30701</field>
+<field name="lastModifyDate">2018-05-14 13:35:11.165</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30695</identifier><datestamp>2018-05-14T18:35:05Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:21:37Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:21:37Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1975-09</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30695</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v1n3_1975-09</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, September 1975</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n3_1975-09.pdf</field>
+<field name="originalName">Gaiety_v1n3_1975-09.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">31956829</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30695/1/Gaiety_v1n3_1975-09.pdf</field>
+<field name="checksum">8e99b5d6e8ef2443c8998aa85c05dad0</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30695/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n3_1975-09.pdf.txt</field>
+<field name="originalName">Gaiety_v1n3_1975-09.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">73727</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30695/3/Gaiety_v1n3_1975-09.pdf.txt</field>
+<field name="checksum">234506949908dd59385299905689f4dc</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n3_1975-09.pdf.jpg</field>
+<field name="originalName">Gaiety_v1n3_1975-09.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">18621</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30695/4/Gaiety_v1n3_1975-09.pdf.jpg</field>
+<field name="checksum">9f4d9068201ba44e36ad61682a2e3b7a</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30695</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30695</field>
+<field name="lastModifyDate">2018-05-14 13:35:05.107</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30697</identifier><datestamp>2018-05-14T18:35:05Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:25:59Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:25:59Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1975-11</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30697</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v1n5_1975-11</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, November 1975</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n5_1975-11.pdf</field>
+<field name="originalName">Gaiety_v1n5_1975-11.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">32759703</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30697/1/Gaiety_v1n5_1975-11.pdf</field>
+<field name="checksum">328c487b8dbdf49bda3fad65f4765bf5</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30697/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n5_1975-11.pdf.txt</field>
+<field name="originalName">Gaiety_v1n5_1975-11.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">73858</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30697/3/Gaiety_v1n5_1975-11.pdf.txt</field>
+<field name="checksum">c49f96159ff66f310d707aab62be1dda</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n5_1975-11.pdf.jpg</field>
+<field name="originalName">Gaiety_v1n5_1975-11.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">17419</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30697/4/Gaiety_v1n5_1975-11.pdf.jpg</field>
+<field name="checksum">970c8deca0224e9ed97f8c9bce3a0a34</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30697</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30697</field>
+<field name="lastModifyDate">2018-05-14 13:35:05.019</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30698</identifier><datestamp>2018-05-14T18:35:11Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="editor">
+<element name="none">
+<field name="value">Poe, Gary W.</field>
+<field name="value">Baker, Lila</field>
+<field name="value">Harris, Fred</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:26:40Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:26:40Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1975-12</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30698</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v1n6_1975-12</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, December 1975</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n6_1975-12.pdf.txt</field>
+<field name="originalName">Gaiety_v1n6_1975-12.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">72340</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30698/3/Gaiety_v1n6_1975-12.pdf.txt</field>
+<field name="checksum">611e0c8835cb7c37bdb73940564828c6</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n6_1975-12.pdf.jpg</field>
+<field name="originalName">Gaiety_v1n6_1975-12.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">20263</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30698/4/Gaiety_v1n6_1975-12.pdf.jpg</field>
+<field name="checksum">40349dd5f213de5f06bcf4b683f3763f</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n6_1975-12.pdf</field>
+<field name="originalName">Gaiety_v1n6_1975-12.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">31991776</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30698/1/Gaiety_v1n6_1975-12.pdf</field>
+<field name="checksum">c1463c354e16bac8149cb8f461401a62</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30698/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30698</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30698</field>
+<field name="lastModifyDate">2018-05-14 13:35:11.305</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30700</identifier><datestamp>2018-05-14T18:35:11Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="author">
+<element name="none">
+<field name="value">Brummett, Martha</field>
+<field name="value">Haynes, Buddy</field>
+</element>
+</element>
+<element name="editor">
+<element name="none">
+<field name="value">Poe, Gary W.</field>
+<field name="value">Harris, Fred</field>
+</element>
+</element>
+<element name="artist">
+<element name="none">
+<field name="value">Cowart, Mary Jo</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:41:41Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:41:41Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1976-02</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30700</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v1n8_1976-02</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, February 1976</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n8_1976-02.pdf</field>
+<field name="originalName">Gaiety_v1n8_1976-02.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">50661444</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30700/1/Gaiety_v1n8_1976-02.pdf</field>
+<field name="checksum">126ee01aeab29bb56a088d8f5ff1a233</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30700/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n8_1976-02.pdf.txt</field>
+<field name="originalName">Gaiety_v1n8_1976-02.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">125113</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30700/3/Gaiety_v1n8_1976-02.pdf.txt</field>
+<field name="checksum">48bb0d9cd1483ef3371e42ef0f98cc33</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n8_1976-02.pdf.jpg</field>
+<field name="originalName">Gaiety_v1n8_1976-02.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">15358</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30700/4/Gaiety_v1n8_1976-02.pdf.jpg</field>
+<field name="checksum">f59aafdbf0e9a5d72f7f973c73b17f92</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30700</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30700</field>
+<field name="lastModifyDate">2018-05-14 13:35:11.358</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30691</identifier><datestamp>2018-05-14T18:35:04Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="author">
+<element name="none">
+<field name="value">Laughlin, Larry</field>
+</element>
+</element>
+<element name="editor">
+<element name="none">
+<field name="value">Poe, Gary W.</field>
+<field name="value">Salles, Gary E.</field>
+</element>
+</element>
+<element name="artist">
+<element name="none">
+<field name="value">Coppock, Tony</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:16:15Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:16:15Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1976-12</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30691</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v0n0_1976-12</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, December 1976</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v0n0_1976-12.pdf</field>
+<field name="originalName">Gaiety_v0n0_1976-12.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">26507261</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30691/1/Gaiety_v0n0_1976-12.pdf</field>
+<field name="checksum">236be7eedfc987ea146012f6c95c97ee</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30691/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v0n0_1976-12.pdf.txt</field>
+<field name="originalName">Gaiety_v0n0_1976-12.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">60828</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30691/3/Gaiety_v0n0_1976-12.pdf.txt</field>
+<field name="checksum">ede1632b9c226cdcd5df546f5bb236db</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v0n0_1976-12.pdf.jpg</field>
+<field name="originalName">Gaiety_v0n0_1976-12.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">16317</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30691/4/Gaiety_v0n0_1976-12.pdf.jpg</field>
+<field name="checksum">96485cbadba0bb01286c6037b0810c12</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30691</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30691</field>
+<field name="lastModifyDate">2018-05-14 13:35:04.016</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30704</identifier><datestamp>2018-05-14T18:35:11Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="author">
+<element name="none">
+<field name="value">Haynes, Buddy</field>
+<field name="value">Brummett, Martha</field>
+<field name="value">Hedgecock, Rik</field>
+<field name="value">Mainord, Dennis</field>
+</element>
+</element>
+<element name="editor">
+<element name="none">
+<field name="value">Poe, Gary W.</field>
+<field name="value">Salles, Gary E.</field>
+<field name="value">Laughlin, Larry</field>
+</element>
+</element>
+<element name="artist">
+<element name="none">
+<field name="value">Cowart, Mary Jo</field>
+<field name="value">Shelton, Jimm</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:44:16Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:44:16Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1976-08</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30704</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v2n2_1976-08</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, August 1976</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v2n2_1976-08.pdf</field>
+<field name="originalName">Gaiety_v2n2_1976-08.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">31157665</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30704/1/Gaiety_v2n2_1976-08.pdf</field>
+<field name="checksum">d17d559b39f22df76cb828e7800451a1</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v2n2_1976-08.pdf.txt</field>
+<field name="originalName">Gaiety_v2n2_1976-08.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">85219</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30704/3/Gaiety_v2n2_1976-08.pdf.txt</field>
+<field name="checksum">d689bfbfeb5dd8d74d6bd849e4ebd52f</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v2n2_1976-08.pdf.jpg</field>
+<field name="originalName">Gaiety_v2n2_1976-08.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">21590</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30704/4/Gaiety_v2n2_1976-08.pdf.jpg</field>
+<field name="checksum">8f6708b690cf07aa3aac1ece526d793a</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30704/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30704</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30704</field>
+<field name="lastModifyDate">2018-05-14 13:35:11.28</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30702</identifier><datestamp>2018-05-14T18:35:05Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31329</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="author">
+<element name="none">
+<field name="value">Brummett, Martha</field>
+<field name="value">Haynes, Buddy</field>
+</element>
+</element>
+<element name="editor">
+<element name="none">
+<field name="value">Poe, Gary W.</field>
+<field name="value">Harris, Fred</field>
+</element>
+</element>
+<element name="artist">
+<element name="none">
+<field name="value">Cowart, Mary Jo</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-11-29T17:43:04Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-11-29T17:43:04Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">1976-06</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30702</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Gaiety_v1n10_1976-06</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">GALI Publishers</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Newspapers</field>
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Gaiety, June 1976</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n10_1976-06.pdf</field>
+<field name="originalName">Gaiety_v1n10_1976-06.pdf</field>
+<field name="description"/>
+<field name="format">application/pdf</field>
+<field name="size">33387987</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30702/1/Gaiety_v1n10_1976-06.pdf</field>
+<field name="checksum">53c60fed4a9086d90d0e84d53965e9c7</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">LICENSE</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">license.txt</field>
+<field name="originalName">license.txt</field>
+<field name="format">text/plain</field>
+<field name="size">1663</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30702/2/license.txt</field>
+<field name="checksum">69d7879d0c65ae9be06d38a27d11bcb2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n10_1976-06.pdf.txt</field>
+<field name="originalName">Gaiety_v1n10_1976-06.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">74327</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30702/3/Gaiety_v1n10_1976-06.pdf.txt</field>
+<field name="checksum">9ef12e07b73d6c0a95f0308fdfb9ea64</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Gaiety_v1n10_1976-06.pdf.jpg</field>
+<field name="originalName">Gaiety_v1n10_1976-06.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">17340</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30702/4/Gaiety_v1n10_1976-06.pdf.jpg</field>
+<field name="checksum">ddb24def4a6700b6809346e2f73020e0</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">4</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30702</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30702</field>
+<field name="lastModifyDate">2018-05-14 13:35:05.079</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+<element name="license">
+<field name="bin">Tk9OLUVYQ0xVU0lWRSBESVNUUklCVVRJT04gTElDRU5TRQoKQnkgc2lnbmluZyBhbmQgc3VibWl0dGluZyB0aGlzIGxpY2Vuc2UsIHlvdSAodGhlIGF1dGhvcihzKSBvciBjb3B5cmlnaHQKb3duZXIpIGdyYW50cyB0byBSaG9kZXMgQ29sbGVnZSAoUkhPREVTKSB0aGUgbm9uLWV4Y2x1c2l2ZSByaWdodCB0byByZXByb2R1Y2UsCnRyYW5zbGF0ZSAoYXMgZGVmaW5lZCBiZWxvdyksIGFuZC9vciBkaXN0cmlidXRlIHlvdXIgc3VibWlzc2lvbiAoaW5jbHVkaW5nCnRoZSBhYnN0cmFjdCkgd29ybGR3aWRlIGluIHByaW50IGFuZCBlbGVjdHJvbmljIGZvcm1hdCBhbmQgaW4gYW55IG1lZGl1bSwKaW5jbHVkaW5nIGJ1dCBub3QgbGltaXRlZCB0byBhdWRpbyBvciB2aWRlby4KCllvdSBhZ3JlZSB0aGF0IFJIT0RFUyBtYXksIHdpdGhvdXQgY2hhbmdpbmcgdGhlIGNvbnRlbnQsIHRyYW5zbGF0ZSB0aGUKc3VibWlzc2lvbiB0byBhbnkgbWVkaXVtIG9yIGZvcm1hdCBmb3IgdGhlIHB1cnBvc2Ugb2YgcHJlc2VydmF0aW9uLgoKWW91IGFsc28gYWdyZWUgdGhhdCBSSE9ERVMgbWF5IGtlZXAgbW9yZSB0aGFuIG9uZSBjb3B5IG9mIHRoaXMgc3VibWlzc2lvbiBmb3IKcHVycG9zZXMgb2Ygc2VjdXJpdHksIGJhY2stdXAgYW5kIHByZXNlcnZhdGlvbi4KCllvdSByZXByZXNlbnQgdGhhdCB0aGUgc3VibWlzc2lvbiBpcyB5b3VyIG9yaWdpbmFsIHdvcmssIGFuZCB0aGF0IHlvdSBoYXZlCnRoZSByaWdodCB0byBncmFudCB0aGUgcmlnaHRzIGNvbnRhaW5lZCBpbiB0aGlzIGxpY2Vuc2UuIFlvdSBhbHNvIHJlcHJlc2VudAp0aGF0IHlvdXIgc3VibWlzc2lvbiBkb2VzIG5vdCwgdG8gdGhlIGJlc3Qgb2YgeW91ciBrbm93bGVkZ2UsIGluZnJpbmdlIHVwb24KYW55b25lJ3MgY29weXJpZ2h0LgoKSWYgdGhlIHN1Ym1pc3Npb24gY29udGFpbnMgbWF0ZXJpYWwgZm9yIHdoaWNoIHlvdSBkbyBub3QgaG9sZCBjb3B5cmlnaHQsCnlvdSByZXByZXNlbnQgdGhhdCB5b3UgaGF2ZSBvYnRhaW5lZCB0aGUgdW5yZXN0cmljdGVkIHBlcm1pc3Npb24gb2YgdGhlCmNvcHlyaWdodCBvd25lciB0byBncmFudCBSSE9ERVMgdGhlIHJpZ2h0cyByZXF1aXJlZCBieSB0aGlzIGxpY2Vuc2UsIGFuZCB0aGF0CnN1Y2ggdGhpcmQtcGFydHkgb3duZWQgbWF0ZXJpYWwgaXMgY2xlYXJseSBpZGVudGlmaWVkIGFuZCBhY2tub3dsZWRnZWQKd2l0aGluIHRoZSB0ZXh0IG9yIGNvbnRlbnQgb2YgdGhlIHN1Ym1pc3Npb24uCgpJRiBUSEUgU1VCTUlTU0lPTiBJUyBCQVNFRCBVUE9OIFdPUksgVEhBVCBIQVMgQkVFTiBTUE9OU09SRUQgT1IgU1VQUE9SVEVECkJZIEFOIEFHRU5DWSBPUiBPUkdBTklaQVRJT04gT1RIRVIgVEhBTiBSSE9ERVMsIFlPVSBSRVBSRVNFTlQgVEhBVCBZT1UgSEFWRQpGVUxGSUxMRUQgQU5ZIFJJR0hUIE9GIFJFVklFVyBPUiBPVEhFUiBPQkxJR0FUSU9OUyBSRVFVSVJFRCBCWSBTVUNICkNPTlRSQUNUIE9SIEFHUkVFTUVOVC4KClJIT0RFUyB3aWxsIGNsZWFybHkgaWRlbnRpZnkgeW91ciBuYW1lKHMpIGFzIHRoZSBhdXRob3Iocykgb3Igb3duZXIocykgb2YgdGhlCnN1Ym1pc3Npb24sIGFuZCB3aWxsIG5vdCBtYWtlIGFueSBhbHRlcmF0aW9uLCBvdGhlciB0aGFuIGFzIGFsbG93ZWQgYnkgdGhpcwpsaWNlbnNlLCB0byB5b3VyIHN1Ym1pc3Npb24uCg==</field>
+</element>
+</metadata></metadata></record></ListRecords></OAI-PMH>

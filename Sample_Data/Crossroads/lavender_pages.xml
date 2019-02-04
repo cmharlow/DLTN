@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="static/style.xsl"?><OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>2019-01-27T19:35:09Z</responseDate><request verb="ListRecords" metadataPrefix="xoai" set="col_10267_31331">http://dlynx.rhodes.edu:8080/oai/request</request><ListRecords><record><header><identifier>oai:dlynx.rhodes.edu:10267/30930</identifier><datestamp>2018-05-14T18:35:10Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31331</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="editor">
+<element name="none">
+<field name="value">Moyt, Anita</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-08T16:42:20Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-08T16:42:20Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">2005-10</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30930</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">GNP_v1n1_2005-10</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">A&amp;P Publications, Inc.</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+<field name="value">Newspapers</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">GLBT News Press, Mid-October 2005</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">GNP_v1n1_2005-10.pdf</field>
+<field name="originalName">GNP_v1n1_2005-10.pdf</field>
+<field name="format">application/pdf</field>
+<field name="size">68845184</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30930/1/GNP_v1n1_2005-10.pdf</field>
+<field name="checksum">0dbd0d77ceadc00fdc8df1feec216d47</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">GNP_v1n1_2005-10.pdf.txt</field>
+<field name="originalName">GNP_v1n1_2005-10.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">102093</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30930/2/GNP_v1n1_2005-10.pdf.txt</field>
+<field name="checksum">1e58305f40ffa223197cffb1124fae8b</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">GNP_v1n1_2005-10.pdf.jpg</field>
+<field name="originalName">GNP_v1n1_2005-10.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">18605</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30930/3/GNP_v1n1_2005-10.pdf.jpg</field>
+<field name="checksum">d458781e440247c88f376fbdf92b641c</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30930</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30930</field>
+<field name="lastModifyDate">2018-05-14 13:35:10.21</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30931</identifier><datestamp>2018-05-14T18:35:10Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31331</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="editor">
+<element name="none">
+<field name="value">Moyt, Anita</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-08T16:42:20Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-08T16:42:20Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">2005-11</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30931</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">GNP_v1n2_2005-11</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">A&amp;P Publications, Inc.</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+<field name="value">Newspapers</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">GLBT News Press, November 2005</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">GNP_v1n2_2005-11.pdf</field>
+<field name="originalName">GNP_v1n2_2005-11.pdf</field>
+<field name="format">application/pdf</field>
+<field name="size">70819554</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30931/1/GNP_v1n2_2005-11.pdf</field>
+<field name="checksum">8a7e16286b33ef352d9c003e33ab477b</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">GNP_v1n2_2005-11.pdf.txt</field>
+<field name="originalName">GNP_v1n2_2005-11.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">107745</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30931/2/GNP_v1n2_2005-11.pdf.txt</field>
+<field name="checksum">ba63c4e4e71d4b3fd616a46d386d039b</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">GNP_v1n2_2005-11.pdf.jpg</field>
+<field name="originalName">GNP_v1n2_2005-11.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">18091</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30931/3/GNP_v1n2_2005-11.pdf.jpg</field>
+<field name="checksum">ccb373b610f1da840288f7a86f3aa45c</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30931</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30931</field>
+<field name="lastModifyDate">2018-05-14 13:35:10.253</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30933</identifier><datestamp>2018-05-14T18:35:10Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31331</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="editor">
+<element name="none">
+<field name="value">Rodgers, Darryl</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-08T16:42:20Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-08T16:42:20Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">2008-11</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30933</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">C_v1n1_2008-11</field>
+</element>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+<field name="value">Newspapers</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">Community, November 2008</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">C_v1n1_2008-11.pdf</field>
+<field name="originalName">C_v1n1_2008-11.pdf</field>
+<field name="format">application/pdf</field>
+<field name="size">25801006</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30933/1/C_v1n1_2008-11.pdf</field>
+<field name="checksum">4b916c6248d9c0b53189756183d1a031</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">C_v1n1_2008-11.pdf.txt</field>
+<field name="originalName">C_v1n1_2008-11.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">29308</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30933/2/C_v1n1_2008-11.pdf.txt</field>
+<field name="checksum">b16bbce6f5ac316929fb4fcd16c947c5</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">C_v1n1_2008-11.pdf.jpg</field>
+<field name="originalName">C_v1n1_2008-11.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">13801</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30933/3/C_v1n1_2008-11.pdf.jpg</field>
+<field name="checksum">d429a9528ab54e6c72fd157f79c4edc0</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30933</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30933</field>
+<field name="lastModifyDate">2018-05-14 13:35:10.391</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30934</identifier><datestamp>2018-05-14T18:35:10Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31331</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="editor">
+<element name="none">
+<field name="value">Hiestand, Katie</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-08T16:42:21Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-08T16:42:21Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">2001-06</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30934</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">Lavender_v0n0_2001-06</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">Memphis Pride, Inc.</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+<field name="value">Newspapers</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">The Lavender Pages, June 2006</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Lavender_v0n0_2001-06.pdf</field>
+<field name="originalName">Lavender_v0n0_2001-06.pdf</field>
+<field name="format">application/pdf</field>
+<field name="size">96308104</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30934/1/Lavender_v0n0_2001-06.pdf</field>
+<field name="checksum">6e6605f2c546ea360e75a326969b26c0</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Lavender_v0n0_2001-06.pdf.txt</field>
+<field name="originalName">Lavender_v0n0_2001-06.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">54773</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30934/2/Lavender_v0n0_2001-06.pdf.txt</field>
+<field name="checksum">00515de06640ec2e825b2870481075d2</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">Lavender_v0n0_2001-06.pdf.jpg</field>
+<field name="originalName">Lavender_v0n0_2001-06.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">13730</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30934/3/Lavender_v0n0_2001-06.pdf.jpg</field>
+<field name="checksum">31eca9fbe6ea3aa72cc94e3f4a36a336</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30934</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30934</field>
+<field name="lastModifyDate">2018-05-14 13:35:10.339</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record><record><header><identifier>oai:dlynx.rhodes.edu:10267/30932</identifier><datestamp>2018-05-14T18:35:10Z</datestamp><setSpec>com_10267_31327</setSpec><setSpec>com_10267_30688</setSpec><setSpec>col_10267_31331</setSpec></header><metadata><metadata xmlns="http://www.lyncode.com/xoai" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lyncode.com/xoai http://www.lyncode.com/xsd/xoai.xsd">
+<element name="dc">
+<element name="contributor">
+<element name="editor">
+<element name="none">
+<field name="value">Moyt, Anita</field>
+</element>
+</element>
+</element>
+<element name="date">
+<element name="accessioned">
+<element name="none">
+<field name="value">2017-12-08T16:42:20Z</field>
+</element>
+</element>
+<element name="available">
+<element name="none">
+<field name="value">2017-12-08T16:42:20Z</field>
+</element>
+</element>
+<element name="issued">
+<element name="none">
+<field name="value">2006-01</field>
+</element>
+</element>
+</element>
+<element name="identifier">
+<element name="uri">
+<element name="none">
+<field name="value">http://hdl.handle.net/10267/30932</field>
+</element>
+</element>
+<element name="rhodes">
+<element name="none">
+<field name="value">GNP_v1n3_2006-01</field>
+</element>
+</element>
+</element>
+<element name="publisher">
+<element name="en_US">
+<field name="value">A&amp;P Publications, Inc.</field>
+</element>
+</element>
+<element name="subject">
+<element name="none">
+<field name="value">Memphis (Tenn.)</field>
+<field name="value">LGBTQ Community</field>
+<field name="value">Newspapers</field>
+</element>
+</element>
+<element name="title">
+<element name="en_US">
+<field name="value">GLBT News Press, January 2006</field>
+</element>
+</element>
+<element name="type">
+<element name="en_US">
+<field name="value">Text</field>
+</element>
+</element>
+</element>
+<element name="bundles">
+<element name="bundle">
+<field name="name">ORIGINAL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">GNP_v1n3_2006-01.pdf</field>
+<field name="originalName">GNP_v1n3_2006-01.pdf</field>
+<field name="format">application/pdf</field>
+<field name="size">37911601</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30932/1/GNP_v1n3_2006-01.pdf</field>
+<field name="checksum">f21cbf2921257c6c72e85e9282b345e9</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">1</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">TEXT</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">GNP_v1n3_2006-01.pdf.txt</field>
+<field name="originalName">GNP_v1n3_2006-01.pdf.txt</field>
+<field name="description">Extracted text</field>
+<field name="format">text/plain</field>
+<field name="size">65389</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30932/2/GNP_v1n3_2006-01.pdf.txt</field>
+<field name="checksum">ec5caaaca3ac193d58c693b2033201ea</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">2</field>
+</element>
+</element>
+</element>
+<element name="bundle">
+<field name="name">THUMBNAIL</field>
+<element name="bitstreams">
+<element name="bitstream">
+<field name="name">GNP_v1n3_2006-01.pdf.jpg</field>
+<field name="originalName">GNP_v1n3_2006-01.pdf.jpg</field>
+<field name="description">Generated Thumbnail</field>
+<field name="format">image/jpeg</field>
+<field name="size">19350</field>
+<field name="url">http://dlynx.rhodes.edu:8080/jspui/bitstream/10267/30932/3/GNP_v1n3_2006-01.pdf.jpg</field>
+<field name="checksum">682890ddaa069ca1fb6dc3159cac130d</field>
+<field name="checksumAlgorithm">MD5</field>
+<field name="sid">3</field>
+</element>
+</element>
+</element>
+</element>
+<element name="others">
+<field name="handle">10267/30932</field>
+<field name="identifier">oai:dlynx.rhodes.edu:10267/30932</field>
+<field name="lastModifyDate">2018-05-14 13:35:10.276</field>
+</element>
+<element name="repository">
+<field name="name">Rhodes College Digital Archives - DLynx</field>
+<field name="mail">newmanj@rhodes.edu</field>
+</element>
+</metadata></metadata></record></ListRecords></OAI-PMH>
