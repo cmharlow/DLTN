@@ -36,6 +36,17 @@
         <dltn:l string="zxx">zxx</dltn:l>
         <dltn:l string="zxx">no linguistic content.</dltn:l>
     </xsl:param>
+    
+    <xsl:param name="pType">
+        <dltn:type string="still image">Still Image</dltn:type>
+        <dltn:type string="text">Text</dltn:type>
+        <dltn:type string="sound recording">Sound</dltn:type>
+        <dltn:type string="text">Document</dltn:type>
+        <dltn:type string="three dimensional object">Object</dltn:type>
+        <dltn:type string="still image">Still image</dltn:type>
+        <dltn:type string="still image">Image/jp2</dltn:type>
+        <dltn:type string="still image">IMAGE</dltn:type>
+    </xsl:param>
 
     <!-- identity tranform -->
     <xsl:template match="@* | node()">
@@ -189,7 +200,12 @@
     <!-- type -->
     <xsl:template match="dc:type">
         <xsl:for-each select="tokenize(normalize-space(.), ';')">
-            <typeOfResource><xsl:value-of select="normalize-space(.)"/></typeOfResource>
+            <xsl:variable name="current-type" select="normalize-space(.)"/>
+            <xsl:choose>
+                <xsl:when test="$current-type = $pType/dltn:type">
+                    <typeOfResource><xsl:value-of select="$pType/dltn:type[. = $current-type]/@string"/></typeOfResource>
+                </xsl:when>
+            </xsl:choose>
         </xsl:for-each>
     </xsl:template>
     
