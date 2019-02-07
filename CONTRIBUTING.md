@@ -4,6 +4,9 @@ We appreciate contributions to the repository in the form of Issues or Pull Requ
 
 If you have any questions about contributing, please open an issue or email the committee.
 
+The DLTN maintains an [XSL style guide in our technical docs](https://dltn-technical-docs.readthedocs.io/en/latest/style/xsl.html).
+Please review it before opening a p.r.
+
 ## Contributing Via Pull Request
 
 1. If your proposed change is complicated, open an issue to discuss your proposed change first.

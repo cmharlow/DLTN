@@ -1,17 +1,41 @@
-# DLTN
-Digital Library of Tennessee stuff
+# DLTN XSLT and Repox Config
 
-## About the Data
 
-These datasets were used just for generated DLTN Metadata documentation and transformation testing.
+## About Sample Data
 
-## About the XSLT
+The sample data here is useful for testing transformation modifications outside of Repox.
 
-This is XSLT used for the Repox aggregation platform and transformation to the DLTN MODS MAP. Stored in flat directory for easier syncing with Repox servers.
+## About XSLT
+
+All XSL transformations currently used by the Digital Library of Tennessee are stored here.  For more information about
+writing new XSL transformations, please review our [XSL style guide](https://dltn-technical-docs.readthedocs.io/en/latest/style/xsl.html).
+
+## About Repox Config
+
+This section includes configuration files with all incoming metadata schemas currently supported by the Digital Library
+of Tennessee.
 
 ## Documentation
 
-See our DLTN wiki: https://wiki.lib.utk.edu/display/DPLA
+For more information, check out our [technical docs](https://dltn-technical-docs.readthedocs.io/en/latest/).
+
+```
+|-- repox_config
+    |-- metadataSchemas.xml
+|-- Sample_Data
+    |-- provider_name_1
+        |-- sample_record_1.xml
+        |-- sample_record_2.xml
+    |-- provider_name_2
+        |-- sample_record_1.xml
+        |-- sample_record_2.xml
+|-- XSLT
+    |-- catalogs
+        |-- provider1_catalog.xsl
+    |-- provider1dctomods.xsl
+    |-- provider2qdctomods.xsl
+
+```
 
 ## Helpful Resources
 
