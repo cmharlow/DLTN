@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<metadataSchemas>
+  <metadataSchema>
+    <shortDesignation>ese</shortDesignation>
+    <namespace>http://www.europeana.eu/schemas/ese/</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="3.4" xsdLink="http://www.europeana.eu/schemas/ese/ESE-V3.4.xsd"/>
+      <version number="3.3" xsdLink="http://www.europeana.eu/schemas/ese/ESE-V3.3.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>MarcXchange</shortDesignation>
+    <namespace>info:lc/xmlns/marcxchange-v1</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="1.0" xsdLink="info:lc/xmlns/marcxchange-v1.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>ISO2709</shortDesignation>
+    <namespace>info:lc/xmlns/marcxchange-v1</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="1.0" xsdLink="info:lc/xmlns/marcxchange-v1.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>tel</shortDesignation>
+    <namespace>http://krait.kb.nl/coop/tel/handbook/telterms.html</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="3.4" xsdLink="http://www.europeana.eu/schemas/ese/ESE-V3.4.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>oai_dc</shortDesignation>
+    <namespace>http://www.openarchives.org/OAI/2.0/</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="2.0" xsdLink="http://www.openarchives.org/OAI/2.0/oai_dc.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>NLM-AI</shortDesignation>
+    <namespace>http://www.w3.org/1998/Math/MathML</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="2.0" xsdLink="ncbi-mathml2/mathml2.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>NLM-Book</shortDesignation>
+    <namespace>http://www.w3.org/1998/Math/MathML</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="2.0" xsdLink="ncbi-mathml2/mathml2.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>lido</shortDesignation>
+    <namespace>http://www.lido-schema.org</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="1.0" xsdLink="http://www.lido-schema.org/schema/v1.0/lido-v1.0.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>edm</shortDesignation>
+    <namespace>http://www.europeana.eu/schemas/edm/</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="1.0" xsdLink="http://www.europeana.eu/schemas/edm/EDM.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>MODS</shortDesignation>
+    <namespace>http://www.loc.gov/mods/v3</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="3.5" xsdLink="http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>oai_mods</shortDesignation>
+    <namespace>http://www.loc.gov/mods/v3</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="3.5" xsdLink="http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>mods</shortDesignation>
+    <namespace>http://www.loc.gov/mods/v3</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="3.5" xsdLink="http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>oai_qdc</shortDesignation>
+    <namespace>http://worldcat.org/xmlschemas/qdc-1.0</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="1.0" xsdLink="http://worldcat.org/xmlschemas/qdc/1.0/qdc-1.0.xsd"/>
+    </versions>
+  </metadataSchema>
+  <metadataSchema>
+    <shortDesignation>xoai</shortDesignation>
+    <namespace>http://www.lyncode.com/xoai</namespace>
+    <bOAIAvailable>true</bOAIAvailable>
+    <versions>
+      <version number="1.0" xsdLink="http://www.lyncode.com/xsd/xoai.xsd"/>
+    </versions>
+  </metadataSchema>
+</metadataSchemas>
