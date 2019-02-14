@@ -106,8 +106,7 @@
             <xsl:apply-templates select='element[@name="dc"]/element[@name="identifier"]/element[@name="rhodes"]/element[@name="none"]/field[@name="value"]'/>
             
             <!-- Subjects -->
-            <xsl:apply-templates select='element[@name = "dc"]/element[@name = "subject"]/element[@name = "none"]/field[@name = "value"]'/>
-            <xsl:apply-templates select='element[@name = "dc"]/element[@name = "subject"]/element[@name = "en_US"]/field[@name = "value"]'/>
+            <xsl:apply-templates select='element[@name = "dc"]/element[@name = "subject"]/element/field[@name = "value"]'/>
             
             <!-- abstract -->
             <xsl:apply-templates select='element[@name="dc"]/element[@name="description"]/element[@name="none"]/field[@name="value"]'/>
@@ -218,16 +217,7 @@
     </xsl:template>
     
     <!-- Subjects -->
-    <xsl:template match='element[@name = "dc"]/element[@name = "subject"]/element[@name = "none"]/field[@name = "value"]'>
-        <subject>
-            <topic>
-                <xsl:apply-templates/>
-            </topic>
-        </subject>
-    </xsl:template>
-    
-    <!-- Subjects -->
-    <xsl:template match='element[@name = "dc"]/element[@name = "subject"]/element[@name = "en_US"]/field[@name = "value"]'>
+    <xsl:template match='element[@name = "dc"]/element[@name = "subject"]/element/field[@name = "value"]'>
         <subject>
             <topic>
                 <xsl:apply-templates/>
