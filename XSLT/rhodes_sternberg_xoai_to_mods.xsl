@@ -109,7 +109,7 @@
             <xsl:apply-templates select='element[@name = "dc"]/element[@name = "subject"]/element/field[@name = "value"]'/>
             
             <!-- abstract -->
-            <xsl:apply-templates select='element[@name="dc"]/element[@name="description"]/element[@name="none"]/field[@name="value"]'/>
+            <xsl:apply-templates select='element[@name="dc"]/element[@name="description"]/element[@name="abstract"]/element[@name="en_US"]/field[@name="value"]'/>
             
             <!-- streaming video -->
             <xsl:apply-templates select='element[@name="dc"]/element[@name="relation"]/element[@name="uri"]/element[@name="none"]/field[@name="value"]'/>
@@ -235,7 +235,7 @@
     </xsl:template>
     
     <!-- Abstract -->
-    <xsl:template match='element[@name="dc"]/element[@name="description"]/element[@name="none"]/field[@name="value"]'>
+    <xsl:template match='element[@name="dc"]/element[@name="description"]/element[@name="abstract"]/element[@name="en_US"]/field[@name="value"]'>
         <abstract><xsl:apply-templates/></abstract>
     </xsl:template>
     
