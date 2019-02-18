@@ -57,9 +57,10 @@
             <xsl:apply-templates select='element[@name="dc"]/element[@name="description"]/element[@name="abstract"]/element[@name="en_US"]/field[@name="value"]'/>
             
             <!-- urls -->
+                <location>
                 <xsl:apply-templates select='element[@name = "dc"]/element[@name = "identifier"]/element[@name = "uri"]/element[@name = "none"]/field[@name = "value"]'/>
                 <xsl:apply-templates select='element[@name="bundles"]/element[@name="bundle"][field[@name="name"][text()="THUMBNAIL"]]/element[@name="bitstreams"]/element[@name="bitstream"][1]/field[@name="url"]'/>
-
+                </location>
             
             <!-- Contributors -->
             <xsl:apply-templates select='element[@name = "dc"]/element[@name="contributor"]/element[@name = "none"]/field[@name = "value"]'/>
@@ -79,7 +80,6 @@
                 <xsl:apply-templates
                     select='element[@name = "dc"]/element[@name = "date"]/element[@name = "issued"]/element[@name = "none"]/field[@name = "value"]'/>
                 <xsl:apply-templates select='element[@name = "dc"]/element[@name = "publisher"]/element[@name = "none"]/field[@name = "value"]'/>
-                <xsl:apply-templates select='element[@name="dc"]/element[@name="date"]/element[@name="issued"]/element[@name="none"]/field[@name="value"]'/>
                 <xsl:apply-templates select='element[@name="dc"]/element[@name="date"]/element[@name="accessioned"]/element[@name="none"]/field[@name="value"]'/>
             </originInfo>
             
@@ -155,19 +155,15 @@
     
     <!-- Thumbnail -->
     <xsl:template match='element[@name="bundles"]/element[@name="bundle"][field[@name="name"][text()="THUMBNAIL"]]/element[@name="bitstreams"]/element[@name="bitstream"][1]/field[@name="url"]'>
-        <location>
             <url access="preview"><xsl:apply-templates/></url>
-        </location>
     </xsl:template>
     
     <!-- Handle -->
     <xsl:template
         match='element[@name = "dc"]/element[@name = "identifier"]/element[@name = "uri"]/element[@name = "none"]/field[@name = "value"]'>
-        <location>
             <url access="object in context">
                 <xsl:apply-templates/>
             </url>
-        </location>
     </xsl:template>
     
     <!-- Creator -->
