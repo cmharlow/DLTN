@@ -236,7 +236,9 @@
     
     <!-- Abstract -->
     <xsl:template match='element[@name="dc"]/element[@name="description"]/element[@name="abstract"]/element[@name="en_US"]/field[@name="value"]'>
-        <abstract><xsl:apply-templates/></abstract>
+        <xsl:if test=".!='UPDATE THIS INFORMATION'">
+            <abstract><xsl:apply-templates/></abstract>
+        </xsl:if>
     </xsl:template>
     
     <!-- Streaming Resource -->
