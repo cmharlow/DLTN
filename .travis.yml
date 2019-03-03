@@ -1,0 +1,22 @@
+language: bash
+dist: trusty
+os: linux
+
+addons:
+  apt:
+    packages:
+      - libxml2-utils
+      - shunit2
+      - oracle-java8-set-default
+
+notifications:
+  email:
+    false
+
+before_script:
+  - mkdir working_directory
+  - curl http://central.maven.org/maven2/net/sf/saxon/saxon/8.7/saxon-8.7.jar > working_directory
+
+script:
+  - cd tests
+  - ./validate_scenarios.sh
