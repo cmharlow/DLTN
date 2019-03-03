@@ -1,0 +1,22 @@
+language: bash
+dist: xenial
+os: linux
+
+addons:
+  apt:
+    packages:
+      - libxml2-utils
+      - shunit2
+      - openjdk-8-jre
+
+notifications:
+  email:
+    false
+
+before_script:
+  - mkdir working_directory
+  - curl http://central.maven.org/maven2/net/sf/saxon/saxon/8.7/saxon-8.7.jar > working_directory/saxon-8.7.jar
+
+script:
+  - cd tests
+  - ./validate_scenarios.sh
