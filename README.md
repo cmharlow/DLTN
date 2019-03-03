@@ -1,5 +1,6 @@
 # DLTN XSLT and Repox Config
 
+![Travis Badge](https://travis-ci.org/DigitalLibraryofTennessee/DLTN_XSLT.png)
 
 ## About Sample Data
 
