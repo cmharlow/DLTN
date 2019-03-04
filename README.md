@@ -2,20 +2,6 @@
 
 ![Travis Badge](https://travis-ci.org/DigitalLibraryofTennessee/DLTN_XSLT.png)
 
-## About Sample Data
-
-The sample data here is useful for testing transformation modifications outside of Repox.
-
-## About XSLT
-
-All XSL transformations currently used by the Digital Library of Tennessee are stored here.  For more information about
-writing new XSL transformations, please review our [XSL style guide](https://dltn-technical-docs.readthedocs.io/en/latest/style/xsl.html).
-
-## About Repox Config
-
-This section includes configuration files with all incoming metadata schemas currently supported by the Digital Library
-of Tennessee.
-
 ## Documentation
 
 For more information, check out our [technical docs](https://dltn-technical-docs.readthedocs.io/en/latest/).
@@ -35,8 +21,31 @@ For more information, check out our [technical docs](https://dltn-technical-docs
         |-- provider1_catalog.xsl
     |-- provider1dctomods.xsl
     |-- provider2qdctomods.xsl
+|-- tests
+    |-- testSchemas
+        |-- DLTN_oai_mods.xsd
+    validate_scenarios.sh
 
 ```
+
+### Sample Data
+
+The sample data here is useful for testing transformation modifications outside of Repox.
+
+### XSLT
+
+All XSL transformations currently used by the Digital Library of Tennessee are stored here.  For more information about
+writing new XSL transformations, please review our [XSL style guide](https://dltn-technical-docs.readthedocs.io/en/latest/style/xsl.html).
+
+### Tests
+
+We strive to include a unit test for every Sample_Data **+** XSLT scenario.  Those tests can be found in validate_scenarios.sh
+and are tested automatically with Travis-CI.
+
+### Repox Config
+
+This section includes configuration files with all incoming metadata schemas currently supported by the Digital Library
+of Tennessee.
 
 ## Helpful Resources
 
