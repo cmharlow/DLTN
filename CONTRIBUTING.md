@@ -23,3 +23,7 @@ Please review it before opening a p.r.
 ## Contributing an Issue
 
 The Digital Library of Tennessee also encourages contributions in the form of issues.  If you have a problem with an existing set or transform or have a question for the community, feel free to add an issue to discuss this.
+
+## Contributing XSLT
+
+If you're contributing XSLT or new data via pull request, also please consider adding a unit test in tests/validate_scenarios.sh
