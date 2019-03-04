@@ -20,7 +20,7 @@ testValidityOfSternberg() {
 
 # This unit test expects all records in Sample_Data/Crossroads to use rhodes_dspace_xoai_to_mods.xsl
 testValidityOfCrossroadsXOAItoMODS() {
-    for filename in ${SAMPLEDATA}/Crossroads/*.xml; do
+    for filename in ${SAMPLEDATA}/Crossroads_xoai_default/*.xml; do
         ${SAXON} ${filename} ${STYLESHEETS}/rhodes_dspace_xoai_to_mods.xsl 2>&1 2>/dev/null 1>${TESTFILE}
         RESPONSE=$(xmllint --noout --schema ${DLTNMODS} ${TESTFILE} 2>&1 1>/dev/null | cat)
         assertEquals "${RESPONSE}" "${TESTFILE} validates"
