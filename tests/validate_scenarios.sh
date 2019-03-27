@@ -40,5 +40,14 @@ testValidityOfCountryMusicHallofFame() {
     assertEquals "${RESPONSE}" "${TESTFILE} validates"
 }
 
+# UTC Tests
+testValidityOfUTCQDCtoMODS() {
+    for filename in ${SAMPLEDATA}/UTC/qdc/*.xml; do
+        ${SAXON} ${filename} ${STYLESHEETS}/utcqdctomods.xsl 2>&1 2>/dev/null 1>${TESTFILE}
+        RESPONSE=$(xmllint --noout --schema ${DLTNMODS} ${TESTFILE} 2>&1 1>/dev/null | cat)
+        assertEquals "${RESPONSE}" "${TESTFILE} validates"
+    done
+}
 
+}
 . shunit2
