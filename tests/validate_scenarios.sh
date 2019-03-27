@@ -49,5 +49,4 @@ testValidityOfUTCQDCtoMODS() {
     done
 }
 
-}
 . shunit2
