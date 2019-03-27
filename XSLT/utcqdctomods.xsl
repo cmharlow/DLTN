@@ -123,8 +123,7 @@
         <xsl:apply-templates select="dc:format"/>
         <!-- dcterms:extent -->
         <xsl:apply-templates select="dcterms:extent"/>
-        <!-- type(s) that start with a lower-case letter -->
-        <xsl:apply-templates select="dc:type[matches(., '^[a-z]')]"/>
+        <xsl:apply-templates select="dc:type"/>
       </physicalDescription>
       <recordInfo>
         <recordContentSource>University of Tennessee at Chattanooga</recordContentSource>
@@ -281,16 +280,8 @@
     <identifier type="local"><xsl:apply-templates/></identifier>
   </xsl:template>
 
-  <!-- type(s) starting with capital letters -->
-  <xsl:template match="dc:type[matches(., '^[A-Z]')]">
-    <xsl:variable name="type-tokens" select="tokenize(., ';')"/>
-    <xsl:for-each select="$type-tokens">
-      <typeOfResource><xsl:value-of select="lower-case(normalize-space(.))"/></typeOfResource>
-    </xsl:for-each>
-  </xsl:template>
-
   <!-- type(s) starting with lower-case letters -->
-  <xsl:template match="dc:type[matches(., '^[a-z]')]">
+  <xsl:template match="dc:type">
     <xsl:variable name="lc-type-tokens" select="tokenize(., ';')"/>
     <xsl:for-each select="$lc-type-tokens">
       <form><xsl:value-of select="$lc-type-tokens"/></form>
