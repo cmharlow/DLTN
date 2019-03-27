@@ -40,6 +40,18 @@ testValidityOfCountryMusicHallofFame() {
     assertEquals "${RESPONSE}" "${TESTFILE} validates"
 }
 
+# TSLA Tests
+
+testValidityOfTSLAqdctoMODS() {
+    TSLA="test_data/tsla_qdc.txt"
+    cat $TSLA | while read line; do
+        OAIPMH=$(curl "https://dpla.lib.utk.edu/repox/OAIHandler?verb=ListRecords&metadataPrefix=oai_qdc&set=$line" | cat)
+        ${SAXON} ${OAIPMH} ${STYLESHEETS}/tslaqdctomods.xsl 2>&1 2>/dev/null 1>${TESTFILE}
+        RESPONSE=$(xmllint --noout --schema ${DLTNMODS} ${TESTFILE} 2>&1 1>/dev/null | cat)
+        assertEquals "${RESPONSE}" "${TESTFILE} validates"
+    done
+}
+
 # UTC Tests
 testValidityOfUTCQDCtoMODS() {
     for filename in ${SAMPLEDATA}/UTC/qdc/*.xml; do
