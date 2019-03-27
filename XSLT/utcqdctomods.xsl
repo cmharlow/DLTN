@@ -101,8 +101,6 @@
       <location>
         <xsl:apply-templates select="dc:identifier[starts-with(normalize-space(.), 'http://')]"/>
       </location>
-      <!-- type(s) that start with a capital letter -->
-      <xsl:apply-templates select="dc:type[matches(., '^[A-Z]')]"/>
       <!-- relatedItem[@type='host'] -->
       <relatedItem type="host">
         <!-- dc:source -->
