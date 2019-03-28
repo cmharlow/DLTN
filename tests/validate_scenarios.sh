@@ -44,12 +44,17 @@ testValidityOfCountryMusicHallofFame() {
 
 testValidityOfTSLAqdctoMODS() {
     TSLA="test_data/tsla_qdc.txt"
+    DATADIR="../working_directory/tsla_qdc"
+    mkdir ${DATADIR}
     cat $TSLA | while read line; do
-        OAIPMH=$(curl "https://dpla.lib.utk.edu/repox/OAIHandler?verb=ListRecords&metadataPrefix=oai_qdc&set=$line" | cat)
-        ${SAXON} ${OAIPMH} ${STYLESHEETS}/tslaqdctomods.xsl 2>&1 2>/dev/null 1>${TESTFILE}
+        curl "https://dpla.lib.utk.edu/repox/OAIHandler?verb=ListRecords&metadataPrefix=oai_qdc&set=$line" 2>&1 2>/dev/null 1>"$DATADIR/$line.xml"
+    done
+    for filename in ${DATADIR}/*.xml; do
+        ${SAXON} ${filename} ${STYLESHEETS}/tslaqdctomods.xsl 2>&1 2>/dev/null 1>${TESTFILE}
         RESPONSE=$(xmllint --noout --schema ${DLTNMODS} ${TESTFILE} 2>&1 1>/dev/null | cat)
         assertEquals "${RESPONSE}" "${TESTFILE} validates"
     done
+    rm -rf ${DATADIR}
 }
 
 # UTC Tests
