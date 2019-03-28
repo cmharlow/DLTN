@@ -41,7 +41,6 @@ testValidityOfCountryMusicHallofFame() {
 }
 
 # TSLA Tests
-
 testValidityOfTSLAqdctoMODS() {
     TSLA="test_data/tsla_qdc.txt"
     DATADIR="../working_directory/tsla_qdc"
