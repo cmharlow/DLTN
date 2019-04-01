@@ -155,7 +155,16 @@
     
     <!-- Thumbnail -->
     <xsl:template match='element[@name="bundles"]/element[@name="bundle"][field[@name="name"][text()="THUMBNAIL"]]/element[@name="bitstreams"]/element[@name="bitstream"][1]/field[@name="url"]'>
-            <url access="preview"><xsl:apply-templates/></url>
+        <xsl:variable name="thumbnail-link" select="./text()"/>
+        <xsl:choose>
+            <xsl:when test="starts-with($thumbnail-link, 'http://dam-2013.rhodes.edu:8080/xmlui')">
+                <xsl:variable name="new-thumbnail" select="replace($thumbnail-link, 'http://dam-2013.rhodes.edu:8080/xmlui', 'http://dlynx.rhodes.edu:8080/jspui')"/>
+                <url access="preview"><xsl:value-of select="$new-thumbnail"/></url>
+            </xsl:when>
+            <xsl:otherwise>
+                <url access="preview"><xsl:value-of select="$thumbnail-link"/></url>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <!-- Handle -->
