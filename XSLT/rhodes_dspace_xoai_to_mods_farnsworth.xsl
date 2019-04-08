@@ -161,7 +161,7 @@
     <!-- Handle -->
     <xsl:template
         match='element[@name = "dc"]/element[@name = "identifier"]/element[@name = "uri"]/element[@name = "none"]/field[@name = "value"]'>
-            <url access="object in context">
+            <url access="object in context" usage="primary display">
                 <xsl:apply-templates/>
             </url>
     </xsl:template>
