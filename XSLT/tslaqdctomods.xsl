@@ -153,8 +153,15 @@
     </xsl:template>
     
     <!-- spatial -->
-    <xsl:template match="dcterms:spatial[not('Unknown' or 'Other')]">
-        <subject><geographic><xsl:apply-templates/></geographic></subject>
+    <xsl:template match="dcterms:spatial">
+        <xsl:variable name="testing" select="."/>
+        <xsl:choose>
+            <xsl:when test="matches(normalize-space($testing), '^[0-9]')"/>
+            <xsl:when test="matches(normalize-space($testing), '^-')"/>
+            <xsl:when test="matches(normalize-space($testing), 'Unknown')"/>
+            <xsl:when test="matches(normalize-space($testing), 'Other')"/>
+            <xsl:otherwise><subject><geographic><xsl:apply-templates/></geographic></subject></xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <!-- subjects -->
