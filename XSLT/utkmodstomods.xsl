@@ -110,7 +110,7 @@
 
     <!-- Apply Creators and Contributors -->
     <xsl:template match="name[namePart[not(matches(lower-case(text()), 'unknown'))]]">
-        <xsl:variable name="vRole" select="normalize-space(role[1]/roleTerm)"/>
+        <xsl:variable name="vRole" select="normalize-space(role[1]/roleTerm[1])"/>
         <xsl:if test="$vRole=$pRole/l">
             <name>
                 <namePart>
