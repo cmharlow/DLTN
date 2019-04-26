@@ -133,11 +133,11 @@
             <genre authority="{$pForm/f[matches(text(), $vForm)]/@authority}" valueURI="{$pForm/f[matches(text(), $vForm)]/@uri}">
                 <xsl:value-of select="$pForm/f[matches(text(), $vForm)]/text()"/>
             </genre>
-            <physicalDesciption>
+            <physicalDescription>
                 <form>
                     <xsl:value-of select="$pForm/f[matches(text(), $vForm)]/text()"/>
                 </form>
-            </physicalDesciption>
+            </physicalDescription>
         </xsl:if>
     </xsl:template>
 
