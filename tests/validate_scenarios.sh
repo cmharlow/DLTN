@@ -65,4 +65,21 @@ testValidityOfUTCQDCtoMODS() {
     done
 }
 
+#UTK Tests
+testValidityOfUTKMODStoMODS() {
+    UTK="test_data/utk_mods.txt"
+    DATADIR="../working_directory/utk"
+    mkdir ${DATADIR}
+    cat $UTK | while read line; do
+        curl "https://dpla.lib.utk.edu/repox/OAIHandler?verb=ListRecords&metadataPrefix=mods&set=$line" 2>&1 2>/dev/null 1>"$DATADIR/$line.xml"
+    done
+    for filename in ${DATADIR}/*.xml; do
+        TESTFILE="${filename}.test"
+        ${SAXON} ${filename} ${STYLESHEETS}/utkmodstomods.xsl 2>&1 2>/dev/null 1>${TESTFILE}
+        RESPONSE=$(xmllint --noout --schema ${DLTNMODS} ${TESTFILE} 2>&1 1>/dev/null | cat)
+        assertEquals "${RESPONSE}" "${TESTFILE} validates"
+    done
+    rm -rf ${DATADIR}
+}
+
 . shunit2
