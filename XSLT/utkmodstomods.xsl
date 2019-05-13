@@ -200,7 +200,7 @@
                     <xsl:attribute name="access">
                         <xsl:value-of select="'preview'"/>
                     </xsl:attribute>
-                    <xsl:value-of select="concat(following::identifier[starts-with(.,'https://')],'/datastream/TN/view')"/>
+                    <xsl:value-of select="concat(following-sibling::identifier[starts-with(.,'https://')],'/datastream/TN/view')"/>
                 </xsl:element>
             </xsl:if>
 
