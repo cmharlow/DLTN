@@ -42,7 +42,19 @@
       <!-- title -->
       <xsl:apply-templates select="dc:title"/>
       <!-- accessRights -->
-      <xsl:apply-templates select="dcterms:accessRights"/>
+      <xsl:choose>
+        <xsl:when test="dcterms:accessRights">
+          <xsl:apply-templates select="dcterms:accessRights"/>
+        </xsl:when>
+        <xsl:when test="dc:rights">
+          <xsl:apply-templates select="dc:rights"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <accessCondition type="local rights statement">
+            This digital image is the property of the Country Music Hall of Fame® and Museum and is protected by U.S. and international copyright laws. The image may not be downloaded, reproduced, or distributed without permission. To inquire about use permissions and obtain a high-quality version of this file, contact print@countrymusichalloffame.org. Please cite image information in email.
+          </accessCondition>
+        </xsl:otherwise>
+      </xsl:choose>
       <!-- description -->
       <xsl:apply-templates select="dc:description"/>
       <!-- subject(s) -->
@@ -75,6 +87,10 @@
   
   <!-- accessRights -->
   <xsl:template match="dcterms:accessRights">
+    <accessCondition type='local rights statement'><xsl:apply-templates/></accessCondition>
+  </xsl:template>
+
+  <xsl:template match="dc:rights">
     <accessCondition type='local rights statement'><xsl:apply-templates/></accessCondition>
   </xsl:template>
   
