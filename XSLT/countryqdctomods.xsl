@@ -68,11 +68,8 @@
         <!-- identifier beginning with 'http://' -->
         <xsl:apply-templates select="dc:identifier[starts-with(., 'http://')]"/>
       </location>
-      <!-- physicalDescription -->
-      <physicalDescription>
         <!-- format(s) -->
         <xsl:apply-templates select="dc:format"/>
-      </physicalDescription>
       <!-- recordInfo -->
       <xsl:call-template name="record-info"/>
     </mods>
@@ -146,7 +143,11 @@
   
   <!-- format(s) -->
   <xsl:template match="dc:format">
-    <form><xsl:apply-templates/></form>
+    <physicalDescription>
+      <form>
+        <xsl:apply-templates/>
+      </form>
+    </physicalDescription>
   </xsl:template>
   
   <!-- record-info template -->
