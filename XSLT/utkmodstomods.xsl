@@ -149,7 +149,7 @@
         </originInfo>
     </xsl:template>
 
-    <xsl:template match="originInfo[not(dateCreated[@encoding = 'edtf'])] | originInfo[not(dateIssued[@encoding = 'edtf'])] | originInfo[not(publisher)]"/>
+    <xsl:template match="originInfo"/>
 
     <xsl:template match="dateCreated[@encoding = 'edtf']">
         <xsl:copy>
