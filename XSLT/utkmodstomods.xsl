@@ -141,18 +141,32 @@
         </xsl:if>
     </xsl:template>
 
-    <xsl:template match="originInfo[dateCreated[@encoding = 'edtf']]">
-        <xsl:copy>
+    <xsl:template match="originInfo[dateCreated[@encoding = 'edtf']] | originInfo[dateIssued[@encoding = 'edtf']] | originInfo[publisher]">
+        <originInfo>
             <xsl:apply-templates select="dateCreated[@encoding = 'edtf']"/>
-        </xsl:copy>
+            <xsl:apply-templates select="dateIssued[@encoding = 'edtf']"/>
+            <xsl:apply-templates select="publisher"/>
+        </originInfo>
     </xsl:template>
 
-    <xsl:template match="originInfo[not(dateCreated[@encoding = 'edtf'])]"/>
+    <xsl:template match="originInfo[not(dateCreated[@encoding = 'edtf'])] | originInfo[not(dateIssued[@encoding = 'edtf'])] | originInfo[not(publisher)]"/>
 
     <xsl:template match="dateCreated[@encoding = 'edtf']">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
+    </xsl:template>
+
+    <xsl:template match="dateIssued[@encoding = 'edtf']">
+        <dateCreated encoding="edtf">
+            <xsl:value-of select="normalize-space(.)"/>
+        </dateCreated>
+    </xsl:template>
+
+    <xsl:template match="publisher">
+        <publisher>
+            <xsl:value-of select="normalize-space(.)"/>
+        </publisher>
     </xsl:template>
 
     <!-- ignore preceding or following sibling titleInfos when titleInfo[@supplied] is present -->
