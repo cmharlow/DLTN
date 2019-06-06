@@ -38,11 +38,14 @@ utk_sanborn
 utk_sturley
 utk_swim
 utk_tenncities
+utk_tennessean
 utk_tenngirl
 utk_thompson
+utk_torch
 utk_univmonthly
 utk_utsmc
 utk_vanvactor
 utk_voice
 utk_vpmoore
 utk_wderfilms
+utk_yrb
