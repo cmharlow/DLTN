@@ -65,11 +65,19 @@ testValidityOfTSLAqdctoMODS() {
 
 # UTC Tests
 testValidityOfUTCQDCtoMODS() {
-    for filename in ${SAMPLEDATA}/UTC/qdc/*.xml; do
-        ${SAXON} ${filename} ${STYLESHEETS}/utcqdctomods.xsl 2>&1 2>/dev/null 1>${TESTFILE}
+    UTK="test_data/utc_qdc.txt"
+    DATADIR="../working_directory/utc"
+    mkdir ${DATADIR}
+    cat $UTK | while read line; do
+        curl "https://dpla.lib.utk.edu/repox/OAIHandler?verb=ListRecords&metadataPrefix=mods&set=$line" 2>&1 2>/dev/null 1>"$DATADIR/$line.xml"
+    done
+    for filename in ${DATADIR}/*.xml; do
+        TESTFILE="${filename}.test"
+        ${SAXON} ${filename} ${STYLESHEETS}/utkmodstomods.xsl 2>&1 2>/dev/null 1>${TESTFILE}
         RESPONSE=$(xmllint --noout --schema ${DLTNMODS} ${TESTFILE} 2>&1 1>/dev/null | cat)
         assertEquals "${RESPONSE}" "${TESTFILE} validates"
     done
+    rm -rf ${DATADIR}
 }
 
 #UTK Tests
