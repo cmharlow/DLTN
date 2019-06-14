@@ -12,6 +12,7 @@ utk_brehm
 utk_cdf
 utk_colloquy
 utk_comm
+utk_dabney
 utk_derris
 utk_druid
 utk_egypt
