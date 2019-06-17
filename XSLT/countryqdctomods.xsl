@@ -14,6 +14,9 @@
   <xsl:output encoding="UTF-8" method="xml" omit-xml-declaration="yes" indent="yes"/>
   <xsl:strip-space elements="*"/>
 
+  <!-- Add Manifest Catalog -->
+  <xsl:variable name="catalog" select="document('catalogs/cmhf_catalog.xml')"/>
+
   <!-- includes and imports -->
     
   <!--
@@ -132,8 +135,12 @@
   <!-- identifier - location processing -->
   <xsl:template match="dc:identifier[starts-with(., 'http://')]">
     <xsl:variable name="identifier-preview-url" select="replace(., '/cdm/ref', '/utils/getthumbnail')"/>
+    <xsl:variable name="iiif-manifest" select="concat(replace(replace(., 'cdm/ref/collection', 'digital/iiif'), '/id', ''), '/info.json')"/>
     <url usage="primary" access="object in context"><xsl:apply-templates/></url>
     <url access="preview"><xsl:value-of select="$identifier-preview-url"/></url>
+    <xsl:if test="normalize-space(.) = $catalog//@id">
+      <url note="iiif-manifest"><xsl:value-of select="$iiif-manifest"/></url>
+    </xsl:if>
   </xsl:template>
   
   <!-- a template to match identifiers that do *not* start with 'http://' -->
