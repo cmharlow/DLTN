@@ -172,6 +172,12 @@
     <!-- ignore preceding or following sibling titleInfos when titleInfo[@supplied] is present -->
     <xsl:template match="titleInfo[preceding-sibling::titleInfo[@supplied] or following-sibling::titleInfo[@supplied]]"/>
 
+    <xsl:template match="titleInfo[@supplied='yes']">
+        <titleInfo>
+            <title><xsl:value-of select="normalize-space(.)"/></title>
+        </titleInfo>
+    </xsl:template>
+
     <!-- This is a temporary rule to move local accessConditions to abstract and replace all text since it currently has non-UTF8 characters -->
     <xsl:template match="accessCondition[@type='local']">
         <abstract>
