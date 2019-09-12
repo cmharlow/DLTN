@@ -2,10 +2,12 @@ bcpl
 utk_3d
 utk_acwiley
 utk_agee
+utk_agrutesc
 utk_agrtfhs
 utk_airscoop
 utk_alumnus
 utk_arrow
+utk_arrpgimg
 utk_arrscrap
 utk_arrsimple
 utk_brehm
@@ -20,6 +22,7 @@ utk_ekcd
 utk_emancip
 utk_fiftyyears
 utk_gamble
+utk_garner
 utk_hbs
 utk_heilman
 utk_humbug
